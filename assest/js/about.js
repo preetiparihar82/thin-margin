@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
-  // 7. Dynamic Stats Count-Up Animation
+  // 7. Dynamic Stats Count-Up Animation (Fluid, High-Precision Live Reveal)
   // ---------------------------------------------------------------------------
   const statsStrip = document.getElementById('statsStrip');
   const metricNumbers = document.querySelectorAll('.fluid-metric-number[data-target]');
@@ -254,50 +254,86 @@ document.addEventListener('DOMContentLoaded', () => {
   if (statsStrip && metricNumbers.length > 0) {
     let animated = false;
 
-    const animateCount = (el) => {
-      const target = parseFloat(el.getAttribute('data-target'));
-      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
-      const suffix = el.getAttribute('data-suffix') || '';
-      const duration = 1600; // ms
-      const startTime = performance.now();
-
-      const updateCount = (currentTime) => {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-
-        // Ease out expo: 1 - Math.pow(2, -10 * progress)
-        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-        const currentVal = easeProgress * target;
-
-        el.textContent = currentVal.toFixed(decimals) + suffix;
-
-        if (progress < 1) {
-          requestAnimationFrame(updateCount);
-        } else {
-          el.textContent = target.toFixed(decimals) + suffix;
-        }
-      };
-
-      requestAnimationFrame(updateCount);
+    const renderMetricHTML = (valStr, suffix, unit) => {
+      return `<span class="metric-val">${valStr}</span><span class="metric-accent">${suffix}</span>${unit ? ` <span class="metric-unit">${unit}</span>` : ''}`;
     };
 
+    const animateCount = (el, delay = 0) => {
+      setTimeout(() => {
+        const target = parseFloat(el.getAttribute('data-target'));
+        const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const unit = el.getAttribute('data-unit') || '';
+        const duration = 1600; // ms
+        const startTime = performance.now();
+
+        el.classList.add('counting');
+
+        const updateCount = (currentTime) => {
+          const elapsed = currentTime - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+
+          // Ease out expo: 1 - Math.pow(2, -10 * progress)
+          const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+          const currentVal = easeProgress * target;
+
+          el.innerHTML = renderMetricHTML(currentVal.toFixed(decimals), suffix, unit);
+
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.innerHTML = renderMetricHTML(target.toFixed(decimals), suffix, unit);
+            el.classList.remove('counting');
+            el.classList.add('counted');
+          }
+        };
+
+        requestAnimationFrame(updateCount);
+      }, delay);
+    };
+
+    const triggerStatsAnimation = () => {
+      if (animated) return;
+      animated = true;
+      metricNumbers.forEach((el, index) => {
+        animateCount(el, index * 140); // rhythmic stagger
+      });
+    };
+
+    // Watch for visibility with IntersectionObserver
     if ('IntersectionObserver' in window) {
       const statsObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting && !animated) {
-            animated = true;
-            metricNumbers.forEach(el => animateCount(el));
+          if (entry.isIntersecting) {
+            // Give 300ms for preloader or scroll to stabilize so user visibly witnesses counting
+            setTimeout(triggerStatsAnimation, 300);
             observer.unobserve(entry.target);
           }
         });
       }, {
-        threshold: 0.2
+        threshold: 0.15
       });
 
       statsObserver.observe(statsStrip);
-    } else {
-      metricNumbers.forEach(el => animateCount(el));
     }
+
+    // Direct check when window loads or immediately if already loaded
+    const checkImmediateVisibility = () => {
+      if (animated) return;
+      const rect = statsStrip.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom >= 0) {
+        setTimeout(triggerStatsAnimation, 450);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      setTimeout(checkImmediateVisibility, 400);
+    } else {
+      window.addEventListener('load', () => setTimeout(checkImmediateVisibility, 400));
+    }
+
+    // Guaranteed fallback after 1.5s
+    setTimeout(triggerStatsAnimation, 1500);
   }
 
 });

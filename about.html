@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet & Bespoke Panoramic About Page Styles -->
-  <link rel="stylesheet" href="assest/css/style.css">
-  <link rel="stylesheet" href="assest/css/about.css">
+  <link rel="stylesheet" href="assest/css/style.css?v=2.3">
+  <link rel="stylesheet" href="assest/css/about.css?v=2.3">
 </head>
 <body class="about-page">
 
@@ -167,25 +167,33 @@
         
         <div class="fluid-metric-item">
           <span class="metric-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
-          <div class="fluid-metric-number" data-target="10" data-suffix="+ Years">0+ Years</div>
+          <div class="fluid-metric-number" data-target="10" data-decimals="0" data-suffix="+" data-unit="Years">
+            <span class="metric-val">0</span><span class="metric-accent">+</span> <span class="metric-unit">Years</span>
+          </div>
           <div class="fluid-metric-label">Industrial logistics and turnkey mega-project leadership across pan-India corridors.</div>
         </div>
 
         <div class="fluid-metric-item">
           <span class="metric-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
-          <div class="fluid-metric-number" data-target="1.2" data-decimals="1" data-suffix="GW+">0.0GW+</div>
+          <div class="fluid-metric-number" data-target="1.2" data-decimals="1" data-suffix="GW+" data-unit="">
+            <span class="metric-val">0.0</span><span class="metric-accent">GW+</span>
+          </div>
           <div class="fluid-metric-label">Single-location mega solar park material custody executed with zero loss.</div>
         </div>
 
         <div class="fluid-metric-item">
           <span class="metric-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
-          <div class="fluid-metric-number" data-target="24" data-suffix="Hrs">0Hrs</div>
+          <div class="fluid-metric-number" data-target="24" data-decimals="0" data-suffix="Hrs" data-unit="">
+            <span class="metric-val">0</span><span class="metric-accent">Hrs</span>
+          </div>
           <div class="fluid-metric-label">Guaranteed container de-stuffing &amp; empty return turnaround to prevent demurrage.</div>
         </div>
 
         <div class="fluid-metric-item">
           <span class="metric-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
-          <div class="fluid-metric-number" data-target="100" data-suffix="%">0%</div>
+          <div class="fluid-metric-number" data-target="100" data-decimals="0" data-suffix="%" data-unit="">
+            <span class="metric-val">0</span><span class="metric-accent">%</span>
+          </div>
           <div class="fluid-metric-label">Zero-compromise EHS compliance, certified rigging, and statutory labor governance.</div>
         </div>
 
@@ -970,6 +978,6 @@
   </div>
 
   <!-- JavaScript Files -->
-  <script src="assest/js/about.js"></script>
+  <script src="assest/js/about.js?v=2.3"></script>
 </body>
 </html>

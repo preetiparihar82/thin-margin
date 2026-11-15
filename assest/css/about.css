@@ -24,7 +24,7 @@ body.about-page {
   position: relative;
   background: 
     linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.18)),
-    url('../images/about_sunset_banner.png') center center / cover no-repeat;
+    url('../images/about_hero_banner.jpg') center center / cover no-repeat;
   color: #ffffff;
   padding: 125px 44px 45px;
   min-height: 250px;
@@ -191,6 +191,41 @@ body.about-page {
   margin-bottom: 8px;
   font-variant-numeric: lining-nums tabular-nums;
   letter-spacing: -0.025em;
+  transition: transform 0.35s ease, color 0.35s ease, filter 0.35s ease;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  will-change: transform, color;
+}
+
+.fluid-metric-number.counting {
+  color: var(--color-accent);
+  transform: translateY(-2px) scale(1.04);
+  filter: drop-shadow(0 4px 14px rgba(238, 33, 48, 0.28));
+}
+
+.fluid-metric-number.counted {
+  color: #0b1329;
+  transform: translateY(0) scale(1);
+  filter: none;
+}
+
+.fluid-metric-number .metric-val {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+
+.fluid-metric-number .metric-accent {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+.fluid-metric-number .metric-unit {
+  font-size: 0.62em;
+  font-weight: 600;
+  color: #475569;
+  margin-left: 3px;
+  letter-spacing: 0;
 }
 
 .fluid-metric-number span.plus {
