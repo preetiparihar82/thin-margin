@@ -207,11 +207,12 @@ ul {
 
 .site-header.scrolled {
   padding: 14px 44px;
-  background-color: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+  background-color: #070c1a;
+  background: rgba(7, 12, 26, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(238, 33, 48, 0.18);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
 .header-container {
@@ -256,20 +257,22 @@ ul {
   display: flex;
   align-items: center;
   gap: 26px;
-  background: rgba(20, 30, 52, 0.58);
+  background: #080d1e;
+  background: rgba(8, 13, 30, 0.88);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.16);
   padding: 10px 28px;
   border-radius: 9999px;
-  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-capsule:hover {
-  background: rgba(24, 36, 64, 0.75);
-  border-color: rgba(238, 33, 48, 0.45);
-  box-shadow: 0 8px 32px rgba(238, 33, 48, 0.18);
+  background: #050916;
+  background: rgba(5, 9, 22, 0.96);
+  border-color: rgba(238, 33, 48, 0.5);
+  box-shadow: 0 8px 32px rgba(238, 33, 48, 0.2);
 }
 
 .nav-item {
@@ -329,14 +332,15 @@ ul {
   top: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  background: rgba(18, 28, 48, 0.92);
+  background: #080e1c;
+  background: rgba(8, 14, 28, 0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(238, 33, 48, 0.22);
   border-radius: 16px;
   padding: 12px 8px;
   min-width: 230px;
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.25), 0 0 20px rgba(238, 33, 48, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6), 0 0 20px rgba(238, 33, 48, 0.08);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -352,9 +356,9 @@ ul {
   transform: translateX(-50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  background: rgba(18, 28, 48, 0.92);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(8, 14, 28, 0.98);
+  border-top: 1px solid rgba(238, 33, 48, 0.22);
+  border-left: 1px solid rgba(238, 33, 48, 0.22);
 }
 
 .nav-item:hover .dropdown-menu {
@@ -1331,9 +1335,9 @@ ul {
 .mobile-nav-drawer {
   position: fixed;
   inset: 0;
-  background: rgba(15, 23, 42, 0.88);
-  backdrop-filter: blur(22px);
-  -webkit-backdrop-filter: blur(22px);
+  background: rgba(7, 12, 26, 0.98);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
   z-index: 999;
   display: flex;
   flex-direction: column;
