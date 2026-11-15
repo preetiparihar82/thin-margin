@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Smooth Scroll Reveal via IntersectionObserver
   // ---------------------------------------------------------------------------
   const revealElements = document.querySelectorAll(
-    '.mv-cut-img-primary, .mv-cut-img-secondary, .mv-pillar-item, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-col'
+    '.mv-photo-frame, .mv-principle-card, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-col'
   );
 
   if ('IntersectionObserver' in window && revealElements.length > 0) {
