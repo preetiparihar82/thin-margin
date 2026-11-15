@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   // 4. Triple Impact Interactive Tabs Switcher
   // ---------------------------------------------------------------------------
-  const impactTabBtns = document.querySelectorAll('.impact-tab-btn');
-  const impactPanes = document.querySelectorAll('.impact-pane');
+  const impactTabBtns = document.querySelectorAll('.impact-pill-btn, .impact-tab-btn');
+  const impactPanes = document.querySelectorAll('.impact-editorial-pane, .impact-pane');
 
   if (impactTabBtns.length > 0 && impactPanes.length > 0) {
     impactTabBtns.forEach(btn => {
@@ -219,7 +219,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   // 6. Smooth Scroll Reveal via IntersectionObserver
   // ---------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll('.mv-card, .why-tm-card, .offer-card, .bridge-matrix-card, .project-card, .director-profile-card, .about-kpi-item');
+  const revealElements = document.querySelectorAll(
+    '.mv-cut-img-primary, .mv-cut-img-secondary, .mv-pillar-item, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-item'
+  );
 
   if ('IntersectionObserver' in window && revealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
