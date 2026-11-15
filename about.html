@@ -17,7 +17,7 @@
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Main Stylesheet & Bespoke Editorial About Page Styles -->
+  <!-- Main Stylesheet & Bespoke Panoramic About Page Styles -->
   <link rel="stylesheet" href="assest/css/style.css">
   <link rel="stylesheet" href="assest/css/about.css">
 </head>
@@ -130,35 +130,39 @@
   </header>
 
   <!-- =========================================================================
-       HERO BANNER: Pure Light Theme, Inset Breadcrumb & Fluid Metrics
+       1. FULL-WIDTH PANORAMIC HERO BANNER (Matches User Reference Image Exactly)
        ========================================================================= -->
-  <section class="about-hero">
-    <div class="about-hero-bg-network" aria-hidden="true"></div>
-    <div class="about-hero-container">
-      
-      <!-- Properly Inset & Nested Breadcrumb -->
-      <div class="breadcrumb-wrapper">
-        <nav class="editorial-breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html"><i class="fa-solid fa-house-chimney"></i> Home</a>
-          <span class="breadcrumb-separator"><i class="fa-solid fa-chevron-right"></i></span>
-          <span class="breadcrumb-current">About Us</span>
-        </nav>
-      </div>
+  <section class="about-panoramic-hero" id="hero-banner">
+    <div class="panoramic-hero-container">
+      <h1 class="panoramic-title">About Us</h1>
+      <nav class="panoramic-breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="panoramic-sep"><i class="fa-solid fa-angle-right"></i></span>
+        <span class="panoramic-current">About Us</span>
+      </nav>
+    </div>
+  </section>
 
-      <div class="about-hero-tag">
+  <!-- =========================================================================
+       2. EXECUTIVE INTRO & FLUID METRIC STRIP (Zero Container Boxes)
+       ========================================================================= -->
+  <section class="about-intro-section" id="executive-intro">
+    <div class="about-intro-container">
+      
+      <div class="intro-tag-pill">
         <i class="fa-solid fa-compass-drafting"></i>
         <span>Techno-Commercial Leadership</span>
       </div>
 
-      <h1 class="about-hero-title">
+      <h2 class="intro-headline">
         Where The Margin of Error is Thin, Our <span class="crimson">Precision</span> Defines The Entire Project.
-      </h1>
+      </h2>
 
-      <p class="about-hero-desc">
+      <p class="intro-lead-text">
         Thin Margin delivers institutional-grade turnkey material management, 24-hour container decantation, zero-defect laydown yard custody, and synchronized ERP tracking for India's foremost renewable energy, thermal power, and industrial infrastructure conglomerates.
       </p>
 
-      <!-- FLUID METRIC STRIP (No Boxes, Clean Horizontal Metric Band) -->
+      <!-- FLUID METRIC STRIP (Completely Borderless, Open Layout, Zero Box Cards) -->
       <div class="fluid-metric-strip">
         
         <div class="fluid-metric-item">
@@ -191,13 +195,13 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 1: MISSION, VISION & PHILOSOPHY (Asymmetrical Collage & Indicator Pillars)
+       3. MISSION, VISION & PHILOSOPHY (Asymmetrical Collage & Indicator Pillars)
        ========================================================================= -->
   <section class="mv-editorial-section" id="mission-vision">
     <div class="mv-editorial-container">
       <div class="mv-editorial-grid">
         
-        <!-- Left: Layered Cut-Designed Image Collage -->
+        <!-- Left: Multi-Layered Cut-Designed Image Collage -->
         <div class="mv-collage-visual">
           
           <div class="mv-cut-img-primary">
@@ -263,7 +267,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 2: WHY THIN MARGIN & REAL OPERATIONS VIDEO SHOWCASE
+       4. WHY THIN MARGIN & REAL OPERATIONS VIDEO SHOWCASE
        ========================================================================= -->
   <section class="why-video-section" id="why-thin-margin">
     <div class="why-video-container">
@@ -360,7 +364,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 3: WHAT WE OFFER (Alternating Visual Capability Rows, Non-Boxed)
+       5. WHAT WE OFFER (Alternating Visual Capability Rows, Non-Boxed)
        ========================================================================= -->
   <section class="offer-showcase-section" id="what-we-offer">
     <div class="offer-showcase-container">
@@ -437,7 +441,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 4: TOP MANAGEMENT LEADERSHIP & FOUNDER STORY
+       6. TOP MANAGEMENT LEADERSHIP & FOUNDER STORY
        ========================================================================= -->
   <section class="leadership-showcase-section" id="leadership">
     <div class="leadership-showcase-container">
@@ -490,7 +494,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 5: HOW THIN MARGIN BRIDGES THE GAP (Dynamic Stream, Non-Boxed)
+       7. HOW THIN MARGIN BRIDGES THE GAP (Dynamic Stream, Non-Boxed)
        ========================================================================= -->
   <section class="bridge-flow-section" id="bridge-gap">
     <div class="bridge-flow-container">
@@ -579,7 +583,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 6: TRIPLE IMPACT FRAMEWORK (Luminous Light Tab Interface)
+       8. TRIPLE IMPACT FRAMEWORK (Luminous Light Tab Interface)
        ========================================================================= -->
   <section class="impact-tabs-section" id="triple-impact">
     <div class="impact-tabs-container">
@@ -665,7 +669,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 7: LANDMARK MEGA-PROJECTS TRACK RECORD
+       9. LANDMARK MEGA-PROJECTS TRACK RECORD
        ========================================================================= -->
   <section class="projects-stream-section" id="projects">
     <div class="projects-stream-container">
@@ -726,7 +730,7 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 8: EXECUTIVE CTA BANNER (100% Light Box)
+       10. EXECUTIVE CTA BANNER
        ========================================================================= -->
   <section class="about-cta-banner">
     <div class="about-cta-container">
@@ -949,16 +953,21 @@
     </div>
   </div>
 
-  <!-- Sleek Floating WhatsApp Button -->
-  <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team%2C%20inquiry%20via%20About%20Us%20page." 
-     target="_blank" 
-     rel="noopener noreferrer" 
-     class="floating-whatsapp-sm" 
-     aria-label="Chat with Thin Margin on WhatsApp (+91 95580 35477)">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12.04 2C6.58 2 2.15 6.43 2.15 11.89c0 1.74.45 3.44 1.32 4.94L2 22l5.31-1.39c1.45.79 3.08 1.21 4.73 1.21 5.46 0 9.89-4.43 9.89-9.89 0-2.64-1.03-5.12-2.9-6.98A9.83 9.83 0 0 0 12.04 2zm0 18.09c-1.49 0-2.95-.4-4.22-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.1 8.1 0 0 1-1.25-4.32c0-4.48 3.65-8.13 8.13-8.13 2.17 0 4.21.85 5.75 2.38a8.09 8.09 0 0 1 2.38 5.75c0 4.49-3.65 8.14-8.14 8.14zm4.53-6.1c-.25-.13-1.47-.73-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.98-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.38-1.73-.14-.25-.01-.39.11-.51.11-.11.25-.29.37-.44.12-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.16 0-.44.06-.66.31-.23.25-.87.85-.87 2.08 0 1.22.89 2.41 1.02 2.57.12.17 1.76 2.68 4.26 3.76.59.26 1.06.41 1.42.53.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.11-.23-.17-.48-.3z" fill="#ffffff"/>
-    </svg>
-  </a>
+  <!-- Floating Action Buttons Stack (WhatsApp + Call, matching reference image) -->
+  <div class="floating-actions-stack">
+    <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team%2C%20inquiry%20via%20About%20Us%20page." 
+       target="_blank" 
+       rel="noopener noreferrer" 
+       class="floating-action-btn btn-floating-whatsapp" 
+       aria-label="Chat on WhatsApp (+91 95580 35477)">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:+919558035477" 
+       class="floating-action-btn btn-floating-call" 
+       aria-label="Direct Call (+91 95580 35477)">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+  </div>
 
   <!-- JavaScript Files -->
   <script src="assest/js/about.js"></script>

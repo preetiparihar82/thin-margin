@@ -1,158 +1,159 @@
 /* ==========================================================================
-   THIN MARGIN - ABOUT US BESPOKE EDITORIAL PAGE (about.css)
-   100% PURE LIGHT THEME - MODERN, FLUID, NON-CONTAINER DESIGN
-   - Zero generic boxed container cards (No card-in-card clutter)
-   - Organic curved imagery with asymmetrical cuts & hover depth
-   - Sleek red indicator lines & kinetic typography
-   - Refined, properly nested breadcrumb pill
-   - Fluid horizontal metric strip
-   - Integrated real ground operations video showcase
-   - Executive Leadership, Mission/Vision & Interactive Capabilities
+   THIN MARGIN - ABOUT US BESPOKE PANORAMIC & NON-CONTAINER STYLES (about.css)
+   - Full-Width Panoramic Banner matching user's exact uploaded reference
+   - 100% Pure Light Theme throughout body content
+   - NO container and box design (Zero repetitive card-box clutter)
+   - Dynamic asymmetrical cut-designed imagery with smooth hover depth & animations
+   - Fluid horizontal metric strips & vertical red indicator lines
+   - Integrated ground operations video showcase with custom HUD controls
+   - Enterprise Leadership, Mission/Vision, Services & Triple Impact
    ========================================================================== */
 
-/* --- Base Typography & Smooth Transitions --- */
+/* --- Base Page Settings --- */
 body.about-page {
-  background-color: #fcfdfe;
+  background-color: #ffffff;
   color: #1e293b;
   font-family: var(--font-body);
   overflow-x: hidden;
 }
 
 /* ==========================================================================
-   1. HERO BANNER: Editorial Layout, Nested Breadcrumb & Fluid Metrics
+   1. FULL-WIDTH PANORAMIC HERO BANNER (Matches user reference image exactly)
    ========================================================================== */
-.about-hero {
+.about-panoramic-hero {
   position: relative;
-  background-color: #ffffff;
-  color: #0f172a;
-  padding: 145px 44px 85px;
+  background: 
+    linear-gradient(90deg, rgba(7, 12, 26, 0.6) 0%, rgba(7, 12, 26, 0.3) 50%, rgba(7, 12, 26, 0.15) 100%),
+    url('../images/aboutus-banner.png') center center / cover no-repeat;
+  color: #ffffff;
+  padding: 175px 44px 85px;
+  min-height: 380px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid var(--color-accent);
   overflow: hidden;
-  border-bottom: 1px solid #edf2f7;
 }
 
-/* Subtle Architectural Supply-Chain Grid & Ambient Radial Glows */
-.about-hero-bg-network {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: 
-    radial-gradient(circle at 82% 18%, rgba(238, 33, 48, 0.04) 0%, transparent 45%),
-    radial-gradient(circle at 18% 82%, rgba(37, 99, 235, 0.035) 0%, transparent 45%),
-    linear-gradient(to right, rgba(15, 23, 42, 0.025) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.025) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 54px 54px, 54px 54px;
-  opacity: 0.9;
-}
-
-.about-hero-container {
+.panoramic-hero-container {
   max-width: 1260px;
+  width: 100%;
   margin: 0 auto;
   position: relative;
   z-index: 2;
 }
 
-/* Properly Nested & Inset Breadcrumb */
-.breadcrumb-wrapper {
-  margin-bottom: 24px;
+.panoramic-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 4.8vw, 4.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 12px;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 }
 
-.editorial-breadcrumb {
+.panoramic-breadcrumb {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #f1f5f9;
-  border: 1px solid #e2e8f0;
-  padding: 6px 16px;
-  border-radius: 9999px;
   font-family: var(--font-body);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: #64748b;
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
-  transition: all 0.25s ease;
-}
-
-.editorial-breadcrumb:hover {
-  background: #eef2f6;
-  border-color: #cbd5e1;
-}
-
-.editorial-breadcrumb a {
-  color: #0f172a;
+  font-size: 15px;
   font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.panoramic-breadcrumb a {
+  color: #ffffff;
   text-decoration: none;
-  transition: color 0.2s ease;
+  opacity: 0.92;
+  transition: opacity 0.2s ease, color 0.2s ease;
 }
 
-.editorial-breadcrumb a:hover {
+.panoramic-breadcrumb a:hover {
+  opacity: 1;
   color: var(--color-accent);
+  text-decoration: underline;
 }
 
-.editorial-breadcrumb .breadcrumb-separator {
-  color: #94a3b8;
-  font-size: 10px;
+.panoramic-breadcrumb .panoramic-sep {
+  opacity: 0.75;
+  font-size: 12px;
   display: inline-flex;
   align-items: center;
 }
 
-.editorial-breadcrumb .breadcrumb-current {
-  color: var(--color-accent);
+.panoramic-breadcrumb .panoramic-current {
+  color: #ffffff;
   font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
-/* Tag Pill */
-.about-hero-tag {
+/* ==========================================================================
+   2. EXECUTIVE EDITORIAL INTRO & FLUID METRIC STRIP (No Boxes)
+   ========================================================================== */
+.about-intro-section {
+  background: #ffffff;
+  padding: 95px 44px 75px;
+  position: relative;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.about-intro-container {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.intro-tag-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
   border-radius: 9999px;
-  background: rgba(238, 33, 48, 0.07);
-  border: 1px solid rgba(238, 33, 48, 0.2);
+  background: rgba(238, 33, 48, 0.08);
+  border: 1px solid rgba(238, 33, 48, 0.22);
   color: var(--color-accent);
   font-family: var(--font-body);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-.about-hero-title {
+.intro-headline {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 4.4vw, 3.9rem);
+  font-size: clamp(2.3rem, 4vw, 3.6rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.18;
   letter-spacing: -0.035em;
   color: #0b1329;
-  max-width: 1060px;
+  max-width: 1040px;
   margin-bottom: 22px;
 }
 
-.about-hero-title span.crimson {
+.intro-headline span.crimson {
   color: var(--color-accent);
   font-style: italic;
-  font-family: inherit;
 }
 
-.about-hero-desc {
+.intro-lead-text {
   font-family: var(--font-body);
-  font-size: clamp(16px, 1.18vw, 18.5px);
-  line-height: 1.72;
+  font-size: clamp(16px, 1.15vw, 18.5px);
+  line-height: 1.75;
   color: #475569;
   max-width: 880px;
   margin-bottom: 50px;
 }
 
-/* FLUID METRIC STRIP (Zero Box Containers, Open Horizontal Layout) */
+/* FLUID METRIC STRIP (Completely Borderless, Open Layout, Zero Box Cards) */
 .fluid-metric-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  padding-top: 40px;
+  gap: 34px;
+  padding-top: 42px;
   border-top: 1px solid #e2e8f0;
 }
 
@@ -181,20 +182,20 @@ body.about-page {
   font-size: 11.5px;
   font-weight: 700;
   color: var(--color-accent);
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
 
 .fluid-metric-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.3rem, 3.2vw, 3rem);
+  font-size: clamp(2.4rem, 3.4vw, 3.1rem);
   font-weight: 800;
   color: #0b1329;
   line-height: 1;
   margin-bottom: 10px;
   font-variant-numeric: lining-nums tabular-nums;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 
 .fluid-metric-number span.plus {
@@ -210,7 +211,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   2. MISSION, VISION & PHILOSOPHY: Asymmetrical Collage & Borderless Pillars
+   3. MISSION, VISION & PHILOSOPHY: Asymmetrical Collage & Indicator Pillars
    ========================================================================== */
 .mv-editorial-section {
   background: #f8fafc;
@@ -283,7 +284,6 @@ body.about-page {
   display: block;
 }
 
-/* Floating Status Pill Badge */
 .mv-floating-pill {
   position: absolute;
   top: 30px;
@@ -319,7 +319,7 @@ body.about-page {
   box-shadow: 0 0 10px var(--color-accent);
 }
 
-/* Right: Borderless Value Pillars (No Boxes, Clean Red Indicators) */
+/* Right: Borderless Value Pillars */
 .mv-text-content {
   display: flex;
   flex-direction: column;
@@ -356,7 +356,6 @@ body.about-page {
   margin-bottom: 34px;
 }
 
-/* 3 Borderless Pillars */
 .mv-pillars-flow {
   display: flex;
   flex-direction: column;
@@ -400,7 +399,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   3. WHY THIN MARGIN: Unbroken Value Stream & Integrated Real Ground Video
+   4. WHY THIN MARGIN: Unbroken Value Stream & Real Operations Video
    ========================================================================== */
 .why-video-section {
   background: #ffffff;
@@ -420,7 +419,7 @@ body.about-page {
   align-items: center;
 }
 
-/* Left: Embedded Real Operations Video with Cinema Mask */
+/* Cinema Frame with Real Working Video */
 .cinema-video-frame {
   position: relative;
   border-radius: 28px;
@@ -471,7 +470,6 @@ body.about-page {
   50% { opacity: 0.35; }
 }
 
-/* Video Control Bar */
 .cinema-controls-bar {
   position: absolute;
   bottom: 0;
@@ -517,7 +515,7 @@ body.about-page {
   border-radius: 6px;
 }
 
-/* Right: Why Thin Margin - Numbered Narrative Stream */
+/* Numbered Value Stream */
 .why-flow-stream {
   display: flex;
   flex-direction: column;
@@ -586,7 +584,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   4. WHAT WE OFFER: Image-Driven Alternating Capability Pairs (Non-Boxed)
+   5. WHAT WE OFFER: Alternating Visual Capability Pairs (No Boxes)
    ========================================================================== */
 .offer-showcase-section {
   background: #f8fafc;
@@ -622,7 +620,6 @@ body.about-page {
   line-height: 1.7;
 }
 
-/* 3 Asymmetrical Editorial Capability Rows */
 .offer-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -734,7 +731,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   5. FOUNDER PROFILE & TOP MANAGEMENT COMMITMENT
+   6. FOUNDER PROFILE & CLIENT TRUST STRIP
    ========================================================================== */
 .leadership-showcase-section {
   background: #ffffff;
@@ -754,7 +751,6 @@ body.about-page {
   align-items: center;
 }
 
-/* Founder Visual with Organic Frame & Seal */
 .founder-visual-wrap {
   position: relative;
   max-width: 440px;
@@ -818,7 +814,6 @@ body.about-page {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Founder Narrative */
 .founder-narrative h2 {
   font-family: var(--font-heading);
   font-size: clamp(2rem, 3.2vw, 2.75rem);
@@ -857,7 +852,6 @@ body.about-page {
   margin-bottom: 28px;
 }
 
-/* Client Logo Row */
 .executive-client-strip {
   display: flex;
   align-items: center;
@@ -882,7 +876,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   6. HOW THIN MARGIN BRIDGES THE GAP: Modern Flow Stream (Non-Boxed)
+   7. HOW THIN MARGIN BRIDGES THE GAP: Modern Flow Stream (Non-Boxed)
    ========================================================================== */
 .bridge-flow-section {
   background: #f8fafc;
@@ -1021,7 +1015,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   7. TRIPLE IMPACT FRAMEWORK: Luminous Light Tab Interface
+   8. TRIPLE IMPACT FRAMEWORK: Luminous Light Tab Interface
    ========================================================================== */
 .impact-tabs-section {
   background: #ffffff;
@@ -1156,7 +1150,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   8. LANDMARK MEGA-PROJECTS: Sleek Horizontal Milestone Rows
+   9. LANDMARK MEGA-PROJECTS: Milestone Stream
    ========================================================================== */
 .projects-stream-section {
   background: #ffffff;
@@ -1258,7 +1252,7 @@ body.about-page {
 }
 
 /* ==========================================================================
-   9. EXECUTIVE CTA BANNER & RESPONSIVE BREAKPOINTS
+   10. EXECUTIVE CTA BANNER
    ========================================================================== */
 .about-cta-banner {
   background: #f1f5f9;
@@ -1303,7 +1297,49 @@ body.about-page {
   flex-wrap: wrap;
 }
 
-/* Responsive Media Queries */
+/* ==========================================================================
+   FLOATING ACTION BUTTONS (Phone & WhatsApp Pills on bottom-right)
+   ========================================================================== */
+.floating-actions-stack {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.floating-action-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 22px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.floating-action-btn:hover {
+  transform: scale(1.1) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-floating-whatsapp {
+  background: #25d366;
+}
+
+.btn-floating-call {
+  background: #007aff;
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
 @media (max-width: 1080px) {
   .mv-editorial-grid,
   .why-video-grid,
@@ -1332,9 +1368,11 @@ body.about-page {
 }
 
 @media (max-width: 768px) {
-  .about-hero {
-    padding: 130px 20px 60px;
+  .about-panoramic-hero {
+    padding: 140px 20px 60px;
+    min-height: 280px;
   }
+  .about-intro-section,
   .mv-editorial-section,
   .why-video-section,
   .offer-showcase-section,
