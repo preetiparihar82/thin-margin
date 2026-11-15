@@ -4227,3 +4227,97 @@ textarea.pill-input {
 .about-creative-title:hover .highlight-crimson {
   filter: drop-shadow(0 4px 16px rgba(238, 33, 48, 0.35));
 }
+
+/* ==========================================================================
+   KINETIC WORD-BY-WORD TYPOGRAPHY SYSTEM ACROSS ALL SECTION TITLES
+   ========================================================================== */
+.kinetic-word-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  line-height: 1.18;
+  padding-bottom: 0.08em;
+}
+
+.kinetic-word {
+  display: inline-block;
+  transform: translateY(112%);
+  opacity: 0;
+  transition: transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+  transition-delay: var(--word-delay, 0s);
+  will-change: transform, opacity;
+}
+
+/* Staggered word emergence when section is revealed */
+.is-revealed .kinetic-word,
+.kinetic-active .kinetic-word {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Gradient and Crimson color preservation on animated words */
+.wm-gradient-text,
+.highlight-crimson {
+  display: inline-block;
+}
+
+.wm-gradient-text .kinetic-word {
+  background: linear-gradient(135deg, #ee2130 0%, #ff3b5c 50%, #ff6b8b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.highlight-crimson .kinetic-word {
+  background: linear-gradient(135deg, #ee2130 0%, #ff3b5c 50%, #ff6b8b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.workflow-title em .kinetic-word,
+.features-header-title em .kinetic-word {
+  color: var(--color-accent, #ee2130);
+  -webkit-text-fill-color: var(--color-accent, #ee2130);
+  font-style: italic;
+}
+
+/* Animated Kickers & Tag Badges (CORE CAPABILITIES, WHY THIN MARGIN, etc.) */
+.wm-kicker,
+.section-tag-pill,
+.workflow-tag,
+.features-header-tag,
+.partners-tag,
+.awards-tag,
+.estimate-tag {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.is-revealed .wm-kicker,
+.is-revealed .section-tag-pill,
+.is-revealed .workflow-tag,
+.is-revealed .features-header-tag,
+.is-revealed .partners-tag,
+.is-revealed .awards-tag,
+.is-revealed .estimate-tag,
+.is-revealed.wm-kicker,
+.is-revealed.section-tag-pill,
+.is-revealed.workflow-tag,
+.is-revealed.features-header-tag,
+.is-revealed.partners-tag,
+.is-revealed.awards-tag,
+.is-revealed.estimate-tag {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wm-kicker-text {
+  display: inline-block;
+  letter-spacing: 0.16em;
+  transition: letter-spacing 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+.is-revealed .wm-kicker-text {
+  letter-spacing: 0.12em;
+}

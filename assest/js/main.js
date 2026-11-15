@@ -465,6 +465,71 @@ document.addEventListener('DOMContentLoaded', () => {
     startWorkflowAutoCycle();
   }
 
+  // --- Kinetic Word-by-Word Animation for Section Titles & Kickers ---
+  function initKineticTypography() {
+    const titles = document.querySelectorAll(
+      '.services-suite-title, .about-creative-title, .workflow-title, .features-header-title, .why-title, .partners-title, .awards-title, .estimate-title'
+    );
+
+    titles.forEach(title => {
+      if (!title || title.dataset.kineticReady) return;
+      title.dataset.kineticReady = 'true';
+
+      let wordIndex = 0;
+
+      function splitTextNode(textNode) {
+        const text = textNode.textContent;
+        if (!text.trim()) {
+          return document.createTextNode(' ');
+        }
+        const words = text.split(/\s+/).filter(w => w.length > 0);
+        const frag = document.createDocumentFragment();
+        words.forEach((w) => {
+          const mask = document.createElement('span');
+          mask.className = 'kinetic-word-mask';
+          const inner = document.createElement('span');
+          inner.className = 'kinetic-word';
+          inner.style.setProperty('--word-delay', `${(wordIndex * 0.075 + 0.08).toFixed(3)}s`);
+          inner.textContent = w;
+          mask.appendChild(inner);
+          frag.appendChild(mask);
+          frag.appendChild(document.createTextNode(' '));
+          wordIndex++;
+        });
+        return frag;
+      }
+
+      function processChild(node) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          return splitTextNode(node);
+        } else if (node.nodeType === Node.ELEMENT_NODE) {
+          if (node.tagName.toLowerCase() === 'br') {
+            return node.cloneNode(true);
+          }
+          const elClone = node.cloneNode(false);
+          const children = Array.from(node.childNodes);
+          children.forEach(child => {
+            elClone.appendChild(processChild(child));
+          });
+          return elClone;
+        }
+        return node.cloneNode(true);
+      }
+
+      const originalChildren = Array.from(title.childNodes);
+      const masterFrag = document.createDocumentFragment();
+      originalChildren.forEach(child => {
+        masterFrag.appendChild(processChild(child));
+      });
+
+      title.innerHTML = '';
+      title.appendChild(masterFrag);
+      title.classList.add('kinetic-title');
+    });
+  }
+
+  initKineticTypography();
+
   // --- Scroll Reveal Animations for Each Section (Safe Instant Display) ---
   const revealElements = document.querySelectorAll('.reveal-fade-up');
   if ('IntersectionObserver' in window && revealElements.length > 0) {
