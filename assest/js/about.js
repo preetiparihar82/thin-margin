@@ -270,7 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let animated = false;
 
     const renderMetricHTML = (valStr, suffix, unit) => {
-      return `<span class="metric-val">${valStr}</span><span class="metric-accent">${suffix}</span>${unit ? ` <span class="metric-unit">${unit}</span>` : ''}`;
+      return `<span class="metric-val-wrap"><span class="metric-val">${valStr}</span></span><span class="metric-accent">${suffix}</span>${unit ? ` <span class="metric-unit">${unit}</span>` : ''}`;
     };
 
     const animateCount = (el, delay = 0) => {
@@ -283,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startTime = performance.now();
 
         el.classList.add('counting');
+        el.classList.add('rotating-roll');
 
         const updateCount = (currentTime) => {
           const elapsed = currentTime - startTime;
@@ -300,6 +301,11 @@ document.addEventListener('DOMContentLoaded', () => {
             el.innerHTML = renderMetricHTML(target.toFixed(decimals), suffix, unit);
             el.classList.remove('counting');
             el.classList.add('counted');
+            
+            // Re-arm rotating animation
+            setTimeout(() => {
+              el.classList.remove('rotating-roll');
+            }, 700);
           }
         };
 
@@ -381,6 +387,15 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           if (!userInteracting && targetCol.classList.contains('auto-flipped')) {
             targetCol.classList.remove('auto-flipped');
+            
+            // Re-trigger 3D barrel roll animation when returning to front
+            const numEl = targetCol.querySelector('.fluid-metric-number');
+            if (numEl) {
+              numEl.classList.remove('rotating-roll');
+              void numEl.offsetWidth; // trigger reflow
+              numEl.classList.add('rotating-roll');
+              setTimeout(() => numEl.classList.remove('rotating-roll'), 700);
+            }
           }
         }, 3000);
       }
