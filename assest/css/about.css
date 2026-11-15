@@ -1,32 +1,44 @@
 /* ==========================================================================
    THIN MARGIN - ABOUT US COMPREHENSIVE PAGE STYLES (about.css)
-   Bespoke Editorial & Industrial Aesthetic:
-   - Deep Black Nav & Footers (#070c1a)
-   - Luminous Light Executive Body (#fcfdfe / #ffffff)
+   100% PURE LIGHT EXECUTIVE THEME (Zero dark sections)
+   - Luminous White & Off-White (#ffffff / #f8fafc / #f1f5f9)
    - Crimson Accent (#ee2130)
-   - Real Operational Video Showcase & Interactive Impact Systems
+   - Deep Executive Slate Typography (#0f172a / #1e293b / #475569)
+   - Subtle Logistics Blueprint Watermark & Grid Background
+   - Redesigned Stats Cards, Mission & Vision, Why Choose Us & What We Offer
    ========================================================================== */
 
-/* --- About Hero Banner --- */
-.about-hero {
-  position: relative;
-  background: linear-gradient(180deg, #070c1a 0%, #0d162d 100%);
-  color: #ffffff;
-  padding: 160px 44px 100px;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+/* --- Base Page Settings --- */
+body.about-page {
+  background-color: #f8fafc;
+  color: #1e293b;
+  font-family: var(--font-body);
 }
 
+/* ==========================================================================
+   HERO BANNER: 100% Pure Light Theme with Logistics Blueprint Background
+   ========================================================================== */
+.about-hero {
+  position: relative;
+  background-color: #ffffff;
+  color: #0f172a;
+  padding: 150px 44px 80px;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Subtle Logistics Watermark Pattern */
 .about-hero-bg-network {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background-image: 
-    radial-gradient(circle at 80% 20%, rgba(238, 33, 48, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 20% 80%, rgba(37, 99, 235, 0.12) 0%, transparent 50%),
-    radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 32px 32px;
-  opacity: 0.6;
+    radial-gradient(circle at 85% 15%, rgba(238, 33, 48, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(37, 99, 235, 0.04) 0%, transparent 45%),
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+  opacity: 0.85;
 }
 
 .about-hero-container {
@@ -36,34 +48,57 @@
   z-index: 2;
 }
 
-.about-hero-breadcrumb {
+/* Proper Breadcrumb Navigation */
+.about-breadcrumb-pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 7px 18px;
+  border-radius: 9999px;
   font-family: var(--font-body);
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  color: #64748b;
   margin-bottom: 22px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
 }
 
-.about-hero-breadcrumb a {
-  color: rgba(255, 255, 255, 0.7);
+.about-breadcrumb-pill a {
+  color: #0f172a;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.about-hero-breadcrumb a:hover {
+.about-breadcrumb-pill a:hover {
   color: var(--color-accent);
 }
 
+.about-breadcrumb-pill .bc-sep {
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.about-breadcrumb-pill .bc-current {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Hero Badge Tag */
 .about-hero-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 6px 16px;
   border-radius: 9999px;
-  background: rgba(238, 33, 48, 0.14);
-  border: 1px solid rgba(238, 33, 48, 0.35);
-  color: #ff5263;
+  background: rgba(238, 33, 48, 0.08);
+  border: 1px solid rgba(238, 33, 48, 0.22);
+  color: var(--color-accent);
   font-family: var(--font-body);
   font-size: 11.5px;
   font-weight: 700;
@@ -74,13 +109,13 @@
 
 .about-hero-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 4.2vw, 3.8rem);
+  font-size: clamp(2.3rem, 4.2vw, 3.8rem);
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.16;
   letter-spacing: -0.03em;
-  color: #ffffff;
-  max-width: 980px;
-  margin-bottom: 24px;
+  color: #0f172a;
+  max-width: 1020px;
+  margin-bottom: 22px;
 }
 
 .about-hero-title span.crimson {
@@ -90,32 +125,75 @@
 
 .about-hero-desc {
   font-family: var(--font-body);
-  font-size: clamp(16px, 1.2vw, 18.5px);
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
-  max-width: 820px;
-  margin-bottom: 45px;
+  font-size: clamp(16px, 1.15vw, 18.5px);
+  line-height: 1.72;
+  color: #475569;
+  max-width: 860px;
+  margin-bottom: 50px;
 }
 
-/* KPI Stats Strip */
+/* ==========================================================================
+   REDESIGNED STATS CARDS (Proper Light Modern Presentation)
+   ========================================================================== */
 .about-kpi-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  gap: 22px;
+  margin-top: 10px;
 }
 
 .about-kpi-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 26px 22px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
   display: flex;
   flex-direction: column;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-kpi-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.about-kpi-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.about-kpi-item:hover::before {
+  background: var(--color-accent);
+}
+
+.about-kpi-icon-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(238, 33, 48, 0.08);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 16px;
 }
 
 .about-kpi-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-size: clamp(2.2rem, 3vw, 2.9rem);
   font-weight: 800;
-  color: #ffffff;
+  color: #0f172a;
   line-height: 1;
   margin-bottom: 8px;
   font-variant-numeric: lining-nums tabular-nums;
@@ -128,14 +206,522 @@
 .about-kpi-label {
   font-family: var(--font-body);
   font-size: 13.5px;
-  color: rgba(255, 255, 255, 0.65);
-  line-height: 1.45;
+  color: #64748b;
+  line-height: 1.48;
+  font-weight: 500;
 }
 
-/* --- Section: Top Management Commitments & Founding Story --- */
-.leadership-commit-section {
+/* ==========================================================================
+   MISSION, VISION & CORE VALUES SECTION
+   ========================================================================== */
+.mission-vision-section {
+  background: #f8fafc;
+  padding: 95px 44px;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.mission-vision-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.mv-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 55px;
+}
+
+.mv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.mv-card {
   background: #ffffff;
-  padding: 100px 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 38px 30px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.mv-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.mv-card:hover::before {
+  background: var(--color-accent);
+}
+
+.mv-icon-box {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(238, 33, 48, 0.08);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 22px;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.mv-card:hover .mv-icon-box {
+  background: var(--color-accent);
+  color: #ffffff;
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.mv-tag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.mv-card h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.mv-card p {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.mv-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 18px;
+}
+
+.mv-features-list li {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.mv-features-list li i {
+  color: var(--color-accent);
+  font-size: 12px;
+}
+
+/* ==========================================================================
+   WHY THIN MARGIN? (Key Strategic Differentiators)
+   ========================================================================== */
+.why-tm-section {
+  background: #ffffff;
+  padding: 95px 44px;
+  border-bottom: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.why-tm-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.why-tm-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 55px;
+}
+
+.why-tm-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.why-tm-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.why-tm-card:hover {
+  background: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  border-color: #cbd5e1;
+}
+
+.why-tm-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  background: rgba(238, 33, 48, 0.08);
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  align-self: flex-start;
+}
+
+.why-tm-card h4 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
+.why-tm-card p {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* ==========================================================================
+   WHAT WE OFFER (Core Capability Suite)
+   ========================================================================== */
+.what-offer-section {
+  background: #f8fafc;
+  padding: 95px 44px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.what-offer-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.what-offer-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 55px;
+}
+
+.what-offer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.offer-card {
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  padding: 34px 28px;
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.offer-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09);
+  border-color: #cbd5e1;
+}
+
+.offer-card:hover::before {
+  background: var(--color-accent);
+}
+
+.offer-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(238, 33, 48, 0.08);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 20px;
+  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+}
+
+.offer-card:hover .offer-icon-box {
+  background: var(--color-accent);
+  color: #ffffff;
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.offer-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.offer-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #475569;
+  line-height: 1.68;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.offer-features {
+  list-style: none;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.offer-features li {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.offer-features li i {
+  color: var(--color-accent);
+  font-size: 11px;
+}
+
+/* ==========================================================================
+   REAL OPERATIONS VIDEO SHOWCASE (Redesigned for Pure Light Theme)
+   ========================================================================== */
+.working-video-section {
+  background: #ffffff;
+  color: #0f172a;
+  padding: 95px 44px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.working-video-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.working-video-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 45px;
+}
+
+.working-video-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(238, 33, 48, 0.08);
+  border: 1px solid rgba(238, 33, 48, 0.22);
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.working-video-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+
+.working-video-desc {
+  font-family: var(--font-body);
+  font-size: clamp(14.5px, 1vw, 16.5px);
+  color: #64748b;
+  line-height: 1.68;
+}
+
+/* Cinema Video Wrapper in Light Theme */
+.video-cinema-box {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.12);
+  border: 3px solid #ffffff;
+  background: #040711;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.video-cinema-element {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video HUD Overlays */
+.video-hud-overlay {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.video-hud-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(4, 7, 17, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.video-live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ee2130;
+  box-shadow: 0 0 10px #ee2130;
+  animation: liveBlink 1.5s infinite;
+}
+
+@keyframes liveBlink {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* Custom Video Control Overlay */
+.video-controls-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px 24px 20px;
+  background: linear-gradient(180deg, transparent 0%, rgba(4, 7, 17, 0.88) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  z-index: 5;
+}
+
+.video-control-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.video-control-btn:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.08);
+}
+
+.video-meta-tags {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.video-meta-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.12);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* ==========================================================================
+   TOP MANAGEMENT COMMITMENTS & FOUNDER PROFILE
+   ========================================================================== */
+.leadership-commit-section {
+  background: #f8fafc;
+  padding: 95px 44px;
   position: relative;
   border-bottom: 1px solid #e2e8f0;
 }
@@ -150,10 +736,6 @@
   grid-template-columns: 1.15fr 0.95fr;
   gap: 65px;
   align-items: center;
-}
-
-.leadership-text .section-tag-pill {
-  margin-bottom: 16px;
 }
 
 .leadership-title {
@@ -183,7 +765,6 @@
   margin-bottom: 28px;
 }
 
-/* 4 Pillars of Leadership Commitments */
 .commit-bullets-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -222,7 +803,7 @@
 /* Director Profile Card */
 .director-profile-card {
   position: relative;
-  background: #f8fafc;
+  background: #ffffff;
   border-radius: 24px;
   border: 1px solid #e2e8f0;
   padding: 34px;
@@ -286,7 +867,7 @@
 }
 
 .director-credentials-box {
-  background: #ffffff;
+  background: #f8fafc;
   border-radius: 14px;
   padding: 16px 20px;
   border: 1px solid #e2e8f0;
@@ -296,299 +877,12 @@
   line-height: 1.6;
 }
 
-/* --- Section: Working Video Showcase (Real Ground Operations) --- */
-.working-video-section {
-  background: #0b1120;
-  color: #ffffff;
-  padding: 100px 44px;
-  position: relative;
-  overflow: hidden;
-}
-
-.working-video-container {
-  max-width: 1240px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-}
-
-.working-video-header {
-  text-align: center;
-  max-width: 820px;
-  margin: 0 auto 50px;
-}
-
-.working-video-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border-radius: 9999px;
-  background: rgba(238, 33, 48, 0.16);
-  border: 1px solid rgba(238, 33, 48, 0.4);
-  color: #ff5263;
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  margin-bottom: 16px;
-}
-
-.working-video-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2rem, 3.2vw, 2.8rem);
-  font-weight: 700;
-  color: #ffffff;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-}
-
-.working-video-desc {
-  font-family: var(--font-body);
-  font-size: clamp(14.5px, 1vw, 16.5px);
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.68;
-}
-
-/* Cinema Video Wrapper */
-.video-cinema-box {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.6), 0 0 35px rgba(238, 33, 48, 0.12);
-  border: 2px solid rgba(255, 255, 255, 0.12);
-  background: #040711;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.video-cinema-element {
-  width: 100%;
-  height: 540px;
-  object-fit: cover;
-  display: block;
-}
-
-/* Video HUD Overlays */
-.video-hud-overlay {
-  position: absolute;
-  top: 20px;
-  left: 24px;
-  right: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none;
-  z-index: 5;
-}
-
-.video-hud-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(4, 7, 17, 0.75);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  padding: 6px 14px;
-  border-radius: 9999px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11.5px;
-  font-weight: 600;
-  color: #ffffff;
-}
-
-.video-live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #ee2130;
-  box-shadow: 0 0 10px #ee2130;
-  animation: liveBlink 1.5s infinite;
-}
-
-@keyframes liveBlink {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.4; transform: scale(0.85); }
-}
-
-/* Custom Video Control Overlay */
-.video-controls-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 30px 24px 20px;
-  background: linear-gradient(180deg, transparent 0%, rgba(4, 7, 17, 0.88) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  z-index: 5;
-}
-
-.video-control-btn {
-  background: rgba(255, 255, 255, 0.16);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.video-control-btn:hover {
-  background: var(--color-accent);
-  border-color: var(--color-accent);
-  transform: scale(1.08);
-}
-
-.video-meta-tags {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.video-meta-tag {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 11.5px;
-  color: rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.08);
-  padding: 4px 10px;
-  border-radius: 6px;
-}
-
-/* --- Section: Strategic Divisions & Capabilities Breakdown (Aseries Inspired) --- */
-.about-divisions-section {
-  background: #f8fafc;
-  padding: 100px 44px;
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.about-divisions-container {
-  max-width: 1300px;
-  margin: 0 auto;
-}
-
-.about-divisions-header {
-  text-align: center;
-  max-width: 780px;
-  margin: 0 auto 55px;
-}
-
-.about-divisions-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
-
-.division-card {
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
-  padding: 34px 28px;
-  transition: transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease, border-color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: hidden;
-}
-
-.division-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background: transparent;
-  transition: background 0.3s ease;
-}
-
-.division-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.09);
-  border-color: #cbd5e1;
-}
-
-.division-card:hover::before {
-  background: var(--color-accent);
-}
-
-.division-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
-  background: rgba(238, 33, 48, 0.08);
-  color: var(--color-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  transition: transform 0.35s ease, background 0.35s ease, color 0.35s ease;
-}
-
-.division-card:hover .division-icon-box {
-  background: var(--color-accent);
-  color: #ffffff;
-  transform: scale(1.08) rotate(-4deg);
-}
-
-.division-title {
-  font-family: var(--font-heading);
-  font-size: 19px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-.division-desc {
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.68;
-  margin-bottom: 20px;
-  flex: 1;
-}
-
-.division-features {
-  list-style: none;
-  border-top: 1px solid #f1f5f9;
-  padding-top: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.division-features li {
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  color: #64748b;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.division-features li i {
-  color: var(--color-accent);
-  font-size: 11px;
-}
-
-/* --- Section: How Thin Margin Bridges The Gap (Matrix) --- */
+/* ==========================================================================
+   HOW THIN MARGIN BRIDGES THE GAP (Matrix)
+   ========================================================================== */
 .bridge-gap-section {
   background: #ffffff;
-  padding: 100px 44px;
+  padding: 95px 44px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -708,12 +1002,15 @@
   line-height: 1.5;
 }
 
-/* --- Section: Triple Impact Framework (Economy, Environment, Society) --- */
+/* ==========================================================================
+   TRIPLE IMPACT FRAMEWORK (Redesigned for Pure Light Theme)
+   ========================================================================== */
 .triple-impact-section {
-  background: #070c1a;
-  color: #ffffff;
-  padding: 100px 44px;
+  background: #f8fafc;
+  color: #0f172a;
+  padding: 95px 44px;
   position: relative;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .triple-impact-container {
@@ -724,7 +1021,7 @@
 .triple-impact-header {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto 50px;
+  margin: 0 auto 45px;
 }
 
 .impact-tabs-nav {
@@ -735,16 +1032,17 @@
 }
 
 .impact-tab-btn {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 9999px;
-  padding: 10px 24px;
-  color: rgba(255, 255, 255, 0.8);
+  padding: 11px 26px;
+  color: #475569;
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
 .impact-tab-btn.active,
@@ -752,7 +1050,7 @@
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: #ffffff;
-  box-shadow: 0 4px 18px rgba(238, 33, 48, 0.35);
+  box-shadow: 0 6px 20px rgba(238, 33, 48, 0.28);
 }
 
 .impact-pane {
@@ -765,13 +1063,18 @@
   grid-template-columns: 1.1fr 0.9fr;
   gap: 50px;
   align-items: center;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 44px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.05);
 }
 
 .impact-pane-content h3 {
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 2.5vw, 2.3rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #0f172a;
   margin-bottom: 18px;
 }
 
@@ -779,7 +1082,7 @@
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.72;
-  color: rgba(255, 255, 255, 0.78);
+  color: #475569;
   margin-bottom: 24px;
 }
 
@@ -796,7 +1099,7 @@
   gap: 12px;
   font-family: var(--font-body);
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #334155;
 }
 
 .impact-points-list li i {
@@ -805,10 +1108,10 @@
 }
 
 .impact-pane-media {
-  border-radius: 20px;
+  border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
 }
 
 .impact-pane-media img {
@@ -818,10 +1121,12 @@
   display: block;
 }
 
-/* --- Section: Landmark Mega-Projects Showcase --- */
+/* ==========================================================================
+   LANDMARK MEGA-PROJECTS TRACK RECORD
+   ========================================================================= */
 .mega-projects-section {
   background: #ffffff;
-  padding: 100px 44px;
+  padding: 95px 44px;
   border-bottom: 1px solid #e2e8f0;
 }
 
@@ -902,17 +1207,24 @@
   gap: 8px;
 }
 
-/* --- Section: CTA Callout Banner --- */
+/* ==========================================================================
+   EXECUTIVE CALLOUT CTA BANNER (100% Light Elegant Box)
+   ========================================================================== */
 .about-cta-banner {
-  background: linear-gradient(135deg, #070c1a 0%, #111a36 100%);
-  color: #ffffff;
-  padding: 75px 44px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f1f5f9;
+  color: #0f172a;
+  padding: 85px 44px;
+  border-top: 1px solid #e2e8f0;
 }
 
 .about-cta-container {
   max-width: 1200px;
   margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 26px;
+  padding: 48px 52px;
+  box-shadow: 0 16px 45px rgba(15, 23, 42, 0.06);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -924,13 +1236,14 @@
   font-family: var(--font-heading);
   font-size: clamp(1.8rem, 2.6vw, 2.5rem);
   font-weight: 700;
+  color: #0f172a;
   margin-bottom: 10px;
 }
 
 .about-cta-content p {
   font-family: var(--font-body);
   font-size: 15.5px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #64748b;
   max-width: 680px;
 }
 
@@ -941,13 +1254,19 @@
   flex-wrap: wrap;
 }
 
-/* Responsive Media Queries */
-@media (max-width: 1050px) {
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1100px) {
   .leadership-grid {
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  .about-divisions-grid {
+  .what-offer-grid,
+  .mv-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .why-tm-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .bridge-matrix-grid {
@@ -962,23 +1281,31 @@
   .impact-pane.active {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 30px;
   }
 }
 
 @media (max-width: 768px) {
   .about-hero {
-    padding: 130px 20px 65px;
+    padding: 130px 20px 60px;
   }
+  .mission-vision-section,
+  .why-tm-section,
+  .what-offer-section,
   .leadership-commit-section,
   .working-video-section,
-  .about-divisions-section,
   .bridge-gap-section,
   .triple-impact-section,
   .mega-projects-section,
   .about-cta-banner {
     padding: 60px 20px;
   }
-  .about-divisions-grid,
+  .about-cta-container {
+    padding: 30px 24px;
+  }
+  .what-offer-grid,
+  .mv-grid,
+  .why-tm-grid,
   .mega-projects-grid,
   .about-kpi-grid,
   .commit-bullets-grid {

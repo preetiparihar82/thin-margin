@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------------------------------------------------
   // 6. Smooth Scroll Reveal via IntersectionObserver
   // ---------------------------------------------------------------------------
-  const revealElements = document.querySelectorAll('.division-card, .bridge-matrix-card, .project-card, .director-profile-card, .about-kpi-item');
+  const revealElements = document.querySelectorAll('.mv-card, .why-tm-card, .offer-card, .bridge-matrix-card, .project-card, .director-profile-card, .about-kpi-item');
 
   if ('IntersectionObserver' in window && revealElements.length > 0) {
     const revealObserver = new IntersectionObserver((entries, observer) => {
