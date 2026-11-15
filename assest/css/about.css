@@ -23,13 +23,15 @@ body.about-page {
 .about-panoramic-hero {
   position: relative;
   background: 
-    linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.18)),
-    url('../images/about_hero_banner.jpg') center center / cover no-repeat;
+    linear-gradient(rgba(0, 0, 0, 0.18), rgba(0, 0, 0, 0.28)),
+    url('../images/about_hero_logistics.jpg') center center / cover no-repeat;
   color: #ffffff;
-  padding: 125px 44px 45px;
-  min-height: 250px;
+  padding: 130px 44px 50px;
+  min-height: 260px;
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   border-bottom: 3px solid var(--color-accent);
   overflow: hidden;
 }
@@ -40,6 +42,11 @@ body.about-page {
   margin: 0 auto;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .panoramic-title {
@@ -49,19 +56,27 @@ body.about-page {
   color: #ffffff;
   line-height: 1.1;
   letter-spacing: -0.03em;
-  margin-bottom: 8px;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.45);
+  margin-bottom: 12px;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+  text-align: center;
 }
 
 .panoramic-breadcrumb {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 10px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  background: rgba(11, 19, 41, 0.42);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 7px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 .panoramic-breadcrumb a {
@@ -73,8 +88,7 @@ body.about-page {
 
 .panoramic-breadcrumb a:hover {
   opacity: 1;
-  color: #ffffff;
-  text-decoration: underline;
+  color: #ff9ca3;
 }
 
 .panoramic-breadcrumb .panoramic-sep {
@@ -143,30 +157,137 @@ body.about-page {
   margin-bottom: 35px;
 }
 
-/* FLUID METRIC STRIP (Completely Borderless, Open Layout, Zero Box Cards) */
+/* FLUID 3D FLIP METRIC STRIP (Front: Title & Number; Back: Description on Hover & Auto-Flip) */
 .fluid-metric-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
-  padding-top: 30px;
+  gap: 22px;
+  padding-top: 32px;
   border-top: 1px solid #e2e8f0;
+  perspective: 1400px;
 }
 
-.fluid-metric-item {
+.fluid-metric-flip-card {
+  perspective: 1400px;
+  min-height: 142px;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.metric-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 142px;
+  transform-style: preserve-3d;
+  transition: transform 0.72s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 12px;
+}
+
+/* Flip on hover, focus, or automatic cycle */
+.fluid-metric-flip-card:hover .metric-flip-inner,
+.fluid-metric-flip-card.auto-flipped .metric-flip-inner,
+.fluid-metric-flip-card:focus-visible .metric-flip-inner {
+  transform: rotateY(180deg);
+}
+
+.metric-flip-face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  position: relative;
-  padding-right: 18px;
+  justify-content: center;
 }
 
-.fluid-metric-item:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  top: 10px;
-  bottom: 10px;
-  right: 0;
-  width: 1px;
-  background: #e2e8f0;
+/* Front Face: Title & Number Only */
+.metric-flip-front {
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  border-left: 3px solid transparent;
+  box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.05);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.fluid-metric-flip-card:hover .metric-flip-front,
+.fluid-metric-flip-card.auto-flipped .metric-flip-front {
+  border-left-color: var(--color-accent);
+  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
+}
+
+.metric-flip-indicator {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 4px;
+  letter-spacing: 0.3px;
+  transition: color 0.25s ease;
+}
+
+.fluid-metric-flip-card:hover .metric-flip-indicator,
+.fluid-metric-flip-card.auto-flipped .metric-flip-indicator {
+  color: var(--color-accent);
+}
+
+/* Back Face: Description & Context */
+.metric-flip-back {
+  background: linear-gradient(135deg, #0b1329 0%, #172343 100%);
+  color: #ffffff;
+  border-left: 3px solid var(--color-accent);
+  box-shadow: 0 12px 28px -6px rgba(11, 19, 41, 0.28);
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.metric-back-kicker {
+  font-family: var(--font-body);
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1.1px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metric-flip-back .fluid-metric-label {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #e2e8f0;
+  line-height: 1.48;
+  margin: 0;
+  font-weight: 400;
+}
+
+.metric-back-meta {
+  margin-top: 8px;
+}
+
+.metric-back-meta .meta-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
 .metric-kicker {
@@ -188,7 +309,7 @@ body.about-page {
   font-weight: 800;
   color: #0b1329;
   line-height: 1;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
   font-variant-numeric: lining-nums tabular-nums;
   letter-spacing: -0.025em;
   transition: transform 0.35s ease, color 0.35s ease, filter 0.35s ease;

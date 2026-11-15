@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Smooth Scroll Reveal via IntersectionObserver
   // ---------------------------------------------------------------------------
   const revealElements = document.querySelectorAll(
-    '.mv-cut-img-primary, .mv-cut-img-secondary, .mv-pillar-item, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-item'
+    '.mv-cut-img-primary, .mv-cut-img-secondary, .mv-pillar-item, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-card'
   );
 
   if ('IntersectionObserver' in window && revealElements.length > 0) {
@@ -334,6 +334,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Guaranteed fallback after 1.5s
     setTimeout(triggerStatsAnimation, 1500);
+  }
+
+  // ---------------------------------------------------------------------------
+  // 8. Dynamic Auto-Flip & Interactive Hover System for Stats Cards
+  // (Front: Number & Title; Back: Detailed Description via Hover & Auto-Cycling)
+  // ---------------------------------------------------------------------------
+  const flipCards = document.querySelectorAll('.fluid-metric-flip-card');
+  if (flipCards.length > 0) {
+    let currentAutoIndex = 0;
+    let autoFlipInterval = null;
+    let isUserInteracting = false;
+    let resumeTimeout = null;
+
+    const clearAllAutoFlips = () => {
+      flipCards.forEach(card => card.classList.remove('auto-flipped'));
+    };
+
+    const runAutoFlipStep = () => {
+      if (isUserInteracting) return;
+
+      clearAllAutoFlips();
+      const targetCard = flipCards[currentAutoIndex];
+      if (targetCard) {
+        // Flip to back to display description
+        targetCard.classList.add('auto-flipped');
+
+        // Turn back to front after 2.8 seconds
+        setTimeout(() => {
+          if (!isUserInteracting && targetCard.classList.contains('auto-flipped')) {
+            targetCard.classList.remove('auto-flipped');
+          }
+        }, 2800);
+      }
+
+      currentAutoIndex = (currentAutoIndex + 1) % flipCards.length;
+    };
+
+    const startAutoCycle = () => {
+      if (autoFlipInterval) clearInterval(autoFlipInterval);
+      autoFlipInterval = setInterval(runAutoFlipStep, 4500);
+    };
+
+    const pauseAutoCycle = () => {
+      isUserInteracting = true;
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      clearAllAutoFlips();
+    };
+
+    const resumeAutoCycleAfterDelay = () => {
+      if (resumeTimeout) clearTimeout(resumeTimeout);
+      resumeTimeout = setTimeout(() => {
+        isUserInteracting = false;
+        clearAllAutoFlips();
+      }, 3500);
+    };
+
+    flipCards.forEach(card => {
+      // Mouse Hover: user directly inspects card
+      card.addEventListener('mouseenter', () => {
+        pauseAutoCycle();
+      });
+
+      card.addEventListener('mouseleave', () => {
+        resumeAutoCycleAfterDelay();
+      });
+
+      // Mobile Tap Toggle Support
+      card.addEventListener('click', (e) => {
+        pauseAutoCycle();
+        const currentlyFlipped = card.classList.contains('auto-flipped');
+        clearAllAutoFlips();
+        if (!currentlyFlipped) {
+          card.classList.add('auto-flipped');
+        }
+        resumeAutoCycleAfterDelay();
+      });
+    });
+
+    // Start auto-flipping after 2.2s once page reveals and counter has rolled
+    setTimeout(startAutoCycle, 2200);
   }
 
 });

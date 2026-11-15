@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet & Bespoke Panoramic About Page Styles -->
-  <link rel="stylesheet" href="assest/css/style.css?v=2.3">
-  <link rel="stylesheet" href="assest/css/about.css?v=2.3">
+  <link rel="stylesheet" href="assest/css/style.css?v=2.4">
+  <link rel="stylesheet" href="assest/css/about.css?v=2.4">
 </head>
 <body class="about-page">
 
@@ -162,39 +162,95 @@
         Thin Margin delivers institutional-grade turnkey material management, 24-hour container decantation, zero-defect laydown yard custody, and synchronized ERP tracking for India's foremost renewable energy, thermal power, and industrial infrastructure conglomerates.
       </p>
 
-      <!-- FLUID METRIC STRIP (No Boxes, Animated Live Counters) -->
+      <!-- FLUID 3D FLIP METRIC STRIP (Front: Title & Animated Counter; Back: Full Description) -->
       <div class="fluid-metric-strip" id="statsStrip">
         
-        <div class="fluid-metric-item">
-          <span class="metric-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
-          <div class="fluid-metric-number" data-target="10" data-decimals="0" data-suffix="+" data-unit="Years">
-            <span class="metric-val">0</span><span class="metric-accent">+</span> <span class="metric-unit">Years</span>
+        <!-- Metric 1: Track Record -->
+        <div class="fluid-metric-flip-card" data-card-index="0" tabindex="0" role="button" aria-label="Track Record statistics: 10+ Years">
+          <div class="metric-flip-inner">
+            <!-- FRONT: Little Title & Number Only -->
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
+              <div class="fluid-metric-number" data-target="10" data-decimals="0" data-suffix="+" data-unit="Years">
+                <span class="metric-val">0</span><span class="metric-accent">+</span> <span class="metric-unit">Years</span>
+              </div>
+              <span class="metric-flip-indicator"><i class="fa-solid fa-arrows-rotate"></i> Details</span>
+            </div>
+            <!-- BACK: Description at Back Side -->
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
+              <p class="fluid-metric-label">Industrial logistics and turnkey mega-project leadership across pan-India corridors.</p>
+              <div class="metric-back-meta">
+                <span class="meta-pill">Pan-India Fleet</span>
+              </div>
+            </div>
           </div>
-          <div class="fluid-metric-label">Industrial logistics and turnkey mega-project leadership across pan-India corridors.</div>
         </div>
 
-        <div class="fluid-metric-item">
-          <span class="metric-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
-          <div class="fluid-metric-number" data-target="1.2" data-decimals="1" data-suffix="GW+" data-unit="">
-            <span class="metric-val">0.0</span><span class="metric-accent">GW+</span>
+        <!-- Metric 2: Mega Solar -->
+        <div class="fluid-metric-flip-card" data-card-index="1" tabindex="0" role="button" aria-label="Mega Solar statistics: 1.2GW+">
+          <div class="metric-flip-inner">
+            <!-- FRONT: Little Title & Number Only -->
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
+              <div class="fluid-metric-number" data-target="1.2" data-decimals="1" data-suffix="GW+" data-unit="">
+                <span class="metric-val">0.0</span><span class="metric-accent">GW+</span>
+              </div>
+              <span class="metric-flip-indicator"><i class="fa-solid fa-arrows-rotate"></i> Details</span>
+            </div>
+            <!-- BACK: Description at Back Side -->
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
+              <p class="fluid-metric-label">Single-location mega solar park material custody executed with zero loss.</p>
+              <div class="metric-back-meta">
+                <span class="meta-pill">Zero Defect Custody</span>
+              </div>
+            </div>
           </div>
-          <div class="fluid-metric-label">Single-location mega solar park material custody executed with zero loss.</div>
         </div>
 
-        <div class="fluid-metric-item">
-          <span class="metric-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
-          <div class="fluid-metric-number" data-target="24" data-decimals="0" data-suffix="Hrs" data-unit="">
-            <span class="metric-val">0</span><span class="metric-accent">Hrs</span>
+        <!-- Metric 3: Port Velocity -->
+        <div class="fluid-metric-flip-card" data-card-index="2" tabindex="0" role="button" aria-label="Port Velocity statistics: 24Hrs">
+          <div class="metric-flip-inner">
+            <!-- FRONT: Little Title & Number Only -->
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
+              <div class="fluid-metric-number" data-target="24" data-decimals="0" data-suffix="Hrs" data-unit="">
+                <span class="metric-val">0</span><span class="metric-accent">Hrs</span>
+              </div>
+              <span class="metric-flip-indicator"><i class="fa-solid fa-arrows-rotate"></i> Details</span>
+            </div>
+            <!-- BACK: Description at Back Side -->
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
+              <p class="fluid-metric-label">Guaranteed container de-stuffing &amp; empty return turnaround to prevent demurrage.</p>
+              <div class="metric-back-meta">
+                <span class="meta-pill">Demurrage Prevention</span>
+              </div>
+            </div>
           </div>
-          <div class="fluid-metric-label">Guaranteed container de-stuffing &amp; empty return turnaround to prevent demurrage.</div>
         </div>
 
-        <div class="fluid-metric-item">
-          <span class="metric-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
-          <div class="fluid-metric-number" data-target="100" data-decimals="0" data-suffix="%" data-unit="">
-            <span class="metric-val">0</span><span class="metric-accent">%</span>
+        <!-- Metric 4: Governance -->
+        <div class="fluid-metric-flip-card" data-card-index="3" tabindex="0" role="button" aria-label="Governance statistics: 100%">
+          <div class="metric-flip-inner">
+            <!-- FRONT: Little Title & Number Only -->
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
+              <div class="fluid-metric-number" data-target="100" data-decimals="0" data-suffix="%" data-unit="">
+                <span class="metric-val">0</span><span class="metric-accent">%</span>
+              </div>
+              <span class="metric-flip-indicator"><i class="fa-solid fa-arrows-rotate"></i> Details</span>
+            </div>
+            <!-- BACK: Description at Back Side -->
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
+              <p class="fluid-metric-label">Zero-compromise EHS compliance, certified rigging, and statutory labor governance.</p>
+              <div class="metric-back-meta">
+                <span class="meta-pill">100% Statutory Compliance</span>
+              </div>
+            </div>
           </div>
-          <div class="fluid-metric-label">Zero-compromise EHS compliance, certified rigging, and statutory labor governance.</div>
         </div>
 
       </div>
@@ -978,6 +1034,6 @@
   </div>
 
   <!-- JavaScript Files -->
-  <script src="assest/js/about.js?v=2.3"></script>
+  <script src="assest/js/about.js?v=2.4"></script>
 </body>
 </html>
