@@ -283,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const startTime = performance.now();
 
         el.classList.add('counting');
-        el.classList.add('rotating-roll');
+        el.classList.add('slot-reel-anim');
 
         const updateCount = (currentTime) => {
           const elapsed = currentTime - startTime;
@@ -302,10 +302,10 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.remove('counting');
             el.classList.add('counted');
             
-            // Re-arm rotating animation
+            // Re-arm slot-reel animation
             setTimeout(() => {
-              el.classList.remove('rotating-roll');
-            }, 700);
+              el.classList.remove('slot-reel-anim');
+            }, 750);
           }
         };
 
@@ -388,13 +388,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (!userInteracting && targetCol.classList.contains('auto-flipped')) {
             targetCol.classList.remove('auto-flipped');
             
-            // Re-trigger 3D barrel roll animation when returning to front
+            // Re-trigger slot-reel spring animation when returning to front
             const numEl = targetCol.querySelector('.fluid-metric-number');
             if (numEl) {
-              numEl.classList.remove('rotating-roll');
+              numEl.classList.remove('slot-reel-anim');
               void numEl.offsetWidth; // trigger reflow
-              numEl.classList.add('rotating-roll');
-              setTimeout(() => numEl.classList.remove('rotating-roll'), 700);
+              numEl.classList.add('slot-reel-anim');
+              setTimeout(() => numEl.classList.remove('slot-reel-anim'), 750);
             }
           }
         }, 3000);
