@@ -235,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Smooth Scroll Reveal via IntersectionObserver
   // ---------------------------------------------------------------------------
   const revealElements = document.querySelectorAll(
-    '.mv-photo-frame, .mv-principle-card, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-col'
+    '.mv-dual-card, .bento-trust-card, .bento-video-card, .bento-wide-panoramic, .mv-values-banner, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-col'
   );
 
   if ('IntersectionObserver' in window && revealElements.length > 0) {
