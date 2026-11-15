@@ -3876,7 +3876,7 @@ textarea.pill-input {
 /* --- WHY CHOOSE US SECTION (No Lines, Flipping Icons, Shifted Tags, Crisp HD) --- */
 .why-choose-section {
   background: #fcfdfe;
-  padding: 50px 30px 65px;
+  padding: 105px 30px 75px;
   position: relative;
   z-index: 10;
   border: none !important;
@@ -4143,9 +4143,11 @@ textarea.pill-input {
   .why-pillars-grid {
     grid-template-columns: 1fr;
   }
-  .services-suite-section,
-  .why-choose-section {
+  .services-suite-section {
     padding: 38px 18px;
+  }
+  .why-choose-section {
+    padding: 65px 18px 45px;
   }
 }
 

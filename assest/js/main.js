@@ -12,26 +12,26 @@ document.addEventListener('DOMContentLoaded', () => {
       tag: 'INNOVATIVE MATERIAL & LOGISTICS MANAGEMENT PARTNER',
       titleLine1: 'Where the margin of error is thin,',
       titleLine2: 'and the last 1% defines the 100%',
-      description: 'Streamlining your logistics with transportation solutions, timely deliveries, and exceptional material management worldwide.',
+      description: 'Streamlining your logistics with overland freight solutions, GPS telemetry, and exceptional material management across India.',
       btnText: 'Our Services',
       label: '01 / Truck Logistics'
     },
     {
       id: 1,
-      tag: 'INNOVATIVE MATERIAL & LOGISTICS MANAGEMENT PARTNER',
-      titleLine1: 'Where the margin of error is thin,',
-      titleLine2: 'and the last 1% defines the 100%',
-      description: 'Delivering your priority shipments worldwide with rapid air transport and guaranteed on-time arrival.',
-      btnText: 'Our Services',
+      tag: 'TIME-CRITICAL EXPEDITED AIR CARGO',
+      titleLine1: 'Speed meets surgical precision,',
+      titleLine2: 'guaranteeing zero-delay arrivals',
+      description: 'Dedicated air corridors connecting Tier-1 metropolises with guaranteed same-day dispatch SLAs and airport customs clearance.',
+      btnText: 'Explore Air Express',
       label: '02 / Air Logistics'
     },
     {
       id: 2,
-      tag: 'INNOVATIVE MATERIAL & LOGISTICS MANAGEMENT PARTNER',
-      titleLine1: 'Where the margin of error is thin,',
-      titleLine2: 'and the last 1% defines the 100%',
-      description: 'Advanced storage facilities and automated fulfillment networks designed to maximize operational efficiency.',
-      btnText: 'Our Services',
+      tag: 'INTELLIGENT WAREHOUSING & TELEMETRY',
+      titleLine1: 'High-density smart storage,',
+      titleLine2: 'driven by real-time SAP & ERP sync',
+      description: 'Modern bonded warehousing, 24-hour container decantation, and automated fulfillment designed to eliminate supply chain waste.',
+      btnText: 'Discover Warehousing',
       label: '03 / Smart Warehousing'
     }
   ];
