@@ -630,6 +630,29 @@ document.addEventListener('DOMContentLoaded', () => {
     box.addEventListener('click', (e) => e.stopPropagation());
   });
 
+  // --- Services Dropdown Hover Grace System (Never prematurely closes) ---
+  const dropdownItem = document.querySelector('.nav-item-dropdown');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
+  if (dropdownItem && dropdownMenu) {
+    let dropdownTimer = null;
+
+    const showDropdown = () => {
+      clearTimeout(dropdownTimer);
+      dropdownItem.classList.add('dropdown-open');
+    };
+
+    const hideDropdown = () => {
+      dropdownTimer = setTimeout(() => {
+        dropdownItem.classList.remove('dropdown-open');
+      }, 250); // 250ms comfortable hover grace period
+    };
+
+    dropdownItem.addEventListener('mouseenter', showDropdown);
+    dropdownItem.addEventListener('mouseleave', hideDropdown);
+    dropdownMenu.addEventListener('mouseenter', showDropdown);
+    dropdownMenu.addEventListener('mouseleave', hideDropdown);
+  }
+
   // --- Mobile Drawer Navigation ---
   if (mobileToggle && mobileDrawer) {
     mobileToggle.addEventListener('click', () => {
@@ -708,8 +731,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const networkGroup = new THREE.Group();
     scene.add(networkGroup);
 
-    // Smooth wireframe icosahedron (Zero green squares)
-    const polyGeo = new THREE.IcosahedronGeometry(8.5, 1);
+    // Smooth wireframe icosahedron (Decreased height to fit section neatly)
+    const polyGeo = new THREE.IcosahedronGeometry(5.6, 1);
     const polyMat = new THREE.MeshBasicMaterial({
       color: 0xee2130,
       wireframe: true,
@@ -719,8 +742,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const polyMesh = new THREE.Mesh(polyGeo, polyMat);
     networkGroup.add(polyMesh);
 
-    // Concentric subtle wireframe sphere
-    const ringGeo = new THREE.SphereGeometry(12, 16, 12);
+    // Concentric subtle wireframe sphere (Decreased height from 12 to 8.2)
+    const ringGeo = new THREE.SphereGeometry(8.2, 16, 12);
     const ringMat = new THREE.MeshBasicMaterial({
       color: 0xee2130,
       wireframe: true,
