@@ -874,11 +874,10 @@ ul {
 
 .hero-description {
   font-family: var(--font-body);
-  font-size: 17px;
-  /* Increased by 2px for enhanced clarity & presence */
+  font-size: clamp(16px, 1.25vw, 18.5px);
   font-weight: 400;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.94);
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 24px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.95), 0 4px 18px rgba(0, 0, 0, 0.85);
 
@@ -1441,7 +1440,7 @@ ul {
 
 .about-creative-lead {
   font-family: var(--font-body);
-  font-size: 16.5px;
+  font-size: clamp(16px, 1.15vw, 18px);
   line-height: 1.68;
   color: #1e293b;
   font-weight: 500;
@@ -1451,8 +1450,8 @@ ul {
 
 .about-creative-desc {
   font-family: var(--font-body);
-  font-size: 14.5px;
-  line-height: 1.72;
+  font-size: clamp(14.8px, 1vw, 16.2px);
+  line-height: 1.75;
   color: #4b586e;
   margin-bottom: 34px;
 }
@@ -1506,8 +1505,9 @@ ul {
 }
 
 .feature-desc {
-  font-size: 13.5px;
-  line-height: 1.58;
+  font-size: clamp(14px, 0.95vw, 15.2px);
+  line-height: 1.65;
+  transition: color 0.3s ease;
   color: #526071;
 }
 
@@ -1884,9 +1884,10 @@ ul {
 }
 
 .workflow-card-desc {
-  font-size: 14px;
+  font-size: clamp(14.5px, 0.98vw, 15.8px);
   color: #526071;
-  line-height: 1.62;
+  line-height: 1.7;
+  transition: color 0.3s ease;
   margin-bottom: 20px;
 }
 
@@ -2148,8 +2149,8 @@ ul {
 
 .feature-box-desc {
   font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: clamp(13.8px, 0.95vw, 15px);
+  line-height: 1.62;
   color: rgba(255, 255, 255, 0.72);
   margin-bottom: 0;
   transition: color 0.3s ease;
@@ -3009,9 +3010,9 @@ textarea.pill-input {
 }
 
 .awards-subtitle {
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.6;
+  font-size: clamp(15px, 1.05vw, 16.8px);
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
   margin: 0 auto;
 }
 
@@ -3162,8 +3163,8 @@ textarea.pill-input {
 }
 
 .footer-col-brand p {
-  font-size: 14px;
-  line-height: 1.65;
+  font-size: clamp(14px, 0.96vw, 15px);
+  line-height: 1.7;
   color: rgba(255, 255, 255, 0.65);
   max-width: 380px;
   margin-bottom: 22px;
@@ -3494,8 +3495,8 @@ textarea.pill-input {
                                                             }
 
                                                             .hero-description {
-                                                              font-size: 13.5px;
-                                                              line-height: 1.5;
+                                                              font-size: clamp(14.5px, 3.8vw, 16px);
+                                                              line-height: 1.58;
                                                               margin-bottom: 18px;
                                                               max-width: 100%;
                                                             }
@@ -3710,8 +3711,8 @@ textarea.pill-input {
 
 .services-suite-subtitle {
   font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: clamp(15.5px, 1.1vw, 17px);
+  line-height: 1.7;
   color: #64748b;
   margin: 0 auto;
 }
@@ -3827,8 +3828,9 @@ textarea.pill-input {
 
 .service-card-desc {
   font-family: var(--font-body);
-  font-size: 13.5px;
-  line-height: 1.6;
+  font-size: clamp(14px, 0.96vw, 15.5px);
+  line-height: 1.68;
+  transition: color 0.3s ease;
   color: #64748b;
   margin-bottom: 14px;
   flex: 1;
@@ -4075,8 +4077,8 @@ textarea.pill-input {
 
 .why-lead-desc {
   font-family: var(--font-body);
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: clamp(15.5px, 1.1vw, 17px);
+  line-height: 1.7;
   color: #475569;
   margin-bottom: 24px;
   max-width: 620px;
@@ -4149,8 +4151,9 @@ textarea.pill-input {
 
 .pillar-desc {
   font-family: var(--font-body);
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: clamp(13.8px, 0.95vw, 15px);
+  line-height: 1.65;
+  transition: color 0.3s ease;
   color: #64748b;
   margin-bottom: 10px;
   flex: 1;
@@ -4320,4 +4323,21 @@ textarea.pill-input {
 
 .is-revealed .wm-kicker-text {
   letter-spacing: 0.12em;
+}
+
+/* Interactive hover contrast for card descriptions */
+.service-suite-card:hover .service-card-desc {
+  color: #1e293b;
+}
+
+.creative-feature-item:hover .feature-desc {
+  color: #0f172a;
+}
+
+.why-pillar-card:hover .pillar-desc {
+  color: #0f172a;
+}
+
+.workflow-acc-item.active .workflow-card-desc {
+  color: #0f172a;
 }
