@@ -17,6 +17,21 @@ body.about-page {
   overflow-x: hidden;
 }
 
+/* Ensure Navigation Bar is prominently displayed on About Page */
+body.about-page .site-header {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+body.about-page .site-header.scrolled {
+  background: rgba(7, 12, 26, 0.96) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55) !important;
+  border-bottom: 1px solid rgba(238, 33, 48, 0.18) !important;
+}
+
 /* ==========================================================================
    1. FULL-WIDTH PANORAMIC HERO BANNER (Matches user reference image exactly)
    ========================================================================== */
@@ -157,39 +172,59 @@ body.about-page {
   margin-bottom: 35px;
 }
 
-/* FLUID 3D FLIP METRIC STRIP (Front: Title & Number; Back: Description on Hover & Auto-Flip) */
+/* ==========================================================================
+   FLUID 3D FLIP METRIC STRIP (100% Non-Container, Borderless Editorial Layout)
+   ========================================================================== */
 .fluid-metric-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  padding-top: 32px;
+  gap: 36px;
+  padding-top: 36px;
   border-top: 1px solid #e2e8f0;
-  perspective: 1400px;
+  perspective: 1200px;
+  background: transparent;
 }
 
-.fluid-metric-flip-card {
-  perspective: 1400px;
-  min-height: 142px;
-  height: 100%;
+.fluid-metric-flip-col {
+  perspective: 1200px;
+  min-height: 110px;
+  height: 110px;
   position: relative;
   cursor: pointer;
   outline: none;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 16px 0 0;
+}
+
+/* Elegant vertical hairline divider between editorial columns, NO BOX */
+.fluid-metric-flip-col:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  right: 0;
+  width: 1px;
+  background: #e2e8f0;
 }
 
 .metric-flip-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 142px;
   transform-style: preserve-3d;
-  transition: transform 0.72s cubic-bezier(0.25, 1, 0.5, 1);
-  border-radius: 12px;
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
-/* Flip on hover, focus, or automatic cycle */
-.fluid-metric-flip-card:hover .metric-flip-inner,
-.fluid-metric-flip-card.auto-flipped .metric-flip-inner,
-.fluid-metric-flip-card:focus-visible .metric-flip-inner {
+/* Flip state on hover or automatic sequence */
+.fluid-metric-flip-col:hover .metric-flip-inner,
+.fluid-metric-flip-col.auto-flipped .metric-flip-inner {
   transform: rotateY(180deg);
 }
 
@@ -201,134 +236,58 @@ body.about-page {
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-radius: 12px;
-  padding: 16px 18px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 4px 0;
 }
 
-/* Front Face: Title & Number Only */
+/* Front Face: Title & Number Only (NO BOX CONTAINER) */
 .metric-flip-front {
-  background: #ffffff;
-  border: 1px solid #f1f5f9;
-  border-left: 3px solid transparent;
-  box-shadow: 0 4px 18px -4px rgba(15, 23, 42, 0.05);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   z-index: 2;
   transform: rotateY(0deg);
-}
-
-.fluid-metric-flip-card:hover .metric-flip-front,
-.fluid-metric-flip-card.auto-flipped .metric-flip-front {
-  border-left-color: var(--color-accent);
-  box-shadow: 0 8px 24px -4px rgba(15, 23, 42, 0.08);
-}
-
-.metric-flip-indicator {
-  font-size: 11px;
-  font-weight: 600;
-  color: #94a3b8;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 4px;
-  letter-spacing: 0.3px;
-  transition: color 0.25s ease;
-}
-
-.fluid-metric-flip-card:hover .metric-flip-indicator,
-.fluid-metric-flip-card.auto-flipped .metric-flip-indicator {
-  color: var(--color-accent);
-}
-
-/* Back Face: Description & Context */
-.metric-flip-back {
-  background: linear-gradient(135deg, #0b1329 0%, #172343 100%);
-  color: #ffffff;
-  border-left: 3px solid var(--color-accent);
-  box-shadow: 0 12px 28px -6px rgba(11, 19, 41, 0.28);
-  transform: rotateY(180deg);
-  z-index: 1;
-}
-
-.metric-back-kicker {
-  font-family: var(--font-body);
-  font-size: 10.5px;
-  font-weight: 700;
-  color: var(--color-accent);
-  text-transform: uppercase;
-  letter-spacing: 1.1px;
-  margin-bottom: 6px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.metric-flip-back .fluid-metric-label {
-  font-family: var(--font-body);
-  font-size: 12.5px;
-  color: #e2e8f0;
-  line-height: 1.48;
-  margin: 0;
-  font-weight: 400;
-}
-
-.metric-back-meta {
-  margin-top: 8px;
-}
-
-.metric-back-meta .meta-pill {
-  display: inline-block;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.78);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 8px;
-  border-radius: 4px;
 }
 
 .metric-kicker {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 7px;
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
   color: var(--color-accent);
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   text-transform: uppercase;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .fluid-metric-number {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(2.1rem, 2.8vw, 2.7rem);
+  font-size: clamp(2.3rem, 3.2vw, 3rem);
   font-weight: 800;
   color: #0b1329;
   line-height: 1;
-  margin-bottom: 6px;
   font-variant-numeric: lining-nums tabular-nums;
-  letter-spacing: -0.025em;
-  transition: transform 0.35s ease, color 0.35s ease, filter 0.35s ease;
+  letter-spacing: -0.03em;
+  transition: transform 0.35s ease, color 0.35s ease;
   display: inline-flex;
   align-items: baseline;
   gap: 2px;
-  will-change: transform, color;
 }
 
 .fluid-metric-number.counting {
   color: var(--color-accent);
-  transform: translateY(-2px) scale(1.04);
-  filter: drop-shadow(0 4px 14px rgba(238, 33, 48, 0.28));
+  transform: translateY(-2px);
 }
 
 .fluid-metric-number.counted {
   color: #0b1329;
-  transform: translateY(0) scale(1);
-  filter: none;
+  transform: translateY(0);
 }
 
 .fluid-metric-number .metric-val {
@@ -342,9 +301,9 @@ body.about-page {
 }
 
 .fluid-metric-number .metric-unit {
-  font-size: 0.62em;
+  font-size: 0.6em;
   font-weight: 600;
-  color: #475569;
+  color: #64748b;
   margin-left: 3px;
   letter-spacing: 0;
 }
@@ -353,11 +312,31 @@ body.about-page {
   color: var(--color-accent);
 }
 
-.fluid-metric-label {
+/* Back Face: Description Only in Same Position (NO BOX CONTAINER) */
+.metric-flip-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.metric-back-kicker {
   font-family: var(--font-body);
-  font-size: 13px;
-  color: #64748b;
-  line-height: 1.48;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.metric-flip-back .fluid-metric-label {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.55;
+  margin: 0;
   font-weight: 500;
 }
 

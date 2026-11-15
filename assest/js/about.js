@@ -37,6 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
+  // 1b. Site Header Entrance & Scroll Spy (Ensures Navbar Always Visible)
+  // ---------------------------------------------------------------------------
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    siteHeader.classList.add('loaded');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 30) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }, { passive: true });
+  }
+
+  // ---------------------------------------------------------------------------
   // 2. Mobile Drawer Navigation
   // ---------------------------------------------------------------------------
   const mobileToggle = document.querySelector('.mobile-toggle');
@@ -220,7 +235,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 6. Smooth Scroll Reveal via IntersectionObserver
   // ---------------------------------------------------------------------------
   const revealElements = document.querySelectorAll(
-    '.mv-cut-img-primary, .mv-cut-img-secondary, .mv-pillar-item, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-card'
+    '.mv-cut-img-primary, .mv-cut-img-secondary, .mv-pillar-item, .offer-row, .founder-photo-cut, .bridge-stream-item, .project-stream-card, .fluid-metric-flip-col'
   );
 
   if ('IntersectionObserver' in window && revealElements.length > 0) {
@@ -337,83 +352,82 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
-  // 8. Dynamic Auto-Flip & Interactive Hover System for Stats Cards
-  // (Front: Number & Title; Back: Detailed Description via Hover & Auto-Cycling)
+  // 8. Dynamic 3D Auto-Flip System (Flips automatically when no human interaction)
+  // (Front: Number & Title; Back: Clean Description on 3D Flip; Zero Boxes)
   // ---------------------------------------------------------------------------
-  const flipCards = document.querySelectorAll('.fluid-metric-flip-card');
-  if (flipCards.length > 0) {
-    let currentAutoIndex = 0;
-    let autoFlipInterval = null;
-    let isUserInteracting = false;
-    let resumeTimeout = null;
+  const flipCols = document.querySelectorAll('.fluid-metric-flip-col');
+  const metricStrip = document.getElementById('statsStrip');
 
-    const clearAllAutoFlips = () => {
-      flipCards.forEach(card => card.classList.remove('auto-flipped'));
+  if (flipCols.length > 0) {
+    let currentAutoIndex = 0;
+    let autoInterval = null;
+    let userInteracting = false;
+    let resetTimer = null;
+
+    const clearAllFlips = () => {
+      flipCols.forEach(col => col.classList.remove('auto-flipped'));
     };
 
-    const runAutoFlipStep = () => {
-      if (isUserInteracting) return;
+    const runAutoStep = () => {
+      if (userInteracting) return;
 
-      clearAllAutoFlips();
-      const targetCard = flipCards[currentAutoIndex];
-      if (targetCard) {
-        // Flip to back to display description
-        targetCard.classList.add('auto-flipped');
+      clearAllFlips();
+      const targetCol = flipCols[currentAutoIndex];
+      if (targetCol) {
+        // 3D Flip to back side to reveal description
+        targetCol.classList.add('auto-flipped');
 
-        // Turn back to front after 2.8 seconds
+        // Turn back to front after 3 seconds
         setTimeout(() => {
-          if (!isUserInteracting && targetCard.classList.contains('auto-flipped')) {
-            targetCard.classList.remove('auto-flipped');
+          if (!userInteracting && targetCol.classList.contains('auto-flipped')) {
+            targetCol.classList.remove('auto-flipped');
           }
-        }, 2800);
+        }, 3000);
       }
 
-      currentAutoIndex = (currentAutoIndex + 1) % flipCards.length;
+      currentAutoIndex = (currentAutoIndex + 1) % flipCols.length;
     };
 
-    const startAutoCycle = () => {
-      if (autoFlipInterval) clearInterval(autoFlipInterval);
-      autoFlipInterval = setInterval(runAutoFlipStep, 4500);
+    const startAutoLoop = () => {
+      if (autoInterval) clearInterval(autoInterval);
+      autoInterval = setInterval(runAutoStep, 3800);
     };
 
-    const pauseAutoCycle = () => {
-      isUserInteracting = true;
-      if (resumeTimeout) clearTimeout(resumeTimeout);
-      clearAllAutoFlips();
-    };
-
-    const resumeAutoCycleAfterDelay = () => {
-      if (resumeTimeout) clearTimeout(resumeTimeout);
-      resumeTimeout = setTimeout(() => {
-        isUserInteracting = false;
-        clearAllAutoFlips();
-      }, 3500);
-    };
-
-    flipCards.forEach(card => {
-      // Mouse Hover: user directly inspects card
-      card.addEventListener('mouseenter', () => {
-        pauseAutoCycle();
+    if (metricStrip) {
+      metricStrip.addEventListener('mouseenter', () => {
+        userInteracting = true;
+        if (resetTimer) clearTimeout(resetTimer);
+        clearAllFlips();
       });
 
-      card.addEventListener('mouseleave', () => {
-        resumeAutoCycleAfterDelay();
+      metricStrip.addEventListener('mouseleave', () => {
+        if (resetTimer) clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          userInteracting = false;
+          clearAllFlips();
+        }, 1800);
       });
+    }
 
-      // Mobile Tap Toggle Support
-      card.addEventListener('click', (e) => {
-        pauseAutoCycle();
-        const currentlyFlipped = card.classList.contains('auto-flipped');
-        clearAllAutoFlips();
-        if (!currentlyFlipped) {
-          card.classList.add('auto-flipped');
-        }
-        resumeAutoCycleAfterDelay();
+    flipCols.forEach(col => {
+      col.addEventListener('click', () => {
+        userInteracting = true;
+        const isFlipped = col.classList.contains('auto-flipped');
+        clearAllFlips();
+        if (!isFlipped) col.classList.add('auto-flipped');
+        if (resetTimer) clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+          userInteracting = false;
+          clearAllFlips();
+        }, 3000);
       });
     });
 
-    // Start auto-flipping after 2.2s once page reveals and counter has rolled
-    setTimeout(startAutoCycle, 2200);
+    // Start auto-flip loop after 1.8s
+    setTimeout(() => {
+      runAutoStep();
+      startAutoLoop();
+    }, 1800);
   }
 
 });
