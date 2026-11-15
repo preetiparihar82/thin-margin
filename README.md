@@ -24,7 +24,7 @@ Headquartered in Kota, Rajasthan, The Thin Margin (TM) delivers turnkey material
 
 ## Contact & Statutory Information
 - **Registered Office**: 131, Riddhi Siddhi Nagar-1st, Kunhari, Kota – 324008, Rajasthan, India
-- **Phone**: +91 80940 02542 / +91 80000 71639 / +91 80940 02666
-- **Email**: contact.thinmargin@gmail.com / kulshreshtha.neelraj@gmail.com / info@thinmargin.in
+- **Phone**: +91 95580 35477 (WhatsApp) / +91 80940 02542 / +91 80000 71639
+- **Email**: info@thinmargin.in
 - **GSTIN**: 08AEDPK0504Q1ZG
 - **MSME**: UDYAM-RJ-24-0003207
