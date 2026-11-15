@@ -245,4 +245,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---------------------------------------------------------------------------
+  // 7. Dynamic Stats Count-Up Animation
+  // ---------------------------------------------------------------------------
+  const statsStrip = document.getElementById('statsStrip');
+  const metricNumbers = document.querySelectorAll('.fluid-metric-number[data-target]');
+
+  if (statsStrip && metricNumbers.length > 0) {
+    let animated = false;
+
+    const animateCount = (el) => {
+      const target = parseFloat(el.getAttribute('data-target'));
+      const decimals = parseInt(el.getAttribute('data-decimals') || '0', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      const duration = 1600; // ms
+      const startTime = performance.now();
+
+      const updateCount = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // Ease out expo: 1 - Math.pow(2, -10 * progress)
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        const currentVal = easeProgress * target;
+
+        el.textContent = currentVal.toFixed(decimals) + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(updateCount);
+        } else {
+          el.textContent = target.toFixed(decimals) + suffix;
+        }
+      };
+
+      requestAnimationFrame(updateCount);
+    };
+
+    if ('IntersectionObserver' in window) {
+      const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            metricNumbers.forEach(el => animateCount(el));
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.2
+      });
+
+      statsObserver.observe(statsStrip);
+    } else {
+      metricNumbers.forEach(el => animateCount(el));
+    }
+  }
+
 });
