@@ -4358,3 +4358,639 @@ textarea.pill-input {
 .workflow-acc-item.active .workflow-card-desc {
   color: #0f172a;
 }
+
+/* ==========================================================================
+   THEMEFOREST LOGINT REDESIGN STYLES:
+   - Signature Floating Tracking & Quick Quote Bar Overlapping Hero
+   - Geometric Cutouts (Polygon Chamfers & Angled Card Corners)
+   - 6-Card Flagship Logistics Suite with Dynamic Hover Zoom
+   - Dark Navy Capabilities Cards (Image 7 Reference)
+   - Interactive Workflow Connected Line
+   ========================================================================== */
+
+/* --- 1. FLOATING TRACKING & QUICK QUOTE DOCK --- */
+.hero-track-quote-bar {
+  position: relative;
+  max-width: 1220px;
+  margin: -65px auto 48px;
+  z-index: 45;
+  padding: 0 24px;
+}
+
+.track-quote-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 26px 70px rgba(7, 12, 26, 0.16), 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.track-quote-card:hover {
+  box-shadow: 0 32px 85px rgba(7, 12, 26, 0.2), 0 6px 26px rgba(0, 0, 0, 0.08);
+}
+
+.track-quote-tabs {
+  display: flex;
+  background: #0b1329;
+  border-bottom: 2px solid rgba(238, 33, 48, 0.85);
+}
+
+.track-tab-btn {
+  flex: 1;
+  padding: 18px 28px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.track-tab-btn i {
+  font-size: 16px;
+  color: var(--color-accent);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.track-tab-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.track-tab-btn.active {
+  background: var(--color-accent);
+  color: #ffffff;
+}
+
+.track-tab-btn.active i {
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.track-quote-body {
+  padding: 28px 34px 32px;
+  background: #ffffff;
+}
+
+.track-quote-pane {
+  display: none;
+  animation: fadeInPane 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.track-quote-pane.active {
+  display: block;
+}
+
+@keyframes fadeInPane {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.track-form-grid {
+  display: grid;
+  grid-template-columns: 1.8fr 1.3fr 1.1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.quote-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1.1fr;
+  gap: 16px;
+  align-items: center;
+}
+
+.track-input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.track-input-icon {
+  position: absolute;
+  left: 18px;
+  color: #94a3b8;
+  font-size: 15px;
+  pointer-events: none;
+  transition: color 0.25s ease;
+}
+
+.track-input-field {
+  width: 100%;
+  height: 52px;
+  padding: 12px 18px 12px 46px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 500;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.track-input-field:focus {
+  background: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px rgba(238, 33, 48, 0.12);
+}
+
+.track-input-field:focus + .track-input-icon,
+.track-input-group:focus-within .track-input-icon {
+  color: var(--color-accent);
+}
+
+.track-select-field {
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  padding-right: 42px;
+}
+
+.btn-track-submit {
+  height: 52px;
+  background: linear-gradient(135deg, var(--color-accent) 0%, #c81423 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 0 26px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 8px 24px rgba(238, 33, 48, 0.32);
+  white-space: nowrap;
+  width: 100%;
+}
+
+.btn-track-submit:hover {
+  background: linear-gradient(135deg, #ff3344 0%, var(--color-accent) 100%);
+  box-shadow: 0 12px 30px rgba(238, 33, 48, 0.45);
+  transform: translateY(-2px);
+}
+
+.btn-track-submit:active {
+  transform: translateY(0);
+}
+
+.btn-track-submit i {
+  transition: transform 0.3s ease;
+}
+
+.btn-track-submit:hover i {
+  transform: translateX(4px);
+}
+
+/* Simulated Live Tracking Results Box */
+.tracking-status-display {
+  display: none;
+  margin-top: 20px;
+  padding: 18px 22px;
+  background: #0b1329;
+  border-radius: 14px;
+  border-left: 4px solid var(--color-accent);
+  color: #ffffff;
+  animation: slideDownStatus 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDownStatus {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tracking-status-display.active {
+  display: block;
+}
+
+.track-status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.track-id-badge {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  background: rgba(238, 33, 48, 0.15);
+  padding: 4px 10px;
+  border-radius: 6px;
+  text-transform: uppercase;
+}
+
+.track-eta {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.track-eta strong {
+  color: #22c55e;
+}
+
+.track-route-text {
+  font-size: 15px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.track-telemetry-tags {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.track-telemetry-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.track-telemetry-tags i {
+  color: var(--color-accent);
+}
+
+/* --- 2. GEOMETRIC CUTOUT SHAPES & CORNERS (Logint Style) --- */
+.logint-chamfer-tr {
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+}
+
+.logint-chamfer-bl {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 28px 100%, 0 calc(100% - 28px));
+}
+
+.logint-chamfer-br {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), calc(100% - 28px) 100%, 0 100%);
+}
+
+.logint-notch-tag {
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 0 100%);
+}
+
+/* Experience Floating Badge */
+.logint-exp-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background: #ffffff;
+  padding: 16px 22px;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+  animation: badgeHoverFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes badgeHoverFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.exp-badge-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(238, 33, 48, 0.1);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.exp-badge-info h5 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b1329;
+  line-height: 1.2;
+}
+
+.exp-badge-info p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --- 3. SERVICES SUITE 6-CARD GRID & HOVER ZOOM --- */
+.services-suite-grid-6 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 48px;
+}
+
+.logint-service-card {
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px rgba(11, 19, 41, 0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.logint-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(238, 33, 48, 0.35);
+  box-shadow: 0 24px 50px rgba(11, 19, 41, 0.12), 0 0 20px rgba(238, 33, 48, 0.08);
+}
+
+.logint-service-media {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+  background: #0b1329;
+}
+
+.logint-service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logint-service-card:hover .logint-service-img {
+  transform: scale(1.08);
+}
+
+.logint-card-icon-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  background: #ffffff;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  z-index: 5;
+  transition: all 0.35s ease;
+}
+
+.logint-service-card:hover .logint-card-icon-badge {
+  background: var(--color-accent);
+  color: #ffffff;
+  transform: rotate(360deg);
+}
+
+.logint-service-content {
+  padding: 26px 26px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.logint-service-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  color: #0b1329;
+  line-height: 1.3;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.logint-service-card:hover .logint-service-title {
+  color: var(--color-accent);
+}
+
+.logint-service-desc {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #64748b;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.logint-service-specs {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.logint-spec-item {
+  font-size: 13.5px;
+  color: #334155;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logint-spec-item i {
+  color: var(--color-accent);
+  font-size: 11px;
+}
+
+.logint-service-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logint-action-link {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b1329;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.logint-action-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  color: #0b1329;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.logint-service-card:hover .logint-action-link {
+  color: var(--color-accent);
+}
+
+.logint-service-card:hover .logint-action-circle {
+  background: var(--color-accent);
+  color: #ffffff;
+  transform: translateX(4px);
+}
+
+/* --- 4. DARK NAVY CAPABILITIES SECTION (Image 7 Reference) --- */
+.dark-capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.dark-capability-card {
+  background: #070e20;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 32px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+  position: relative;
+}
+
+.dark-capability-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(238, 33, 48, 0.45);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 25px rgba(238, 33, 48, 0.12);
+}
+
+.dark-cap-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.dark-cap-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.dark-cap-icon {
+  font-size: 22px;
+  color: var(--color-accent);
+  margin-left: 14px;
+  transition: transform 0.3s ease;
+}
+
+.dark-capability-card:hover .dark-cap-icon {
+  transform: scale(1.15);
+}
+
+.dark-cap-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.dark-cap-media {
+  width: 100%;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.dark-cap-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-capability-card:hover .dark-cap-img {
+  transform: scale(1.08);
+}
+
+/* Responsive adjustments for Track Quote Bar & Grids */
+@media (max-width: 1080px) {
+  .hero-track-quote-bar {
+    margin-top: -40px;
+  }
+  .track-form-grid,
+  .quote-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .services-suite-grid-6,
+  .dark-capabilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-track-quote-bar {
+    margin-top: -20px;
+    padding: 0 14px;
+  }
+  .track-tab-btn {
+    padding: 14px 16px;
+    font-size: 13.5px;
+  }
+  .track-quote-body {
+    padding: 20px 18px 24px;
+  }
+  .track-form-grid,
+  .quote-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-suite-grid-6,
+  .dark-capabilities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
