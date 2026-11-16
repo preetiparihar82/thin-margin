@@ -18,8 +18,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet & Bespoke Panoramic About Page Styles -->
-  <link rel="stylesheet" href="assest/css/style.css?v=3.0">
-  <link rel="stylesheet" href="assest/css/about.css?v=3.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=3.1">
+  <link rel="stylesheet" href="assest/css/about.css?v=3.1">
 </head>
 <body class="about-page">
 
@@ -339,13 +339,13 @@
   </section>
 
   <!-- =========================================================================
-       4. WHY THIN MARGIN & REAL OPERATIONS VIDEO SHOWCASE
+       4. WHY THIN MARGIN & REAL OPERATIONS VIDEO SHOWCASE (Interactive Telemetry Stream)
        ========================================================================= -->
   <section class="why-video-section" id="why-thin-margin">
     <div class="why-video-container">
       <div class="why-video-grid">
         
-        <!-- Left: Cinema Video Frame with Real Operations Video -->
+        <!-- Left: Cinema Telemetry Video Player -->
         <div class="cinema-video-frame">
           
           <video id="aboutWorkVideo" class="cinema-video-element" playsinline loop muted autoplay poster="assest/images/warehouseimgcompany.webp" src="assest/images/working in managemnet.mp4">
@@ -353,78 +353,146 @@
             Your browser does not support the video tag.
           </video>
 
-          <!-- Floating HUD Pill -->
+          <!-- Subtle Top Ambient Vignette -->
+          <div class="cinema-ambient-vignette"></div>
+
+          <!-- Floating Live HUD Pill -->
           <div class="video-hud-pill">
             <span class="hud-live-dot"></span>
-            <span>GROUND OPS &bull; CONTAINER DECANTATION</span>
+            <span id="videoHudStatus">GROUND OPS &bull; CONTAINER DECANTATION</span>
           </div>
 
-          <!-- Video Control Bar -->
+          <!-- Floating Dynamic Telemetry Badge -->
+          <div class="video-telemetry-badge" id="videoTelemetryBadge">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <span id="videoTelemetryText">Live Yard Telemetry</span>
+          </div>
+
+          <!-- Real-Time Video Progress Scrubber Bar -->
+          <div class="video-progress-tracker" aria-hidden="true">
+            <div class="video-progress-fill" id="videoProgressFill"></div>
+          </div>
+
+          <!-- Interactive Cinema Controls Bar -->
           <div class="cinema-controls-bar">
-            <div style="display: flex; align-items: center; gap: 12px;">
+            <div class="cinema-controls-left">
               <button type="button" class="cinema-ctrl-btn" id="videoPlayPauseBtn" aria-label="Pause or play ground operations video">
                 <i class="fa-solid fa-pause"></i>
               </button>
               <button type="button" class="cinema-ctrl-btn" id="videoMuteBtn" aria-label="Mute or unmute video audio">
                 <i class="fa-solid fa-volume-xmark"></i>
               </button>
-              <span style="font-family: 'Plus Jakarta Sans', sans-serif; font-size: 12.5px; font-weight: 600; color: #ffffff;">
-                Live Telemetry: Active Yard Staging
-              </span>
+              <div class="cinema-live-caption">
+                <span class="caption-label">Telemetry Stream</span>
+                <span class="caption-title" id="videoActiveCaption">Techno-Commercial Leadership</span>
+              </div>
             </div>
 
-            <div style="display: flex; gap: 8px;">
-              <span class="cinema-meta-tag"><i class="fa-solid fa-check" style="color: #22c55e;"></i> Mechanized Rigging</span>
-              <span class="cinema-meta-tag"><i class="fa-solid fa-check" style="color: #22c55e;"></i> 24-Hr Turnaround</span>
+            <div class="cinema-controls-right">
+              <span class="cinema-meta-tag tag-rigging" id="cinemaTag1"><i class="fa-solid fa-check"></i> GW-Scale Logistics</span>
+              <span class="cinema-meta-tag tag-turnaround" id="cinemaTag2"><i class="fa-solid fa-check"></i> Milestone Defense</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Right: Why Thin Margin - Numbered Value Stream (No Boxes) -->
+        <!-- Right: Interactive Dynamic Capability Stream -->
         <div class="why-flow-stream">
-          <span class="mv-section-tag">
-            <i class="fa-solid fa-award"></i> The Thin Margin Edge
-          </span>
+          
+          <div class="why-tag-pill">
+            <span class="why-tag-dot"></span>
+            <span>The Thin Margin Edge</span>
+          </div>
+
           <h2 class="why-flow-title">
-            Why India's Foremost Enterprise Leaders Choose Us
+            Why India's Foremost Enterprise Leaders <span class="title-highlight">Choose Us</span>
           </h2>
+
           <p class="why-flow-subtitle">
             How our engineered techno-commercial methodology outperforms conventional transport brokers and fragmented logistics vendors.
           </p>
 
-          <div class="why-points-list">
+          <!-- Interactive Dynamic Cards Deck with Live Telemetry Sync -->
+          <div class="why-interactive-deck" id="whyCapabilitiesDeck">
             
-            <div class="why-point-row">
-              <div class="why-point-num">01</div>
-              <div class="why-point-text">
-                <h5>Techno-Commercial Leadership</h5>
-                <p>Managed by veterans with over a decade of hands-on leadership executing GW-scale solar parks and thermal power stations. We understand civil milestone dependencies, crane idle costs, and balance sheet protection.</p>
+            <!-- Card 01 -->
+            <div class="why-deck-card active cycling" data-index="0" data-hud="GROUND OPS &bull; GW SOLAR &amp; THERMAL" data-telemetry="GW-Scale Infrastructure" data-caption="Techno-Commercial Leadership" data-tag1="GW-Scale Logistics" data-tag2="Milestone Defense">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
               </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">01</span>
+                  <i class="fa-solid fa-compass-drafting num-icon"></i>
+                </div>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Techno-Commercial Leadership</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-award"></i> Decade+ GW Expertise</span>
+                </div>
+              </div>
+              <p class="deck-card-desc">
+                Managed by veterans with over a decade of hands-on leadership executing GW-scale solar parks and thermal power stations. We understand civil milestone dependencies, crane idle costs, and balance sheet protection.
+              </p>
             </div>
 
-            <div class="why-point-row">
-              <div class="why-point-num">02</div>
-              <div class="why-point-text">
-                <h5>Demurrage Neutrality Guarantee</h5>
-                <p>Dedicated rapid decantation crews stationed near key ports (Mundra, Kandla, Tuticorin) and ICD railheads ensure imported containers are de-stuffed and returned within 24 hours, shielding clients from penal shipping fees.</p>
+            <!-- Card 02 -->
+            <div class="why-deck-card" data-index="1" data-hud="PORT VELOCITY &bull; 24-HR CONTAINER DECANTATION" data-telemetry="Zero Demurrage Guaranteed" data-caption="Demurrage Neutrality Guarantee" data-tag1="24-Hr Port Turnaround" data-tag2="Penal Fee Shield">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
               </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">02</span>
+                  <i class="fa-solid fa-stopwatch-24 num-icon"></i>
+                </div>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Demurrage Neutrality Guarantee</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-anchor"></i> 24-Hr Port Turnaround</span>
+                </div>
+              </div>
+              <p class="deck-card-desc">
+                Dedicated rapid decantation crews stationed near key ports (Mundra, Kandla, Tuticorin) and ICD railheads ensure imported containers are de-stuffed and returned within 24 hours, shielding clients from penal shipping fees.
+              </p>
             </div>
 
-            <div class="why-point-row">
-              <div class="why-point-num">03</div>
-              <div class="why-point-text">
-                <h5>Real-Time SAP/ERP Sync</h5>
-                <p>Eliminating blind spots through serialized barcode/QR tagging, digital Good Receipt Note (GRN) logging, and instant synchronization with client ERP suites (SAP S/4HANA, Oracle).</p>
+            <!-- Card 03 -->
+            <div class="why-deck-card" data-index="2" data-hud="TELEMETRY &bull; REAL-TIME SAP/ERP SYNC" data-telemetry="Serialized QR Logging" data-caption="Real-Time SAP/ERP Sync" data-tag1="Digital GRN Logging" data-tag2="Instant Telemetry">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
               </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">03</span>
+                  <i class="fa-solid fa-network-wired num-icon"></i>
+                </div>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Real-Time SAP/ERP Sync</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-qrcode"></i> Serialized ERP Sync</span>
+                </div>
+              </div>
+              <p class="deck-card-desc">
+                Eliminating blind spots through serialized barcode/QR tagging, digital Good Receipt Note (GRN) logging, and instant synchronization with client ERP suites (SAP S/4HANA, Oracle).
+              </p>
             </div>
 
-            <div class="why-point-row">
-              <div class="why-point-num">04</div>
-              <div class="why-point-text">
-                <h5>Turnkey Port-to-Foundation Execution</h5>
-                <p>A single, unbroken line of accountability from maritime port discharge through heavy multi-axle haulage, engineered laydown storage, and precision crane placement directly at the foundation.</p>
+            <!-- Card 04 -->
+            <div class="why-deck-card" data-index="3" data-hud="CUSTODY &bull; TURNKEY PORT-TO-FOUNDATION" data-telemetry="Unbroken Chain of Custody" data-caption="Turnkey Port-to-Foundation Execution" data-tag1="Heavy Multi-Axle Haulage" data-tag2="Precision Crane Placement">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
               </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">04</span>
+                  <i class="fa-solid fa-truck-ramp-box num-icon"></i>
+                </div>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Turnkey Port-to-Foundation Execution</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-shield-halved"></i> Unbroken Chain of Custody</span>
+                </div>
+              </div>
+              <p class="deck-card-desc">
+                A single, unbroken line of accountability from maritime port discharge through heavy multi-axle haulage, engineered laydown storage, and precision crane placement directly at the foundation.
+              </p>
             </div>
 
           </div>
@@ -1037,6 +1105,6 @@
   </div>
 
   <!-- JavaScript Files -->
-  <script src="assest/js/about.js?v=3.0"></script>
+  <script src="assest/js/about.js?v=3.1"></script>
 </body>
 </html>

@@ -84,11 +84,130 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---------------------------------------------------------------------------
-  // 3. Ground Operations Video Player Controls
+  // 3. Ground Operations Video Player & Interactive Capability Deck
   // ---------------------------------------------------------------------------
   const workVideo = document.getElementById('aboutWorkVideo');
   const playPauseBtn = document.getElementById('videoPlayPauseBtn');
   const muteBtn = document.getElementById('videoMuteBtn');
+  const videoProgressFill = document.getElementById('videoProgressFill');
+  const videoHudStatus = document.getElementById('videoHudStatus');
+  const videoTelemetryText = document.getElementById('videoTelemetryText');
+  const videoActiveCaption = document.getElementById('videoActiveCaption');
+  const cinemaTag1 = document.getElementById('cinemaTag1');
+  const cinemaTag2 = document.getElementById('cinemaTag2');
+
+  const deckCards = document.querySelectorAll('.why-deck-card');
+  const deckContainer = document.getElementById('whyCapabilitiesDeck');
+
+  if (deckCards.length > 0) {
+    let currentActiveIndex = 0;
+    let cycleTimer = null;
+    let userPausedCycle = false;
+    const CYCLE_DURATION = 5000; // 5 seconds per capability
+
+    const activateCard = (index) => {
+      deckCards.forEach((c, idx) => {
+        c.classList.remove('active', 'cycling');
+        if (idx === index) {
+          c.classList.add('active');
+          if (!userPausedCycle) {
+            void c.offsetWidth; // trigger reflow for smooth progress bar fill
+            c.classList.add('cycling');
+          }
+
+          // Synchronize Video HUD & Captions
+          const hud = c.getAttribute('data-hud');
+          const telemetry = c.getAttribute('data-telemetry');
+          const caption = c.getAttribute('data-caption');
+          const tag1 = c.getAttribute('data-tag1');
+          const tag2 = c.getAttribute('data-tag2');
+
+          if (videoHudStatus && hud) {
+            videoHudStatus.style.opacity = '0';
+            setTimeout(() => {
+              videoHudStatus.innerHTML = hud;
+              videoHudStatus.style.opacity = '1';
+            }, 180);
+          }
+
+          if (videoTelemetryText && telemetry) {
+            videoTelemetryText.style.opacity = '0';
+            setTimeout(() => {
+              videoTelemetryText.textContent = telemetry;
+              videoTelemetryText.style.opacity = '1';
+            }, 180);
+          }
+
+          if (videoActiveCaption && caption) {
+            videoActiveCaption.style.opacity = '0';
+            setTimeout(() => {
+              videoActiveCaption.textContent = caption;
+              videoActiveCaption.style.opacity = '1';
+            }, 180);
+          }
+
+          if (cinemaTag1 && tag1) {
+            cinemaTag1.innerHTML = `<i class="fa-solid fa-check"></i> ${tag1}`;
+          }
+          if (cinemaTag2 && tag2) {
+            cinemaTag2.innerHTML = `<i class="fa-solid fa-check"></i> ${tag2}`;
+          }
+        }
+      });
+      currentActiveIndex = index;
+    };
+
+    const startCycle = () => {
+      if (cycleTimer) clearInterval(cycleTimer);
+      deckCards[currentActiveIndex]?.classList.add('cycling');
+      cycleTimer = setInterval(() => {
+        if (!userPausedCycle) {
+          const nextIndex = (currentActiveIndex + 1) % deckCards.length;
+          activateCard(nextIndex);
+        }
+      }, CYCLE_DURATION);
+    };
+
+    const stopCycle = () => {
+      if (cycleTimer) clearInterval(cycleTimer);
+      deckCards.forEach(c => c.classList.remove('cycling'));
+    };
+
+    // User interaction with cards
+    deckCards.forEach((card, idx) => {
+      card.addEventListener('mouseenter', () => {
+        userPausedCycle = true;
+        stopCycle();
+        activateCard(idx);
+      });
+
+      card.addEventListener('click', () => {
+        userPausedCycle = true;
+        stopCycle();
+        activateCard(idx);
+      });
+    });
+
+    if (deckContainer) {
+      deckContainer.addEventListener('mouseleave', () => {
+        userPausedCycle = false;
+        startCycle();
+      });
+    }
+
+    // Start auto cycle initially
+    startCycle();
+  }
+
+  // Video progress bar tracking
+  if (workVideo && videoProgressFill) {
+    workVideo.addEventListener('timeupdate', () => {
+      if (workVideo.duration) {
+        const pct = (workVideo.currentTime / workVideo.duration) * 100;
+        videoProgressFill.style.width = `${pct}%`;
+      }
+    });
+  }
 
   if (workVideo && playPauseBtn) {
     // Attempt autoplay muted safely
