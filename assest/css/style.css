@@ -4921,3 +4921,523 @@ textarea.pill-input {
   }
 }
 
+/* ==========================================================================
+   3D DIGITAL TWIN & REAL-TIME MATERIAL TELEMETRY SECTION
+   Scroll-Driven Three.js WebGL Interactive Laydown Matrix
+   ========================================================================== */
+.digital-twin-section {
+  position: relative;
+  padding: 120px 0 130px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 40%, #f1f5f9 100%);
+  overflow: hidden;
+  border-top: 1px solid rgba(226, 232, 240, 0.85);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+}
+
+.digital-twin-container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 32px;
+  position: relative;
+  z-index: 2;
+}
+
+.digital-twin-header {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto 65px;
+}
+
+.digital-twin-title {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.8vw, 48px);
+  font-weight: 800;
+  color: #0b1329;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.digital-twin-subtitle {
+  font-family: var(--font-body);
+  font-size: 16.5px;
+  line-height: 1.7;
+  color: #475569;
+}
+
+.twin-stage-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* 3D WebGL Canvas Viewport Stage */
+.twin-viewport-frame {
+  position: relative;
+  background: radial-gradient(circle at 50% 40%, rgba(255, 255, 255, 0.95) 0%, rgba(241, 245, 249, 0.9) 100%);
+  border-radius: 28px;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 25px 60px -15px rgba(11, 19, 41, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  overflow: hidden;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+}
+
+.twin-webgl-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  cursor: grab;
+}
+
+.twin-webgl-canvas:active {
+  cursor: grabbing;
+}
+
+/* Floating HUD Elements inside 3D Viewport */
+.twin-hud-top {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.twin-hud-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 100px;
+  box-shadow: 0 8px 24px -4px rgba(11, 19, 41, 0.06);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #0b1329;
+}
+
+.twin-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 0 rgba(238, 33, 48, 0.7);
+  animation: pulseBeacon 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes pulseBeacon {
+  0% {
+    box-shadow: 0 0 0 0 rgba(238, 33, 48, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(238, 33, 48, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(238, 33, 48, 0);
+  }
+}
+
+.coordinates-pill {
+  color: #64748b;
+  font-size: 11px;
+}
+.coordinates-pill i {
+  color: var(--color-accent);
+}
+
+.twin-hud-center-tip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: opacity 0.5s ease;
+}
+
+.twin-hud-center-tip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(11, 19, 41, 0.07);
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #334155;
+  letter-spacing: 0.03em;
+}
+
+.twin-hud-bottom {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 20px;
+  padding: 16px 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  z-index: 10;
+  box-shadow: 0 12px 32px -8px rgba(11, 19, 41, 0.06);
+}
+
+.twin-hud-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.twin-stat-label {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.twin-stat-val {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0b1329;
+}
+
+.twin-stat-val.text-accent {
+  color: var(--color-accent);
+}
+
+/* Right Column: Interactive Waypoint Cards */
+.twin-telemetry-console {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.twin-node-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  padding: 22px 26px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px -2px rgba(11, 19, 41, 0.03);
+}
+
+.twin-node-card:hover {
+  transform: translateX(6px);
+  border-color: rgba(238, 33, 48, 0.35);
+  box-shadow: 0 16px 36px -8px rgba(238, 33, 48, 0.08);
+}
+
+.twin-node-card.active {
+  background: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: 0 18px 45px -10px rgba(238, 33, 48, 0.12), 0 0 0 1px var(--color-accent) inset;
+  transform: translateX(10px);
+}
+
+.twin-node-marker {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+}
+
+.twin-node-card.active .twin-node-marker {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+  box-shadow: 0 8px 20px -4px rgba(238, 33, 48, 0.45);
+}
+
+.node-idx {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0b1329;
+  transition: color 0.3s ease;
+}
+
+.twin-node-card.active .node-idx {
+  color: #ffffff;
+}
+
+.node-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 18px;
+  border: 2px solid var(--color-accent);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.twin-node-card.active .node-pulse-ring {
+  opacity: 0.6;
+  animation: nodeRingPulse 2.4s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes nodeRingPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.3);
+    opacity: 0;
+  }
+}
+
+.twin-node-info {
+  flex: 1;
+}
+
+.node-tag-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+
+.node-tag-chip {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.twin-node-card.active .node-tag-chip {
+  color: var(--color-accent);
+}
+
+.node-live-status {
+  font-size: 11px;
+  font-weight: 600;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.node-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b1329;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.twin-node-card.active .node-title {
+  color: #0b1329;
+}
+
+.node-desc {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+.node-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.node-meta-row span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #334155;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.node-meta-row span i {
+  color: var(--color-accent);
+  font-size: 10px;
+}
+
+/* Hero Laser Scanner & Floating Telemetry Accents */
+.hero-image-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  perspective: 1000px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.scanner-laser-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #ee2130 50%, transparent 100%);
+  box-shadow: 0 0 15px 4px rgba(238, 33, 48, 0.7), 0 0 30px 6px rgba(238, 33, 48, 0.4);
+  z-index: 5;
+  pointer-events: none;
+  animation: laserScanSweep 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes laserScanSweep {
+  0% {
+    top: 5%;
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 92%;
+    opacity: 0.85;
+  }
+}
+
+.hero-floating-chip-demurrage {
+  position: absolute;
+  bottom: 80px;
+  left: -20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 16px;
+  color: #0b1329;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  z-index: 9;
+  box-shadow: 0 18px 40px -10px rgba(11, 19, 41, 0.12);
+  animation: floatChip 5s ease-in-out infinite alternate;
+}
+
+@keyframes floatChip {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+.chip-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.chip-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.chip-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #0b1329;
+}
+
+.chip-subtitle {
+  font-size: 11px;
+  font-weight: 600;
+  color: #10b981;
+}
+
+/* Service Card Watermark Numbers */
+.supply-watermark-num {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 44px;
+  font-weight: 900;
+  color: rgba(11, 19, 41, 0.05);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 3;
+  transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.supply-service-card:hover .supply-watermark-num {
+  color: rgba(238, 33, 48, 0.14);
+  transform: translateY(-2px) scale(1.04);
+}
+
+@media (max-width: 1080px) {
+  .twin-stage-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .twin-viewport-frame {
+    min-height: 520px;
+  }
+  .twin-hud-bottom {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-floating-chip-demurrage {
+    left: 10px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .twin-viewport-frame {
+    min-height: 440px;
+  }
+  .twin-hud-bottom {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 14px 18px;
+  }
+  .twin-node-card {
+    padding: 18px 20px;
+  }
+}
+
+
