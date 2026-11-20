@@ -4,52 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Thin Margin - Transport & Logistics Solutions</title>
+  <title>Thin Margin - Turnkey Material &amp; Supply Chain Management</title>
   
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assest/images/thin_margin_logo_white_tight.png">
+  <link rel="icon" type="image/jpeg" href="assest/images/thin_margin_favicon.jpeg">
 
-  <!-- Google Fonts: Plus Jakarta Sans, Outfit & Inter (Modern, Stylish, Executive Typography) -->
+  <!-- Google Fonts: Plus Jakarta Sans, Playfair Display, Lora & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Main Stylesheet (Thin Margin Theme) -->
-  <link rel="stylesheet" href="assest/css/style.css?v=2.6">
+  <!-- Main Stylesheets (Pure Light Theme & Material Management Architecture) -->
+  <link rel="stylesheet" href="assest/css/style.css?v=3.0">
+  <link rel="stylesheet" href="assest/css/about.css?v=3.2">
 </head>
-<body>
+<body class="light-theme-page">
 
   <!-- Smooth Page Preloader -->
   <div class="page-loader" id="pageLoader">
     <div class="loader-content">
       <div class="loader-logo-wrap">
-        <img src="assest/images/thin_margin_logo.png" alt="Thin Margin TM Logo" class="loader-logo-img">
+        <img src="assest/images/thin_margin_logo.png" alt="Thin Margin Logo" class="loader-logo-img">
         <div class="loader-logo-glow"></div>
       </div>
       <div class="loader-track">
         <div class="loader-bar"></div>
       </div>
-      <span class="loader-brand-text">PRECISION LOGISTICS</span>
+      <span class="loader-brand-text">TURNKEY SUPPLY CHAIN PRECISION</span>
     </div>
   </div>
 
-  <!-- Header / Navigation Bar -->
+  <!-- Header / Navigation Bar (Light Crystal Glass Theme) -->
   <header class="site-header">
     <div class="header-container">
       
       <!-- Thin Margin Brand Logo -->
       <a href="index.html" class="header-logo" aria-label="Thin Margin Home">
-        <img src="assest/images/thin_margin_logo_white_tight.png" alt="Thin Margin Logo" class="logo-img" onerror="this.src='assest/images/thin_margin_logo.png'">
+        <img src="assest/images/thin_margin_logo.png" alt="Thin Margin Logo" class="logo-img">
       </a>
 
       <!-- Center Floating Pill Navigation Capsule -->
       <nav class="header-nav" aria-label="Primary Navigation">
         <ul class="nav-capsule">
           
-          <!-- Home (No dropdown) -->
+          <!-- Home -->
           <li class="nav-item active">
             <a href="#home" class="nav-link">Home</a>
           </li>
@@ -59,35 +60,105 @@
             <a href="about.html" class="nav-link">About Us</a>
           </li>
 
-          <!-- Services -->
+          <!-- Services (Enhanced Mega Dropdown with all 8 Services) -->
           <li class="nav-item nav-item-dropdown">
             <a href="#services" class="nav-link">
               Services <i class="fa-solid fa-chevron-down chevron"></i>
             </a>
-            <ul class="dropdown-menu">
-              <li><a href="https://thinmargin.in/expert-services/" target="_blank" rel="noopener noreferrer" class="dropdown-link">Expert Services <i class="fa-solid fa-arrow-right"></i></a></li>
-              <li><a href="https://thinmargin.in/value-added-services/" target="_blank" rel="noopener noreferrer" class="dropdown-link">Value Added Services <i class="fa-solid fa-arrow-right"></i></a></li>
-              <li><a href="https://thinmargin.in/ehs-commitment/" target="_blank" rel="noopener noreferrer" class="dropdown-link">EHS Commitment <i class="fa-solid fa-arrow-right"></i></a></li>
-            </ul>
+            <div class="dropdown-menu-mega">
+              <!-- Service 1: Warehouse & Stores Management -->
+              <a href="#service-warehouse" class="dropdown-link-mega">
+                <i class="fa-solid fa-warehouse service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">Warehouse &amp; Stores Management</span>
+                </div>
+              </a>
+
+              <!-- Service 2: Material & Inventory Management -->
+              <a href="#service-inventory" class="dropdown-link-mega">
+                <i class="fa-solid fa-boxes-stacked service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">Material &amp; Inventory Management</span>
+                </div>
+              </a>
+
+              <!-- Service 3: Logistics & Supply Chain -->
+              <a href="#service-supplychain" class="dropdown-link-mega">
+                <i class="fa-solid fa-network-wired service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">Logistics &amp; Supply Chain</span>
+                </div>
+              </a>
+
+              <!-- Service 4: Procurement & Material Handling -->
+              <a href="#service-procurement" class="dropdown-link-mega">
+                <i class="fa-solid fa-dolly service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">Procurement &amp; Material Handling</span>
+                </div>
+              </a>
+
+              <!-- Service 5: SAP / ERP Solutions -->
+              <a href="#service-saperp" class="dropdown-link-mega">
+                <i class="fa-solid fa-laptop-code service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">SAP / ERP Solutions</span>
+                </div>
+              </a>
+
+              <!-- Service 6: EHS & Compliance -->
+              <a href="#service-ehs" class="dropdown-link-mega">
+                <i class="fa-solid fa-shield-halved service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">EHS &amp; Compliance</span>
+                </div>
+              </a>
+
+              <!-- Service 7: Asset & Facility Management -->
+              <a href="#service-asset" class="dropdown-link-mega">
+                <i class="fa-solid fa-building-shield service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">Asset &amp; Facility Management</span>
+                </div>
+              </a>
+
+              <!-- Service 8: EXIM & Industrial Services -->
+              <a href="#service-exim" class="dropdown-link-mega">
+                <i class="fa-solid fa-ship service-icon"></i>
+                <div class="service-text-wrap">
+                  <span class="service-name">EXIM &amp; Industrial Services</span>
+                </div>
+              </a>
+            </div>
           </li>
 
-          <!-- Blog (No Arrow, Clean Direct Link) -->
+          <!-- Methodology / Process -->
+          <li class="nav-item">
+            <a href="#process" class="nav-link">Process</a>
+          </li>
+
+          <!-- Why Us -->
+          <li class="nav-item">
+            <a href="#why-choose-us" class="nav-link">Why Us</a>
+          </li>
+
+          <!-- Blog -->
           <li class="nav-item">
             <a href="https://thinmargin.in/blog/" target="_blank" rel="noopener noreferrer" class="nav-link">Blog</a>
           </li>
 
           <!-- Contact Us -->
           <li class="nav-item">
-            <a href="#contact" class="nav-link">Contact Us</a>
+            <a href="#contact" class="nav-link">Contact</a>
           </li>
 
         </ul>
       </nav>
 
-      <!-- Right Header Actions (Socials + Book Consult CTA) -->
+      <!-- Right Header Actions -->
       <div class="header-actions">
         
-        <!-- Social Icons: Facebook, X, LinkedIn, Instagram, WhatsApp -->
+        <!-- Social Icons -->
         <div class="header-socials">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
@@ -106,7 +177,7 @@
           </a>
         </div>
 
-        <!-- Book Consult Pill Button with Thin Margin Red Circle -->
+        <!-- Book Consult Pill Button -->
         <a href="#book-consult" class="btn-book-consult open-consult-modal">
           <span>Book Consult</span>
           <span class="arrow-circle">
@@ -128,166 +199,279 @@
     </div>
   </header>
 
-  <!-- Hero Home Section with Background Video Carousel -->
-  <section class="hero-section" id="home">
-    
-    <!-- Hero Slider Track (Background Videos) -->
-    <div class="hero-slider-track">
-      
-      <!-- Slide 1: Heavy Truck Logistics Video (Active Default) -->
-      <div class="hero-slide active" data-slide="0">
-        <video class="hero-slide-video" autoplay muted loop playsinline preload="auto" poster="assest/images/slider-truck-clean.jpg" src="assest/images/hero_video.mp4">
-          <source src="assest/images/hero_video.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <!-- Slide 2: Air Logistics Video -->
-      <div class="hero-slide" data-slide="1">
-        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/slider-plane-clean.jpg" src="assest/images/herovid2.mp4">
-          <source src="assest/images/herovid2.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <!-- Slide 3: Smart Warehousing Video -->
-      <div class="hero-slide" data-slide="2">
-        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/slider-ship-clean.jpg" src="assest/images/herovid3.mp4">
-          <source src="assest/images/herovid3.mp4" type="video/mp4">
-        </video>
-      </div>
-
-    </div>
-
-    <!-- Subtle Light Overlays (Zero glow, natural video clarity) -->
-    <div class="hero-overlay">
-      <div class="hero-overlay-gradient"></div>
-      <div class="hero-overlay-radial"></div>
-    </div>
-
-    <!-- Right Side Curved Notch Pagination Dock (Curved White Tab with Red Active Indicator) -->
-    <aside class="hero-pagination-dock" aria-label="Hero Slider Pagination">
-      <button type="button" class="dock-dot active" data-slide-index="0" aria-label="Slide 1: Heavy Truck Logistics">
-        <span class="dot-tooltip">01 / Truck Logistics</span>
-      </button>
-      <button type="button" class="dock-dot" data-slide-index="1" aria-label="Slide 2: Air Freight Solutions">
-        <span class="dot-tooltip">02 / Air Freight</span>
-      </button>
-      <button type="button" class="dock-dot" data-slide-index="2" aria-label="Slide 3: Smart Warehousing">
-        <span class="dot-tooltip">03 / Warehousing</span>
-      </button>
-    </aside>
-
-    <!-- Bottom Content Container (Split Grid with Smooth Text Animation) -->
-    <div class="hero-content-container">
-      <div class="hero-content-grid">
+  <!-- ==========================================================================
+       EXECUTIVE PURE LIGHT HERO SECTION
+       High-Density Modern Warehousing, Material Custody, Live Telemetry
+       ========================================================================== -->
+  <section class="hero-light-section" id="home">
+    <div class="hero-light-container">
+      <div class="hero-light-grid">
         
-        <!-- Left Side: Tag Pill + Big Bold Headline -->
-        <div class="hero-left-content">
+        <!-- Left: Strategic Narrative & Actions -->
+        <div class="hero-light-content reveal-fade-up">
           
-          <!-- Tag Pill (Clean Sleek Badge, No Dot) -->
-          <div class="hero-tag-pill">
-            <span>INNOVATIVE MATERIAL & LOGISTICS MANAGEMENT PARTNER</span>
+          <div class="hero-light-badge">
+            <i class="fa-solid fa-cubes-stacked"></i>
+            <span>Turnkey Material &amp; Supply Chain Management</span>
           </div>
 
-          <!-- Main Headline with staggered line mask reveal -->
-          <h1 class="hero-title">
-            <span class="title-line-mask">
-              <span class="title-line title-line-1">Where the margin of error is thin,</span>
-            </span>
-            <span class="title-line-mask">
-              <span class="title-line title-line-2">and the last 1% defines the 100%</span>
-            </span>
+          <h1 class="hero-light-title">
+            Where The Margin of Error is Thin, Our Precision Defines <span class="accent-text">Every Capital Asset.</span>
           </h1>
+
+          <p class="hero-light-desc">
+            Institutional-grade stores management, real-time SAP/ERP inventory synchronization, 24-hour container decantation, and turnkey laydown custody for India's foremost renewable energy, thermal power, and industrial infrastructure leaders.
+          </p>
+
+          <div class="hero-light-actions">
+            <a href="#services" class="btn-book-consult" style="padding: 14px 28px;">
+              <span>Explore 8 Core Services</span>
+              <span class="arrow-circle">
+                <svg class="arrow-icon" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+
+            <a href="#contact" class="btn-hero-consult">
+              <i class="fa-regular fa-calendar-check" style="color: var(--color-accent); font-size: 15px;"></i>
+              <span>Book Strategy Consultation</span>
+            </a>
+          </div>
+
+          <!-- Quick Trust Metrics Strip -->
+          <div class="hero-quick-trust">
+            <div class="trust-item">
+              <div class="trust-number">10<span>+</span> Years</div>
+              <div class="trust-label">On-Ground Leadership</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-number">1.2<span>GW+</span></div>
+              <div class="trust-label">Solar &amp; Thermal Custody</div>
+            </div>
+            <div class="trust-item">
+              <div class="trust-number">24<span>Hrs</span></div>
+              <div class="trust-label">Decantation SLA</div>
+            </div>
+          </div>
 
         </div>
 
-        <!-- Right Side: Description + Sub-CTA Button -->
-        <div class="hero-right-content">
-          
-          <p class="hero-description">
-            Streamlining your supply chain with turnkey on-site material management, specialized warehouse sizing, and zero-defect project execution across India.
-          </p>
+        <!-- Right: Modern Supply Chain & Warehousing Visual Frame -->
+        <div class="hero-light-visual reveal-fade-up reveal-stagger-1">
+          <div class="hero-image-frame">
+            <img src="assest/images/hero_supply_chain.jpg" alt="High-Density Industrial Supply Chain &amp; Warehouse Facility" loading="eager">
+            
+            <!-- Live HUD Telemetry Badge (Top Left) -->
+            <div class="hero-hud-telemetry">
+              <span class="pulse-dot" style="width:8px; height:8px; border-radius:50%; background:#ee2130; display:inline-block; box-shadow:0 0 10px #ee2130;"></span>
+              <span>LIVE TELEMETRY: ACTIVE STORES STAGING</span>
+            </div>
 
-          <a href="#services" class="btn-services">
-            <span class="btn-services-text">Our Services</span>
-            <span class="arrow-circle">
-              <svg class="arrow-icon" width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </span>
-          </a>
-
+            <!-- Floating SLA Badge (Bottom Right) -->
+            <div class="hero-floating-sla">
+              <i class="fa-solid fa-shield-halved" style="color: var(--color-accent); font-size: 16px;"></i>
+              <span>100% Zero-Loss Yard Custody SLA</span>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
+  </section>
 
+  <!-- =========================================================================
+       STRATEGIC PERFORMANCE METRICS STRIP (Ref: Image 1 & 2)
+       Fluid 3D Split-Flap Flip Cards & Slot-Reel Counter Animation
+       ========================================================================= -->
+  <section class="about-intro-section" id="metrics">
+    <div class="about-intro-container">
+      
+      <div class="intro-tag-pill">
+        <i class="fa-solid fa-compass-drafting"></i>
+        <span>Techno-Commercial Performance</span>
+      </div>
+
+      <h2 class="intro-headline">
+        Engineering Ground Realities with Uncompromising Precision.
+      </h2>
+
+      <p class="intro-lead-text">
+        Thin Margin delivers specialized warehouse sizing, open laydown storage, 24-hour import container decantation, and synchronized ERP tracking tailored to your operational margins.
+      </p>
+
+      <!-- FLUID 3D FLIP METRIC STRIP (100% Non-Container, Borderless Editorial Layout) -->
+      <div class="fluid-metric-strip" id="statsStrip">
+        
+        <!-- Metric 1: Track Record -->
+        <div class="fluid-metric-flip-col" data-card-index="0" tabindex="0" role="button" aria-label="Track Record statistics: 10+ Years">
+          <div class="metric-flip-inner">
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
+              <div class="fluid-metric-number" data-target="10" data-decimals="0" data-suffix="+" data-unit="Years">
+                <span class="metric-val-wrap"><span class="metric-val">0</span></span><span class="metric-accent">+</span> <span class="metric-unit">Years</span>
+              </div>
+            </div>
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
+              <p class="fluid-metric-label">Industrial supply chain and turnkey mega-project leadership across pan-India corridors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 2: Mega Solar -->
+        <div class="fluid-metric-flip-col" data-card-index="1" tabindex="0" role="button" aria-label="Mega Solar statistics: 1.2GW+">
+          <div class="metric-flip-inner">
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
+              <div class="fluid-metric-number" data-target="1.2" data-decimals="1" data-suffix="GW+" data-unit="">
+                <span class="metric-val-wrap"><span class="metric-val">0.0</span></span><span class="metric-accent">GW+</span>
+              </div>
+            </div>
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
+              <p class="fluid-metric-label">Single-location mega solar park material custody executed with zero loss.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 3: Port Velocity -->
+        <div class="fluid-metric-flip-col" data-card-index="2" tabindex="0" role="button" aria-label="Port Velocity statistics: 24Hrs">
+          <div class="metric-flip-inner">
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
+              <div class="fluid-metric-number" data-target="24" data-decimals="0" data-suffix="Hrs" data-unit="">
+                <span class="metric-val-wrap"><span class="metric-val">0</span></span><span class="metric-accent">Hrs</span>
+              </div>
+            </div>
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
+              <p class="fluid-metric-label">Guaranteed container de-stuffing &amp; empty return turnaround to prevent demurrage.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metric 4: Governance -->
+        <div class="fluid-metric-flip-col" data-card-index="3" tabindex="0" role="button" aria-label="Governance statistics: 100%">
+          <div class="metric-flip-inner">
+            <div class="metric-flip-face metric-flip-front">
+              <span class="metric-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
+              <div class="fluid-metric-number" data-target="100" data-decimals="0" data-suffix="%" data-unit="">
+                <span class="metric-val-wrap"><span class="metric-val">0</span></span><span class="metric-accent">%</span>
+              </div>
+            </div>
+            <div class="metric-flip-face metric-flip-back">
+              <span class="metric-back-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
+              <p class="fluid-metric-label">Zero-compromise EHS compliance, certified rigging, and statutory labor governance.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </section>
 
   <!-- ==========================================================================
-       CREATIVE ABOUT US SECTION (Directly After Hero - Pure Light Theme)
-       Features Asymmetrical Cut-Designed Image Collage & Leadership
+       GUIDING PRINCIPLES & ABOUT THIN MARGIN (Ref: Image 3 & 4)
+       Asymmetrical Visual Collage, SLA Badge, Mission, Vision, Core Values
        ========================================================================== -->
   <section class="about-creative-section" id="about">
     <div class="about-creative-container">
       <div class="about-creative-grid">
         
-        <!-- Left Column: Story, Philosophy & Pillars -->
-        <div class="about-creative-text reveal-fade-up">
-          <div class="section-tag-pill">
-            <span>ABOUT THIN MARGIN</span>
+        <!-- Left Column: Supply Chain & Laydown Yard Collage -->
+        <div class="about-creative-visual">
+          <div class="creative-cut-collage">
+            
+            <!-- Cut Image 1: Main High-Density Warehouse -->
+            <div class="cut-image-card cut-card-primary logint-chamfer-tr reveal-fade-up">
+              <img src="assest/images/Thin Margin about.webp" alt="Thin Margin Material &amp; Stores Hub" class="cut-img">
+              
+              <!-- Floating Live SLA Badge (Ref: Image 3) -->
+              <div class="logint-exp-badge" style="top: 24px; right: 24px; bottom: auto; left: auto;">
+                <span class="pulse-dot" style="width:10px; height:10px; border-radius:50%; background:#ee2130; display:inline-block; box-shadow:0 0 10px #ee2130;"></span>
+                <span style="font-size:12.5px; font-weight:700; color:#0b1329; letter-spacing:0.02em;">100% Zero-Loss Yard Custody SLA</span>
+              </div>
+            </div>
+
+            <!-- Cut Image 2: Mechanized Material Staging & Handling -->
+            <div class="cut-image-card cut-card-secondary logint-chamfer-bl reveal-fade-up reveal-stagger-1">
+              <img src="assest/images/why_choose_us_crystal.jpg" alt="Dedicated Supply Chain Ground Custody" class="cut-img">
+            </div>
+
+            <!-- Floating Experience Badge -->
+            <div class="logint-exp-badge">
+              <div class="exp-badge-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <div class="exp-badge-info">
+                <h5>10+ Years Of Excellence</h5>
+                <p>Trusted Turnkey Supply Chain Partner</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Guiding Principles Narrative -->
+        <div class="about-creative-text reveal-fade-up reveal-stagger-2">
+          <div class="intro-tag-pill">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>Guiding Principles</span>
           </div>
 
           <h2 class="about-creative-title">
-            Techno-Commercial <span class="highlight-crimson">Leadership</span>
+            Engineered on Ground Realities, Driven by <span class="highlight-crimson">Uncompromising Accountability</span>
           </h2>
 
           <p class="about-creative-lead">
-            The Thin Margin (TM) was established by professionals with a rich Techno-Commercial background who gained extensive experience executing prestigious mega-projects across India and abroad.
+            We bridge the critical gap between high-level engineering schedules and the gritty realities of on-site material custody. We assume total techno-commercial ownership so our clients' capital investments remain on time and on budget.
           </p>
 
-          <p class="about-creative-desc">
-            Headquartered in Kota, Rajasthan, our leadership team brings proven expertise in turnkey Material Management from construction phase through to steady-state operations. We specialize in warehouse sizing, open laydown storage, 24-hour import cargo decantation, critical process implementation, and SAP/ERP transactions designed around your operational margins.
-          </p>
-
-          <!-- 4 Core Offerings (Redesigned: Sleek, Borderless, No Container Boxes) -->
-          <div class="about-creative-features">
+          <!-- 3 Structured Pillar Cards (Mission, Vision, Core Values - Ref: Image 3) -->
+          <div class="about-creative-features" style="grid-template-columns: 1fr; gap: 20px;">
             
+            <!-- Pillar 1: Our Mission -->
             <div class="creative-feature-item">
               <div class="feature-indicator-line"></div>
               <div class="feature-content-wrap">
-                <h4 class="feature-title">Techno-Commercial Leadership</h4>
-                <p class="feature-desc">Hands-on leadership across mega solar, thermal power, and petrochemical plants from construction to steady-state.</p>
+                <h4 class="feature-title" style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-crosshairs" style="color: var(--color-accent); font-size: 15px;"></i>
+                  Our Mission
+                </h4>
+                <p class="feature-desc">To eliminate the margin of error in industrial material management through turnkey custody, high-velocity 24-hr container de-stuffing, and synchronized ERP telemetry for high-stakes capital infrastructure projects across India.</p>
               </div>
             </div>
 
+            <!-- Pillar 2: Our Vision -->
             <div class="creative-feature-item">
               <div class="feature-indicator-line"></div>
               <div class="feature-content-wrap">
-                <h4 class="feature-title">Integrated EHS &amp; Zero-Harm</h4>
-                <p class="feature-desc">Zero-harm to environment philosophy backed by full statutory compliances (GST, PF, ESIC &amp; WC Policy).</p>
+                <h4 class="feature-title" style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-eye" style="color: var(--color-accent); font-size: 15px;"></i>
+                  Our Vision
+                </h4>
+                <p class="feature-desc">To be India's preeminent techno-commercial supply chain partner, setting national benchmarks in zero-defect laydown storage, EHS compliance, and technology-driven material velocity for GW-scale energy and infrastructure assets.</p>
               </div>
             </div>
 
+            <!-- Pillar 3: Core Values -->
             <div class="creative-feature-item">
               <div class="feature-indicator-line"></div>
               <div class="feature-content-wrap">
-                <h4 class="feature-title">Warehouse Sizing &amp; Layouts</h4>
-                <p class="feature-desc">Engineered open laydowns, covered stores, and temperature/humidity-controlled preservation facilities.</p>
-              </div>
-            </div>
-
-            <div class="creative-feature-item">
-              <div class="feature-indicator-line"></div>
-              <div class="feature-content-wrap">
-                <h4 class="feature-title">SAP / ERP System SLAs</h4>
-                <p class="feature-desc">Day-to-day posting of transactions, ROL &amp; ROQ, ABC/VED analytics, and zero-shrinkage stock verification.</p>
+                <h4 class="feature-title" style="display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-gem" style="color: var(--color-accent); font-size: 15px;"></i>
+                  Core Values
+                </h4>
+                <p class="feature-desc">Techno-commercial precision, absolute demurrage neutrality, radical operational transparency, and a zero-harm safety culture protecting personnel and cargo alike.</p>
               </div>
             </div>
 
           </div>
 
-          <!-- Direct Actions -->
-          <div class="about-creative-actions" style="display: flex; align-items: center; gap: 18px; flex-wrap: wrap;">
+          <!-- Direct CTA -->
+          <div class="about-creative-actions">
             <a href="about.html" class="btn-book-consult">
               <span>Explore Full Story &amp; Leadership</span>
               <span class="arrow-circle">
@@ -300,151 +484,244 @@
 
         </div>
 
-        <!-- Right Column: Clean Cut-Designed Images (No Container Frame, No Floating Tag Clutter) -->
-        <div class="about-creative-visual">
-          <div class="creative-cut-collage">
-            
-            <!-- Cut Image 1 (Large Main Photo with Asymmetrical Curved Corners) -->
-            <div class="cut-image-card cut-card-primary reveal-fade-up">
-              <img src="assest/images/Thin Margin about.webp" alt="Thin Margin Material & Logistics Hub" class="cut-img">
-            </div>
-
-            <!-- Cut Image 2 (Overlapping Secondary Cut Photo with Angled Curve) -->
-            <div class="cut-image-card cut-card-secondary reveal-fade-up reveal-stagger-1">
-              <img src="assest/images/about-truck-clean.jpg" alt="Dedicated Heavy Transport Fleet" class="cut-img">
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       WORKFLOW SECTION: "Logistics Solutions to Help Businesses" (Ref: Image 3 / Image 7)
-       Light Theme (#f4f7fb) with vertical tabs 01, 02 on left, card in center, 03, 04 on right
-       ========================================================================== -->
-    <!-- ==========================================================================
-       OUR SERVICES: CORE CAPABILITIES (Expert Services, Value Added, EHS Commitment)
-       Interactive cards with official links, clear specifications & high-impact media
+       THE 8 FLAGSHIP SUPPLY CHAIN & MATERIAL SERVICES (The User's Core Suite)
+       Dedicated 8-Card Grid with Industrial Imagery & Hover Elevation
        ========================================================================== -->
   <section class="services-suite-section" id="services">
     <div class="services-suite-container">
       
-      <!-- Section Header (No Dots, Modern Watermelon Typography) -->
+      <!-- Section Header -->
       <div class="services-suite-header reveal-fade-up">
         <div class="wm-kicker">
-          <span class="wm-kicker-text">CORE CAPABILITIES</span>
+          <span class="wm-kicker-text">COMPREHENSIVE CAPABILITIES</span>
         </div>
         <h2 class="services-suite-title wm-heading">
-          Our <span class="wm-gradient-text">Services</span>
+          Our 8 Core <span class="wm-gradient-text">Supply Chain Services</span>
         </h2>
         <p class="services-suite-subtitle">
-          We deliver expert solutions, value-added services, and strong EHS commitments to ensure safety, efficiency, and sustainability.
+          Tailored techno-commercial solutions engineered to eliminate shrinkage, ensure demurrage neutrality, and guarantee seamless project execution across pan-India capital infrastructure.
         </p>
       </div>
 
-      <!-- 3 Flagship Service Cards Grid (No Numbering) -->
-      <div class="services-suite-grid">
+      <!-- 8-Card Flagship Grid -->
+      <div class="services-suite-grid-8">
         
-        <!-- Card 1: Expert Services -->
-        <article class="service-suite-card reveal-fade-up">
-          <div class="service-card-media">
-            <img src="assest/images/Expert Services.jpg" alt="Expert Services - Material & Warehouse Management" loading="lazy">
-            <div class="service-media-overlay"></div>
+        <!-- Service 1: Warehouse & Stores Management -->
+        <article class="supply-service-card reveal-fade-up" id="service-warehouse">
+          <div class="supply-service-media">
+            <img src="assest/images/warehouseimgcompany.webp" alt="Warehouse &amp; Stores Management" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-warehouse"></i>
+            </div>
           </div>
-          <div class="service-card-body">
-            <div class="service-title-row">
-              <h3 class="service-card-title">
-                <a href="https://thinmargin.in/expert-services/" target="_blank" rel="noopener noreferrer">
-                  Expert Services
-                </a>
-              </h3>
-              <span class="service-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"></path><path d="m3.3 7 8.7 5 8.7-5"></path><path d="M12 22V12"></path></svg>
-              </span>
-            </div>
-            <p class="service-card-desc">
-              We provide complete Material, Warehouse, and Logistics Management solutions — from warehouse design and process implementation to inventory control and SAP/ERP transactions. Our team ensures efficiency, accuracy, and timely execution across every project stage.
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">Warehouse &amp; Stores Management</h3>
+            <p class="supply-service-desc">
+              Engineered open laydown yards, covered warehouses, and high-density vertical racking with temperature and humidity control following strict FIFO standards.
             </p>
-            <div class="service-features-specs">
-              <span class="spec-item"><span class="spec-dash">—</span> Warehouse Design</span>
-              <span class="spec-item"><span class="spec-dash">—</span> SAP / ERP Transactions</span>
-              <span class="spec-item"><span class="spec-dash">—</span> Turnkey Material Flow</span>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Engineered Stores Sizing &amp; Layouts</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Open Laydowns &amp; Covered Storage</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> FIFO OEM Preservation Protocols</span>
             </div>
-            <div class="service-card-action">
-              <a href="https://thinmargin.in/expert-services/" target="_blank" rel="noopener noreferrer" class="service-cta-btn">
-                <span>Explore Expert Services</span>
-                <span class="btn-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire Stores Solutions</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Card 2: Value Added Services -->
-        <article class="service-suite-card reveal-fade-up reveal-stagger-1">
-          <div class="service-card-media">
-            <img src="assest/images/Value Added Services.jpg" alt="Value Added Services - Optimization & Audits" loading="lazy">
-            <div class="service-media-overlay"></div>
+        <!-- Service 2: Material & Inventory Management -->
+        <article class="supply-service-card reveal-fade-up reveal-stagger-1" id="service-inventory">
+          <div class="supply-service-media">
+            <img src="assest/images/hero_supply_chain.jpg" alt="Material &amp; Inventory Management" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
           </div>
-          <div class="service-card-body">
-            <div class="service-title-row">
-              <h3 class="service-card-title">
-                <a href="https://thinmargin.in/value-added-services/" target="_blank" rel="noopener noreferrer">
-                  Value Added Services
-                </a>
-              </h3>
-              <span class="service-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
-              </span>
-            </div>
-            <p class="service-card-desc">
-              Our value-added solutions include cost optimization, stock verification, packaging design, manpower support, and compliance audits. We help clients reduce waste, improve productivity, and achieve operational excellence through tailored management systems.
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">Material &amp; Inventory Management</h3>
+            <p class="supply-service-desc">
+              End-to-end custody with serialized barcode and QR tagging, digital Good Receipt Note (GRN) logging, periodic cycle counting, and ABC/VED classification.
             </p>
-            <div class="service-features-specs">
-              <span class="spec-item"><span class="spec-dash">—</span> Cost Optimization</span>
-              <span class="spec-item"><span class="spec-dash">—</span> Stock Verification</span>
-              <span class="spec-item"><span class="spec-dash">—</span> Compliance Audits</span>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Serialized Barcode / QR Tagging</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Zero-Shrinkage Physical Audits</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> ABC, VED &amp; FSN Inventory Analytics</span>
             </div>
-            <div class="service-card-action">
-              <a href="https://thinmargin.in/value-added-services/" target="_blank" rel="noopener noreferrer" class="service-cta-btn">
-                <span>Explore Value Added Services</span>
-                <span class="btn-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire Inventory Control</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
               </a>
             </div>
           </div>
         </article>
 
-        <!-- Card 3: EHS Commitment -->
-        <article class="service-suite-card reveal-fade-up reveal-stagger-2">
-          <div class="service-card-media">
-            <img src="assest/images/EHS Commitment.jpg" alt="EHS Commitment - Safety & Sustainability" loading="lazy">
-            <div class="service-media-overlay"></div>
+        <!-- Service 3: Logistics & Supply Chain -->
+        <article class="supply-service-card reveal-fade-up reveal-stagger-2" id="service-supplychain">
+          <div class="supply-service-media">
+            <img src="assest/images/Expert Services.jpg" alt="Logistics &amp; Supply Chain" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
           </div>
-          <div class="service-card-body">
-            <div class="service-title-row">
-              <h3 class="service-card-title">
-                <a href="https://thinmargin.in/ehs-commitment/" target="_blank" rel="noopener noreferrer">
-                  EHS Commitment
-                </a>
-              </h3>
-              <span class="service-card-icon">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-              </span>
-            </div>
-            <p class="service-card-desc">
-              At The Thin Margin, safety and sustainability come first. We follow strict Environment, Health, and Safety (EHS) standards to protect people, materials, and the environment while maintaining full compliance with national and global norms.
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">Logistics &amp; Supply Chain</h3>
+            <p class="supply-service-desc">
+              Synchronized supply chain orchestration connecting discharge ports, central inventory stores, and project site laydown areas under unified SLAs.
             </p>
-            <div class="service-features-specs">
-              <span class="spec-item"><span class="spec-dash">—</span> Zero-Harm Standards</span>
-              <span class="spec-item"><span class="spec-dash">—</span> Eco Sustainability</span>
-              <span class="spec-item"><span class="spec-dash">—</span> ISO Compliance</span>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Turnkey Port-to-Yard Flow</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Route Feasibility &amp; ODC Planning</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Synchronized Milestone Delivery</span>
             </div>
-            <div class="service-card-action">
-              <a href="https://thinmargin.in/ehs-commitment/" target="_blank" rel="noopener noreferrer" class="service-cta-btn">
-                <span>Explore EHS Commitment</span>
-                <span class="btn-arrow"><svg width="13" height="13" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 11.5L11.5 2.5M11.5 2.5H4.5M11.5 2.5V9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire Supply Chain</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 4: Procurement & Material Handling -->
+        <article class="supply-service-card reveal-fade-up reveal-stagger-3" id="service-procurement">
+          <div class="supply-service-media">
+            <img src="assest/images/Value Added Services.jpg" alt="Procurement &amp; Material Handling" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-dolly"></i>
+            </div>
+          </div>
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">Procurement &amp; Material Handling</h3>
+            <p class="supply-service-desc">
+              Verification of vendor shipments at receiving docks, mechanized Material Handling Equipment (MHE) deployment, and damage-free staging.
+            </p>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Vendor Consignment Sanity Audits</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Dedicated Crane, Hydra &amp; MHE Fleets</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Certified Heavy Rigging Crews</span>
+            </div>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire Handling</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 5: SAP / ERP Solutions -->
+        <article class="supply-service-card reveal-fade-up" id="service-saperp">
+          <div class="supply-service-media">
+            <img src="assest/images/sap_erp_solutions.jpg" alt="SAP / ERP Solutions" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+          </div>
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">SAP / ERP Solutions</h3>
+            <p class="supply-service-desc">
+              Direct transaction posting in client ERP systems (SAP S/4HANA, Oracle), automated ROL and ROQ triggers, and daily ledger reconciliations.
+            </p>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Real-Time SAP S/4HANA Sync</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Automated ROL &amp; ROQ Alerts</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Digital GRN &amp; Material Issues Ledger</span>
+            </div>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire ERP Posting</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 6: EHS & Compliance -->
+        <article class="supply-service-card reveal-fade-up reveal-stagger-1" id="service-ehs">
+          <div class="supply-service-media">
+            <img src="assest/images/EHS Commitment.jpg" alt="EHS &amp; Compliance" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-shield-halved"></i>
+            </div>
+          </div>
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">EHS &amp; Compliance</h3>
+            <p class="supply-service-desc">
+              Zero-harm philosophy protecting personnel and cargo, backed by 100% statutory compliances across GST, PF, ESIC, and Workman Compensation policies.
+            </p>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Zero-Harm Safety Protocol</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Full Statutory Labor Compliance (PF/ESIC)</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Certified PPE &amp; Tool Box Audits</span>
+            </div>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire EHS Norms</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 7: Asset & Facility Management -->
+        <article class="supply-service-card reveal-fade-up reveal-stagger-2" id="service-asset">
+          <div class="supply-service-media">
+            <img src="assest/images/why_choose_us_crystal.jpg" alt="Asset &amp; Facility Management" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-building-shield"></i>
+            </div>
+          </div>
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">Asset &amp; Facility Management</h3>
+            <p class="supply-service-desc">
+              Long-term preservation of high-value capital assets including solar modules, power transformers, inverters, and turbines with 24/7 security custody.
+            </p>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> High-Value Capital Asset Care</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Laydown Yard Surfacing &amp; Drainage</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Round-The-Clock Perimeter Security</span>
+            </div>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire Asset Care</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Service 8: EXIM & Industrial Services -->
+        <article class="supply-service-card reveal-fade-up reveal-stagger-3" id="service-exim">
+          <div class="supply-service-media">
+            <img src="assest/images/Thin Margin about.webp" alt="EXIM &amp; Industrial Services" class="supply-service-img" loading="lazy">
+            <div class="supply-service-icon-badge">
+              <i class="fa-solid fa-ship"></i>
+            </div>
+          </div>
+          <div class="supply-service-content">
+            <h3 class="supply-service-title">EXIM &amp; Industrial Services</h3>
+            <p class="supply-service-desc">
+              Rapid 24-hour container decantation at maritime ports (Mundra, Kandla, Tuticorin) and ICD railheads, guaranteeing zero container detention charges.
+            </p>
+            <div class="supply-service-specs">
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> 24-Hour Container De-Stuffing</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Zero Demurrage &amp; Detention Guarantee</span>
+              <span class="supply-spec-item"><i class="fa-solid fa-check"></i> Port Gate Inward Coordination</span>
+            </div>
+            <div class="supply-service-action">
+              <a href="#contact" class="supply-action-link">
+                <span>Inquire EXIM Velocity</span>
+                <span class="supply-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
               </a>
             </div>
           </div>
@@ -455,41 +732,43 @@
     </div>
   </section>
 
-<section class="workflow-section" id="workflow">
+  <!-- ==========================================================================
+       OPERATIONAL METHODOLOGY / 4-STAGE TURNKEY WORKFLOW
+       Connecting Lines, Progress Badges, Interactive Expansion
+       ========================================================================== -->
+  <section class="workflow-section" id="process">
     <div class="workflow-container">
       
       <!-- Section Header -->
       <div class="workflow-header reveal-fade-up">
-        <span class="workflow-tag">HOW IT WORKS</span>
-        <h2 class="workflow-title">Logistics Solutions to <em>Help Businesses</em></h2>
+        <span class="workflow-tag">OPERATIONAL METHODOLOGY</span>
+        <h2 class="workflow-title">How We Execute <em>Turnkey Supply Chain Precision</em></h2>
       </div>
 
-      <!-- Interactive Workflow Area: Horizontal Accordion where each box activates at its own position -->
+      <!-- Interactive 4-Step Accordion -->
       <div class="workflow-accordion reveal-fade-up reveal-stagger-1" id="workflowAccordion">
         
         <!-- Step 01 Item -->
         <div class="workflow-acc-item active" data-step="1">
-          <!-- Collapsed Pill View -->
-          <div class="workflow-acc-pill" aria-label="Step 01: Gate Entry & Inspection">
+          <div class="workflow-acc-pill" aria-label="Step 01: Inward Receiving">
             <span class="pill-badge">01</span>
-            <span class="pill-text">Gate Entry &amp; Inspection</span>
+            <span class="pill-text">Gate Entry &amp; Receiving</span>
           </div>
-          <!-- Expanded Card View -->
           <div class="workflow-acc-card">
             <div class="workflow-card-img-wrap">
-              <img src="assest/images/slider-truck-clean.jpg" alt="Receive packages & Cargo Inspection" loading="lazy">
+              <img src="assest/images/hero_supply_chain.jpg" alt="Inward Receiving &amp; Barcode Verification" loading="lazy">
             </div>
             <div class="workflow-card-content">
               <span class="workflow-badge-num">01</span>
-              <h3 class="workflow-card-title">Gate Entry &amp; <em>Cargo Inspection</em></h3>
+              <h3 class="workflow-card-title">Gate Entry &amp; <em>Inward Inspection</em></h3>
               <p class="workflow-card-desc">
-                Every consignment arriving at dispatch gates undergoes gate entry/exit verification, receiving, unloading, and weight &amp; dimensional sanity checks.
+                Every consignment arriving at project laydown gates undergoes gate entry verification, physical inspection, packing list reconciliation, and barcode sanity checks.
               </p>
               <ul class="workflow-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Gate Entry &amp; Exit management</li>
-                <li><i class="fa-solid fa-circle-check"></i> Digital weight &amp; dimensional scanning</li>
-                <li><i class="fa-solid fa-circle-check"></i> Receiving verification &amp; transaction booking</li>
-                <li><i class="fa-solid fa-circle-check"></i> Strict cargo safety &amp; tagging protocols</li>
+                <li><i class="fa-solid fa-circle-check"></i> Digital gate inward / outward logging</li>
+                <li><i class="fa-solid fa-circle-check"></i> Physical packing slip vs PO verification</li>
+                <li><i class="fa-solid fa-circle-check"></i> Barcode and QR serial scan verification</li>
+                <li><i class="fa-solid fa-circle-check"></i> Non-conformance tagging for transit defects</li>
               </ul>
             </div>
           </div>
@@ -497,27 +776,25 @@
 
         <!-- Step 02 Item -->
         <div class="workflow-acc-item" data-step="2">
-          <!-- Collapsed Pill View -->
           <div class="workflow-acc-pill" aria-label="Step 02: Bulk Decantation">
             <span class="pill-badge">02</span>
-            <span class="pill-text">Bulk Decantation</span>
+            <span class="pill-text">24-Hr Container Decantation</span>
           </div>
-          <!-- Expanded Card View -->
           <div class="workflow-acc-card">
             <div class="workflow-card-img-wrap">
-              <img src="assest/images/hero-truck.jpg" alt="Deliver packages & Cross-Docking" loading="lazy">
+              <img src="assest/images/Thin Margin about.webp" alt="Container Decantation &amp; Empty Return" loading="lazy">
             </div>
             <div class="workflow-card-content">
               <span class="workflow-badge-num">02</span>
-              <h3 class="workflow-card-title">Bulk Decantation &amp; <em>Container Release</em></h3>
+              <h3 class="workflow-card-title">Bulk Decantation &amp; <em>Zero Detention</em></h3>
               <p class="workflow-card-desc">
-                Bulk cargo receiving in import containerized shipments, immediate decantation, and round-the-clock container release ensuring zero detention charges.
+                High-speed de-stuffing of import containerized shipments near key ports and railheads with immediate empty box return to shipping lines.
               </p>
               <ul class="workflow-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> 24-hour container decantation &amp; release</li>
-                <li><i class="fa-solid fa-circle-check"></i> Zero container detention protocol</li>
-                <li><i class="fa-solid fa-circle-check"></i> Certified cargo strapping &amp; securing</li>
-                <li><i class="fa-solid fa-circle-check"></i> Heavy lift crane &amp; MHE deployment</li>
+                <li><i class="fa-solid fa-circle-check"></i> 24-hour turnaround container de-stuffing</li>
+                <li><i class="fa-solid fa-circle-check"></i> Zero shipping line detention protocol</li>
+                <li><i class="fa-solid fa-circle-check"></i> Heavy reach stackers &amp; forklift rigging</li>
+                <li><i class="fa-solid fa-circle-check"></i> Secured pallet restacking and strapping</li>
               </ul>
             </div>
           </div>
@@ -525,27 +802,25 @@
 
         <!-- Step 03 Item -->
         <div class="workflow-acc-item" data-step="3">
-          <!-- Collapsed Pill View -->
-          <div class="workflow-acc-pill" aria-label="Step 03: ODC Logistics & Haulage">
+          <div class="workflow-acc-pill" aria-label="Step 03: SAP ERP Sync">
             <span class="pill-badge">03</span>
-            <span class="pill-text">ODC Logistics &amp; Haulage</span>
+            <span class="pill-text">High-Density Storage &amp; ERP Sync</span>
           </div>
-          <!-- Expanded Card View -->
           <div class="workflow-acc-card">
             <div class="workflow-card-img-wrap">
-              <img src="assest/images/Value Added Services.jpg" alt="Transport packages & Material Handling" loading="lazy">
+              <img src="assest/images/sap_erp_solutions.jpg" alt="SAP S/4HANA Inventory Sync" loading="lazy">
             </div>
             <div class="workflow-card-content">
               <span class="workflow-badge-num">03</span>
-              <h3 class="workflow-card-title">ODC Logistics &amp; <em>Heavy Haulage</em></h3>
+              <h3 class="workflow-card-title">High-Density Storage &amp; <em>ERP Sync</em></h3>
               <p class="workflow-card-desc">
-                Our specialized heavy transport fleet and Over-Dimensional Cargo (ODC) handling ensures safe, zero-delay transit to erection sites under certified engineering supervision.
+                Systematic bin allocation, covered stores placement, temperature monitoring, and instant posting of Good Receipt Notes (GRN) into SAP.
               </p>
               <ul class="workflow-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Receiving ODC cargo at erection sites</li>
-                <li><i class="fa-solid fa-circle-check"></i> Placement of dedicated fleet &amp; waybills</li>
-                <li><i class="fa-solid fa-circle-check"></i> GPS monitoring &amp; on-time delivery guarantees</li>
-                <li><i class="fa-solid fa-circle-check"></i> Coordinated directly from Kota, Rajasthan headquarters</li>
+                <li><i class="fa-solid fa-circle-check"></i> Automated SAP S/4HANA location binning</li>
+                <li><i class="fa-solid fa-circle-check"></i> Digital GRN posting within shift timeline</li>
+                <li><i class="fa-solid fa-circle-check"></i> ABC/VED high-value segregation</li>
+                <li><i class="fa-solid fa-circle-check"></i> OEM preservative coating and humidity checks</li>
               </ul>
             </div>
           </div>
@@ -553,27 +828,25 @@
 
         <!-- Step 04 Item -->
         <div class="workflow-acc-item" data-step="4">
-          <!-- Collapsed Pill View -->
-          <div class="workflow-acc-pill" aria-label="Step 04: Storage & Preservation">
+          <div class="workflow-acc-pill" aria-label="Step 04: Project Dispatch">
             <span class="pill-badge">04</span>
-            <span class="pill-text">Storage &amp; Preservation</span>
+            <span class="pill-text">Erection Staging &amp; JIT Dispatch</span>
           </div>
-          <!-- Expanded Card View -->
           <div class="workflow-acc-card">
             <div class="workflow-card-img-wrap">
-              <img src="assest/images/Thin Margin about.webp" alt="Warehousing Operation & Fulfillment" loading="lazy">
+              <img src="assest/images/warehouseimgcompany.webp" alt="Just-In-Time Erection Staging" loading="lazy">
             </div>
             <div class="workflow-card-content">
               <span class="workflow-badge-num">04</span>
-              <h3 class="workflow-card-title">Warehouse Sizing &amp; <em>Stock Preservation</em></h3>
+              <h3 class="workflow-card-title">Erection Staging &amp; <em>JIT Handover</em></h3>
               <p class="workflow-card-desc">
-                Open laydown stores, covered storage, and temperature/humidity-controlled preservation with periodic physical stock verification and FIFO standards.
+                Precision kitting and synchronized handover of equipment directly to site construction and commissioning teams, eliminating civil idle times.
               </p>
               <ul class="workflow-checklist">
-                <li><i class="fa-solid fa-circle-check"></i> Open laydowns &amp; covered store sizing</li>
-                <li><i class="fa-solid fa-circle-check"></i> Temperature &amp; humidity-controlled storage</li>
-                <li><i class="fa-solid fa-circle-check"></i> ABC analysis &amp; SAP-based location audits</li>
-                <li><i class="fa-solid fa-circle-check"></i> OEM-recommended stock preservation (FIFO)</li>
+                <li><i class="fa-solid fa-circle-check"></i> Direct civil milestone aligned kitting</li>
+                <li><i class="fa-solid fa-circle-check"></i> Zero crane idle time on site foundations</li>
+                <li><i class="fa-solid fa-circle-check"></i> Digital Goods Issue Note (GIN) reconciliation</li>
+                <li><i class="fa-solid fa-circle-check"></i> Daily balance-of-plant stock reports</li>
               </ul>
             </div>
           </div>
@@ -584,286 +857,162 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       ESSENTIAL FEATURES OF OUR SERVICES (Refined 3-Cards View & Atmospheric Background)
-       Rich multi-layer mesh & logistics telemetry background, exactly 3 cards displayed,
-       smooth hardware-accelerated carousel sliding, interactive hover zoom & auto-cycle
-       ========================================================================== -->
-  <div class="features-sticky-outer" id="featuresStickyOuter">
-    <section class="features-carousel-section" id="features">
-      <div class="features-carousel-container">
+  <!-- =========================================================================
+       WHY INDIA'S FOREMOST ENTERPRISE LEADERS CHOOSE US (Ref: Image 6)
+       Cinema Telemetry Video Player with Live HUD & Synchronized 4 Capabilities
+       ========================================================================= -->
+  <section class="why-video-section" id="why-choose-us">
+    <div class="why-video-container">
+      <div class="why-video-grid">
         
-        <!-- Section Header with carousel arrows & pagination indicators -->
-        <div class="features-header-row reveal-fade-up">
-          <div class="features-header-left">
-            <span class="features-header-tag">OUR EXPERIENCE</span>
-            <h2 class="features-header-title">Essential Features<br>of <em>our Services</em></h2>
-          </div>
+        <!-- Left: Cinema Telemetry Video Player -->
+        <div class="cinema-video-frame reveal-fade-up">
           
-          <div class="features-header-controls">
-          <div class="features-header-nav" aria-label="Feature navigation controls">
-              <button type="button" class="feature-nav-btn prev-btn" id="featurePrevBtn" aria-label="Previous feature">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M8.75 11.5L4.25 7L8.75 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+          <video id="aboutWorkVideo" class="cinema-video-element" playsinline loop muted autoplay poster="assest/images/warehouseimgcompany.webp" src="assest/images/working in managemnet.mp4">
+            <source src="assest/images/working in managemnet.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+
+          <!-- Subtle Top Ambient Vignette -->
+          <div class="cinema-ambient-vignette"></div>
+
+          <!-- Floating Live HUD Pill -->
+          <div class="video-hud-pill">
+            <span class="hud-live-dot"></span>
+            <span id="videoHudStatus">GROUND OPS &bull; CONTAINER DECANTATION</span>
+          </div>
+
+          <!-- Floating Dynamic Telemetry Badge -->
+          <div class="video-telemetry-badge" id="videoTelemetryBadge">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <span id="videoTelemetryText">Live Yard Telemetry</span>
+          </div>
+
+          <!-- Real-Time Video Progress Scrubber Bar -->
+          <div class="video-progress-tracker" aria-hidden="true">
+            <div class="video-progress-fill" id="videoProgressFill"></div>
+          </div>
+
+          <!-- Interactive Cinema Controls Bar -->
+          <div class="cinema-controls-bar">
+            <div class="cinema-controls-left">
+              <button type="button" class="cinema-ctrl-btn" id="videoPlayPauseBtn" aria-label="Pause or play ground operations video">
+                <i class="fa-solid fa-pause"></i>
               </button>
-              <button type="button" class="feature-nav-btn next-btn" id="featureNextBtn" aria-label="Next feature">
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5.25 11.5L9.75 7L5.25 2.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+              <button type="button" class="cinema-ctrl-btn" id="videoMuteBtn" aria-label="Mute or unmute video audio">
+                <i class="fa-solid fa-volume-xmark"></i>
               </button>
+              <div class="cinema-live-caption">
+                <span class="caption-label">Telemetry Stream</span>
+                <span class="caption-title" id="videoActiveCaption">Techno-Commercial Leadership</span>
+              </div>
+            </div>
+
+            <div class="cinema-controls-right">
+              <span class="cinema-meta-tag tag-rigging" id="cinemaTag1"><i class="fa-solid fa-check"></i> GW-Scale Logistics</span>
+              <span class="cinema-meta-tag tag-turnaround" id="cinemaTag2"><i class="fa-solid fa-check"></i> Milestone Defense</span>
             </div>
           </div>
+
         </div>
 
-        <!-- 3 Rounded Cards Viewport & Hardware Accelerated Track -->
-        <div class="features-slider-viewport reveal-fade-up reveal-stagger-1" id="featuresViewport">
-          <div class="features-cards-track" id="featuresTrack">
-            
-            <!-- Card 1: Real Time Tracking -->
-            <div class="feature-box" data-feature-index="0">
-              <div class="feature-box-top">
-                <div class="feature-box-title-wrap">
-                  <h3 class="feature-box-title">Real Time<br>Tracking</h3>
-                  <div class="feature-box-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 17H21C21.55 17 22 16.55 22 16V12C22 11.66 21.83 11.34 21.54 11.16L18.42 9.08C18.17 8.91 17.87 8.82 17.57 8.82H15V6C15 4.9 14.1 4 13 4H3C1.9 4 1 4.9 1 6V16C1 17.1 1.9 18 3 18H4C4 19.66 5.34 21 7 21C8.66 21 10 19.66 10 18H14C14 19.66 15.34 21 17 21C18.66 21 20 19.66 20 18M7 19.5C6.17 19.5 5.5 18.83 5.5 18C5.5 17.17 6.17 16.5 7 16.5C7.83 16.5 8.5 17.17 8.5 18C8.5 18.83 7.83 19.5 7 19.5M17 19.5C16.17 19.5 15.5 18.83 15.5 18C15.5 17.17 16.17 16.5 17 16.5C17.83 16.5 18.5 17.17 18.5 18C18.5 18.83 17.83 19.5 17 19.5M16.5 10.5H17.43L19.83 12.1V15H15V10.5H16.5Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <p class="feature-box-desc">
-                  Continuous GPS telemetry, automated milestone alerts, and live geofencing for complete shipment visibility across state borders.
-                </p>
-              </div>
-              <div class="feature-box-media">
-                <img src="assest/images/slider-ship-clean.jpg" alt="Real Time Highway Truck Fleet Tracking" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Card 2: Distribution Centers -->
-            <div class="feature-box" data-feature-index="1">
-              <div class="feature-box-top">
-                <div class="feature-box-title-wrap">
-                  <h3 class="feature-box-title">Distribution<br>Centers</h3>
-                  <div class="feature-box-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <p class="feature-box-desc">
-                  Strategic multi-modal distribution centers connecting northern industrial hubs with southern and western industrial corridors.
-                </p>
-              </div>
-              <div class="feature-box-media">
-                <img src="assest/images/slider-truck-clean.jpg" alt="Modern Multi-Modal Distribution Terminal" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Card 3: Bonded Warehousing -->
-            <div class="feature-box" data-feature-index="2">
-              <div class="feature-box-top">
-                <div class="feature-box-title-wrap">
-                  <h3 class="feature-box-title">Bonded<br>Warehousing</h3>
-                  <div class="feature-box-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M19 3H5C3.89 3 3 3.89 3 5V19C3 20.1 3.89 21 5 21H19C20.1 21 21 20.1 21 19V5C21 3.89 20.1 3 19 3ZM19 19H5V5H19V19ZM17 11H7V9H17V11ZM13 15H7V13H13V15Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <p class="feature-box-desc">
-                  Authorized customs bonded facilities with high security vaults, automated cycle counting, and tax deferment benefits.
-                </p>
-              </div>
-              <div class="feature-box-media">
-                <img src="assest/images/Thin Margin about.webp" alt="Certified Customs Bonded Warehousing" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Card 4: Warehouse Storage -->
-            <div class="feature-box" data-feature-index="3">
-              <div class="feature-box-top">
-                <div class="feature-box-title-wrap">
-                  <h3 class="feature-box-title">Warehouse<br>Storage</h3>
-                  <div class="feature-box-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M12 3L2 12H5V20H19V12H22L12 3ZM12 7.7L16 11.3V18H8V11.3L12 7.7Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <p class="feature-box-desc">
-                  Climate-controlled storage, high-density vertical racking, and RFID-enabled stock audits with zero tolerance for shrinkage.
-                </p>
-              </div>
-              <div class="feature-box-media">
-                <img src="assest/images/warehouseimgcompany.webp" alt="Climate-Controlled Warehouse Storage &amp; High-Density Racking" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Card 5: Air Express Expedited Freight -->
-            <div class="feature-box" data-feature-index="4">
-              <div class="feature-box-top">
-                <div class="feature-box-title-wrap">
-                  <h3 class="feature-box-title">Air Express<br>Haulage</h3>
-                  <div class="feature-box-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 16V14L13 9V3.5C13 2.67 12.33 2 11.5 2C10.67 2 10 2.67 10 3.5V9L2 14V16L10 13.5V19L8 20.5V22L11.5 21L15 22V20.5L13 19V13.5L21 16Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <p class="feature-box-desc">
-                  Time-critical air freight corridors connecting Tier-1 metropolises with guaranteed same-day transit SLAs and customs dispatch.
-                </p>
-              </div>
-              <div class="feature-box-media">
-                <img src="assest/images/slider-plane-clean.jpg" alt="Air Express Expedited Cargo Freight" loading="lazy">
-              </div>
-            </div>
-
-            <!-- Card 6: Multi-Modal Logistics -->
-            <div class="feature-box" data-feature-index="5">
-              <div class="feature-box-top">
-                <div class="feature-box-title-wrap">
-                  <h3 class="feature-box-title">Multi-Modal<br>Logistics</h3>
-                  <div class="feature-box-icon">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 21C18.61 21 17.22 20.53 16.09 19.59C13.8 21.47 10.19 21.47 7.9 19.59C6.77 20.53 5.38 21 4 21H2V19H4C4.92 19 5.84 18.66 6.6 18C8.11 16.74 10.38 16.74 11.89 18C13.41 19.26 15.68 19.26 17.19 18C17.96 18.66 18.88 19 19.8 19H22V21H20ZM12 2C11.5 2 11 2.19 10.62 2.56L3.41 9.77C2.7 10.48 2.7 11.64 3.41 12.35L5.7 14.64C6.41 15.35 7.57 15.35 8.28 14.64L11 11.92V16H13V11.92L15.72 14.64C16.43 15.35 17.59 15.35 18.3 14.64L20.59 12.35C21.3 11.64 21.3 10.48 20.59 9.77L13.38 2.56C13 2.19 12.5 2 12 2Z" fill="currentColor"/>
-                    </svg>
-                  </div>
-                </div>
-                <p class="feature-box-desc">
-                  Seamless multi-modal integration combining road haulage, coastal cargo vessels, and container rail transit under unified SLAs.
-                </p>
-              </div>
-              <div class="feature-box-media">
-                <img src="assest/images/warehouseimgcompany.webp" alt="Automated Material Handling and Fulfillment Infrastructure" loading="lazy">
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </div>
-
-  <!-- ==========================================================================
-       TRUSTED PARTNERS (Clean Light Background)
-       ========================================================================== -->
-    <!-- ==========================================================================
-       WHY CHOOSE US: EXCELLENCE YOU CAN TRUST
-       Executive Asymmetric Layout, Interactive 4 Pillars & Real Operational Telemetry
-       ========================================================================== -->
-  <section class="why-choose-section" id="why-choose-us">
-    <!-- Three.js 3D Interactive Logistics Background Canvas (Zero green squares, smooth ambient motion) -->
-    <canvas class="why-choose-canvas" id="whyThreeCanvas"></canvas>
-    
-    <div class="why-choose-container">
-      
-      <div class="why-choose-split">
-        
-        <!-- Left: Warehouse Specialist Visual with HD Clarity, Ambient Aura & Clean Bottom Telemetry Tags -->
-        <div class="why-choose-visual reveal-fade-up">
-          <div class="wm-ambient-aura" aria-hidden="true"></div>
-
-          <div class="why-photo-wrapper" id="whyPhotoCard">
-            <img src="assest/images/why_choose_us_crystal.jpg" alt="Thin Margin Material Management Specialist" loading="lazy">
-            <div class="why-photo-overlay"></div>
+        <!-- Right: Interactive Dynamic Capability Stream (Ref: Image 6) -->
+        <div class="why-flow-stream reveal-fade-up reveal-stagger-1">
+          
+          <div class="why-tag-pill">
+            <span class="why-tag-dot"></span>
+            <span>The Thin Margin Edge</span>
           </div>
 
-          <!-- Clean Telemetry Tag: 10+ Years (No Icon, No Dot, Shifted to Bottom Right) -->
-          <div class="wm-telemetry-card wm-badge-years">
-            <div class="telemetry-content">
-              <span class="telemetry-val">10+ Years</span>
-              <span class="telemetry-lbl">Industrial Logistics</span>
-            </div>
-          </div>
-
-          <!-- Clean Telemetry Tag: 99.8% (No Icon, No Dot, Shifted to Bottom Left) -->
-          <div class="wm-telemetry-card wm-badge-precision">
-            <div class="telemetry-content">
-              <span class="telemetry-val">99.8%</span>
-              <span class="telemetry-lbl">Precision Fulfillment</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right: Kinetic Heading (No Dots) & 4 Cards (Nothing Active, No Numbering, Flipping Icons) -->
-        <div class="why-choose-content reveal-fade-up reveal-stagger-1">
-          <div class="wm-kicker">
-            <span class="wm-kicker-text">WHY THIN MARGIN</span>
-          </div>
-          <h2 class="why-title wm-heading">
-            Excellence You Can <span class="wm-gradient-text">Trust</span>
+          <h2 class="why-flow-title">
+            Why India's Foremost Enterprise Leaders <span class="title-highlight">Choose Us</span>
           </h2>
-          <p class="why-lead-desc">
-            Our expertise, innovative solutions, integrity, and commitment to customer delight ensure reliable, efficient, and high-quality material management services.
+
+          <p class="why-flow-subtitle">
+            How our engineered techno-commercial methodology outperforms conventional transport brokers and fragmented logistics vendors.
           </p>
 
-          <div class="why-pillars-grid">
+          <!-- Interactive Dynamic Cards Deck with Live Telemetry Sync -->
+          <div class="why-interactive-deck" id="whyCapabilitiesDeck">
             
-            <!-- Pillar 1: Experience (Clean, not active by default, flipping icon) -->
-            <div class="why-pillar-card" data-pillar="experience">
-              <div class="pillar-header-row">
-                <div class="pillar-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <!-- Card 01 -->
+            <div class="why-deck-card active cycling" data-index="0" data-hud="GROUND OPS &bull; GW SOLAR &amp; THERMAL" data-telemetry="GW-Scale Infrastructure" data-caption="Techno-Commercial Leadership" data-tag1="GW-Scale Logistics" data-tag2="Milestone Defense">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
+              </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">01</span>
+                  <i class="fa-solid fa-compass-drafting num-icon"></i>
                 </div>
-                <h3 class="pillar-title">Experience</h3>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Techno-Commercial Leadership</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-award"></i> Decade+ GW Expertise</span>
+                </div>
               </div>
-              <p class="pillar-desc">
-                Years of proven expertise in managing large-scale projects across industries, ensuring seamless operations and reliable delivery.
+              <p class="deck-card-desc">
+                Managed by veterans with over a decade of hands-on leadership executing GW-scale solar parks and thermal power stations. We understand civil milestone dependencies, crane idle costs, and balance sheet protection.
               </p>
-              <div class="pillar-status-row">
-                <span class="status-text">Multi-Industry Proven</span>
-              </div>
             </div>
 
-            <!-- Pillar 2: Innovation -->
-            <div class="why-pillar-card" data-pillar="innovation">
-              <div class="pillar-header-row">
-                <div class="pillar-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+            <!-- Card 02 -->
+            <div class="why-deck-card" data-index="1" data-hud="PORT VELOCITY &bull; 24-HR CONTAINER DECANTATION" data-telemetry="Zero Demurrage Guaranteed" data-caption="Demurrage Neutrality Guarantee" data-tag1="24-Hr Port Turnaround" data-tag2="Penal Fee Shield">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
+              </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">02</span>
+                  <i class="fa-solid fa-stopwatch-24 num-icon"></i>
                 </div>
-                <h3 class="pillar-title">Innovation</h3>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Demurrage Neutrality Guarantee</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-anchor"></i> 24-Hr Port Turnaround</span>
+                </div>
               </div>
-              <p class="pillar-desc">
-                We implement modern, technology-driven solutions to optimize processes, reduce costs, and enhance operational efficiency.
+              <p class="deck-card-desc">
+                Dedicated rapid decantation crews stationed near key ports (Mundra, Kandla, Tuticorin) and ICD railheads ensure imported containers are de-stuffed and returned within 24 hours, shielding clients from penal shipping fees.
               </p>
-              <div class="pillar-status-row">
-                <span class="status-text">Telemetry &amp; SAP/ERP Sync</span>
-              </div>
             </div>
 
-            <!-- Pillar 3: Integrity -->
-            <div class="why-pillar-card" data-pillar="integrity">
-              <div class="pillar-header-row">
-                <div class="pillar-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
+            <!-- Card 03 -->
+            <div class="why-deck-card" data-index="2" data-hud="TELEMETRY SYNC &bull; REAL-TIME SAP/ERP POSTING" data-telemetry="Zero Blind Spots" data-caption="Real-Time SAP/ERP Sync" data-tag1="Barcoded Serial Tracking" data-tag2="Digital GRN Logging">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
+              </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">03</span>
+                  <i class="fa-solid fa-network-wired num-icon"></i>
                 </div>
-                <h3 class="pillar-title">Integrity</h3>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Real-Time SAP/ERP Sync</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-qrcode"></i> Digital Inventory Sync</span>
+                </div>
               </div>
-              <p class="pillar-desc">
-                Transparent, ethical, and responsible practices form the foundation of every project we undertake.
+              <p class="deck-card-desc">
+                Eliminating blind spots through serialized barcode/QR tagging, digital Good Receipt Note (GRN) logging, and instant synchronization with client ERP suites (SAP S/4HANA, Oracle).
               </p>
-              <div class="pillar-status-row">
-                <span class="status-text">Ethical Governance Protocol</span>
-              </div>
             </div>
 
-            <!-- Pillar 4: Customer Delight -->
-            <div class="why-pillar-card" data-pillar="delight">
-              <div class="pillar-header-row">
-                <div class="pillar-icon">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+            <!-- Card 04 -->
+            <div class="why-deck-card" data-index="3" data-hud="PORT-TO-FOUNDATION &bull; HEAVY MULTI-AXLE LOGISTICS" data-telemetry="Turnkey Port to Erection" data-caption="Turnkey Port-to-Foundation Execution" data-tag1="Multi-Axle Fleets" data-tag2="Engineered Rigging">
+              <div class="deck-card-progress">
+                <div class="deck-progress-bar"></div>
+              </div>
+              <div class="deck-card-header">
+                <div class="deck-num-badge">
+                  <span class="num-val">04</span>
+                  <i class="fa-solid fa-truck-ramp-box num-icon"></i>
                 </div>
-                <h3 class="pillar-title">Customer Delight</h3>
+                <div class="deck-title-wrap">
+                  <h4 class="deck-card-title">Turnkey Port-to-Foundation Execution</h4>
+                  <span class="deck-card-chip"><i class="fa-solid fa-route"></i> Single Unbroken SLA</span>
+                </div>
               </div>
-              <p class="pillar-desc">
-                Personalized, high-quality services tailored to client needs to ensure maximum satisfaction and long-term partnerships.
+              <p class="deck-card-desc">
+                A single, unbroken line of accountability from maritime port discharge through heavy multi-axle haulage, engineered laydown storage, and precision crane placement directly at the foundation.
               </p>
-              <div class="pillar-status-row">
-                <span class="status-text">98.5% Client Retention</span>
-              </div>
             </div>
 
           </div>
@@ -875,17 +1024,20 @@
     </div>
   </section>
 
-<section class="partners-section">
+  <!-- ==========================================================================
+       TRUSTED PARTNERS MARQUEE
+       Infinite Smooth Continuous Sliding Track
+       ========================================================================== -->
+  <section class="partners-section">
     <div class="partners-inner">
       <div class="partners-header reveal-fade-up">
         <span class="partners-tag">TRUSTED PARTNERS</span>
         <h3 class="partners-title">Trusted by India's Foremost Enterprise Leaders</h3>
       </div>
 
-      <!-- Continuous Sliding Partner Logos (No Outside Container Boxes or Borders) -->
       <div class="partners-marquee-wrapper reveal-fade-up reveal-stagger-1" aria-label="Trusted enterprise partners sliding track">
         <div class="partners-marquee-track">
-          <!-- Primary 6 Partner Logos (High-Resolution Clean Transparent Marks) -->
+          <!-- Primary 6 Partner Logos -->
           <div class="partner-logo-item" title="Aditya Birla Group">
             <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla Group" loading="lazy">
           </div>
@@ -905,7 +1057,7 @@
             <img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables" loading="lazy">
           </div>
 
-          <!-- Duplicated 6 Logos for Seamless Infinite Continuous Sliding -->
+          <!-- Duplicated 6 Logos for Infinite Sliding -->
           <div class="partner-logo-item" title="Aditya Birla Group" aria-hidden="true">
             <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla Group" loading="lazy">
           </div>
@@ -930,14 +1082,11 @@
   </section>
 
   <!-- ==========================================================================
-       RECOGNITION & AWARDS (Sticky Parallax Showcase - Ref: Image 3)
-       Crane sunset sticky background with smooth scrolling foreground cards & callout banner
+       RECOGNITION & AWARDS SHOWCASE
        ========================================================================== -->
   <section class="awards-sticky-section" id="awards">
-    <!-- Fixed/Sticky Parallax Background with Crane Sunset Silhouette -->
     <div class="awards-sticky-bg" aria-hidden="true"></div>
 
-    <!-- Foreground Scrolling Content -->
     <div class="awards-scroll-content">
       
       <!-- Section Header -->
@@ -955,27 +1104,24 @@
         </p>
       </div>
 
-      <!-- 3 Awards Cards Row (Exact Match to Image 3) -->
+      <!-- 3 Awards Cards Row -->
       <div class="awards-cards-row">
         
-        <!-- Award Card 1: Adani Agile Excellence Plaque -->
         <div class="award-card-item">
           <img src="assest/images/award_adani_agile.png" alt="Adani Agile Recognition for Excellence" class="award-card-img" loading="lazy">
         </div>
 
-        <!-- Award Card 2: Reliance Long Service Award (Ref: user request "award_pic use this image for the 2nd") -->
         <div class="award-card-item">
           <img src="assest/images/award_pic.png" alt="Reliance Long Service Award Certificate" class="award-card-img" loading="lazy">
         </div>
 
-        <!-- Award Card 3: Adani Special Recognition Award 2015 Trophy Ceremony -->
         <div class="award-card-item">
-          <img src="assest/images/award_v3_trophy.png" alt="Adani Special Recognition Award 2015 Trophy &amp; Ceremony" class="award-card-img" loading="lazy">
+          <img src="assest/images/award_v3_trophy.png" alt="Adani Special Recognition Award 2015 Trophy Ceremony" class="award-card-img" loading="lazy">
         </div>
 
       </div>
 
-      <!-- Bottom Callout Strip (Ref: Image 3) -->
+      <!-- Bottom Callout Strip -->
       <div class="awards-bottom-bar">
         <div class="awards-bar-left">
           <h3 class="awards-bar-title">Our Achievements, Your Trust</h3>
@@ -994,47 +1140,41 @@
   </section>
 
   <!-- ==========================================================================
-       FREE ESTIMATE & OFFICIAL CONTACT SECTION (Dark Obsidian Theme)
-       Split Layout: Left rounded photo (contactusimg.jpg), right obsidian card with wave contour lines,
-       subtle telemetry network, plus unified communications hub with bare direct icons & diagonal hover.
+       FREE ESTIMATE & OFFICIAL CONTACT SECTION
        ========================================================================== -->
   <section class="estimate-section" id="contact">
-    <!-- Subtle Glowing Dark Logistics Transit Telemetry Network -->
     <div class="estimate-bg-network" aria-hidden="true"></div>
 
     <div class="estimate-container">
       
-      <!-- Top Split: Photo Left, Deep Navy/Obsidian Card Right -->
       <div class="estimate-split-grid reveal-fade-up">
         
-        <!-- Left Column: Striking Rounded Photo (contact_usimg.jpg stretching to match right box) -->
+        <!-- Left Column: Photo -->
         <div class="estimate-photo-col reveal-fade-up reveal-stagger-1">
-          <img src="assest/images/contact_usimg.jpg" alt="Thin Margin Contact &amp; Support" class="estimate-photo" loading="lazy">
+          <img src="assest/images/contact_usimg.jpg" alt="Thin Margin Supply Chain Support" class="estimate-photo" loading="lazy">
         </div>
 
-        <!-- Right Column: Obsidian/Navy Estimate Card with Flowing Wave Contour Vectors -->
+        <!-- Right Column: Estimate Card -->
         <div class="estimate-card reveal-fade-up reveal-stagger-2">
           <div class="estimate-card-inner">
             <span class="estimate-tag">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 2V13H10V22L17 10H13L16 2H7Z" fill="currentColor"/>
-              </svg>
+              <i class="fa-solid fa-headset" style="margin-right: 6px;"></i>
               <span>WHAT TO EXPECT</span>
             </span>
-            <h2 class="estimate-title">Get your free estimate!</h2>
+            <h2 class="estimate-title">Get your project estimate!</h2>
             
             <form id="estimateForm" class="estimate-form">
               <div class="estimate-inputs-grid">
                 
-                <!-- Row 1: Full Name & Email Address (Ref: Shared Image 2) -->
+                <!-- Row 1: Full Name & Email Address -->
                 <div class="estimate-field">
                   <input type="text" id="estFullName" class="pill-input" placeholder="Full Name" required>
                 </div>
                 <div class="estimate-field">
-                  <input type="email" id="estEmail" class="pill-input" placeholder="Email Address" required>
+                  <input type="email" id="estEmail" class="pill-input" placeholder="Work Email Address" required>
                 </div>
 
-                <!-- Row 2: Mobile Number & Company Name (Ref: Shared Image 2) -->
+                <!-- Row 2: Mobile Number & Company Name -->
                 <div class="estimate-field">
                   <input type="tel" id="estMobile" class="pill-input" placeholder="Mobile Number" required>
                 </div>
@@ -1042,23 +1182,27 @@
                   <input type="text" id="estCompany" class="pill-input" placeholder="Company Name" required>
                 </div>
 
-                <!-- Row 3: Select Service (Ref: Shared Image 2 & 3) -->
+                <!-- Row 3: Select Service (Dropdown with the 8 Core Services) -->
                 <div class="estimate-field estimate-field-full">
                   <select id="estService" class="pill-input pill-select" required aria-label="Select Service">
-                    <option value="" disabled selected>Select Service</option>
-                    <option value="material-management">Material Management</option>
-                    <option value="logistics-support">Logistics Support</option>
-                    <option value="project-consulting">Project Consulting</option>
-                    <option value="other">Other</option>
+                    <option value="" disabled selected>Select Core Service</option>
+                    <option value="warehouse-stores">Warehouse &amp; Stores Management</option>
+                    <option value="material-inventory">Material &amp; Inventory Management</option>
+                    <option value="logistics-supplychain">Logistics &amp; Supply Chain</option>
+                    <option value="procurement-handling">Procurement &amp; Material Handling</option>
+                    <option value="sap-erp">SAP / ERP Solutions</option>
+                    <option value="ehs-compliance">EHS &amp; Compliance</option>
+                    <option value="asset-facility">Asset &amp; Facility Management</option>
+                    <option value="exim-industrial">EXIM &amp; Industrial Services</option>
                   </select>
                 </div>
 
-                <!-- Row 4: Message Textarea (Ref: Shared Image 2) -->
+                <!-- Row 4: Message Textarea -->
                 <div class="estimate-field estimate-field-full">
-                  <textarea id="estMessage" class="pill-input" placeholder="Message" rows="4"></textarea>
+                  <textarea id="estMessage" class="pill-input" placeholder="Project Scope / Sizing Query..." rows="4"></textarea>
                 </div>
 
-                <!-- Submit Button: SUBMIT INQUIRY (Ref: Shared Image 2) -->
+                <!-- Submit Button -->
                 <div class="estimate-field-submit">
                   <button type="submit" class="btn-estimate-submit">
                     <span>SUBMIT INQUIRY</span>
@@ -1077,10 +1221,10 @@
 
       </div>
 
-      <!-- Unified Logistics Communications Hub (Dark Theme, No Dots, Bare Direct Icons, Pure Typography Tags, Diagonal Hover) -->
+      <!-- Unified Logistics Communications Hub -->
       <div class="contact-hub-container reveal-fade-up reveal-stagger-3">
         
-        <!-- Segment 1: Headquarters & Registered Office -->
+        <!-- Segment 1: Headquarters -->
         <div class="hub-segment">
           <div class="hub-segment-top">
             <svg class="hub-icon-direct" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1100,10 +1244,9 @@
           </a>
         </div>
 
-        <!-- Vertical Divider -->
         <div class="hub-divider"></div>
 
-        <!-- Segment 2: 24/7 Priority Telemetry & Dispatch -->
+        <!-- Segment 2: Priority Dispatch Hotline -->
         <div class="hub-segment hub-segment-dispatch">
           <div class="hub-segment-top">
             <svg class="hub-icon-direct" width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1129,7 +1272,6 @@
           </a>
         </div>
 
-        <!-- Vertical Divider -->
         <div class="hub-divider"></div>
 
         <!-- Segment 3: Corporate Communications -->
@@ -1162,22 +1304,19 @@
     </div>
   </section>
 
-
   <!-- ==========================================================================
        EXECUTIVE ENTERPRISE FOOTER
        ========================================================================== -->
   <footer class="site-footer">
-    
-    <!-- 4-Column Structured Footer -->
     <div class="footer-grid">
       
       <!-- Brand Column -->
       <div class="footer-col footer-col-brand">
         <a href="index.html">
-          <img src="assest/images/thin_margin_logo_white_tight.png" alt="Thin Margin Logistics" class="footer-logo" onerror="this.src='assest/images/thin_margin_logo.png'">
+          <img src="assest/images/thin_margin_logo_white_tight.png" alt="Thin Margin Logistics" class="footer-logo">
         </a>
         <p>
-          Delivering techno-commercial excellence, turnkey warehouse operations, and zero-defect project execution for India's foremost enterprise leaders.
+          Delivering techno-commercial excellence, turnkey warehouse &amp; stores operations, and zero-defect project execution for India's foremost enterprise leaders.
         </p>
         <div class="header-socials">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -1194,27 +1333,29 @@
         <ul class="footer-links">
           <li><a href="#home">Home</a></li>
           <li><a href="about.html">About Thin Margin</a></li>
-          <li><a href="#services">Our Services</a></li>
+          <li><a href="#services">Our 8 Core Services</a></li>
+          <li><a href="#process">Operational Methodology</a></li>
           <li><a href="#awards">Recognition &amp; Awards</a></li>
           <li><a href="#contact">Free Estimate</a></li>
-          <li><a href="https://thinmargin.in/contact-us/#" target="_blank" rel="noopener noreferrer">Corporate Contact</a></li>
         </ul>
       </div>
 
-      <!-- Dedicated Logistics Capabilities -->
+      <!-- The 8 Core Supply Chain Capabilities -->
       <div class="footer-col">
-        <h5>Logistics Capabilities</h5>
+        <h5>8 Core Capabilities</h5>
         <ul class="footer-links">
-          <li><a href="#services">Heavy Truck Transportation (FTL)</a></li>
-          <li><a href="#services">Air Express Expedited Freight</a></li>
-          <li><a href="#services">Customs Bonded Warehousing</a></li>
-          <li><a href="#services">24/7 Fleet Telemetry &amp; GPS Alerts</a></li>
-          <li><a href="#services">Quality &amp; Precision Cargo SLAs</a></li>
-          <li><a href="#contact">Custom Enterprise SLAs</a></li>
+          <li><a href="#service-warehouse">Warehouse &amp; Stores Management</a></li>
+          <li><a href="#service-inventory">Material &amp; Inventory Management</a></li>
+          <li><a href="#service-supplychain">Logistics &amp; Supply Chain</a></li>
+          <li><a href="#service-procurement">Procurement &amp; Material Handling</a></li>
+          <li><a href="#service-saperp">SAP / ERP Solutions</a></li>
+          <li><a href="#service-ehs">EHS &amp; Compliance</a></li>
+          <li><a href="#service-asset">Asset &amp; Facility Management</a></li>
+          <li><a href="#service-exim">EXIM &amp; Industrial Services</a></li>
         </ul>
       </div>
 
-      <!-- Registered Headquarters & Contacts -->
+      <!-- Registered Headquarters & Statutory -->
       <div class="footer-col">
         <h5>Registered Headquarters</h5>
         <div class="footer-contact-item">
@@ -1240,22 +1381,20 @@
             GSTIN: 08AEDPK0504Q1ZG<br>MSME: UDYAM-RJ-24-0003207
           </div>
         </div>
-        
       </div>
 
     </div>
 
     <!-- Bottom Legal Bar -->
     <div class="footer-bottom">
-      <p>© 2026 Thin Margin Logistics. All Rights Reserved. Headquartered in Kota, Rajasthan, India.</p>
+      <p>&copy; 2026 Thin Margin. All Rights Reserved. Headquartered in Kota, Rajasthan, India.</p>
       <div class="footer-bottom-links">
         <a href="#contact">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
-
-  <!-- Interactive "Book Consult" Modal (Matching User Specification) -->
+  <!-- Interactive "Book Consult" Modal -->
   <div class="modal-overlay" id="consultModal">
     <div class="consult-modal-box">
       <button type="button" class="modal-close-btn" aria-label="Close consultation modal">
@@ -1264,13 +1403,12 @@
 
       <div class="consult-modal-header">
         <h3 class="consult-modal-title">Book a Consultation</h3>
-        <p class="consult-modal-desc">Schedule a session with our supply chain &amp; logistics leadership.</p>
+        <p class="consult-modal-desc">Schedule a session with our supply chain &amp; material management leadership.</p>
       </div>
 
       <form id="consultForm">
         <div class="form-grid">
           
-          <!-- Row 1: Name & Email Id -->
           <div class="form-group">
             <label for="consultName">Name</label>
             <input type="text" id="consultName" class="form-control" placeholder="Enter your name" required>
@@ -1281,7 +1419,6 @@
             <input type="email" id="consultEmail" class="form-control" placeholder="Enter email id" required>
           </div>
 
-          <!-- Row 2: Phone Number & Company Name -->
           <div class="form-group">
             <label for="consultPhone">Phone Number</label>
             <input type="tel" id="consultPhone" class="form-control" placeholder="Enter your phone number" required>
@@ -1292,24 +1429,21 @@
             <input type="text" id="consultCompany" class="form-control" placeholder="Enter your company name">
           </div>
 
-          <!-- Row 3: Meeting Date & Time of Meeting -->
           <div class="form-group">
             <label for="consultDate">Meeting Date</label>
-            <input type="date" id="consultDate" class="form-control" placeholder="dd-mm-yyyy" required>
+            <input type="date" id="consultDate" class="form-control" required>
           </div>
 
           <div class="form-group">
             <label for="consultTime">Time of Meeting</label>
-            <input type="time" id="consultTime" class="form-control" placeholder="--:--" required>
+            <input type="time" id="consultTime" class="form-control" required>
           </div>
 
-          <!-- Row 4: Query Points (Full Width) -->
           <div class="form-group form-full">
             <label for="consultQuery">Query Points</label>
-            <textarea id="consultQuery" class="form-control" rows="3" placeholder="Query Points for the Meeting..."></textarea>
+            <textarea id="consultQuery" class="form-control" rows="3" placeholder="Query Points regarding warehouse layout, material management, SAP sync..."></textarea>
           </div>
 
-          <!-- Row 5: Submit Button -->
           <div class="form-full" style="margin-top: 10px;">
             <button type="submit" class="form-submit-btn">
               <span>Book Consult</span>
@@ -1331,7 +1465,9 @@
     <div class="mobile-nav-list">
       <a href="#home" class="mobile-nav-link">Home</a>
       <a href="about.html" class="mobile-nav-link">About Us</a>
-      <a href="#services" class="mobile-nav-link">Services</a>
+      <a href="#services" class="mobile-nav-link">8 Core Services</a>
+      <a href="#process" class="mobile-nav-link">Process</a>
+      <a href="#why-choose-us" class="mobile-nav-link">Why Us</a>
       <a href="#contact" class="mobile-nav-link">Contact Us</a>
     </div>
 
@@ -1355,7 +1491,7 @@
     </div>
   </div>
 
-  <!-- Sleek Floating WhatsApp Button (Small 46px, Clean, No Intrusive Tooltip) -->
+  <!-- Sleek Floating WhatsApp Button -->
   <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team%2C%20I%20would%20like%20to%20inquire%20about%20material%20management%20services." 
      target="_blank" 
      rel="noopener noreferrer" 
@@ -1366,8 +1502,8 @@
     </svg>
   </a>
 
-  <!-- Main JavaScript File -->
-  <script src="assest/js/three.min.js"></script>
-  <script src="assest/js/main.js"></script>
+  <!-- Main JavaScript Files -->
+  <script src="assest/js/main.js?v=3.0"></script>
+  <script src="assest/js/about.js?v=3.2"></script>
 </body>
 </html>

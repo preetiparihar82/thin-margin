@@ -91,8 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 750); // Show branded TM logo & telemetry bar smoothly
     }
 
-    // Initialize all video streams
-    initVideos();
+    // Initialize all video streams if slides exist
+    if (heroSlides && heroSlides.length > 0) {
+      initVideos();
+    }
 
     // Trigger Header slide down
     setTimeout(() => {
@@ -105,12 +107,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (paginationDock) paginationDock.classList.add('loaded');
     }, 480);
 
-    // Start Autoplay Video Carousel
-    startSlideAutoPlay();
+    // Start Autoplay Video Carousel if slides exist
+    if (heroSlides && heroSlides.length > 0) {
+      startSlideAutoPlay();
+    }
   }
 
   // --- Slide Transition Function ---
   function goToSlide(targetIndex) {
+    if (!heroSlides || heroSlides.length === 0) return;
     if (targetIndex === currentSlideIndex || isTransitioning) return;
     isTransitioning = true;
 
@@ -178,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Autoplay Carousel (Continuous rotation) ---
   function startSlideAutoPlay() {
+    if (!heroSlides || heroSlides.length === 0) return;
     stopSlideAutoPlay();
     slideInterval = setInterval(() => {
       const nextIndex = (currentSlideIndex + 1) % slidesData.length;
@@ -632,7 +638,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Services Dropdown Hover Grace System (Never prematurely closes) ---
   const dropdownItem = document.querySelector('.nav-item-dropdown');
-  const dropdownMenu = document.querySelector('.dropdown-menu');
+  const dropdownMenu = document.querySelector('.dropdown-menu, .dropdown-menu-mega');
   if (dropdownItem && dropdownMenu) {
     let dropdownTimer = null;
 
