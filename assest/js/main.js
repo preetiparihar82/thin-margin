@@ -1188,12 +1188,11 @@ document.addEventListener('DOMContentLoaded', () => {
      DYNAMIC HERO OPERATIONAL SOLUTION MODE SWITCHER
      -------------------------------------------------------------------------- */
   function initHeroModeSwitcher() {
-    const modePills = document.querySelectorAll('.dock-segment-tab, .hero-mode-pill');
+    const modePills = document.querySelectorAll('.hero-mode-pill');
     const heroImg = document.getElementById('heroMainVisual');
     const heroHudText = document.getElementById('heroHudText');
     const heroBadgeText = document.getElementById('heroBadgeText');
     const heroDescText = document.getElementById('heroDescText');
-    const heroSlaText = document.getElementById('heroSlaText');
     const modeSwitcher = document.getElementById('heroModeSwitcher');
 
     if (modePills.length === 0 || !heroImg) return;
@@ -1201,7 +1200,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentMode = 0;
     let modeTimer = null;
     let isUserInteracting = false;
-    const ROTATION_INTERVAL = 6000;
+    const ROTATION_INTERVAL = 5500;
 
     function setMode(index) {
       if (index < 0 || index >= modePills.length) return;
@@ -1216,11 +1215,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const newTelemetry = activePill.getAttribute('data-telemetry');
       const newBadge = activePill.getAttribute('data-badge');
       const newDesc = activePill.getAttribute('data-desc');
-      const newSla = activePill.getAttribute('data-sla');
 
       if (newImg && heroImg.getAttribute('src') !== newImg) {
         heroImg.style.opacity = '0.35';
-        heroImg.style.transform = 'scale(0.98)';
+        heroImg.style.transform = 'scale(0.97)';
         setTimeout(() => {
           heroImg.src = newImg;
           heroImg.style.opacity = '1';
@@ -1233,14 +1231,6 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           heroHudText.textContent = newTelemetry;
           heroHudText.style.opacity = '1';
-        }, 150);
-      }
-
-      if (heroSlaText && newSla) {
-        heroSlaText.style.opacity = '0';
-        setTimeout(() => {
-          heroSlaText.textContent = newSla;
-          heroSlaText.style.opacity = '1';
         }, 150);
       }
 
