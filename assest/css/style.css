@@ -4700,353 +4700,878 @@ textarea.pill-input {
   margin-bottom: 35px;
 }
 
-/* --- 2. EXECUTIVE PURE LIGHT HERO SECTION --- */
-.hero-light-section {
+/* ==========================================================================
+   CARGONEXT DESIGN SYSTEM & THEME ARCHITECTURE
+   ========================================================================== */
+
+/* --- 1. CARGONEXT TOPBAR --- */
+.cnx-topbar {
+  background: #060c18;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: #94a3b8;
+  padding: 8px 48px;
   position: relative;
-  min-height: 90vh;
+  z-index: 1001;
+}
+
+.cnx-topbar-inner {
+  max-width: 1600px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  padding: 140px 44px 85px;
-  background: 
-    radial-gradient(circle at 84% 22%, rgba(238, 33, 48, 0.05) 0%, transparent 55%),
-    radial-gradient(circle at 12% 65%, rgba(11, 19, 41, 0.03) 0%, transparent 50%),
-    #ffffff;
-  border-bottom: 1px solid #edf2f7;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cnx-topbar-left, .cnx-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cnx-topbar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cnx-topbar-item i {
+  color: var(--color-accent);
+  font-size: 12px;
+}
+
+.cnx-topbar-item a {
+  color: #ffffff;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.cnx-topbar-item a:hover {
+  color: var(--color-accent);
+}
+
+.cnx-topbar-divider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* --- 2. CARGONEXT SITE HEADER --- */
+.site-header.cnx-site-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 14px 48px;
+  background: rgba(7, 14, 28, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+  transition: all 0.3s ease;
+}
+
+.cnx-site-header .nav-menu-list {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cnx-site-header .nav-link {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 2px;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.cnx-site-header .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-accent);
+  transition: width 0.3s var(--ease-out-expo);
+  border-radius: 2px;
+}
+
+.cnx-site-header .nav-item:hover .nav-link::after,
+.cnx-site-header .nav-item.active .nav-link::after {
+  width: 100%;
+}
+
+.cnx-site-header .nav-item:hover .nav-link,
+.cnx-site-header .nav-item.active .nav-link {
+  color: var(--color-accent);
+}
+
+/* --- 3. CARGONEXT ANIMATED BUTTON SYSTEM (mtfe-animated-btn) --- */
+.mtfe-animated-btn-wrap {
+  display: inline-flex;
+}
+
+.mtfe-animated-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 28px;
+  height: 52px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.mtfe-animated-btn__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: currentColor;
+  box-shadow: 0 0 10px currentColor;
+  animation: mtfe-btn-pulse 1.8s infinite;
+}
+
+@keyframes mtfe-btn-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.mtfe-animated-btn.cnx-btn-primary {
+  background: var(--color-accent);
+  color: #ffffff;
+  border: 1px solid var(--color-accent);
+}
+
+.mtfe-animated-btn.cnx-btn-primary:hover {
+  background: var(--color-accent-hover);
+  border-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(238, 33, 48, 0.4);
+}
+
+.mtfe-animated-btn.cnx-btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.mtfe-animated-btn.cnx-btn-glass:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.mtfe-animated-btn.cnx-nav-btn {
+  height: 44px;
+  padding: 0 22px;
+  font-size: 12.5px;
+  background: var(--color-accent);
+  color: #ffffff;
+  border: 1px solid var(--color-accent);
+}
+
+.mtfe-animated-btn.cnx-nav-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(238, 33, 48, 0.35);
+}
+
+/* --- 4. CARGONEXT HERO SECTION --- */
+.cnx-hero-section {
+  position: relative;
+  min-height: 92vh;
+  background: #081022;
+  background-image: 
+    radial-gradient(circle at 75% 25%, rgba(238, 33, 48, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 15% 75%, rgba(14, 26, 46, 0.8) 0%, transparent 60%),
+    url('../images/hero_supply_chain.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  padding: 70px 48px 60px;
+  display: flex;
+  align-items: center;
   overflow: hidden;
 }
 
-.hero-light-container {
-  max-width: 1520px;
-  width: 100%;
-  margin: 0 auto;
+.cnx-hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(6, 12, 25, 0.94) 0%, rgba(9, 18, 38, 0.88) 55%, rgba(7, 13, 26, 0.95) 100%);
+  z-index: 1;
 }
 
-.hero-light-grid {
+.cnx-hero-container {
+  max-width: 1540px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+
+.cnx-hero-grid {
   display: grid;
-  grid-template-columns: 1.15fr 0.95fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 55px;
   align-items: center;
 }
 
-.hero-light-badge {
+/* Live Glass Badge */
+.mtfe-live-badge-wrap {
+  display: inline-flex;
+  margin-bottom: 24px;
+}
+
+.mtfe-live-badge {
+  --mtfe-dot: #2BE07A;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 6px 16px;
+  gap: 10px;
+  padding: 8px 18px 8px 14px;
   border-radius: 999px;
-  background: rgba(238, 33, 48, 0.08);
-  border: 1px solid rgba(238, 33, 48, 0.22);
-  color: var(--color-accent);
+  border: 1px solid transparent;
+  color: #ffffff;
   font-family: var(--font-body);
-  font-size: 11.5px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  font-size: 12px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-decoration: none;
+}
+
+.mtfe-live-badge.is-glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(3, 10, 24, 0.4);
+}
+
+.mtfe-live-badge__dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--mtfe-dot);
+  box-shadow: 0 0 10px var(--mtfe-dot);
+  animation: mtfe-badge-pulse 1.8s infinite;
+}
+
+@keyframes mtfe-badge-pulse {
+  0% { box-shadow: 0 0 0 0 var(--mtfe-dot); }
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+/* CargoNext Signature Hero Title with Outlined text */
+.cnx-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 4.4vw, 4.4rem);
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   margin-bottom: 22px;
 }
 
-.hero-light-title {
-  font-family: var(--font-heading);
-  font-size: clamp(2.35rem, 3.8vw, 3.5rem);
-  font-weight: 800;
-  color: #0b1329;
-  line-height: 1.18;
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
+.cnx-outline {
+  -webkit-text-stroke: 1.5px #ffffff;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-style: normal;
 }
 
-.hero-light-title span.accent-text {
+.cnx-accent {
   color: var(--color-accent);
 }
 
-.hero-light-desc {
+.cnx-hero-desc {
   font-family: var(--font-body);
-  font-size: clamp(16px, 1.12vw, 18px);
-  line-height: 1.72;
-  color: #475569;
+  font-size: clamp(16px, 1.15vw, 18px);
+  line-height: 1.7;
+  color: #cbd5e1;
+  max-width: 620px;
   margin-bottom: 34px;
-  max-width: 640px;
 }
 
-.hero-light-actions {
+.cnx-hero-buttons {
   display: flex;
   align-items: center;
   gap: 18px;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 38px;
 }
 
-.btn-hero-consult {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 26px;
-  border-radius: 999px;
-  border: 1.5px solid #cbd5e1;
-  background: #ffffff;
-  color: #0b1329;
-  font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
-}
-
-.btn-hero-consult:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-  box-shadow: 0 8px 24px rgba(238, 33, 48, 0.12);
-  transform: translateY(-2px);
-}
-
-.hero-quick-trust {
+/* Rating Avatars */
+.mtfe-rating-avatars {
   display: flex;
   align-items: center;
-  gap: 32px;
-  flex-wrap: wrap;
-  padding-top: 26px;
-  border-top: 1px solid #e2e8f0;
+  gap: 16px;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 13.5px;
 }
 
-.trust-item {
+.mtfe-rating-avatars__faces {
+  display: flex;
+}
+
+.mtfe-rating-avatars__faces img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #081022;
+  object-fit: cover;
+  margin-left: -12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.mtfe-rating-avatars__faces img:first-child {
+  margin-left: 0;
+}
+
+.mtfe-rating-avatars__summary {
   display: flex;
   flex-direction: column;
 }
 
-.trust-number {
-  font-family: var(--font-heading);
-  font-size: 22px;
-  font-weight: 800;
-  color: #0b1329;
-  line-height: 1.1;
+.mtfe-rating-avatars__stars {
+  color: #FFB400;
+  letter-spacing: 2px;
+  font-size: 14px;
+  line-height: 1.2;
 }
 
-.trust-number span {
-  color: var(--color-accent);
-}
-
-.trust-label {
-  font-size: 12px;
-  color: #64748b;
-  font-weight: 500;
+.mtfe-rating-avatars__text {
+  font-size: 13px;
+  color: #cbd5e1;
   margin-top: 2px;
 }
 
-/* Right Column Visual Showcase */
-.hero-light-visual {
-  position: relative;
-  width: 100%;
-}
-
-.hero-image-frame {
-  position: relative;
-  width: 100%;
-  height: 520px;
-  border-radius: 26px;
-  overflow: hidden;
-  border: 4px solid #ffffff;
-  box-shadow: 0 28px 70px rgba(11, 19, 41, 0.14), 0 4px 20px rgba(0, 0, 0, 0.04);
-  background: #f1f5f9;
-}
-
-.hero-image-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.hero-image-frame:hover img {
-  transform: scale(1.04);
-}
-
-.hero-hud-telemetry {
-  position: absolute;
-  top: 22px;
-  left: 22px;
-  background: rgba(11, 19, 41, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.mtfe-rating-avatars__text strong {
   color: #ffffff;
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  font-size: 12px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-  z-index: 5;
 }
 
-.hero-floating-sla {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-  background: #ffffff;
-  color: #0b1329;
-  padding: 12px 20px;
-  border-radius: 14px;
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  font-size: 13px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  box-shadow: 0 16px 40px rgba(11, 19, 41, 0.16);
-  z-index: 5;
-  animation: floatSla 4s ease-in-out infinite alternate;
-}
-
-@keyframes floatSla {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
-}
-
-/* --- 3. 8 CORE SUPPLY CHAIN SERVICES GRID --- */
-.services-suite-grid-8 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  margin-top: 50px;
-}
-
-.supply-service-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  overflow: hidden;
+/* --- 5. CARGONEXT FLOATING SHIPMENT TRACKER & STAT CARDS --- */
+.cnx-hero-visual {
+  position: relative;
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 10px 30px rgba(11, 19, 41, 0.04);
+  gap: 24px;
+}
+
+.mtfe-tracker {
+  --mtfe-accent: #ee2130;
+  --mtfe-status: #2BE07A;
+  padding: 28px 30px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+  font-family: var(--font-body);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(3, 10, 24, 0.5);
+  position: relative;
+  z-index: 2;
+}
+
+.mtfe-tracker.is-floating {
+  animation: mtfe-tracker-float 6s ease-in-out infinite;
+}
+
+@keyframes mtfe-tracker-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.mtfe-tracker__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.mtfe-tracker__id {
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #e2e8f0;
+}
+
+.mtfe-tracker__status {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(43, 224, 122, 0.18);
+  color: var(--mtfe-status);
+  border: 1px solid rgba(43, 224, 122, 0.35);
+  letter-spacing: 0.8px;
+}
+
+.mtfe-tracker__route {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
   position: relative;
 }
 
-.supply-service-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(238, 33, 48, 0.4);
-  box-shadow: 0 24px 50px rgba(11, 19, 41, 0.1), 0 0 20px rgba(238, 33, 48, 0.08);
+.mtfe-tracker__stop {
+  display: flex;
+  flex-direction: column;
 }
 
-.supply-service-media {
+.mtfe-tracker__city {
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.mtfe-tracker__stop small {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 3px;
+}
+
+.mtfe-tracker__stop.is-end {
+  text-align: right;
+}
+
+.mtfe-tracker__line {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
   position: relative;
-  height: 200px;
-  width: 100%;
-  overflow: hidden;
-  background: #f1f5f9;
+  margin: 0 10px;
 }
 
-.supply-service-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.supply-service-card:hover .supply-service-img {
-  transform: scale(1.08);
-}
-
-.supply-service-icon-badge {
+.mtfe-tracker__vehicle {
   position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 42px;
-  height: 42px;
-  background: #ffffff;
-  border-radius: 10px;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--mtfe-accent);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 16px var(--mtfe-accent);
+  animation: mtfe-truck-pulse 2s infinite alternate;
+}
+
+@keyframes mtfe-truck-pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  100% { transform: translate(-50%, -50%) scale(1.12); }
+}
+
+.mtfe-tracker__bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.mtfe-tracker__bar span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #ee2130 0%, #ff5263 100%);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(238, 33, 48, 0.6);
+}
+
+.mtfe-tracker__meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* Inset 3 Floating Glass Stat Cards */
+.cnx-stat-cards-cluster {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.mtfe-stat-card {
+  padding: 18px 20px;
+  border-radius: 18px;
+  color: #ffffff;
+  font-family: var(--font-body);
+}
+
+.mtfe-stat-card.is-glass {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 45px rgba(3, 10, 24, 0.35);
+}
+
+.mtfe-stat-card.is-float-slow {
+  animation: mtfe-stat-float 7s ease-in-out infinite;
+}
+
+@keyframes mtfe-stat-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.mtfe-stat-card__value {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 800;
   color: var(--color-accent);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.14);
-  z-index: 5;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.mtfe-stat-card__label {
+  display: block;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  line-height: 1.35;
+}
+
+/* --- 6. CARGONEXT QUICK LINKS GLASS DOCK --- */
+.mtfe-quick-links {
+  --mtfe-accent: #ee2130;
+  --mtfe-divider: rgba(255, 255, 255, 0.12);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 50px rgba(3, 10, 24, 0.35);
+}
+
+.mtfe-quick-links__item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  color: #ffffff !important;
+  text-decoration: none;
+  border-right: 1px solid var(--mtfe-divider);
+  transition: background 0.35s ease, transform 0.3s ease;
+}
+
+.mtfe-quick-links__item:last-child {
+  border-right: 0;
+}
+
+.mtfe-quick-links__item:hover {
+  background: var(--mtfe-accent);
+}
+
+.mtfe-quick-links__icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.mtfe-quick-links__item:hover .mtfe-quick-links__icon {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.mtfe-quick-links__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.mtfe-quick-links__title {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+}
+
+.mtfe-quick-links__subtitle {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 3px;
+}
+
+/* --- 7. CARGONEXT SECTION KICKER & DUAL HEADINGS --- */
+.cnx-section-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.cnx-kicker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent);
+}
+
+.cnx-kicker-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.cnx-dual-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 3.6vw, 3.2rem);
+  font-weight: 800;
+  color: #0b1329;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin-bottom: 18px;
+}
+
+/* --- 8. CARGONEXT v4 SERVICES GRID (SIGNATURE BACKGROUND REVEAL HOVER ANIMATION) --- */
+.cnx-services-section {
+  background: #f8fafc;
+  padding: 100px 48px;
+  position: relative;
+}
+
+.mt-service-design-v4 .services-suite-grid-8 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-top: 50px;
+}
+
+.mt-service-design-v4 .mt-service-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 32px 28px;
+  text-align: left;
+  box-shadow: 0 6px 20px rgba(11, 19, 41, 0.04);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Background image reveal on hover via ::before */
+.mt-service-design-v4 .mt-service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--mt-service-card-bg) center / cover no-repeat;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -2;
+}
+
+/* Dark gradient overlay on hover via ::after */
+.mt-service-design-v4 .mt-service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 14, 28, 0.8) 0%, rgba(4, 8, 17, 0.94) 100%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+}
+
+/* Hover Trigger */
+.mt-service-design-v4 .mt-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(238, 33, 48, 0.45);
+  box-shadow: 0 24px 60px rgba(3, 10, 24, 0.4), 0 0 25px rgba(238, 33, 48, 0.15);
+}
+
+.mt-service-design-v4 .mt-service-card:hover::before,
+.mt-service-design-v4 .mt-service-card:hover::after {
+  opacity: 1;
+}
+
+.mt-service-design-v4 .mt-service-card:hover::before {
+  transform: scale(1);
+}
+
+/* Icon */
+.mt-service-design-v4 .mt-service-card-icon {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(238, 33, 48, 0.08);
+  color: var(--color-accent);
+  font-size: 22px;
+  border-radius: 14px;
+  margin-bottom: 22px;
   transition: all 0.35s ease;
 }
 
-.supply-service-card:hover .supply-service-icon-badge {
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-icon {
   background: var(--color-accent);
   color: #ffffff;
-  transform: rotate(360deg);
+  transform: scale(1.08);
 }
 
-.supply-service-content {
-  padding: 22px 22px 24px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+/* Counter Number */
+.mt-service-design-v4 .mt-service-card-number {
+  position: absolute;
+  top: 32px;
+  right: 28px;
+  font-family: var(--font-body);
+  font-size: 24px;
+  font-weight: 800;
+  color: #cbd5e1;
+  line-height: 1;
+  transition: color 0.4s ease;
 }
 
-.supply-service-title {
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-number {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Service Title */
+.mt-service-design-v4 .mt-service-card-title {
   font-family: var(--font-heading);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
-  color: #0b1329;
   line-height: 1.3;
-  margin-bottom: 10px;
-  letter-spacing: -0.02em;
-  transition: color 0.3s ease;
+  margin-bottom: 12px;
 }
 
-.supply-service-card:hover .supply-service-title {
-  color: var(--color-accent);
+.mt-service-design-v4 .mt-service-card-title a {
+  color: #0b1329;
+  text-decoration: none;
+  transition: color 0.35s ease;
 }
 
-.supply-service-desc {
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-title a {
+  color: #ffffff;
+}
+
+/* Description */
+.mt-service-design-v4 .mt-service-card-desc {
   font-family: var(--font-body);
   font-size: 13.8px;
   line-height: 1.65;
   color: #64748b;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   flex: 1;
+  transition: color 0.35s ease;
 }
 
-.supply-service-specs {
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-desc {
+  color: #cbd5e1;
+}
+
+/* Specs */
+.mt-service-design-v4 .mt-service-card-specs {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  margin-bottom: 18px;
-  padding-bottom: 16px;
+  gap: 7px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
   border-bottom: 1px solid #f1f5f9;
+  transition: border-color 0.35s ease;
 }
 
-.supply-spec-item {
-  font-size: 12.8px;
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-specs {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.mt-service-design-v4 .mt-service-card-specs span {
+  font-size: 12.5px;
   color: #334155;
   font-weight: 500;
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: color 0.35s ease;
 }
 
-.supply-spec-item i {
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-specs span {
+  color: #e2e8f0;
+}
+
+.mt-service-design-v4 .mt-service-card-specs span i {
   color: var(--color-accent);
   font-size: 10px;
 }
 
-.supply-service-action {
-  display: flex;
+/* Bottom Action Link */
+.mt-service-design-v4 .mt-service-card-link {
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.supply-action-link {
+  width: 100%;
   font-size: 13.5px;
   font-weight: 700;
   color: #0b1329;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: all 0.3s ease;
+  text-decoration: none;
+  transition: color 0.35s ease;
+  margin-top: auto;
 }
 
-.supply-action-circle {
-  width: 32px;
-  height: 32px;
+.mt-service-design-v4 .mt-service-card-circle-arrow {
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
   background: #f1f5f9;
   color: #0b1329;
@@ -5057,14 +5582,113 @@ textarea.pill-input {
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.supply-service-card:hover .supply-action-link {
-  color: var(--color-accent);
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-link {
+  color: #ffffff;
 }
 
-.supply-service-card:hover .supply-action-circle {
+.mt-service-design-v4 .mt-service-card:hover .mt-service-card-circle-arrow {
   background: var(--color-accent);
   color: #ffffff;
+  transform: translateX(4px) rotate(-45deg);
+}
+
+/* --- 9. ABOUT PILLARS (MISSION, VISION, CORE VALUES & ETHICS) --- */
+.about-pillars-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 34px;
+}
+
+.institutional-pillar-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 12px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 16px rgba(11, 19, 41, 0.03);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.institutional-pillar-card:hover {
   transform: translateX(4px);
+  border-color: #cbd5e1;
+  border-left-color: var(--color-accent-hover);
+  box-shadow: 0 10px 25px rgba(11, 19, 41, 0.06);
+}
+
+.pillar-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.pillar-title-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pillar-icon {
+  color: var(--color-accent);
+  font-size: 15px;
+}
+
+.pillar-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  color: #0b1329;
+  letter-spacing: -0.01em;
+}
+
+.pillar-num-tag {
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 800;
+  color: var(--color-accent);
+  background: rgba(238, 33, 48, 0.08);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.pillar-desc {
+  font-family: var(--font-body);
+  font-size: 13.8px;
+  line-height: 1.65;
+  color: #475569;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  .mt-service-design-v4 .services-suite-grid-8 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .mtfe-quick-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .cnx-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .cnx-topbar {
+    display: none;
+  }
+  .mtfe-quick-links {
+    grid-template-columns: 1fr;
+  }
+  .cnx-stat-cards-cluster {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .mt-service-design-v4 .services-suite-grid-8 {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 1200px) {
