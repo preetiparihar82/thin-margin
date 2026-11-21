@@ -4,10 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Thin Margin - Turnkey Material &amp; Supply Chain Management</title>
+  <title>Thin Margin</title>
   
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assest/images/thin_margin_favicon.jpeg">
+  <link rel="shortcut icon" type="image/jpeg" href="assest/images/thin_margin_favicon.jpeg">
+  <link rel="apple-touch-icon" href="assest/images/thin_margin_favicon.jpeg">
 
   <!-- Google Fonts: Plus Jakarta Sans, Playfair Display, Lora & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,8 +20,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheets (CargoNext Enterprise Architecture) -->
-  <link rel="stylesheet" href="assest/css/style.css?v=4.0">
-  <link rel="stylesheet" href="assest/css/about.css?v=4.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=4.1">
+  <link rel="stylesheet" href="assest/css/about.css?v=4.1">
 </head>
 <body class="light-theme-page">
 
@@ -33,7 +35,7 @@
       <div class="loader-track">
         <div class="loader-bar"></div>
       </div>
-      <span class="loader-brand-text">TURNKEY SUPPLY CHAIN PRECISION</span>
+      <span class="loader-brand-text">THIN MARGIN</span>
     </div>
   </div>
 
@@ -213,12 +215,17 @@
         <!-- Left: CargoNext Strategic Content -->
         <div class="cnx-hero-content reveal-fade-up">
           
-          <!-- Live Glass Badge -->
+          <!-- High-Tech Glass Live Badge -->
           <div class="mtfe-live-badge-wrap">
-            <span class="mtfe-live-badge is-glass">
-              <span class="mtfe-live-badge__dot" aria-hidden="true"></span>
-              <span class="mtfe-live-badge__text">Live · 1.2GW+ Capital Assets in Custody</span>
-            </span>
+            <div class="mtfe-live-badge is-glass">
+              <span class="mtfe-live-badge__beacon">
+                <span class="mtfe-live-badge__dot"></span>
+                <span class="mtfe-live-badge__wave"></span>
+              </span>
+              <span class="mtfe-live-badge__category">GROUND CUSTODY TELEMETRY</span>
+              <span class="mtfe-live-badge__divider"></span>
+              <span class="mtfe-live-badge__text">1.2GW+ Capital Assets in Active Custody</span>
+            </div>
           </div>
 
           <!-- CargoNext Outlined + Accent Headline -->
@@ -267,57 +274,96 @@
 
         </div>
 
-        <!-- Right: CargoNext Live Shipment Tracker Cockpit & Glass Stat Cards -->
+        <!-- Right: Master Glass Telemetry Cockpit Terminal -->
         <div class="cnx-hero-visual reveal-fade-up reveal-stagger-1">
+          <div class="cnx-cockpit-glow-bg"></div>
           
-          <!-- Live Floating Shipment Tracker Card -->
-          <div class="mtfe-tracker is-glass is-floating" style="--mtfe-progress: 74%">
-            <div class="mtfe-tracker__top">
-              <span class="mtfe-tracker__id"><i class="fa-solid fa-fingerprint" style="color:var(--color-accent); margin-right:6px;"></i> CUSTODY DISPATCH #TM-DECANT-884</span>
-              <span class="mtfe-tracker__status">ACTIVE GROUND OPS</span>
-            </div>
-            <div class="mtfe-tracker__route">
-              <div class="mtfe-tracker__stop">
-                <span class="mtfe-tracker__city">Mundra Seaport</span>
-                <small>De-Stuffing · 06:40</small>
+          <div class="cnx-master-cockpit is-glass">
+            
+            <!-- Terminal Top Status Bar -->
+            <div class="cockpit-top-bar">
+              <div class="cockpit-top-left">
+                <span class="cockpit-live-led"></span>
+                <span class="cockpit-id-text">TELEMETRY DISPATCH #TM-MUNDRA-884</span>
               </div>
-              <div class="mtfe-tracker__line">
-                <span class="mtfe-tracker__vehicle">
-                  <svg aria-hidden="true" class="e-font-icon-svg e-fas-truck" viewBox="0 0 640 512" xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="currentColor">
-                    <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"></path>
-                  </svg>
-                </span>
-              </div>
-              <div class="mtfe-tracker__stop is-end">
-                <span class="mtfe-tracker__city">Solar Laydown Hub</span>
-                <small>Custody GRN · 14:20</small>
+              <div class="cockpit-top-right">
+                <span class="cockpit-chip-sla"><i class="fa-solid fa-shield-halved"></i> 100% CUSTODY SLA</span>
               </div>
             </div>
-            <div class="mtfe-tracker__bar" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100">
-              <span style="width: 74%;"></span>
-            </div>
-            <div class="mtfe-tracker__meta">
-              <span>1,284 of 1,650 units decanted</span>
-              <span>74% complete · Zero Demurrage</span>
-            </div>
-          </div>
 
-          <!-- Inset 3 Floating Glass Stat Cards -->
-          <div class="cnx-stat-cards-cluster">
-            <div class="mtfe-stat-card is-glass is-float-slow">
-              <span class="mtfe-stat-card__value">98.4%</span>
-              <span class="mtfe-stat-card__label">On-time 24-hr decantation</span>
-            </div>
-            <div class="mtfe-stat-card is-glass is-float-slow" style="animation-delay: -2s;">
-              <span class="mtfe-stat-card__value">24/7</span>
-              <span class="mtfe-stat-card__label">SAP S/4HANA live sync</span>
-            </div>
-            <div class="mtfe-stat-card is-glass is-float-slow" style="animation-delay: -4s;">
-              <span class="mtfe-stat-card__value">1.2GW+</span>
-              <span class="mtfe-stat-card__label">Capital assets in custody</span>
-            </div>
-          </div>
+            <!-- Route Flight/Transit Monitor -->
+            <div class="cockpit-route-terminal">
+              <div class="route-station origin">
+                <div class="station-icon"><i class="fa-solid fa-anchor"></i></div>
+                <div class="station-info">
+                  <span class="station-name">Mundra Seaport</span>
+                  <span class="station-detail">Gate 4 De-Stuffing · 06:40 IST</span>
+                </div>
+              </div>
 
+              <div class="route-vector-track">
+                <div class="vector-line-dashed"></div>
+                <div class="vector-pulse-node origin-node"></div>
+                <div class="vector-carrier-vehicle" style="--vehicle-progress: 74%;">
+                  <div class="carrier-vehicle-pulse"></div>
+                  <div class="carrier-vehicle-icon">
+                    <svg aria-hidden="true" viewBox="0 0 640 512" width="18" height="15" fill="currentColor">
+                      <path d="M624 352h-16V243.9c0-12.7-5.1-24.9-14.1-33.9L494 110.1c-9-9-21.2-14.1-33.9-14.1H416V48c0-26.5-21.5-48-48-48H48C21.5 0 0 21.5 0 48v320c0 26.5 21.5 48 48 48h16c0 53 43 96 96 96s96-43 96-96h128c0 53 43 96 96 96s96-43 96-96h48c8.8 0 16-7.2 16-16v-32c0-8.8-7.2-16-16-16zM160 464c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm320 0c-26.5 0-48-21.5-48-48s21.5-48 48-48 48 21.5 48 48-21.5 48-48 48zm80-208H416V144h44.1l99.9 99.9V256z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="vector-pulse-node dest-node"></div>
+              </div>
+
+              <div class="route-station destination">
+                <div class="station-icon"><i class="fa-solid fa-solar-panel"></i></div>
+                <div class="station-info">
+                  <span class="station-name">Solar Laydown Hub</span>
+                  <span class="station-detail">Khavda Yard GRN · 14:20 IST</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Dynamic Progress Meter -->
+            <div class="cockpit-progress-wrap">
+              <div class="cockpit-progress-header">
+                <span class="progress-label"><i class="fa-solid fa-boxes-packing"></i> Rapid Decantation Velocity</span>
+                <span class="progress-pct">74% Complete</span>
+              </div>
+              <div class="cockpit-progress-track">
+                <div class="cockpit-progress-fill" style="width: 74%;">
+                  <span class="progress-sheen"></span>
+                </div>
+              </div>
+              <div class="cockpit-progress-meta">
+                <span><i class="fa-solid fa-cube"></i> <strong>1,284</strong> of 1,650 TEU Decanted</span>
+                <span><i class="fa-solid fa-clock-rotate-left"></i> <strong>Zero</strong> Demurrage SLA Met</span>
+              </div>
+            </div>
+
+            <!-- Integrated Glass Triple Stats Pods -->
+            <div class="cockpit-stats-integrated">
+              <div class="cockpit-stat-pod">
+                <span class="pod-val">98.4%</span>
+                <span class="pod-label">On-Time 24-Hr Decantation</span>
+              </div>
+              <div class="cockpit-stat-pod">
+                <span class="pod-val">24/7</span>
+                <span class="pod-label">SAP S/4HANA Sync</span>
+              </div>
+              <div class="cockpit-stat-pod">
+                <span class="pod-val">1.2GW+</span>
+                <span class="pod-label">Capital Assets Custody</span>
+              </div>
+            </div>
+
+            <!-- Live Status Ticker -->
+            <div class="cockpit-bottom-ticker">
+              <span class="ticker-dot">●</span>
+              <span class="ticker-text">MUNDRA &rarr; KHAVDA ACTIVE CORRIDOR · GUARANTEED DEMURRAGE NEUTRALITY</span>
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -357,192 +403,205 @@
     </div>
   </section>
 
-  <!-- =========================================================================
-       STRATEGIC PERFORMANCE METRICS STRIP (Ref: Image 1 & 2)
-       Fluid 3D Split-Flap Flip Cards & Slot-Reel Counter Animation
-       ========================================================================= -->
-  <section class="about-intro-section" id="metrics">
-    <div class="about-intro-container">
-      
-      <div class="intro-tag-pill">
-        <i class="fa-solid fa-chart-line"></i>
-        <span>PERFORMANCE BENCHMARKS</span>
-      </div>
-
-      <h2 class="intro-headline">
-        Precision <span class="highlight-crimson">Metrics</span>
-      </h2>
-
-      <p class="intro-lead-text">
-        Institutional-grade KPIs defining our turnkey supply chain and material custody execution across pan-India capital infrastructure.
-      </p>
-
-      <!-- FLUID 3D FLIP METRIC STRIP (100% Non-Container, Borderless Editorial Layout) -->
-      <div class="fluid-metric-strip" id="statsStrip">
-        
-        <!-- Metric 1: Track Record -->
-        <div class="fluid-metric-flip-col" data-card-index="0" tabindex="0" role="button" aria-label="Track Record statistics: 10+ Years">
-          <div class="metric-flip-inner">
-            <div class="metric-flip-face metric-flip-front">
-              <span class="metric-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
-              <div class="fluid-metric-number" data-target="10" data-decimals="0" data-suffix="+" data-unit="Years">
-                <span class="metric-val-wrap"><span class="metric-val">0</span></span><span class="metric-accent">+</span> <span class="metric-unit">Years</span>
-              </div>
-            </div>
-            <div class="metric-flip-face metric-flip-back">
-              <span class="metric-back-kicker"><i class="fa-solid fa-calendar-check"></i> Track Record</span>
-              <p class="fluid-metric-label">Industrial supply chain and turnkey mega-project leadership across pan-India corridors.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metric 2: Mega Solar -->
-        <div class="fluid-metric-flip-col" data-card-index="1" tabindex="0" role="button" aria-label="Mega Solar statistics: 1.2GW+">
-          <div class="metric-flip-inner">
-            <div class="metric-flip-face metric-flip-front">
-              <span class="metric-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
-              <div class="fluid-metric-number" data-target="1.2" data-decimals="1" data-suffix="GW+" data-unit="">
-                <span class="metric-val-wrap"><span class="metric-val">0.0</span></span><span class="metric-accent">GW+</span>
-              </div>
-            </div>
-            <div class="metric-flip-face metric-flip-back">
-              <span class="metric-back-kicker"><i class="fa-solid fa-solar-panel"></i> Mega Solar</span>
-              <p class="fluid-metric-label">Single-location mega solar park material custody executed with zero loss.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metric 3: Port Velocity -->
-        <div class="fluid-metric-flip-col" data-card-index="2" tabindex="0" role="button" aria-label="Port Velocity statistics: 24Hrs">
-          <div class="metric-flip-inner">
-            <div class="metric-flip-face metric-flip-front">
-              <span class="metric-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
-              <div class="fluid-metric-number" data-target="24" data-decimals="0" data-suffix="Hrs" data-unit="">
-                <span class="metric-val-wrap"><span class="metric-val">0</span></span><span class="metric-accent">Hrs</span>
-              </div>
-            </div>
-            <div class="metric-flip-face metric-flip-back">
-              <span class="metric-back-kicker"><i class="fa-solid fa-stopwatch-24"></i> Port Velocity</span>
-              <p class="fluid-metric-label">Guaranteed container de-stuffing &amp; empty return turnaround to prevent demurrage.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Metric 4: Governance -->
-        <div class="fluid-metric-flip-col" data-card-index="3" tabindex="0" role="button" aria-label="Governance statistics: 100%">
-          <div class="metric-flip-inner">
-            <div class="metric-flip-face metric-flip-front">
-              <span class="metric-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
-              <div class="fluid-metric-number" data-target="100" data-decimals="0" data-suffix="%" data-unit="">
-                <span class="metric-val-wrap"><span class="metric-val">0</span></span><span class="metric-accent">%</span>
-              </div>
-            </div>
-            <div class="metric-flip-face metric-flip-back">
-              <span class="metric-back-kicker"><i class="fa-solid fa-shield-halved"></i> Governance</span>
-              <p class="fluid-metric-label">Zero-compromise EHS compliance, certified rigging, and statutory labor governance.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
   <!-- ==========================================================================
-       GUIDING PRINCIPLES & ABOUT THIN MARGIN (CargoNext Style Architecture)
-       Stacked Visual Collage, Zero Clutter Badges, Mission, Vision, Core Values Pillars
+       GROUND REALITIES. ABSOLUTE ACCOUNTABILITY (Interactive Enterprise Architecture)
+       Techno-Commercial Genesis, Construction-to-Steady-State, Employee-to-Entrepreneur,
+       Interactive Corporate Tabs (Mission, Vision, Core Values), and Ground Operations Showcase
        ========================================================================== -->
-  <section class="about-creative-section" id="about">
+  <section class="about-creative-section cnx-ground-realities-section" id="about">
+    <div class="cnx-about-decor-glow"></div>
     <div class="about-creative-container">
-      <div class="about-creative-grid">
-        
-        <!-- Left Column: Supply Chain & Laydown Yard Collage (Clean, No Floating Stickers) -->
-        <div class="about-creative-visual">
-          <div class="creative-cut-collage">
-            
-            <!-- Cut Image 1: Main High-Density Warehouse -->
-            <div class="cut-image-card cut-card-primary reveal-fade-up">
-              <img src="assest/images/Thin Margin about.webp" alt="Thin Margin Material &amp; Stores Hub" class="cut-img">
-            </div>
 
-            <!-- Cut Image 2: Mechanized Material Staging & Handling -->
-            <div class="cut-image-card cut-card-secondary reveal-fade-up reveal-stagger-1">
-              <img src="assest/images/why_choose_us_crystal.jpg" alt="Dedicated Supply Chain Ground Custody" class="cut-img">
-            </div>
-
-          </div>
+      <!-- Section Header -->
+      <div class="cnx-section-header-centered reveal-fade-up">
+        <div class="cnx-kicker-pill">
+          <span class="cnx-kicker-pulse-dot"></span>
+          <span class="cnx-kicker-text">GROUND REALITIES</span>
         </div>
-
-        <!-- Right Column: Guiding Principles & CargoNext Corporate Pillars -->
-        <div class="about-creative-text reveal-fade-up reveal-stagger-2">
-          <div class="cnx-section-kicker">
-            <span class="cnx-kicker-dot"></span>
-            <span class="cnx-kicker-text">GROUND REALITIES</span>
-          </div>
-
-          <h2 class="about-creative-title cnx-dual-heading">
-            Ground Realities. <span class="cnx-accent">Absolute Accountability</span>
-          </h2>
-
-          <p class="about-creative-lead">
-            We bridge engineering schedules with on-site material custody, assuming total techno-commercial ownership to safeguard your capital investments on time and within budget.
-          </p>
-
-          <!-- 3 Institutional Corporate Pillars (Mission, Vision, and Core Values & Ethics) -->
-          <div class="about-pillars-stack">
-            
-            <!-- Pillar 1: Our Mission -->
-            <div class="institutional-pillar-card">
-              <div class="pillar-card-header">
-                <span class="pillar-num-tag">01</span>
-                <div class="pillar-title-box">
-                  <i class="fa-solid fa-crosshairs pillar-icon"></i>
-                  <h4 class="pillar-title">Our Mission</h4>
-                </div>
-              </div>
-              <p class="pillar-desc">To eliminate the margin of error in industrial material management through turnkey custody, high-velocity 24-hr container de-stuffing, and synchronized ERP telemetry for high-stakes capital infrastructure projects across India.</p>
-            </div>
-
-            <!-- Pillar 2: Our Vision -->
-            <div class="institutional-pillar-card">
-              <div class="pillar-card-header">
-                <span class="pillar-num-tag">02</span>
-                <div class="pillar-title-box">
-                  <i class="fa-solid fa-eye pillar-icon"></i>
-                  <h4 class="pillar-title">Our Vision</h4>
-                </div>
-              </div>
-              <p class="pillar-desc">To be India's preeminent techno-commercial supply chain partner, setting national benchmarks in zero-defect laydown storage, EHS compliance, and technology-driven material velocity for GW-scale energy and infrastructure assets.</p>
-            </div>
-
-            <!-- Pillar 3: Core Values & Ethics -->
-            <div class="institutional-pillar-card">
-              <div class="pillar-card-header">
-                <span class="pillar-num-tag">03</span>
-                <div class="pillar-title-box">
-                  <i class="fa-solid fa-scale-balanced pillar-icon"></i>
-                  <h4 class="pillar-title">Core Values &amp; Ethics</h4>
-                </div>
-              </div>
-              <p class="pillar-desc">Uncompromising corporate governance, 100% statutory labor compliance (PF, ESIC, Workman Compensation), zero-tolerance safety protocols, and absolute commercial transparency across every yard, dock, and project site.</p>
-            </div>
-
-          </div>
-
-          <!-- Direct CTA -->
-          <div class="about-creative-actions">
-            <div class="mtfe-animated-btn-wrap">
-              <a href="about.html" class="mtfe-animated-btn cnx-btn-primary">
-                <span class="mtfe-animated-btn__dot" aria-hidden="true"></span>
-                <span class="mtfe-animated-btn__label">Explore Full Story &amp; Leadership</span>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
+        <h2 class="cnx-grand-heading">
+          Ground Realities. <span class="cnx-accent">Absolute Accountability</span>
+        </h2>
+        <p class="cnx-grand-subtitle">
+          Engineered on ground realities, driven by uncompromising accountability — bridging mega-project schedules with on-site material custody.
+        </p>
       </div>
+
+      <!-- Grand Executive Narrative Manifesto (The User's Exact Corporate Narrative) -->
+      <div class="tm-executive-manifesto reveal-fade-up reveal-stagger-1">
+        <div class="manifesto-glass-card">
+          <div class="manifesto-card-accent-bar"></div>
+          <div class="manifesto-quote-icon">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <div class="manifesto-body-text">
+            <p class="manifesto-lead-para">
+              <strong>The Thin Margin (TM)</strong> is established by professionals with <strong>Techno-Commercial background</strong> who gained rich experience while working with several world / country’s prestigious construction of projects and contributed significantly in implementing projects with expertise in <strong>Material Management during Construction to Steady state stage</strong>.
+            </p>
+            <p class="manifesto-sub-para">
+              The team of highly motivated and result oriented individuals with exemplary levels of commitment are brought to an umbrella to become <strong>employees to entrepreneur</strong> with the ambition to be known as leader in <strong>Material Management Partner</strong> to large size projects in India and abroad.
+            </p>
+          </div>
+
+          <!-- 4 Strategic Pillars Strip -->
+          <div class="manifesto-credentials-grid">
+            <div class="manifesto-cred-box">
+              <div class="cred-icon-wrap"><i class="fa-solid fa-briefcase"></i></div>
+              <div class="cred-text-wrap">
+                <span class="cred-tag">GENESIS</span>
+                <strong>Techno-Commercial</strong>
+                <small>Global mega-project expertise</small>
+              </div>
+            </div>
+            <div class="manifesto-cred-box">
+              <div class="cred-icon-wrap"><i class="fa-solid fa-layer-group"></i></div>
+              <div class="cred-text-wrap">
+                <span class="cred-tag">LIFECYCLE</span>
+                <strong>Construction to Steady State</strong>
+                <small>Zero-shrinkage stewardship</small>
+              </div>
+            </div>
+            <div class="manifesto-cred-box">
+              <div class="cred-icon-wrap"><i class="fa-solid fa-user-astronaut"></i></div>
+              <div class="cred-text-wrap">
+                <span class="cred-tag">OWNERSHIP</span>
+                <strong>Employees to Entrepreneur</strong>
+                <small>Personal on-ground accountability</small>
+              </div>
+            </div>
+            <div class="manifesto-cred-box">
+              <div class="cred-icon-wrap"><i class="fa-solid fa-earth-americas"></i></div>
+              <div class="cred-text-wrap">
+                <span class="cred-tag">HORIZON</span>
+                <strong>India &amp; Abroad</strong>
+                <small>Large-scale infrastructure partner</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive 3-Tab Strategic Console: Mission · Vision · Core Values & Ethics -->
+      <div class="tm-interactive-ground-hub reveal-fade-up reveal-stagger-2">
+        <div class="ground-hub-nav" role="tablist">
+          <button type="button" class="ground-tab-btn active" data-tab="tab-mission" role="tab" aria-selected="true">
+            <span class="tab-btn-icon"><i class="fa-solid fa-crosshairs"></i></span>
+            <span class="tab-btn-title">01 / Our Mission</span>
+            <span class="tab-btn-sub">Zero-Margin-of-Error Custody</span>
+          </button>
+          <button type="button" class="ground-tab-btn" data-tab="tab-vision" role="tab" aria-selected="false">
+            <span class="tab-btn-icon"><i class="fa-solid fa-eye"></i></span>
+            <span class="tab-btn-title">02 / Our Vision</span>
+            <span class="tab-btn-sub">National &amp; Global Benchmark</span>
+          </button>
+          <button type="button" class="ground-tab-btn" data-tab="tab-values" role="tab" aria-selected="false">
+            <span class="tab-btn-icon"><i class="fa-solid fa-scale-balanced"></i></span>
+            <span class="tab-btn-title">03 / Core Values &amp; Ethics</span>
+            <span class="tab-btn-sub">100% Statutory Compliance</span>
+          </button>
+        </div>
+
+        <div class="ground-hub-content">
+          
+          <!-- Pane 1: Mission -->
+          <div class="ground-tab-pane active" id="tab-mission" role="tabpanel">
+            <div class="pane-grid">
+              <div class="pane-text">
+                <span class="pane-badge"><i class="fa-solid fa-bullseye"></i> OPERATIONAL MANDATE</span>
+                <h3 class="pane-title">Eliminating the Margin of Error Across Industrial Mega-Projects</h3>
+                <p class="pane-desc">
+                  To eliminate the margin of error in industrial material management through turnkey custody, high-velocity 24-hr container de-stuffing, and synchronized ERP telemetry for high-stakes capital infrastructure projects across India and abroad.
+                </p>
+                <div class="pane-checkmarks">
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>24-Hour Container Decantation SLA at Seaports (Mundra, Kandla)</span></div>
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>Strict FIFO OEM Preservation &amp; Zero Shrinkage Guarantee</span></div>
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>Real-Time SAP S/4HANA ERP Posting &amp; Telemetry Sync</span></div>
+                </div>
+              </div>
+              <div class="pane-visual">
+                <div class="pane-visual-card">
+                  <img src="assest/images/port_container_decantation.jpg" alt="Port Container Decantation Velocity" class="pane-img">
+                  <div class="pane-visual-glass-overlay">
+                    <span class="overlay-telemetry-badge"><i class="fa-solid fa-stopwatch-24"></i> Rapid 24-Hr Turnaround</span>
+                    <span class="overlay-meta">Mundra &amp; Kandla Seaports · Zero Demurrage</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 2: Vision -->
+          <div class="ground-tab-pane" id="tab-vision" role="tabpanel">
+            <div class="pane-grid">
+              <div class="pane-text">
+                <span class="pane-badge"><i class="fa-solid fa-compass"></i> STRATEGIC HORIZON</span>
+                <h3 class="pane-title">The Benchmark in Techno-Commercial Material Stewardship</h3>
+                <p class="pane-desc">
+                  To be India's preeminent techno-commercial supply chain partner and expand globally, setting national benchmarks in zero-defect laydown storage, EHS compliance, and technology-driven material velocity for GW-scale energy and infrastructure assets.
+                </p>
+                <div class="pane-checkmarks">
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>1.2GW+ Renewable Energy Single-Location Solar Park Footprint</span></div>
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>End-to-End Construction to Steady-State Lifecycle Management</span></div>
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>Pan-India Expansion across Khavda, Dholera, Jamnagar &amp; Beyond</span></div>
+                </div>
+              </div>
+              <div class="pane-visual">
+                <div class="pane-visual-card">
+                  <img src="assest/images/Thin Margin about.webp" alt="High-Density Capital Asset Laydown" class="pane-img">
+                  <div class="pane-visual-glass-overlay">
+                    <span class="overlay-telemetry-badge"><i class="fa-solid fa-solar-panel"></i> 1.2GW+ Capital Assets</span>
+                    <span class="overlay-meta">Khavda Mega Solar Laydown · Institutional Custody</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pane 3: Core Values & Ethics -->
+          <div class="ground-tab-pane" id="tab-values" role="tabpanel">
+            <div class="pane-grid">
+              <div class="pane-text">
+                <span class="pane-badge"><i class="fa-solid fa-shield-halved"></i> UNCOMPROMISING GOVERNANCE</span>
+                <h3 class="pane-title">Absolute Transparency, Statutory Rigor &amp; Zero-Tolerance Safety</h3>
+                <p class="pane-desc">
+                  Uncompromising corporate governance, 100% statutory labor compliance (PF, ESIC, Workman Compensation), zero-tolerance safety protocols, and absolute commercial transparency across every yard, dock, and project site.
+                </p>
+                <div class="pane-checkmarks">
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>100% Statutory Labor Compliance (PF, ESIC, Safety Audits)</span></div>
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>Third-Party Certified Heavy Rigging &amp; Mechanized Material Handling</span></div>
+                  <div class="checkmark-row"><i class="fa-solid fa-circle-check"></i> <span>Transparent Commercial Audit Trails &amp; Zero Detention Surcharge</span></div>
+                </div>
+              </div>
+              <div class="pane-visual">
+                <div class="pane-visual-card">
+                  <img src="assest/images/why_choose_us_crystal.jpg" alt="EHS & Statutory Compliance On-Ground" class="pane-img">
+                  <div class="pane-visual-glass-overlay">
+                    <span class="overlay-telemetry-badge"><i class="fa-solid fa-hard-hat"></i> Zero-Loss Safety Record</span>
+                    <span class="overlay-meta">Statutory Rigor · 10+ Years Operational Governance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="ground-realities-actions reveal-fade-up">
+        <div class="mtfe-animated-btn-wrap">
+          <a href="about.html" class="mtfe-animated-btn cnx-btn-primary">
+            <span class="mtfe-animated-btn__dot" aria-hidden="true"></span>
+            <span class="mtfe-animated-btn__label">Explore Full Story &amp; Leadership</span>
+          </a>
+        </div>
+        <div class="mtfe-animated-btn-wrap">
+          <a href="#contact" class="mtfe-animated-btn cnx-btn-glass">
+            <span class="mtfe-animated-btn__dot" aria-hidden="true"></span>
+            <span class="mtfe-animated-btn__label">Schedule On-Site Audit</span>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 

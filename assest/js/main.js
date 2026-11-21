@@ -1309,18 +1309,50 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --------------------------------------------------------------------------
+     GROUND REALITIES INTERACTIVE TABS CONSOLE
+     -------------------------------------------------------------------------- */
+  function initGroundRealitiesTabs() {
+    const tabBtns = document.querySelectorAll('.ground-tab-btn');
+    const tabPanes = document.querySelectorAll('.ground-tab-pane');
+    if (tabBtns.length === 0 || tabPanes.length === 0) return;
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-tab');
+        if (!targetId) return;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabPanes.forEach(p => p.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const targetPane = document.getElementById(targetId);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        }
+      });
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initWhyChooseThreeJs();
       initDigitalTwin3D();
       initHeroModeSwitcher();
       initHeroParallaxTilt();
+      initGroundRealitiesTabs();
     });
   } else {
     initWhyChooseThreeJs();
     initDigitalTwin3D();
     initHeroModeSwitcher();
     initHeroParallaxTilt();
+    initGroundRealitiesTabs();
   }
 
 });
