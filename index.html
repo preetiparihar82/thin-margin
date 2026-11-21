@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheets (Pure Light Theme & Material Management Architecture) -->
-  <link rel="stylesheet" href="assest/css/style.css?v=3.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=3.5">
   <link rel="stylesheet" href="assest/css/about.css?v=3.2">
 </head>
 <body class="light-theme-page">
@@ -216,17 +216,33 @@
         <div class="hero-light-content reveal-fade-up">
           
           <div class="hero-light-badge">
-            <i class="fa-solid fa-cubes-stacked"></i>
-            <span>Turnkey Material &amp; Supply Chain Management</span>
+            <span class="badge-pulse-indicator"></span>
+            <span id="heroBadgeText">Turnkey Material &amp; Supply Chain Management</span>
           </div>
 
           <h1 class="hero-light-title">
-            Where The Margin of Error is Thin, Our Precision Defines <span class="accent-text">Every Capital Asset.</span>
+            Where Margins Are Thin, Precision Defines <span class="accent-text">Every Capital Asset.</span>
           </h1>
 
-          <p class="hero-light-desc">
+          <p class="hero-light-desc" id="heroDescText">
             Institutional-grade stores management, real-time SAP/ERP inventory synchronization, 24-hour container decantation, and turnkey laydown custody for India's foremost renewable energy, thermal power, and industrial infrastructure leaders.
           </p>
+
+          <!-- Interactive Dynamic Solution Mode Switcher -->
+          <div class="hero-mode-switcher" id="heroModeSwitcher" role="tablist" aria-label="Operational Solution Modes">
+            <button type="button" class="hero-mode-pill active" data-mode="0" data-img="assest/images/hero_supply_chain.jpg" data-telemetry="LIVE: HIGH-BAY STORES ACTIVE" data-badge="Smart Stores Management" data-desc="Institutional-grade stores management, FIFO protocols, vertical automated racking, and zero-loss laydown custody.">
+              <span class="mode-dot"></span>
+              <span>01 / Smart Stores</span>
+            </button>
+            <button type="button" class="hero-mode-pill" data-mode="1" data-img="assest/images/port_container_decantation.jpg" data-telemetry="LIVE: SEAPORT DECANTATION ACTIVE" data-badge="24-Hr Container Decantation" data-desc="24-hour rapid container de-stuffing at key seaports (Mundra, Kandla) and ICDs, guaranteeing zero detention fees.">
+              <span class="mode-dot"></span>
+              <span>02 / 24-Hr Decantation</span>
+            </button>
+            <button type="button" class="hero-mode-pill" data-mode="2" data-img="assest/images/sap_erp_solutions.jpg" data-telemetry="LIVE: SAP S/4HANA SYNC ACTIVE" data-badge="SAP S/4HANA ERP Posting" data-desc="Direct digital GRN posting, serialized barcode/RFID tracking, and real-time ledger synchronization eliminating blind spots.">
+              <span class="mode-dot"></span>
+              <span>03 / ERP Telemetry</span>
+            </button>
+          </div>
 
           <div class="hero-light-actions">
             <a href="#services" class="btn-book-consult" style="padding: 14px 28px;">
@@ -264,16 +280,16 @@
 
         <!-- Right: Modern Supply Chain & Warehousing Visual Frame -->
         <div class="hero-light-visual reveal-fade-up reveal-stagger-1">
-          <div class="hero-image-frame">
-            <img src="assest/images/hero_supply_chain.jpg" alt="High-Density Industrial Supply Chain &amp; Warehouse Facility" loading="eager">
+          <div class="hero-image-frame" id="heroImageFrame">
+            <img src="assest/images/hero_supply_chain.jpg" id="heroMainVisual" alt="High-Density Industrial Supply Chain &amp; Warehouse Facility" loading="eager">
             
             <!-- Animated Cybernetic Laser Scanner Sweep -->
             <div class="scanner-laser-beam"></div>
 
             <!-- Live HUD Telemetry Badge (Top Left) -->
-            <div class="hero-hud-telemetry">
+            <div class="hero-hud-telemetry" id="heroHudTelemetry">
               <span class="pulse-dot" style="width:8px; height:8px; border-radius:50%; background:#ee2130; display:inline-block; box-shadow:0 0 10px #ee2130;"></span>
-              <span>LIVE TELEMETRY: ACTIVE STORES STAGING</span>
+              <span id="heroHudText">LIVE TELEMETRY: ACTIVE STORES STAGING</span>
             </div>
 
             <!-- Floating Demurrage Neutrality Interactive Chip -->
@@ -286,6 +302,12 @@
                 <span class="chip-subtitle">&le; 24-Hr Turnaround SLA</span>
               </div>
             </div>
+
+            <!-- Interactive Video Trigger Pill -->
+            <a href="#why-choose-us" class="hero-video-preview-pill" aria-label="Watch Ground Operations Video">
+              <span class="play-triangle"><i class="fa-solid fa-play"></i></span>
+              <span>Watch Ground Ops</span>
+            </a>
 
             <!-- Floating SLA Badge (Bottom Right) -->
             <div class="hero-floating-sla">
@@ -307,16 +329,16 @@
     <div class="about-intro-container">
       
       <div class="intro-tag-pill">
-        <i class="fa-solid fa-compass-drafting"></i>
-        <span>Techno-Commercial Performance</span>
+        <i class="fa-solid fa-chart-line"></i>
+        <span>PERFORMANCE BENCHMARKS</span>
       </div>
 
       <h2 class="intro-headline">
-        Engineering Ground Realities with Uncompromising Precision.
+        Precision <span class="highlight-crimson">Metrics</span>
       </h2>
 
       <p class="intro-lead-text">
-        Thin Margin delivers specialized warehouse sizing, open laydown storage, 24-hour import container decantation, and synchronized ERP tracking tailored to your operational margins.
+        Institutional-grade KPIs defining our turnkey supply chain and material custody execution across pan-India capital infrastructure.
       </p>
 
       <!-- FLUID 3D FLIP METRIC STRIP (100% Non-Container, Borderless Editorial Layout) -->
@@ -1686,7 +1708,7 @@
 
   <!-- Main JavaScript Files -->
   <script src="assest/js/three.min.js"></script>
-  <script src="assest/js/main.js?v=3.5"></script>
+  <script src="assest/js/main.js?v=4.0"></script>
   <script src="assest/js/about.js?v=3.2"></script>
 </body>
 </html>

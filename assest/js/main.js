@@ -1184,14 +1184,143 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* --------------------------------------------------------------------------
+     DYNAMIC HERO OPERATIONAL SOLUTION MODE SWITCHER
+     -------------------------------------------------------------------------- */
+  function initHeroModeSwitcher() {
+    const modePills = document.querySelectorAll('.hero-mode-pill');
+    const heroImg = document.getElementById('heroMainVisual');
+    const heroHudText = document.getElementById('heroHudText');
+    const heroBadgeText = document.getElementById('heroBadgeText');
+    const heroDescText = document.getElementById('heroDescText');
+    const modeSwitcher = document.getElementById('heroModeSwitcher');
+
+    if (modePills.length === 0 || !heroImg) return;
+
+    let currentMode = 0;
+    let modeTimer = null;
+    let isUserInteracting = false;
+    const ROTATION_INTERVAL = 5500;
+
+    function setMode(index) {
+      if (index < 0 || index >= modePills.length) return;
+      currentMode = index;
+
+      modePills.forEach((pill, idx) => {
+        pill.classList.toggle('active', idx === index);
+      });
+
+      const activePill = modePills[index];
+      const newImg = activePill.getAttribute('data-img');
+      const newTelemetry = activePill.getAttribute('data-telemetry');
+      const newBadge = activePill.getAttribute('data-badge');
+      const newDesc = activePill.getAttribute('data-desc');
+
+      if (newImg && heroImg.getAttribute('src') !== newImg) {
+        heroImg.style.opacity = '0.35';
+        heroImg.style.transform = 'scale(0.97)';
+        setTimeout(() => {
+          heroImg.src = newImg;
+          heroImg.style.opacity = '1';
+          heroImg.style.transform = 'scale(1)';
+        }, 180);
+      }
+
+      if (heroHudText && newTelemetry) {
+        heroHudText.style.opacity = '0';
+        setTimeout(() => {
+          heroHudText.textContent = newTelemetry;
+          heroHudText.style.opacity = '1';
+        }, 150);
+      }
+
+      if (heroBadgeText && newBadge) {
+        heroBadgeText.style.opacity = '0';
+        setTimeout(() => {
+          heroBadgeText.textContent = newBadge;
+          heroBadgeText.style.opacity = '1';
+        }, 150);
+      }
+
+      if (heroDescText && newDesc) {
+        heroDescText.style.opacity = '0.5';
+        setTimeout(() => {
+          heroDescText.textContent = newDesc;
+          heroDescText.style.opacity = '1';
+        }, 150);
+      }
+    }
+
+    modePills.forEach((pill, idx) => {
+      pill.addEventListener('click', () => {
+        isUserInteracting = true;
+        setMode(idx);
+        stopModeRotation();
+        setTimeout(() => {
+          isUserInteracting = false;
+          startModeRotation();
+        }, 8000);
+      });
+    });
+
+    function startModeRotation() {
+      stopModeRotation();
+      modeTimer = setInterval(() => {
+        if (!isUserInteracting) {
+          const next = (currentMode + 1) % modePills.length;
+          setMode(next);
+        }
+      }, ROTATION_INTERVAL);
+    }
+
+    function stopModeRotation() {
+      if (modeTimer) {
+        clearInterval(modeTimer);
+        modeTimer = null;
+      }
+    }
+
+    if (modeSwitcher) {
+      modeSwitcher.addEventListener('mouseenter', stopModeRotation);
+      modeSwitcher.addEventListener('mouseleave', () => {
+        if (!isUserInteracting) startModeRotation();
+      });
+    }
+
+    startModeRotation();
+  }
+
+  /* --------------------------------------------------------------------------
+     HERO IMAGE 3D PERSPECTIVE MOUSE TILT
+     -------------------------------------------------------------------------- */
+  function initHeroParallaxTilt() {
+    const frame = document.getElementById('heroImageFrame');
+    if (!frame) return;
+
+    frame.addEventListener('mousemove', (e) => {
+      const rect = frame.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width - 0.5;
+      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      frame.style.transform = `perspective(1000px) rotateY(${x * 8}deg) rotateX(${-y * 8}deg) scale3d(1.01, 1.01, 1.01)`;
+    });
+
+    frame.addEventListener('mouseleave', () => {
+      frame.style.transform = 'perspective(1000px) rotateY(0deg) rotateX(0deg) scale3d(1, 1, 1)';
+    });
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initWhyChooseThreeJs();
       initDigitalTwin3D();
+      initHeroModeSwitcher();
+      initHeroParallaxTilt();
     });
   } else {
     initWhyChooseThreeJs();
     initDigitalTwin3D();
+    initHeroModeSwitcher();
+    initHeroParallaxTilt();
   }
 
 });
