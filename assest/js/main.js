@@ -1356,3 +1356,116 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+/* --- CARGO TRUCKING INTERACTIONS --- */
+function initCargoTruckingInteractions() {
+  // 1. Sticky Header
+  const header = document.querySelector('.cmsms-site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        header.classList.add('is-sticky');
+      } else {
+        header.classList.remove('is-sticky');
+      }
+    }, { passive: true });
+  }
+
+  // 2. FAQ Accordion
+  const accordionHeaders = document.querySelectorAll('.cmsms-accordion-header');
+  accordionHeaders.forEach(headerBtn => {
+    headerBtn.addEventListener('click', () => {
+      const parentItem = headerBtn.closest('.cmsms-accordion-item');
+      if (!parentItem) return;
+
+      const isOpen = parentItem.classList.contains('active');
+      const allItems = document.querySelectorAll('.cmsms-accordion-item');
+      
+      // Close others
+      allItems.forEach(item => {
+        item.classList.remove('active');
+        const body = item.querySelector('.cmsms-accordion-body');
+        if (body) body.style.maxHeight = null;
+      });
+
+      // Toggle clicked
+      if (!isOpen) {
+        parentItem.classList.add('active');
+        const body = parentItem.querySelector('.cmsms-accordion-body');
+        if (body) {
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      }
+    });
+  });
+
+  // 3. Mobile Navigation Toggle
+  const mobileToggle = document.querySelector('.mobile-toggle');
+  const headerNav = document.querySelector('.cmsms-header-nav');
+  if (mobileToggle && headerNav) {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      headerNav.classList.toggle('active');
+      mobileToggle.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!headerNav.contains(e.target) && !mobileToggle.contains(e.target)) {
+        headerNav.classList.remove('active');
+        mobileToggle.classList.remove('active');
+      }
+    });
+  }
+
+  // 4. Counter Animation
+  const counters = document.querySelectorAll('.cmsms-counter-val');
+  if (counters.length && 'IntersectionObserver' in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const targetNum = parseFloat(el.getAttribute('data-count') || el.innerText);
+          const prefix = el.getAttribute('data-prefix') || '';
+          const suffix = el.getAttribute('data-suffix') || '';
+          const isDecimal = String(targetNum).includes('.');
+          
+          let current = 0;
+          const duration = 1800;
+          const startTime = performance.now();
+
+          function updateCounter(now) {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease out quad
+            const easeProgress = 1 - (1 - progress) * (1 - progress);
+            current = targetNum * easeProgress;
+
+            if (isDecimal) {
+              el.innerText = prefix + current.toFixed(1) + suffix;
+            } else {
+              el.innerText = prefix + Math.floor(current) + suffix;
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(updateCounter);
+            } else {
+              el.innerText = prefix + (isDecimal ? targetNum.toFixed(1) : targetNum) + suffix;
+            }
+          }
+
+          requestAnimationFrame(updateCounter);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(c => counterObserver.observe(c));
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initCargoTruckingInteractions);
+} else {
+  initCargoTruckingInteractions();
+}
