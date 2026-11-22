@@ -8733,3 +8733,444 @@ h1, h2, h3, h4, h5, h6 {
     gap: 0 !important;
   }
 }
+
+/* ==========================================================================
+   NAVIGATION BAR VISIBILITY & DARK GLASS BACKDROP
+   ========================================================================== */
+.cmsms-site-header {
+  position: absolute;
+  top: 41px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 14px 48px;
+  background: rgba(11, 13, 16, 0.92) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.3s ease;
+}
+
+.cmsms-site-header.is-sticky {
+  position: fixed !important;
+  top: 0 !important;
+  background: rgba(11, 13, 16, 0.98) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  border-bottom: 1px solid rgba(238, 33, 48, 0.3) !important;
+}
+
+.cmsms-nav-link {
+  font-family: var(--font-heading) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  padding: 8px 16px !important;
+  border-radius: 6px !important;
+  transition: all 0.25s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.cmsms-nav-link:hover, 
+.cmsms-nav-link.active {
+  color: #ffffff !important;
+  background: rgba(238, 33, 48, 0.2) !important;
+  border: 1px solid rgba(238, 33, 48, 0.5) !important;
+}
+
+/* ==========================================================================
+   STICKY VERTICAL SIDE ACTION BUTTONS (SERVICE ENQUIRY & FREE CONSULTATION)
+   ========================================================================== */
+.sticky-side-bar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9998;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.side-tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px 13px 16px;
+  border-radius: 8px 0 0 8px;
+  font-family: var(--font-heading) !important;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  border: none;
+  box-shadow: -4px 6px 20px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateX(0);
+  white-space: nowrap;
+  outline: none;
+}
+
+.side-tab-enquiry {
+  background: #ee2130;
+  color: #ffffff;
+  border-left: 3px solid #ffffff;
+}
+
+.side-tab-enquiry:hover {
+  background: #c81422;
+  transform: translateX(-8px);
+  box-shadow: -6px 10px 25px rgba(238, 33, 48, 0.5);
+}
+
+.side-tab-consult {
+  background: #111317;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: none;
+  border-left: 3px solid #ee2130;
+}
+
+.side-tab-consult:hover {
+  background: #1b1e24;
+  border-color: #ee2130;
+  transform: translateX(-8px);
+  box-shadow: -6px 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+.side-tab-btn i {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .sticky-side-bar {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   FLOATING WHATSAPP BUTTON (+91 95580 35477)
+   ========================================================================== */
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  color: #ffffff !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.45), 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.12) translateY(-4px);
+  background: #20ba59;
+  box-shadow: 0 14px 32px rgba(37, 211, 102, 0.6);
+  color: #ffffff !important;
+}
+
+.whatsapp-ping {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #25D366;
+  animation: whatsappPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+@keyframes whatsappPing {
+  0% { transform: scale(1); opacity: 0.85; }
+  100% { transform: scale(1.45); opacity: 0; }
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 74px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111315;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.floating-whatsapp-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+@media (max-width: 640px) {
+  .floating-whatsapp-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    font-size: 28px;
+  }
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   FOOTER SOCIAL MEDIA ICONS (REAL OFFICIAL COLORS & HOVER ANIMATION)
+   ========================================================================== */
+.footer-social-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.footer-social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff !important;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Official LinkedIn */
+.footer-social-btn.linkedin {
+  background: #0A66C2 !important;
+  box-shadow: 0 4px 12px rgba(10, 102, 194, 0.35);
+}
+
+.footer-social-btn.linkedin:hover {
+  transform: translateY(-6px) scale(1.15) rotate(8deg);
+  box-shadow: 0 10px 22px rgba(10, 102, 194, 0.65);
+}
+
+/* Official X / Twitter */
+.footer-social-btn.x-twitter {
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.footer-social-btn.x-twitter:hover {
+  background: #111315 !important;
+  border-color: #ffffff;
+  transform: translateY(-6px) scale(1.15) rotate(-8deg);
+  box-shadow: 0 10px 22px rgba(255, 255, 255, 0.3);
+}
+
+/* Official Facebook */
+.footer-social-btn.facebook {
+  background: #1877F2 !important;
+  box-shadow: 0 4px 12px rgba(24, 119, 242, 0.35);
+}
+
+.footer-social-btn.facebook:hover {
+  transform: translateY(-6px) scale(1.15) rotate(8deg);
+  box-shadow: 0 10px 22px rgba(24, 119, 242, 0.65);
+}
+
+/* Official WhatsApp */
+.footer-social-btn.whatsapp {
+  background: #25D366 !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35);
+}
+
+.footer-social-btn.whatsapp:hover {
+  transform: translateY(-6px) scale(1.15) rotate(-8deg);
+  box-shadow: 0 10px 22px rgba(37, 211, 102, 0.65);
+}
+
+/* Official Instagram Gradient */
+.footer-social-btn.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%) !important;
+  box-shadow: 0 4px 12px rgba(220, 39, 67, 0.35);
+}
+
+.footer-social-btn.instagram:hover {
+  transform: translateY(-6px) scale(1.15) rotate(8deg);
+  box-shadow: 0 10px 22px rgba(220, 39, 67, 0.65);
+}
+
+/* ==========================================================================
+   OUR CLIENTS, CAREER, AND BLOGS SECTIONS STYLING
+   ========================================================================== */
+.cmsms-clients-section {
+  padding: 80px 48px;
+  background: #ffffff;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.cmsms-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.cmsms-client-card {
+  background: #f8fafc;
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  transition: all 0.3s ease;
+}
+
+.cmsms-client-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.cmsms-client-card img {
+  max-height: 52px;
+  max-width: 160px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.cmsms-client-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.cmsms-career-section {
+  padding: 100px 48px;
+  background: var(--color-bg-light);
+}
+
+.cmsms-career-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 44px;
+}
+
+.cmsms-career-card {
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  padding: 32px 28px;
+  -webkit-clip-path: var(--clip-chamfer-tr);
+  clip-path: var(--clip-chamfer-tr);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cmsms-career-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.cmsms-blogs-section {
+  padding: 100px 48px;
+  background: #ffffff;
+}
+
+.cmsms-blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 44px;
+}
+
+.cmsms-blog-card {
+  background: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.cmsms-blog-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+}
+
+.cmsms-blog-thumb {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.cmsms-blog-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.cmsms-blog-body {
+  padding: 24px 22px;
+}
+
+.cmsms-blog-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+
+.cmsms-blog-desc {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+@media (max-width: 1024px) {
+  .cmsms-clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cmsms-career-grid,
+  .cmsms-blogs-grid {
+    grid-template-columns: 1fr;
+  }
+}

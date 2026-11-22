@@ -1378,9 +1378,19 @@ function initCargoTruckingInteractions() {
   const closeModalBtn = document.getElementById('closeConsultModal');
 
   if (consultModal) {
+    const serviceSelect = document.getElementById('consultService');
     openModalBtns.forEach(btn => {
       btn.addEventListener('click', (e) => {
         e.preventDefault();
+        const defaultService = btn.getAttribute('data-service-default');
+        if (defaultService && serviceSelect) {
+          for (let opt of serviceSelect.options) {
+            if (opt.value.toLowerCase().includes(defaultService.toLowerCase())) {
+              serviceSelect.value = opt.value;
+              break;
+            }
+          }
+        }
         consultModal.classList.add('open');
         document.body.style.overflow = 'hidden';
       });
