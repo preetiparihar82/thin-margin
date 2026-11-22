@@ -3,140 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thin Margin</title>
-  <meta name="description" content="Thin Margin - Institutional Material Management, 24-Hr Seaport Container Decantation, Zero Demurrage Guarantee, and 3D Laydown Yard Digital Twin for Mega Capital Projects.">
-
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Thin Margin - Supply Chain, Laydown Yards &amp; Warehouse Management</title>
+  
   <!-- Favicon -->
-  <link rel="icon" type="image/jpeg" href="assest/images/thin_margin_favicon.jpeg">
-  <link rel="shortcut icon" type="image/jpeg" href="assest/images/thin_margin_favicon.jpeg">
-  <link rel="apple-touch-icon" href="assest/images/thin_margin_favicon.jpeg">
+  <link rel="icon" type="image/x-icon" href="assest/images/favicon.ico">
+  <link rel="shortcut icon" type="image/png" href="assest/images/thin_margin_favicon.jpeg">
 
-  <!-- Google Fonts: Space Grotesk & Manrope (Cargo Trucking Signature Typography) -->
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit & Inter (Executive, Modern Typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=5.0">
-  <link rel="stylesheet" href="assest/css/about.css?v=5.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=6.0">
+  <link rel="stylesheet" href="assest/css/about.css?v=3.5">
 </head>
-<body>
+<body class="light-theme">
 
   <!-- ==========================================================================
-       1. CARGO TRUCKING TOPBAR
+       1. TOPBAR - PAN-INDIA PORTS & CONTACT TELEMETRY
        ========================================================================== -->
   <div class="cmsms-topbar">
-    <div class="cmsms-topbar-inner">
+    <div class="cmsms-topbar-container">
       <div class="cmsms-topbar-left">
         <div class="cmsms-topbar-item">
-          <i class="fa-solid fa-location-dot" style="color: var(--color-accent); margin-right: 6px;"></i>
+          <i class="fa-solid fa-location-dot"></i>
           <span>Pan-India Ports: Mundra &bull; Kandla &bull; Nhava Sheva</span>
         </div>
-        <span class="topbar-sep">|</span>
         <div class="cmsms-topbar-item">
-          <i class="fa-solid fa-shield-halved" style="color: var(--color-accent); margin-right: 6px;"></i>
-          <span><strong>24/7 GROUND OPS:</strong> Rapid Decantation &amp; Zero Demurrage Shield</span>
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>24/7 GROUND OPS: Rapid Decantation &amp; Zero Demurrage Shield</span>
         </div>
       </div>
       <div class="cmsms-topbar-right">
-        <div class="cmsms-topbar-item">
-          <i class="fa-solid fa-envelope" style="color: var(--color-accent); margin-right: 6px;"></i>
-          <a href="mailto:info@thinmargin.com">info@thinmargin.com</a>
-        </div>
-        <div class="cmsms-topbar-item">
-          <i class="fa-brands fa-whatsapp" style="color: #25D366; margin-right: 6px;"></i>
-          <a href="https://wa.me/919558035477" target="_blank" rel="noopener noreferrer">+91 95580 35477</a>
-        </div>
+        <a href="mailto:info@thinmargin.com" class="cmsms-topbar-link">
+          <i class="fa-solid fa-envelope"></i>
+          <span>info@thinmargin.com</span>
+        </a>
+        <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team" class="cmsms-topbar-link" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
+          <span>+91 95580 35477</span>
+        </a>
       </div>
     </div>
   </div>
 
   <!-- ==========================================================================
-       2. CARGO TRUCKING ABSOLUTE HEADER & NAVIGATION
+       2. CLEAN ENTERPRISE HEADER & NAVIGATION (LOGINT ARCHITECTURE)
        ========================================================================== -->
-  <header class="cmsms-site-header">
-    <div class="cmsms-header-container">
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
       
-      <!-- Brand Logo -->
-      <a href="index.html" class="cmsms-header-logo">
-        <img src="assest/images/thin_margin_favicon.jpeg" alt="Thin Margin Logo">
-        <span>Thin Margin</span>
+      <!-- Thin Margin Brand Logo -->
+      <a href="index.html" class="header-logo" aria-label="Thin Margin Home">
+        <img src="assest/images/thin_margin_logo.png" alt="Thin Margin Logo" class="brand-logo-img">
       </a>
 
-      <!-- Desktop Navigation Menu -->
-      <nav class="cmsms-header-nav" aria-label="Main Navigation">
-        <ul class="cmsms-nav-menu">
-          <li class="cmsms-nav-item">
-            <a href="index.html" class="cmsms-nav-link active">Home</a>
+      <!-- Desktop Navigation Menu (No square box, clean active indicator) -->
+      <nav class="header-nav" aria-label="Primary Navigation">
+        <ul class="nav-menu-list">
+          <li class="nav-menu-item">
+            <a href="index.html" class="nav-menu-link active">Home</a>
           </li>
-          <li class="cmsms-nav-item">
-            <a href="#about" class="cmsms-nav-link">About Us</a>
+          <li class="nav-menu-item">
+            <a href="#about" class="nav-menu-link">About Us</a>
           </li>
           
-          <!-- Services Dropdown with 8 Core Services -->
-          <li class="cmsms-nav-item dropdown-has-mega">
-            <a href="#services" class="cmsms-nav-link">
+          <!-- Services Dropdown (8 Core Capabilities) -->
+          <li class="nav-menu-item has-dropdown">
+            <a href="#services" class="nav-menu-link">
               <span>Services</span>
-              <i class="fa-solid fa-chevron-down" style="font-size: 11px; margin-left: 4px;"></i>
+              <i class="fa-solid fa-chevron-down nav-chevron"></i>
             </a>
-            <div class="cmsms-dropdown-mega">
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-warehouse"></i></div>
-                <div class="cmsms-mega-title">Warehouse &amp; Stores Management</div>
+            <div class="services-dropdown-panel">
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-warehouse"></i></div>
+                <div>
+                  <div class="dropdown-service-title">Warehouse &amp; Stores Management</div>
+                  <div class="dropdown-service-sub">Laydown yards &amp; RFID tracking</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-                <div class="cmsms-mega-title">Material &amp; Inventory Management</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
+                <div>
+                  <div class="dropdown-service-title">Material &amp; Inventory Management</div>
+                  <div class="dropdown-service-sub">Zero-variance reconciliation</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-truck-fast"></i></div>
-                <div class="cmsms-mega-title">Logistics &amp; Supply Chain</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-truck-fast"></i></div>
+                <div>
+                  <div class="dropdown-service-title">Logistics &amp; Supply Chain</div>
+                  <div class="dropdown-service-sub">24-hr port decantation &amp; transit</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-dolly"></i></div>
-                <div class="cmsms-mega-title">Procurement &amp; Material Handling</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-dolly"></i></div>
+                <div>
+                  <div class="dropdown-service-title">Procurement &amp; Material Handling</div>
+                  <div class="dropdown-service-sub">QA/QC expediting &amp; crane rigging</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-network-wired"></i></div>
-                <div class="cmsms-mega-title">SAP / ERP Solutions</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-network-wired"></i></div>
+                <div>
+                  <div class="dropdown-service-title">SAP / ERP Solutions</div>
+                  <div class="dropdown-service-sub">S/4HANA MIGO/GRN sync</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-shield-halved"></i></div>
-                <div class="cmsms-mega-title">EHS &amp; Compliance</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                  <div class="dropdown-service-title">EHS &amp; Compliance</div>
+                  <div class="dropdown-service-sub">ISO 45001 / Zero-harm execution</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-building-circle-check"></i></div>
-                <div class="cmsms-mega-title">Asset &amp; Facility Management</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-building-circle-check"></i></div>
+                <div>
+                  <div class="dropdown-service-title">Asset &amp; Facility Management</div>
+                  <div class="dropdown-service-sub">Preservation maintenance &amp; security</div>
+                </div>
               </a>
-              <a href="#services" class="cmsms-mega-link">
-                <div class="cmsms-mega-icon"><i class="fa-solid fa-ship"></i></div>
-                <div class="cmsms-mega-title">EXIM &amp; Industrial Services</div>
+              <a href="#services" class="dropdown-service-item">
+                <div class="dropdown-icon-box"><i class="fa-solid fa-ship"></i></div>
+                <div>
+                  <div class="dropdown-service-title">EXIM &amp; Industrial Services</div>
+                  <div class="dropdown-service-sub">Customs bonded clearance</div>
+                </div>
               </a>
             </div>
           </li>
 
-          <li class="cmsms-nav-item">
-            <a href="#clients" class="cmsms-nav-link">Our Clients</a>
+          <li class="nav-menu-item">
+            <a href="#clients" class="nav-menu-link">Our Clients</a>
           </li>
-          <li class="cmsms-nav-item">
-            <a href="#career" class="cmsms-nav-link">Career</a>
+          <li class="nav-menu-item">
+            <a href="#career" class="nav-menu-link">Career</a>
           </li>
-          <li class="cmsms-nav-item">
-            <a href="#blogs" class="cmsms-nav-link">Blogs</a>
+          <li class="nav-menu-item">
+            <a href="#blogs" class="nav-menu-link">Blogs</a>
           </li>
         </ul>
       </nav>
 
-      <!-- Header Actions (Phone removed as requested) -->
-      <div class="cmsms-header-actions">
-        <a href="#contact" class="cmsms-btn cmsms-btn-primary open-consult-modal">
+      <!-- Right Header Actions (CTA Button) -->
+      <div class="header-actions">
+        <a href="#contact" class="btn-header-quote open-consult-modal">
           <span>Get a Quote</span>
-          <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <span class="btn-quote-circle"><i class="fa-solid fa-arrow-right"></i></span>
         </a>
-        <button type="button" class="mobile-toggle" aria-label="Toggle Navigation">
+        <button type="button" class="mobile-toggle" aria-label="Toggle Mobile Navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -147,196 +168,339 @@
   </header>
 
   <!-- ==========================================================================
-       3. CARGO TRUCKING HERO SECTION (DIAGONAL SKEW DIVIDER)
+       3. LOGINT HERO SECTION (BACKGROUND CAROUSEL + CURVED NOTCH DOCK)
        ========================================================================== -->
-  <section class="cmsms-hero-section" id="home">
+  <section class="hero-section" id="home">
     
-    <!-- Hero Background Carousel with Ken Burns Zoom-In Effect -->
-    <div class="hero-bg-carousel" id="heroBgCarousel">
-      <div class="hero-bg-slide active" style="background-image: url('assest/images/port_container_decantation.jpg');" data-index="0"></div>
-      <div class="hero-bg-slide" style="background-image: url('assest/images/hero_supply_chain.jpg');" data-index="1"></div>
-      <div class="hero-bg-slide" style="background-image: url('assest/images/heavy_transport_logistics.jpg');" data-index="2"></div>
-      <div class="hero-bg-slide" style="background-image: url('assest/images/mechanized_crane_rigging.jpg');" data-index="3"></div>
-      <!-- Cinematic Vignette & Deep Black Gradient Overlay -->
-      <div class="hero-bg-overlay"></div>
-    </div>
-
-    <div class="cmsms-hero-container">
+    <!-- Hero Slider Track (Background Imagery & Videos) -->
+    <div class="hero-slider-track" id="heroSliderTrack">
       
-      <!-- Hero Content -->
-      <div class="cmsms-hero-content">
-        
-        <!-- Theme Kicker Tag with Red Arrow Box -->
-        <div class="cmsms-kicker-tag" id="heroKickerTag">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span id="heroKickerText">GROUND REALITIES. ABSOLUTE ACCOUNTABILITY</span>
-        </div>
-
-        <!-- Space Grotesk Headline with Typewriter Transition -->
-        <h1 class="cmsms-hero-title">
-          Where Margins Are Thin, Precision Defines <br>
-          <span class="highlight-accent hero-typewriter-text" id="heroTypewriterText">Every Capital Asset.</span><span class="hero-typewriter-cursor">|</span>
-        </h1>
-
-        <!-- Subtitle smoothly synchronized with active slide -->
-        <p class="cmsms-hero-desc" id="heroDescText">
-          Institutional-grade material custody, 24-hour seaport container decantation at Mundra &amp; Kandla, and SAP-integrated laydown yard management for mega infrastructure projects.
-        </p>
-
-        <!-- Action Buttons -->
-        <div class="cmsms-hero-buttons">
-          <a href="#services" class="cmsms-btn cmsms-btn-primary">
-            <span>Explore 8 Core Services</span>
-            <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-          </a>
-          <a href="#contact" class="cmsms-btn cmsms-btn-outline open-consult-modal">
-            <span>Book Strategy Consultation</span>
-            <div class="cmsms-btn-arrow"><i class="fa-regular fa-calendar-check"></i></div>
-          </a>
-        </div>
-
+      <!-- Slide 0: Seaport Container Decantation -->
+      <div class="hero-slide active" data-slide="0">
+        <div class="hero-slide-bg" style="background-image: url('assest/images/port_container_decantation.jpg');"></div>
+        <video class="hero-slide-video" autoplay muted loop playsinline preload="auto" poster="assest/images/port_container_decantation.jpg">
+          <source src="assest/images/hero_video.mp4" type="video/mp4">
+        </video>
       </div>
 
-      <!-- Hero Slide Controls & Indicators -->
-      <div class="hero-slider-hud">
-        <div class="hero-hud-pills">
-          <button type="button" class="hero-hud-pill active" data-slide="0">
-            <span class="hud-pill-num">01</span>
-            <span class="hud-pill-name">Seaport Decantation</span>
-            <div class="hud-pill-progress"></div>
-          </button>
-          <button type="button" class="hero-hud-pill" data-slide="1">
-            <span class="hud-pill-num">02</span>
-            <span class="hud-pill-name">Smart Yard Stores</span>
-            <div class="hud-pill-progress"></div>
-          </button>
-          <button type="button" class="hero-hud-pill" data-slide="2">
-            <span class="hud-pill-num">03</span>
-            <span class="hud-pill-name">Heavy-Haul Freight</span>
-            <div class="hud-pill-progress"></div>
-          </button>
-          <button type="button" class="hero-hud-pill" data-slide="3">
-            <span class="hud-pill-num">04</span>
-            <span class="hud-pill-name">Crane Rigging</span>
-            <div class="hud-pill-progress"></div>
-          </button>
-        </div>
-        <div class="hero-hud-arrows">
-          <button type="button" class="hero-hud-arrow prev" id="heroPrevBtn" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
-          <button type="button" class="hero-hud-arrow next" id="heroNextBtn" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
-        </div>
+      <!-- Slide 1: Smart Yard Stores & Warehousing -->
+      <div class="hero-slide" data-slide="1">
+        <div class="hero-slide-bg" style="background-image: url('assest/images/hero_supply_chain.jpg');"></div>
+        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/hero_supply_chain.jpg">
+          <source src="assest/images/warehousevid.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Slide 2: Heavy-Haul Multi-Modal Freight -->
+      <div class="hero-slide" data-slide="2">
+        <div class="hero-slide-bg" style="background-image: url('assest/images/heavy_transport_logistics.jpg');"></div>
+        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/heavy_transport_logistics.jpg">
+          <source src="assest/images/herovid2.mp4" type="video/mp4">
+        </video>
+      </div>
+
+      <!-- Slide 3: Mechanized Crane Rigging -->
+      <div class="hero-slide" data-slide="3">
+        <div class="hero-slide-bg" style="background-image: url('assest/images/mechanized_crane_rigging.jpg');"></div>
+        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/mechanized_crane_rigging.jpg">
+          <source src="assest/images/herovid3.mp4" type="video/mp4">
+        </video>
       </div>
 
     </div>
 
-    <!-- Theme Signature Diagonal Skew Divider -->
-    <div class="cmsms-hero-diagonal-skew"></div>
+    <!-- Cinematic Gradients for Crisp Text Readability -->
+    <div class="hero-overlay">
+      <div class="hero-overlay-gradient"></div>
+      <div class="hero-overlay-radial"></div>
+    </div>
+
+    <!-- Logint Signature Right Notch Pagination Dock -->
+    <aside class="hero-pagination-dock" aria-label="Hero Slider Pagination">
+      <button type="button" class="dock-dot active" data-slide-index="0" aria-label="01 / Seaport Decantation">
+        <span class="dot-tooltip">01 / Seaport Decantation</span>
+      </button>
+      <button type="button" class="dock-dot" data-slide-index="1" aria-label="02 / Smart Yard Stores">
+        <span class="dot-tooltip">02 / Smart Yard Stores</span>
+      </button>
+      <button type="button" class="dock-dot" data-slide-index="2" aria-label="03 / Heavy-Haul Freight">
+        <span class="dot-tooltip">03 / Heavy-Haul Freight</span>
+      </button>
+      <button type="button" class="dock-dot" data-slide-index="3" aria-label="04 / Crane Rigging">
+        <span class="dot-tooltip">04 / Crane Rigging</span>
+      </button>
+    </aside>
+
+    <!-- Bottom Content Container (Split Grid) -->
+    <div class="hero-content-container">
+      <div class="hero-content-grid">
+        
+        <!-- Left Side: Tag Pill + Big Bold Headline -->
+        <div class="hero-left-content">
+          <div class="hero-tag-pill">
+            <span>GROUND REALITIES. ABSOLUTE ACCOUNTABILITY.</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="title-line-mask">
+              <span class="title-line title-line-1">Where Margins Are Thin,</span>
+            </span>
+            <span class="title-line-mask">
+              <span class="title-line title-line-2"><span class="highlight-crimson">Precision Defines</span> Every Capital Asset.</span>
+            </span>
+          </h1>
+        </div>
+
+        <!-- Right Side: Description + Dual CTA -->
+        <div class="hero-right-content">
+          <p class="hero-description">
+            Institutional-grade material custody, 24-hour seaport container decantation at Mundra &amp; Kandla, and SAP-integrated laydown yard management for mega infrastructure projects.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#services" class="btn-services">
+              <span class="btn-services-text">Explore 8 Core Services</span>
+              <span class="arrow-circle">
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+            <a href="#contact" class="btn-services-secondary open-consult-modal">
+              <span>Book Strategy Consultation</span>
+              <i class="fa-solid fa-calendar-check" style="margin-left: 8px;"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </section>
 
   <!-- ==========================================================================
-       4. CARGO TRUCKING ABOUT US SECTION (CORPORATE GENESIS MANIFESTO)
+       4. SIGNATURE LOGINT FLOATING TRACK & FREIGHT QUOTE DOCK
        ========================================================================== -->
-  <section class="cmsms-about-section" id="about">
-    <div class="cmsms-about-container">
-      
-      <!-- Section Header with Red Arrow Kicker -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>ABOUT US</span>
-        </div>
-        <h2 class="cmsms-section-title">
-          Engineering Ground Realities with Uncompromising Precision
-        </h2>
-        <p class="cmsms-section-lead">
-          Leading India's capital infrastructure execution with institutional material custody and relentless ground accountability.
-        </p>
+  <div class="hero-track-quote-bar reveal-fade-up">
+    <div class="track-quote-card">
+      <div class="track-quote-tabs" role="tablist">
+        <button type="button" class="track-tab-btn active" id="tabTrackBtn" role="tab" aria-selected="true" data-tab="paneTrack">
+          <i class="fa-solid fa-satellite-dish"></i>
+          <span>Track Consignment</span>
+        </button>
+        <button type="button" class="track-tab-btn" id="tabQuoteBtn" role="tab" aria-selected="false" data-tab="paneQuote">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Request Freight Quote</span>
+        </button>
       </div>
 
-      <!-- Executive Genesis Manifesto Card -->
-      <div class="cmsms-about-manifesto-card">
-        <div class="manifesto-accent-line"></div>
-        <p class="manifesto-lead-text">
-          The Thin Margin ( TM ) is established by professionals with Techno-Commercial background who gained rich experience while working with several world / country’s prestigious construction of projects and contributed significantly in implementing projects with expertise in Material Management during Construction to Steady state stage.
+      <div class="track-quote-body">
+        <!-- Tab 1: Track Consignment -->
+        <div class="track-quote-pane active" id="paneTrack" role="tabpanel">
+          <form id="trackConsignmentForm">
+            <div class="track-form-grid">
+              <div class="track-input-group">
+                <input type="text" id="trackInput" class="track-input-field" placeholder="Enter Consignment / LR Tracking ID (e.g. TM-98421)" required>
+                <i class="fa-solid fa-barcode track-input-icon"></i>
+              </div>
+              <div class="track-input-group">
+                <select id="trackFreightMode" class="track-input-field track-select-field">
+                  <option value="all">All Freight Modes</option>
+                  <option value="ftl">Full Truckload (FTL)</option>
+                  <option value="multimodal">Multi-Modal Rail &amp; Port</option>
+                  <option value="air">Air Express Expedited</option>
+                  <option value="warehouse">Warehouse Storage</option>
+                </select>
+                <i class="fa-solid fa-truck-ramp-box track-input-icon"></i>
+              </div>
+              <div>
+                <button type="submit" class="btn-track-submit">
+                  <span>Track Consignment</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Simulated Live Telemetry Result Display -->
+          <div class="tracking-status-display" id="trackStatusDisplay">
+            <div class="track-status-header">
+              <span class="track-id-badge" id="resTrackId">CONSIGNMENT TM-984210</span>
+              <span class="track-eta">Status: <strong>IN TRANSIT (ON SCHEDULE)</strong></span>
+            </div>
+            <div class="track-route-text" id="resTrackRoute">
+              <i class="fa-solid fa-location-dot" style="color:var(--color-accent); margin-right:6px;"></i>
+              Mundra Port, Gujarat &rarr; Bhadla Solar Park Laydown Yard, Rajasthan
+            </div>
+            <div class="track-telemetry-tags">
+              <span><i class="fa-solid fa-satellite"></i> GPS Telemetry Active</span>
+              <span><i class="fa-solid fa-clock"></i> 24-Hr Decantation Guaranteed</span>
+              <span><i class="fa-solid fa-shield-check"></i> 100% Zero-Loss SLA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Request Freight Quote -->
+        <div class="track-quote-pane" id="paneQuote" role="tabpanel">
+          <form id="quickQuoteForm">
+            <div class="quote-form-grid">
+              <div class="track-input-group">
+                <input type="text" id="quoteOrigin" class="track-input-field" placeholder="Origin Port / City (e.g. Mundra, Kandla)" required>
+                <i class="fa-solid fa-location-arrow track-input-icon"></i>
+              </div>
+              <div class="track-input-group">
+                <input type="text" id="quoteDest" class="track-input-field" placeholder="Project Site (e.g. Kota, Khavda, Bhadla)" required>
+                <i class="fa-solid fa-location-dot track-input-icon"></i>
+              </div>
+              <div class="track-input-group">
+                <select id="quoteCargoType" class="track-input-field track-select-field">
+                  <option value="odc">ODC Heavy Equipment</option>
+                  <option value="containers">Import Container Cargo</option>
+                  <option value="solar">Solar PV Modules / Inverters</option>
+                  <option value="industrial">General Industrial Cargo</option>
+                </select>
+                <i class="fa-solid fa-box-archive track-input-icon"></i>
+              </div>
+              <div>
+                <button type="submit" class="btn-track-submit">
+                  <span>Calculate Quote</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       5. EXECUTIVE INTRO & CORPORATE GENESIS MANIFESTO (LIGHT THEME)
+       ========================================================================= -->
+  <section class="about-intro-section" id="executive-intro">
+    <div class="about-intro-container">
+      
+      <div class="intro-tag-pill">
+        <span>CORPORATE GENESIS</span>
+      </div>
+
+      <h2 class="intro-title">
+        From Industry Professionals to <span class="highlight-crimson">Entrepreneurial Leaders</span>
+      </h2>
+
+      <!-- Corporate Genesis Narrative -->
+      <div class="genesis-narrative-card">
+        <p class="genesis-para">
+          <strong>The Thin Margin ( TM )</strong> is established by professionals with Techno-Commercial background who gained rich experience while working with several world / country’s prestigious construction of projects and contributed significantly in implementing projects with expertise in Material Management during Construction to Steady state stage.
         </p>
-        <p class="manifesto-sub-text">
+        <p class="genesis-para">
           The team of highly motivated and result oriented individuals with exemplary levels of commitment are brought to an umbrella to become employees to entrepreneur with the ambition to be known as leader in Material Management Partner to large size projects in India and abroad.
         </p>
       </div>
 
-      <!-- 4-Box Credentials Grid -->
-      <div class="cmsms-cred-grid">
+      <!-- 4 Key Performance Metrics Cards -->
+      <div class="credentials-4-grid">
+        <div class="credential-box">
+          <div class="credential-icon"><i class="fa-solid fa-helmet-safety"></i></div>
+          <div class="credential-stat">10+ Years On-Ground</div>
+          <div class="credential-desc">Proven execution across mega power, solar, and industrial sites from construction break-ground to steady-state operations.</div>
+        </div>
+        <div class="credential-box">
+          <div class="credential-icon"><i class="fa-solid fa-solar-panel"></i></div>
+          <div class="credential-stat">1.2GW+ Assets in Custody</div>
+          <div class="credential-desc">Direct institutional stewardship over high-value capital equipment, power transformers, modules, and balance-of-plant assets.</div>
+        </div>
+        <div class="credential-box">
+          <div class="credential-icon"><i class="fa-solid fa-stopwatch"></i></div>
+          <div class="credential-stat">24-Hr Decantation SLA</div>
+          <div class="credential-desc">Rapid container de-stuffing at key seaports (Mundra, Kandla, Nhava Sheva) and ICDs, guaranteeing zero detention fees.</div>
+        </div>
+        <div class="credential-box">
+          <div class="credential-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="credential-stat">100% Zero Demurrage</div>
+          <div class="credential-desc">Backed by 100% statutory EHS and labor compliance certifications, eliminating penalty exposure entirely.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. CREATIVE ABOUT US SECTION (LOGINT 2-COLUMN GRID)
+       ========================================================================== -->
+  <section class="about-creative-section" id="about">
+    <div class="about-creative-container">
+      <div class="about-creative-grid">
         
-        <div class="cmsms-cred-card">
-          <div class="cred-card-top">
-            <div class="cred-badge-icon">
-              <i class="fa-solid fa-helmet-safety"></i>
+        <!-- Left Side: Visual Showcase + 10+ Years Experience Badge -->
+        <div class="about-creative-media-wrap">
+          <div class="creative-image-frame logint-chamfer-tr">
+            <img src="assest/images/why_choose_us_crystal.jpg" alt="Thin Margin Material Management Ground Operations" class="creative-main-img" onerror="this.src='assest/images/about_hero_banner.jpg'">
+            
+            <!-- Logint Floating Experience Badge -->
+            <div class="logint-exp-badge">
+              <div class="exp-badge-icon"><i class="fa-solid fa-shield-check"></i></div>
+              <div class="exp-badge-info">
+                <h5>10+ Years</h5>
+                <p>Ground Realities &amp; Zero Demurrage</p>
+              </div>
             </div>
-            <div class="cred-metric-num">10<span class="cred-metric-plus">+</span></div>
-          </div>
-          <h3 class="cred-card-title">Years On-Ground</h3>
-          <div class="cred-card-subtitle">Construction to Steady-State</div>
-          <p class="cred-card-desc">
-            Frontline site stewardship across India's largest thermal, renewable, and infrastructure break-grounds with zero compromise on ground realities.
-          </p>
-          <div class="cred-pill-list">
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> Turnkey Custody</span>
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> Pan-India Corridors</span>
           </div>
         </div>
 
-        <div class="cmsms-cred-card">
-          <div class="cred-card-top">
-            <div class="cred-badge-icon">
-              <i class="fa-solid fa-solar-panel"></i>
-            </div>
-            <div class="cred-metric-num">1.2<span class="cred-metric-unit">GW+</span></div>
+        <!-- Right Side: Narrative & Value Pillars -->
+        <div class="about-creative-content">
+          <div class="intro-tag-pill">
+            <span>ABOUT THIN MARGIN</span>
           </div>
-          <h3 class="cred-card-title">Assets in Custody</h3>
-          <div class="cred-card-subtitle">Renewable &amp; Heavy Plant Capital</div>
-          <p class="cred-card-desc">
-            Direct institutional custody over critical transformers, solar modules, inverters, and high-value balance-of-plant project cargo without variance.
-          </p>
-          <div class="cred-pill-list">
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> Sub-Meter Geotagging</span>
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> Zero Loss Record</span>
-          </div>
-        </div>
+          
+          <h2 class="about-creative-title">
+            Techno-Commercial Leadership in <span class="highlight-crimson">Mega Project Supply Chain</span> &amp; Laydown Yards
+          </h2>
 
-        <div class="cmsms-cred-card highlight-card">
-          <div class="cred-card-top">
-            <div class="cred-badge-icon">
-              <i class="fa-solid fa-stopwatch-20"></i>
-            </div>
-            <div class="cred-metric-num">&le;24<span class="cred-metric-unit">Hrs</span></div>
-          </div>
-          <h3 class="cred-card-title">Decantation SLA</h3>
-          <div class="cred-card-subtitle">Rapid Seaport &amp; ICD Turnaround</div>
-          <p class="cred-card-desc">
-            Contractual 24-hour container destuffing and empty return protocol at Mundra, Kandla, and Nhava Sheva, eliminating shipping detention penalties.
+          <p class="about-creative-lead">
+            Where margins are thin, execution certainty is everything. We bridge the critical gap between high-level project schedules and the granular, high-friction reality of port gates, laydown yards, and physical store management.
           </p>
-          <div class="cred-pill-list">
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> Mundra &bull; Kandla</span>
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> 100% On-Time Empty</span>
-          </div>
-        </div>
 
-        <div class="cmsms-cred-card">
-          <div class="cred-card-top">
-            <div class="cred-badge-icon">
-              <i class="fa-solid fa-shield-halved"></i>
-            </div>
-            <div class="cred-metric-num">100<span class="cred-metric-unit">%</span></div>
-          </div>
-          <h3 class="cred-card-title">Zero Demurrage</h3>
-          <div class="cred-card-subtitle">Statutory EHS &amp; Labor Compliance</div>
-          <p class="cred-card-desc">
-            Ironclad financial and operational liability shield backed by 100% compliance with PF, ESIC, OSHA, and certified zero-incident safety culture.
+          <p class="about-creative-desc">
+            Operating across India's largest infrastructure hubs, our senior custody teams take on-site responsibility for heavy equipment offloading, sub-meter GPS stacking, and instantaneous ERP synchronization.
           </p>
-          <div class="cred-pill-list">
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> Zero-Demurrage Shield</span>
-            <span class="cred-pill"><i class="fa-solid fa-check"></i> ISO &amp; Labor Certified</span>
+
+          <!-- 4 Pillars with Red Indicators -->
+          <div class="about-creative-features">
+            <div class="creative-feature-item">
+              <div class="feature-indicator-line"></div>
+              <div class="feature-content-wrap">
+                <h4 class="feature-title">Sub-Meter Yard Geotagging</h4>
+                <p class="feature-desc">Accurate laydown grid indexing eliminating lost materials and equipment misplacement.</p>
+              </div>
+            </div>
+            <div class="creative-feature-item">
+              <div class="feature-indicator-line"></div>
+              <div class="feature-content-wrap">
+                <h4 class="feature-title">24-Hr Decantation Shield</h4>
+                <p class="feature-desc">Swift container de-stuffing at Mundra and Kandla preventing catastrophic shipping demurrage.</p>
+              </div>
+            </div>
+            <div class="creative-feature-item">
+              <div class="feature-indicator-line"></div>
+              <div class="feature-content-wrap">
+                <h4 class="feature-title">Zero-Variance Reconciliation</h4>
+                <p class="feature-desc">Physical counts matched 100% against purchase orders and project bills of materials.</p>
+              </div>
+            </div>
+            <div class="creative-feature-item">
+              <div class="feature-indicator-line"></div>
+              <div class="feature-content-wrap">
+                <h4 class="feature-title">SAP S/4HANA Sync</h4>
+                <p class="feature-desc">Automated MIGO/GRN bookings directly aligned with client ERP ledgers.</p>
+              </div>
+            </div>
           </div>
+
+          <a href="#contact" class="btn-services open-consult-modal">
+            <span class="btn-services-text">Schedule Site Strategy Audit</span>
+            <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
         </div>
 
       </div>
@@ -344,179 +508,234 @@
   </section>
 
   <!-- ==========================================================================
-       5. OUR 8 CORE SERVICES (CHAMFERED CORNER CARDS)
+       7. 8 CORE SERVICES SUITE (LOGINT CHAMFERED CARDS & REALISTIC IMAGES)
        ========================================================================== -->
-  <section class="cmsms-services-section" id="services">
-    <div class="cmsms-services-container">
+  <section class="services-suite-section" id="services">
+    <div class="services-suite-container">
       
       <!-- Section Header -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>OUR SERVICES</span>
+      <div class="services-suite-header reveal-fade-up">
+        <div class="intro-tag-pill">
+          <span>OUR 8 CORE CAPABILITIES</span>
         </div>
-        <h2 class="cmsms-section-title">
-          Comprehensive Supply Chain &amp; Material Management
+        <h2 class="services-suite-title">
+          Integrated Supply Chain &amp; <span class="highlight-crimson">Warehouse Management</span>
         </h2>
-        <p class="cmsms-section-lead">
-          Institutional turnkey custody and material governance engineered for mega capital infrastructure, industrial plants, and renewable energy corridors.
+        <p class="services-suite-subtitle">
+          Turnkey material stewardship, automated warehouse laydowns, and zero-loss container operations engineered for India's largest infrastructure assets.
         </p>
       </div>
 
-      <!-- 8 Services Grid (Chamfered Top-Right Cutout) -->
-      <div class="cmsms-services-grid">
+      <!-- 8 Services Grid with Logint Chamfers & Realistic Imagery -->
+      <div class="services-suite-grid-8">
         
         <!-- 01. Warehouse & Stores Management -->
-        <div class="cmsms-service-card" data-num="01">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-warehouse"></i></div>
-            <h3 class="cmsms-service-title">Warehouse &amp; Stores Management</h3>
-            <p class="cmsms-service-desc">
-              Multi-tier warehouse design, rack architecture, bin-location indexing, temperature-controlled storerooms, and RFID/barcoded yard inventory control.
-            </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Rack Optimization</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Bin-Location Indexing</span>
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/warehouseimgcompany.webp" alt="Warehouse and Stores Management" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-warehouse"></i>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
           </div>
-        </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">Warehouse &amp; Stores Management</h3>
+            <p class="logint-service-desc">
+              Multi-tier laydown yard layout, heavy racking design, bin-location indexing, temperature-controlled stores, and RFID/barcoded yard inventory control.
+            </p>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Sub-meter Laydown Indexing</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Barcode / RFID Tagging</span>
+            </div>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- 02. Material & Inventory Management -->
-        <div class="cmsms-service-card" data-num="02">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
-            <h3 class="cmsms-service-title">Material &amp; Inventory Management</h3>
-            <p class="cmsms-service-desc">
-              Turnkey custody from break-ground to handover. Rigorous physical verification, FIFO/FEFO lifecycle controls, and variance-free audits.
-            </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Zero Inventory Variance</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Cycle-Count Audits</span>
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/Expert Services.jpg" alt="Material and Inventory Management" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-boxes-stacked"></i>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
           </div>
-        </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">Material &amp; Inventory Management</h3>
+            <p class="logint-service-desc">
+              Turnkey custody from break-ground to commercial operation. Rigorous 100% physical verification, cycle-count audits, and zero-variance reconciliation.
+            </p>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Zero Inventory Variance</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Daily Cycle Counts &amp; Audits</span>
+            </div>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
 
-        <!-- 03. Logistics & Supply Chain -->
-        <div class="cmsms-service-card" data-num="03">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-truck-fast"></i></div>
-            <h3 class="cmsms-service-title">Logistics &amp; Supply Chain</h3>
-            <p class="cmsms-service-desc">
-              End-to-end multimodal transit coordination, route surveys, heavy-haul ODC transport, and 24-hr seaport container decantation SLA.
-            </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> 24-Hr Decantation SLA</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Heavy-Haul Transit</span>
+        <!-- 03. Logistics & Supply Chain Solutions -->
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/heavy_transport_logistics.jpg" alt="Logistics and Supply Chain Solutions" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-truck-fast"></i>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
           </div>
-        </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">Logistics &amp; Supply Chain Solutions</h3>
+            <p class="logint-service-desc">
+              Multimodal freight coordination, specialized ODC route survey, transit risk monitoring, and guaranteed 24-hr container decantation at Mundra &amp; Kandla.
+            </p>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> 24-Hr Decantation SLA</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Multimodal Freight Coordination</span>
+            </div>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- 04. Procurement & Material Handling -->
-        <div class="cmsms-service-card" data-num="04">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-dolly"></i></div>
-            <h3 class="cmsms-service-title">Procurement &amp; Material Handling</h3>
-            <p class="cmsms-service-desc">
-              Vendor expediting, factory acceptance testing QA/QC, synchronized site delivery schedules, and mechanized yard rigging equipment deployment.
-            </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> QA/QC Verification</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Mechanized Rigging</span>
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/mechanized_crane_rigging.jpg" alt="Procurement and Material Handling Support" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-dolly"></i>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
           </div>
-        </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">Procurement &amp; Material Handling</h3>
+            <p class="logint-service-desc">
+              Vendor expediting, factory acceptance testing QA/QC, mill test certificate validation, and mechanized crane rigging deployment for capital equipment.
+            </p>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> QA/QC Mill Test Validation</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Mechanized Crane Rigging</span>
+            </div>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- 05. SAP / ERP Solutions -->
-        <div class="cmsms-service-card" data-num="05">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-network-wired"></i></div>
-            <h3 class="cmsms-service-title">SAP / ERP Solutions</h3>
-            <p class="cmsms-service-desc">
-              Real-time SAP MM / S/4HANA material synchronization, digitized MIGO/GRN generation, custom reservation tracking, and automated reporting.
-            </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> SAP S/4HANA Sync</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Automated MIGO / GRN</span>
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/sap_erp_solutions.jpg" alt="SAP and ERP Solutions" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-network-wired"></i>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
           </div>
-        </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">SAP / ERP Solutions</h3>
+            <p class="logint-service-desc">
+              Real-time SAP MM &amp; S/4HANA material synchronization, digitized MIGO/GRN generation, custom reservation tracking, and automated inventory ledger sync.
+            </p>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> SAP S/4HANA MIGO / GRN Sync</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Real-Time Ledger Reconciliation</span>
+            </div>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
 
-        <!-- 06. EHS & Compliance -->
-        <div class="cmsms-service-card" data-num="06">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-shield-halved"></i></div>
-            <h3 class="cmsms-service-title">EHS &amp; Compliance</h3>
-            <p class="cmsms-service-desc">
-              Zero-incident safety culture, hazardous material protocols, OSHA compliance, and 100% labor law, PF, ESIC, and statutory adherence.
-            </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Zero-LTI Track Record</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> 100% Statutory PF/ESIC</span>
+        <!-- 06. EHS, Safety & Statutory Compliance -->
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/EHS Commitment.jpg" alt="EHS and Compliance" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-shield-halved"></i>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
           </div>
-        </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">EHS, Safety &amp; Statutory Compliance</h3>
+            <p class="logint-service-desc">
+              ISO 45001 &amp; ISO 9001 certified execution, zero-LTI safety protocols, hazardous material stewardship, and 100% statutory labor law, PF, and ESIC adherence.
+            </p>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Zero-LTI Safety Standards</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> 100% PF / ESIC Labor Compliance</span>
+            </div>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
 
         <!-- 07. Asset & Facility Management -->
-        <div class="cmsms-service-card" data-num="07">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-building-circle-check"></i></div>
-            <h3 class="cmsms-service-title">Asset &amp; Facility Management</h3>
-            <p class="cmsms-service-desc">
-              Capital equipment preservation, nitrogen purging maintenance, perimeter security, CCTV perimeter coverage, and industrial facility upkeep.
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/Value Added Services.jpg" alt="Asset and Facility Management" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-building-circle-check"></i>
+            </div>
+          </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">Asset &amp; Facility Management</h3>
+            <p class="logint-service-desc">
+              High-value capital preservation, nitrogen purging monitoring for transformers, perimeter surveillance, secure laydown access control, and facility upkeep.
             </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Nitrogen Purging</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Perimeter Security</span>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Nitrogen Purging Monitoring</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> 24/7 Perimeter Security Staging</span>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <!-- 08. EXIM & Industrial Services -->
-        <div class="cmsms-service-card" data-num="08">
-          <div class="cmsms-service-card-inner">
-            <div class="cmsms-service-icon"><i class="fa-solid fa-ship"></i></div>
-            <h3 class="cmsms-service-title">EXIM &amp; Industrial Services</h3>
-            <p class="cmsms-service-desc">
-              Customs bonded warehousing, MOOWR scheme advisory, import-export clearance, bill of entry reconciliation, and demurrage neutral ground logistics.
+        <!-- 08. EXIM, Port Operations & Demurrage Shield -->
+        <article class="logint-service-card logint-chamfer-tr">
+          <div class="logint-service-media">
+            <img src="assest/images/port_container_decantation.jpg" alt="EXIM and Port Operations" class="logint-service-img" loading="lazy">
+            <div class="logint-card-icon-badge">
+              <i class="fa-solid fa-ship"></i>
+            </div>
+          </div>
+          <div class="logint-service-content">
+            <h3 class="logint-service-title">EXIM &amp; Port Operations Shield</h3>
+            <p class="logint-service-desc">
+              Customs bonded warehousing, MOOWR advisory, import container clearance, bill of entry reconciliation, and fast turnaround eliminating detention penalties.
             </p>
-            <div class="cmsms-service-specs">
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> Bonded Warehousing</span>
-              <span class="cmsms-spec-item"><i class="fa-solid fa-check"></i> MOOWR Advisory</span>
+            <div class="logint-service-specs">
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Zero Port Demurrage Shield</span>
+              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Customs &amp; MOOWR Advisory</span>
             </div>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Request Service Audit</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+            <div class="logint-service-action">
+              <a href="#contact" class="logint-action-link open-consult-modal">
+                <span>Request Service Audit</span>
+                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
           </div>
-        </div>
+        </article>
 
       </div>
 
@@ -524,50 +743,55 @@
   </section>
 
   <!-- ==========================================================================
-       6. CARGO TRUCKING "HANDLED WITH CARE" FEATURE PILLARS
+       8. LOGINT 4-STEP EXECUTION WORKFLOW
        ========================================================================== -->
-  <section class="cmsms-care-section">
-    <div class="cmsms-care-container">
+  <section class="workflow-section" id="workflow">
+    <div class="workflow-container">
       
-      <!-- Section Header -->
-      <div class="cmsms-care-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>CORE EXECUTION PILLARS</span>
+      <div class="services-suite-header reveal-fade-up">
+        <div class="intro-tag-pill">
+          <span>OPERATIONAL METHODOLOGY</span>
         </div>
-        <h2 class="cmsms-section-title">
-          Your Capital Assets, Handled With Institutional Care
+        <h2 class="services-suite-title">
+          How Thin Margin <span class="highlight-crimson">Secures Your Supply Chain</span>
         </h2>
-        <p class="cmsms-section-lead">
-          Every container, crate, and transformer is tracked with barcode custody, zero-demurrage protocols, and live telemetry.
+        <p class="services-suite-subtitle">
+          From seaport berth to active installation, our structured four-phase custody protocol ensures zero demurrage and zero inventory loss.
         </p>
       </div>
 
-      <!-- 3 Feature Cards Grid -->
-      <div class="cmsms-care-grid">
+      <div class="workflow-steps-grid">
         
-        <div class="cmsms-care-card">
-          <div class="cmsms-care-icon"><i class="fa-solid fa-lock"></i></div>
-          <h3 class="cmsms-care-title">Secure Laydown &amp; Yard Custody</h3>
-          <p class="cmsms-care-desc">
-            Geotagged laydown grid coordinates, digital dual-lock container seals, 24/7 CCTV surveillance, and 100% zero-pilferage liability coverage.
-          </p>
+        <!-- Step 1 -->
+        <div class="workflow-step-card logint-chamfer-tr">
+          <div class="step-num-badge">01</div>
+          <div class="step-icon"><i class="fa-solid fa-ship"></i></div>
+          <h4 class="step-title">Port Arrival &amp; Custody Handover</h4>
+          <p class="step-desc">Real-time vessel tracking, customs bonded documentation, and immediate container gate-out at Mundra &amp; Kandla.</p>
         </div>
 
-        <div class="cmsms-care-card">
-          <div class="cmsms-care-icon"><i class="fa-solid fa-anchor"></i></div>
-          <h3 class="cmsms-care-title">Seaport &amp; ICD Decantation</h3>
-          <p class="cmsms-care-desc">
-            Direct on-berth coordination at Mundra, Kandla, Nhava Sheva, and Pipavav. Sub-24-hour container decantation avoids hefty shipping line penalties.
-          </p>
+        <!-- Step 2 -->
+        <div class="workflow-step-card logint-chamfer-tr">
+          <div class="step-num-badge">02</div>
+          <div class="step-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
+          <h4 class="step-title">Rapid 24-Hr Decantation</h4>
+          <p class="step-desc">Mechanized de-stuffing at off-dock laydowns and prompt empty container return within the free window.</p>
         </div>
 
-        <div class="cmsms-care-card">
-          <div class="cmsms-care-icon"><i class="fa-solid fa-satellite-dish"></i></div>
-          <h3 class="cmsms-care-title">ERP &amp; Telemetry Integration</h3>
-          <p class="cmsms-care-desc">
-            Live synchronization between on-ground physical scans and SAP S/4HANA enterprise databases, ensuring automated audit trails and real-time reconciliation.
-          </p>
+        <!-- Step 3 -->
+        <div class="workflow-step-card logint-chamfer-tr">
+          <div class="step-num-badge">03</div>
+          <div class="step-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+          <h4 class="step-title">Sub-Meter Yard Stacking</h4>
+          <p class="step-desc">GPS-coordinated laydown placement, barcoding, weather preservation, and protective packaging.</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="workflow-step-card logint-chamfer-tr">
+          <div class="step-num-badge">04</div>
+          <div class="step-icon"><i class="fa-solid fa-network-wired"></i></div>
+          <h4 class="step-title">Real-Time SAP MIGO Sync</h4>
+          <p class="step-desc">Digitized GRN booking into client SAP S/4HANA systems, ensuring 100% ledger transparency.</p>
         </div>
 
       </div>
@@ -576,533 +800,174 @@
   </section>
 
   <!-- ==========================================================================
-       7. CARGO TRUCKING INFINITE CONTINUOUS MARQUEE TICKER
+       9. TELEMETRY & INFRASTRUCTURE VIDEO SHOWCASE (DARK CONTRAST SECTION #111315)
        ========================================================================== -->
-  <div class="cmsms-marquee-wrap">
-    <div class="cmsms-marquee-content">
-      <span class="cmsms-marquee-item">24-HR CONTAINER DECANTATION SLA</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">ZERO DEMURRAGE GUARANTEE</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">1.2GW+ CAPITAL ASSETS IN CUSTODY</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">REAL-TIME 3D DIGITAL TWIN</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">SAP S/4HANA TELEMETRY</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">100% STATUTORY EHS COMPLIANCE</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">PAN-INDIA SEAPORT NETWORK</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <!-- Repeated for infinite scroll -->
-      <span class="cmsms-marquee-item">24-HR CONTAINER DECANTATION SLA</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">ZERO DEMURRAGE GUARANTEE</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">1.2GW+ CAPITAL ASSETS IN CUSTODY</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">REAL-TIME 3D DIGITAL TWIN</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">SAP S/4HANA TELEMETRY</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">100% STATUTORY EHS COMPLIANCE</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-      <span class="cmsms-marquee-item">PAN-INDIA SEAPORT NETWORK</span>
-      <span class="cmsms-marquee-item">&bull;</span>
-    </div>
-  </div>
-
-  <!-- ==========================================================================
-       8. CARGO TRUCKING FOOTPRINT IN NUMBERS (ANIMATED COUNTERS)
-       ========================================================================== -->
-  <section class="cmsms-numbers-section">
-    <div class="cmsms-numbers-container">
+  <section class="why-video-section" id="why-choose-us">
+    <div class="why-video-container">
       
-      <!-- Section Header -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>INSTITUTIONAL METRICS</span>
+      <div class="video-showcase-header">
+        <div class="intro-tag-pill" style="border-color: rgba(238, 33, 48, 0.4); background: rgba(238, 33, 48, 0.12);">
+          <span>ON-GROUND EXECUTION</span>
         </div>
-        <h2 class="cmsms-section-title">
-          Our Proven Track Record in Numbers:
+        <h2 class="video-section-title">
+          Where Complex Engineering Meets <span class="highlight-crimson">Zero-Loss Discipline</span>
         </h2>
-        <p class="cmsms-section-lead">
-          Verified benchmarks delivering absolute accountability across India's largest infrastructure sites.
+        <p class="video-section-subtitle">
+          Watch our ground operations teams decant multi-acre laydown yards and execute heavy turbine and module custody with precision.
         </p>
       </div>
 
-      <!-- 4 Counters Grid -->
-      <div class="cmsms-numbers-grid">
+      <!-- Video Player Frame -->
+      <div class="video-player-frame">
+        <video class="showcase-video-elem" autoplay muted loop playsinline poster="assest/images/why_choose_us_hd.png">
+          <source src="assest/images/warehousevid.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay-gradient"></div>
         
-        <div class="cmsms-counter-box">
-          <div class="cmsms-counter-val" data-count="10" data-suffix="+">10+</div>
-          <div class="cmsms-counter-title">Years Ground Experience</div>
-          <div class="cmsms-counter-desc">Decade of frontline execution from construction break-ground to steady-state handover.</div>
+        <!-- Center Floating Stats Banner -->
+        <div class="video-stats-dock">
+          <div class="stat-pill-item">
+            <span class="stat-num">100%</span>
+            <span class="stat-lbl">Demurrage Shield</span>
+          </div>
+          <div class="stat-pill-divider"></div>
+          <div class="stat-pill-item">
+            <span class="stat-num">1.2GW+</span>
+            <span class="stat-lbl">Managed Assets</span>
+          </div>
+          <div class="stat-pill-divider"></div>
+          <div class="stat-pill-item">
+            <span class="stat-num">10,000+</span>
+            <span class="stat-lbl">Decanted TEUs</span>
+          </div>
+          <div class="stat-pill-divider"></div>
+          <div class="stat-pill-item">
+            <span class="stat-num">99.98%</span>
+            <span class="stat-lbl">Reconciliation Yield</span>
+          </div>
         </div>
-
-        <div class="cmsms-counter-box">
-          <div class="cmsms-counter-val" data-count="1.2" data-suffix="GW+">1.2GW+</div>
-          <div class="cmsms-counter-title">Capital Assets In Custody</div>
-          <div class="cmsms-counter-desc">Cumulative renewable power and industrial capital plant equipment managed without loss.</div>
-        </div>
-
-        <div class="cmsms-counter-box">
-          <div class="cmsms-counter-val" data-count="24" data-suffix="Hrs">24Hrs</div>
-          <div class="cmsms-counter-title">Container Decantation SLA</div>
-          <div class="cmsms-counter-desc">Strict 24-hour turnaround threshold from port gate-in to laydown stacking, eliminating demurrage.</div>
-        </div>
-
-        <div class="cmsms-counter-box">
-          <div class="cmsms-counter-val" data-count="0" data-suffix=" Defect">0 Defect</div>
-          <div class="cmsms-counter-title">Demurrage &amp; Safety Breaches</div>
-          <div class="cmsms-counter-desc">Zero penal charges recorded across audited project deployments with 100% EHS adherence.</div>
-        </div>
-
       </div>
 
     </div>
   </section>
 
   <!-- ==========================================================================
-       9. REAL-TIME 3D DIGITAL TWIN MATRIX SECTION (THREE.JS INTERACTIVE ENGINE)
+       10. AUTO-SCROLLING INDIAN LEADERSHIP TESTIMONIALS TICKER
        ========================================================================== -->
-  <section class="digital-twin-section" id="digital-twin">
-    <div class="digital-twin-container">
+  <section class="cmsms-testimonials-section" id="testimonials">
+    <div class="testimonials-container">
       
-      <!-- Section Header -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>INTERACTIVE SIMULATION</span>
+      <div class="services-suite-header reveal-fade-up">
+        <div class="intro-tag-pill">
+          <span>CLIENT TESTIMONIALS</span>
         </div>
-        <h2 class="cmsms-section-title">
-          Real-Time Laydown Yard Digital Twin Matrix
+        <h2 class="services-suite-title" style="color: #ffffff;">
+          Trusted by <span class="highlight-crimson">India's Infrastructure Leaders</span>
         </h2>
-        <p class="cmsms-section-lead">
-          Interactive 3D telemetry mapping multi-acre laydown coordinates, container decantation, and real-time SAP S/4HANA material synchronization.
+        <p class="services-suite-subtitle" style="color: #94a3b8;">
+          Hear how our techno-commercial custody teams eliminate container detention and maintain flawless audit trails for Tier-1 EPC projects.
         </p>
       </div>
 
-      <!-- 3D Interactive Stage & Telemetry Console Grid -->
-      <div class="twin-stage-grid">
-        
-        <!-- 3D Canvas Stage with Futuristic HUD -->
-        <div class="twin-viewport-frame">
-          <canvas id="digitalTwinCanvas" class="twin-webgl-canvas"></canvas>
-
-          <!-- Top Floating HUD Badges -->
-          <div class="twin-hud-top">
-            <div class="twin-hud-pill live-indicator">
-              <span class="twin-pulse-dot"></span>
-              <span>3D DIGITAL TWIN ACTIVE</span>
-            </div>
-            <div class="twin-hud-pill coordinates-pill">
-              <i class="fa-solid fa-crosshairs"></i>
-              <span id="twinCoordsText">NODE 01: MARITIME BERTH DISCHARGE</span>
-            </div>
-          </div>
-
-          <!-- Center Tip -->
-          <div class="twin-hud-center-tip" id="twinCenterTip">
-            <span><i class="fa-solid fa-arrows-up-down"></i> Scroll down or move mouse to navigate 3D laydown space</span>
-          </div>
-
-          <!-- Bottom Telemetry HUD Bar -->
-          <div class="twin-hud-bottom">
-            <div class="twin-hud-stat">
-              <span class="twin-stat-label">CUSTODY SLA</span>
-              <span class="twin-stat-val">100% Zero-Loss</span>
-            </div>
-            <div class="twin-hud-stat">
-              <span class="twin-stat-label">DEMURRAGE TIMER</span>
-              <span class="twin-stat-val text-accent">&le; 24 Hrs (Guaranteed)</span>
-            </div>
-            <div class="twin-hud-stat">
-              <span class="twin-stat-label">ERP SYNCHRONIZATION</span>
-              <span class="twin-stat-val">SAP S/4HANA Real-Time</span>
-            </div>
-            <div class="twin-hud-stat">
-              <span class="twin-stat-label">CAMERA ORBIT</span>
-              <span class="twin-stat-val" id="twinCamStatus">AUTO SCROLL-TRACK</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Right: Interactive Waypoint Cards -->
-        <div class="twin-telemetry-console">
-          
-          <div class="twin-node-card active" data-node="0" tabindex="0" role="button">
-            <div class="twin-node-marker">
-              <span class="node-idx">01</span>
-              <div class="node-pulse-ring"></div>
-            </div>
-            <div class="twin-node-info">
-              <div class="node-tag-row">
-                <span class="node-tag-chip">PORT INTERFACE</span>
-                <span class="node-live-status"><i class="fa-solid fa-satellite"></i> GPS Active</span>
-              </div>
-              <h4 class="node-title">Maritime Port Discharge &amp; Demurrage Shield</h4>
-              <p class="node-desc">
-                Immediate vessel discharge coordination at Mundra, Kandla, and Tuticorin. Rapid evacuation of heavy equipment to prevent shipping line demurrage fees.
-              </p>
-              <div class="node-meta-row">
-                <span><i class="fa-solid fa-check"></i> Zero Detention Protocol</span>
-                <span><i class="fa-solid fa-check"></i> Customs Bonded Transit</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="twin-node-card" data-node="1" tabindex="0" role="button">
-            <div class="twin-node-marker">
-              <span class="node-idx">02</span>
-              <div class="node-pulse-ring"></div>
-            </div>
-            <div class="twin-node-info">
-              <div class="node-tag-row">
-                <span class="node-tag-chip">RAPID DE-STUFFING</span>
-                <span class="node-live-status"><i class="fa-solid fa-stopwatch"></i> &le; 24h SLA</span>
-              </div>
-              <h4 class="node-title">24-Hr Container Decantation Protocol</h4>
-              <p class="node-desc">
-                High-throughput mechanized de-stuffing. Heavy crates unboxed, physical bill of lading verified, and empty containers returned to terminal within 24 hours.
-              </p>
-              <div class="node-meta-row">
-                <span><i class="fa-solid fa-check"></i> Mechanized Unloading</span>
-                <span><i class="fa-solid fa-check"></i> Gate-Out Empty Return</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="twin-node-card" data-node="2" tabindex="0" role="button">
-            <div class="twin-node-marker">
-              <span class="node-idx">03</span>
-              <div class="node-pulse-ring"></div>
-            </div>
-            <div class="twin-node-info">
-              <div class="node-tag-row">
-                <span class="node-tag-chip">3D GEOTAGGED CUSTODY</span>
-                <span class="node-live-status"><i class="fa-solid fa-qrcode"></i> RFID Barcoded</span>
-              </div>
-              <h4 class="node-title">Laydown Yard Digital Twin &amp; Geotagged Stacking</h4>
-              <p class="node-desc">
-                Multi-acre open yards mapped into sub-meter coordinate grids. Inverters, modules, and structures assigned micro-locations with tamper-proof RFID seals.
-              </p>
-              <div class="node-meta-row">
-                <span><i class="fa-solid fa-check"></i> Sub-Meter Geotagging</span>
-                <span><i class="fa-solid fa-check"></i> FIFO Stacking Hierarchy</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="twin-node-card" data-node="3" tabindex="0" role="button">
-            <div class="twin-node-marker">
-              <span class="node-idx">04</span>
-              <div class="node-pulse-ring"></div>
-            </div>
-            <div class="twin-node-info">
-              <div class="node-tag-row">
-                <span class="node-tag-chip">ERP TELEMETRY</span>
-                <span class="node-live-status"><i class="fa-solid fa-database"></i> SAP Real-Time</span>
-              </div>
-              <h4 class="node-title">SAP S/4HANA Live Telemetry &amp; Erection Handover</h4>
-              <p class="node-desc">
-                Instant MIGO/GRN generation synced directly to client ERP systems. Controlled issue-to-erection protocols eliminate double handling and construction delays.
-              </p>
-              <div class="node-meta-row">
-                <span><i class="fa-solid fa-check"></i> Automated MIGO Postings</span>
-                <span><i class="fa-solid fa-check"></i> Zero-Variance Reconciliations</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       10. CARGO TRUCKING EXECUTION PROCESS SECTION
-       ========================================================================== -->
-  <section class="cmsms-process-section" id="process">
-    <div class="cmsms-process-container">
-      
-      <!-- Section Header -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>METHODOLOGY</span>
-        </div>
-        <h2 class="cmsms-section-title">
-          Turnkey Material Execution Pipeline
-        </h2>
-        <p class="cmsms-section-lead">
-          Our systematic 4-phase custody lifecycle ensures complete transparency, zero losses, and zero demurrage.
-        </p>
-      </div>
-
-      <!-- 4 Step Pipeline Grid -->
-      <div class="cmsms-process-grid">
-        
-        <div class="cmsms-process-card">
-          <div class="cmsms-process-step-num">01</div>
-          <h3 class="cmsms-process-card-title">Port Inward &amp; Escort</h3>
-          <p class="cmsms-process-card-desc">
-            Immediate customs gate-in clearance, physical container integrity inspection, seal verification, and GPS transit escort to the laydown facility.
-          </p>
-        </div>
-
-        <div class="cmsms-process-card">
-          <div class="cmsms-process-step-num">02</div>
-          <h3 class="cmsms-process-card-title">24-Hr Decantation</h3>
-          <p class="cmsms-process-card-desc">
-            Mechanized unboxing and material destuffing executed within 24 hours. Empty containers inspected and returned directly to port lines.
-          </p>
-        </div>
-
-        <div class="cmsms-process-card">
-          <div class="cmsms-process-step-num">03</div>
-          <h3 class="cmsms-process-card-title">Geotagged Stacking</h3>
-          <p class="cmsms-process-card-desc">
-            RFID barcoded indexing and coordinate placement into 3D mapped yard grids following strict preservation and preservation protocols.
-          </p>
-        </div>
-
-        <div class="cmsms-process-card">
-          <div class="cmsms-process-step-num">04</div>
-          <h3 class="cmsms-process-card-title">SAP Issue to Erection</h3>
-          <p class="cmsms-process-card-desc">
-            Direct MIGO/GRN synchronization in client SAP ERP. Controlled material requisition and staging to project erection teams on ground.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       11. CARGO TRUCKING TESTIMONIALS SECTION
-       ========================================================================== -->
-  <section class="cmsms-testimonials-section" id="why-choose-us">
-    <div class="cmsms-testimonials-container">
-      
-      <!-- Section Header -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>REAL-TIME CLIENT REVIEWS</span>
-        </div>
-        <h2 class="cmsms-section-title" style="color: #ffffff;">
-          Trusted by Foremost Enterprise Leaders Across India
-        </h2>
-        <p class="cmsms-section-lead" style="color: #94a3b8;">
-          Live audited feedback from project directors, supply chain heads, and EPC leaders managing mega infrastructure corridors.
-        </p>
-      </div>
-
-      <!-- Auto-Scrolling Testimonial Ticker -->
       <div class="testimonial-ticker-wrap">
         <div class="testimonial-ticker-track">
           
-          <!-- Testimonial 01 -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
+          <!-- Testimonial 1: Adani Solar & Power -->
+          <div class="testimonial-card">
+            <div class="testi-card-top">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
             </div>
-            <p class="testi-quote-text">
-              "Managing 480+ containers of solar modules at Mundra Port within the 24-hour turnaround SLA saved us over &dollar;180,000 in penal detention fees. Thin Margin's ground coordination and immediate de-stuffing capability is unmatched in India."
+            <p class="testi-quote">
+              &ldquo;Thin Margin’s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
             </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">RS</div>
+            <div class="testi-author-bar">
+              <div class="testi-author-avatar">RV</div>
               <div>
-                <div class="testi-author-name">Rajeshwar Sharma</div>
-                <div class="testi-author-role">VP Supply Chain &amp; Procurement &bull; <span class="testi-author-company">Adani Power &amp; Infra</span></div>
+                <div class="testi-author-name">Rajesh Varma</div>
+                <div class="testi-author-role">VP - Supply Chain &bull; <span class="testi-author-company">Adani Solar &amp; Power</span></div>
               </div>
             </div>
           </div>
 
-          <!-- Testimonial 02 -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
+          <!-- Testimonial 2: L&T Hydrocarbon Engineering -->
+          <div class="testimonial-card">
+            <div class="testi-card-top">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
             </div>
-            <p class="testi-quote-text">
-              "Their 3D Laydown Matrix and sub-meter geotagged stacking allowed our site engineers to locate critical 400kV transformer components across 60 acres in minutes. Zero discrepancies during our statutory project audits."
+            <p class="testi-quote">
+              &ldquo;Their sub-meter geotagged laydown yard management and strict SAP S/4HANA MIGO bookings brought absolute transparency to our heavy capital equipment laydown operations.&rdquo;
             </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">VN</div>
-              <div>
-                <div class="testi-author-name">Vikramaditya Nair</div>
-                <div class="testi-author-role">Project Director (500MW Ultra Mega Solar Park) &bull; <span class="testi-author-company">Renewable Energy SPV</span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonial 03 -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
-              </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
-            </div>
-            <p class="testi-quote-text">
-              "Thin Margin brings genuine ground realities to capital logistics. From zero-incident mechanized crane rigging to seamless SAP S/4HANA MIGO generation, they are our most dependable site custody partner."
-            </p>
-            <div class="testi-author-row">
+            <div class="testi-author-bar">
               <div class="testi-author-avatar">AS</div>
               <div>
-                <div class="testi-author-name">Amitav Sengupta</div>
-                <div class="testi-author-role">Head of Logistics &amp; Materials &bull; <span class="testi-author-company">L&amp;T Heavy Infrastructure</span></div>
+                <div class="testi-author-name">Col. Arvind Sharma</div>
+                <div class="testi-author-role">Chief Project Director &bull; <span class="testi-author-company">L&amp;T Hydrocarbon</span></div>
               </div>
             </div>
           </div>
 
-          <!-- Testimonial 04 -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
+          <!-- Testimonial 3: Tata Power Renewable Energy -->
+          <div class="testimonial-card">
+            <div class="testi-card-top">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
             </div>
-            <p class="testi-quote-text">
-              "The 100% zero-pilferage custody guarantee is backed by true techno-commercial rigor. Their barcoded staging and continuous preservation protocol delivered zero inventory variance across our entire 18-month execution cycle."
+            <p class="testi-quote">
+              &ldquo;Managing material across a 1,200-acre site is complex. Thin Margin’s RFID tagging and zero-variance reconciliation ensured every transformer and inverter was tracked without a single mismatch.&rdquo;
             </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">PM</div>
+            <div class="testi-author-bar">
+              <div class="testi-author-avatar">SM</div>
               <div>
-                <div class="testi-author-name">Priya Mukherjee</div>
-                <div class="testi-author-role">Chief Material Controller &bull; <span class="testi-author-company">Tata Power Renewables</span></div>
+                <div class="testi-author-name">Sanjay Mukherjee</div>
+                <div class="testi-author-role">Head of Materials &amp; Contracts &bull; <span class="testi-author-company">Tata Power Renewables</span></div>
               </div>
             </div>
           </div>
 
-          <!-- Testimonial 05 -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
+          <!-- Testimonial 4: NTPC Green Energy -->
+          <div class="testimonial-card">
+            <div class="testi-card-top">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
             </div>
-            <p class="testi-quote-text">
-              "Their speed of container de-stuffing and immediate empty container gate-out to shipping lines sets the gold standard at Kandla Port. Zero demurrage, complete safety adherence, and spotless documentation."
+            <p class="testi-quote">
+              &ldquo;The level of statutory EHS and labor law compliance provided by Thin Margin is second to none. They deliver complete peace of mind on regulatory safety and contractor management.&rdquo;
             </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">HP</div>
+            <div class="testi-author-bar">
+              <div class="testi-author-avatar">AK</div>
               <div>
-                <div class="testi-author-name">Harishchandra Patel</div>
-                <div class="testi-author-role">General Manager, Port Operations &bull; <span class="testi-author-company">Kandla Terminal Logistics</span></div>
+                <div class="testi-author-name">Alok K. Srivastav</div>
+                <div class="testi-author-role">General Manager - Procurement &bull; <span class="testi-author-company">NTPC Green Energy</span></div>
               </div>
             </div>
           </div>
 
-          <!-- Testimonial 06 -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
+          <!-- Duplicated for seamless continuous ticker loop -->
+          <div class="testimonial-card">
+            <div class="testi-card-top">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
             </div>
-            <p class="testi-quote-text">
-              "From construction break-ground to steady-state commissioning, Thin Margin stewarded over 1.2GW of capital assets without a single incident. Motivated professionals turned entrepreneurs delivering supreme value."
+            <p class="testi-quote">
+              &ldquo;Thin Margin’s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
             </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">SK</div>
+            <div class="testi-author-bar">
+              <div class="testi-author-avatar">RV</div>
               <div>
-                <div class="testi-author-name">Suresh K. Kulkarni</div>
-                <div class="testi-author-role">Senior VP, EPC Operations &bull; <span class="testi-author-company">Aditya Birla Group</span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Repeated items for smooth infinite scroll -->
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
-              </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
-            </div>
-            <p class="testi-quote-text">
-              "Managing 480+ containers of solar modules at Mundra Port within the 24-hour turnaround SLA saved us over &dollar;180,000 in penal detention fees. Thin Margin's ground coordination and immediate de-stuffing capability is unmatched in India."
-            </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">RS</div>
-              <div>
-                <div class="testi-author-name">Rajeshwar Sharma</div>
-                <div class="testi-author-role">VP Supply Chain &amp; Procurement &bull; <span class="testi-author-company">Adani Power &amp; Infra</span></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cmsms-testimonial-card-v2">
-            <div class="testi-header-row">
-              <div class="testi-rating-badge">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <span class="testi-score">5.0 / 5.0</span>
-              </div>
-              <span class="testi-verified-chip"><span class="pulse-dot"></span> Verified EPC Review</span>
-            </div>
-            <p class="testi-quote-text">
-              "Their 3D Laydown Matrix and sub-meter geotagged stacking allowed our site engineers to locate critical 400kV transformer components across 60 acres in minutes. Zero discrepancies during our statutory project audits."
-            </p>
-            <div class="testi-author-row">
-              <div class="testi-author-avatar">VN</div>
-              <div>
-                <div class="testi-author-name">Vikramaditya Nair</div>
-                <div class="testi-author-role">Project Director (500MW Ultra Mega Solar Park) &bull; <span class="testi-author-company">Renewable Energy SPV</span></div>
+                <div class="testi-author-name">Rajesh Varma</div>
+                <div class="testi-author-role">VP - Supply Chain &bull; <span class="testi-author-company">Adani Solar &amp; Power</span></div>
               </div>
             </div>
           </div>
@@ -1114,333 +979,145 @@
   </section>
 
   <!-- ==========================================================================
-       12. CARGO TRUCKING FAQ ACCORDION SECTION
+       11. OUR CLIENTS & PARTNERS CAROUSEL
        ========================================================================== -->
-  <section class="cmsms-faq-section" id="faq">
-    <div class="cmsms-faq-container">
-      
-      <!-- Section Header -->
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>FAQ</span>
-        </div>
-        <h2 class="cmsms-section-title">
-          Got Questions? We’ve Got Answers
-        </h2>
-        <p class="cmsms-section-lead">
-          Everything you need to know about our institutional material custody, container turnaround SLA, and ERP integration.
-        </p>
+  <section class="partners-section" id="clients">
+    <div class="partners-container">
+      <div class="partners-kicker">
+        <span>TRUSTED BY INDUSTRY CONGLOMERATES</span>
       </div>
-
-      <!-- Accordion Container -->
-      <div class="cmsms-accordion">
-        
-        <!-- FAQ 1 -->
-        <div class="cmsms-accordion-item active">
-          <div class="cmsms-accordion-header" role="button" tabindex="0">
-            <div class="cmsms-accordion-title">What types of capital cargo and industrial materials do you handle?</div>
-            <div class="cmsms-accordion-icon"><i class="fa-solid fa-plus"></i></div>
-          </div>
-          <div class="cmsms-accordion-body" style="max-height: 200px;">
-            <p>
-              Thin Margin specializes in capital project cargo, including heavy transformers, solar modules, inverters, balance-of-plant (BoP) piping, structural steel, mechanized equipment, switchgear, and project-critical spare parts across thermal, renewable, and infrastructure sites.
-            </p>
-          </div>
+      <div class="partners-logos-grid">
+        <div class="partner-logo-item">
+          <img src="assest/images/adanilogo_clean.png" alt="Adani Group" loading="lazy">
         </div>
-
-        <!-- FAQ 2 -->
-        <div class="cmsms-accordion-item">
-          <div class="cmsms-accordion-header" role="button" tabindex="0">
-            <div class="cmsms-accordion-title">How does your 24-hour seaport container decantation SLA work?</div>
-            <div class="cmsms-accordion-icon"><i class="fa-solid fa-plus"></i></div>
-          </div>
-          <div class="cmsms-accordion-body">
-            <p>
-              From the moment a container discharges at major maritime gateways like Mundra, Kandla, or Nhava Sheva, our ground team manages customs gate-out, unsealing, mechanized destuffing, visual inspection, and return of the empty container to the shipping line depot within 24 hours—guaranteeing 100% immunity from detention penalties.
-            </p>
-          </div>
+        <div class="partner-logo-item">
+          <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla" loading="lazy">
         </div>
-
-        <!-- FAQ 3 -->
-        <div class="cmsms-accordion-item">
-          <div class="cmsms-accordion-header" role="button" tabindex="0">
-            <div class="cmsms-accordion-title">How does Thin Margin integrate with enterprise ERP systems like SAP?</div>
-            <div class="cmsms-accordion-icon"><i class="fa-solid fa-plus"></i></div>
-          </div>
-          <div class="cmsms-accordion-body">
-            <p>
-              Our systems feature direct bi-directional integration with SAP MM, S/4HANA, and Oracle ERP. Inward physical inspections automatically generate Goods Receipt Notes (MIGO/GRN), while material requisitions by contractor crews trigger real-time stock deductions and audit trails.
-            </p>
-          </div>
+        <div class="partner-logo-item">
+          <img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables" loading="lazy">
         </div>
-
-        <!-- FAQ 4 -->
-        <div class="cmsms-accordion-item">
-          <div class="cmsms-accordion-header" role="button" tabindex="0">
-            <div class="cmsms-accordion-title">What guarantees do you provide against material pilferage or damage?</div>
-            <div class="cmsms-accordion-icon"><i class="fa-solid fa-plus"></i></div>
-          </div>
-          <div class="cmsms-accordion-body">
-            <p>
-              We provide a contractual 100% Zero-Loss Guarantee. All laydown zones feature multi-tier security including RFID barcoding, 24/7 CCTV surveillance, biometric access gates, nitrogen purging maintenance for sensitive equipment, and full financial liability coverage.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="cmsms-accordion-item">
-          <div class="cmsms-accordion-header" role="button" tabindex="0">
-            <div class="cmsms-accordion-title">Do you provide end-to-end statutory EHS and labor compliance?</div>
-            <div class="cmsms-accordion-icon"><i class="fa-solid fa-plus"></i></div>
-          </div>
-          <div class="cmsms-accordion-body">
-            <p>
-              Yes. All our personnel and mechanized rigging equipment adhere strictly to statutory safety standards (OSHA, ISO 45001). We maintain 100% compliance with central and state labor regulations, including Provident Fund (PF), Employee State Insurance (ESIC), and contract labor licenses.
-            </p>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       13. HIGH-IMPACT CTA BANNER (CHAMFERED CORNER CUT)
-       ========================================================================== -->
-    <!-- ==========================================================================
-       OUR CLIENTS & INDUSTRY TRUST PARTNERS
-       ========================================================================== -->
-  <section class="cmsms-clients-section" id="clients">
-    <div class="cmsms-services-container">
-      <div class="cmsms-section-header" style="margin-bottom: 24px;">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>OUR CLIENTS &amp; PARTNERS</span>
-        </div>
-        <h2 class="cmsms-section-title">
-          Trusted by Foremost Enterprise Leaders
-        </h2>
-        <p class="cmsms-section-lead">
-          Powering supply chain custody for India's premier infrastructure developers and industrial conglomerates.
-        </p>
-      </div>
-
-      <div class="cmsms-clients-grid">
-        <div class="cmsms-client-card">
-          <img src="assest/images/adanilogo_clean.png" alt="Adani Solar">
-        </div>
-        <div class="cmsms-client-card">
-          <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla">
-        </div>
-        <div class="cmsms-client-card">
-          <img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables">
-        </div>
-        <div class="cmsms-client-card">
-          <img src="assest/images/Ecomexpress_clean.png" alt="Ecom Express">
+        <div class="partner-logo-item">
+          <img src="assest/images/Ecomexpress_clean.png" alt="Ecom Express" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       CAREER AT THIN MARGIN
+       12. CAREER & BLOGS (GROUND INSIGHTS)
        ========================================================================== -->
   <section class="cmsms-career-section" id="career">
-    <div class="cmsms-services-container">
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>JOIN OUR EXPEDITION</span>
-        </div>
-        <h2 class="cmsms-section-title">
-          Build Your Career With Industry Leaders
-        </h2>
-        <p class="cmsms-section-lead">
-          From employees to entrepreneurs: Work with seasoned techno-commercial pioneers across India's mega infrastructure corridors.
-        </p>
-      </div>
-
-      <div class="cmsms-career-grid">
-        <div class="cmsms-career-card">
-          <div>
-            <span class="cmsms-spec-item" style="color: var(--color-accent); font-weight: 700; margin-bottom: 12px; display: inline-block;">FULL-TIME &bull; MUNDRA SEAPORT</span>
-            <h3 class="cmsms-service-title" style="margin-top: 6px;">Seaport Decantation Manager</h3>
-            <p class="cmsms-service-desc">
-              Lead on-berth container destuffing, customs bonded transit coordination, and zero-demurrage turnaround protocols at Mundra and Kandla ports.
-            </p>
+    <div class="cmsms-career-container">
+      <div class="cmsms-career-banner">
+        <div class="career-text-col">
+          <div class="intro-tag-pill" style="border-color: rgba(238, 33, 48, 0.4); background: rgba(238, 33, 48, 0.1);">
+            <span>JOIN OUR TEAM</span>
           </div>
-          <a href="#contact" class="cmsms-btn cmsms-btn-outline open-consult-modal" style="margin-top: 20px; align-self: flex-start;">
-            <span>Apply Now</span>
-            <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-          </a>
-        </div>
-
-        <div class="cmsms-career-card">
-          <div>
-            <span class="cmsms-spec-item" style="color: var(--color-accent); font-weight: 700; margin-bottom: 12px; display: inline-block;">FULL-TIME &bull; AHMEDABAD / SITE</span>
-            <h3 class="cmsms-service-title" style="margin-top: 6px;">SAP MM / S/4HANA Lead</h3>
-            <p class="cmsms-service-desc">
-              Oversee live material synchronization, MIGO/GRN generation, inventory reservation tracking, and bi-directional ERP integration.
-            </p>
-          </div>
-          <a href="#contact" class="cmsms-btn cmsms-btn-outline open-consult-modal" style="margin-top: 20px; align-self: flex-start;">
-            <span>Apply Now</span>
-            <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-          </a>
-        </div>
-
-        <div class="cmsms-career-card">
-          <div>
-            <span class="cmsms-spec-item" style="color: var(--color-accent); font-weight: 700; margin-bottom: 12px; display: inline-block;">FULL-TIME &bull; PAN-INDIA CORRIDORS</span>
-            <h3 class="cmsms-service-title" style="margin-top: 6px;">Laydown Yard Operations Lead</h3>
-            <p class="cmsms-service-desc">
-              Manage multi-acre industrial laydown coordinates, RFID barcoded stacking, crane rigging safety, and strict EHS zero-incident compliance.
-            </p>
-          </div>
-          <a href="#contact" class="cmsms-btn cmsms-btn-outline open-consult-modal" style="margin-top: 20px; align-self: flex-start;">
-            <span>Apply Now</span>
-            <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <h2 class="career-title">Build Your Career with <span class="highlight-crimson">India's Custody Leaders</span></h2>
+          <p class="career-desc">
+            We are actively hiring Techno-Commercial Material Managers, SAP S/4HANA Specialists, Rigging Supervisors, and Port Operations Controllers across Mundra, Kandla, and capital project corridors.
+          </p>
+          <a href="#contact" class="btn-services open-consult-modal">
+            <span class="btn-services-text">Explore Career Opportunities</span>
+            <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ==========================================================================
-       BLOGS & INDUSTRY INSIGHTS
-       ========================================================================== -->
   <section class="cmsms-blogs-section" id="blogs">
-    <div class="cmsms-services-container">
-      <div class="cmsms-section-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="cmsms-blogs-container">
+      <div class="services-suite-header reveal-fade-up">
+        <div class="intro-tag-pill">
           <span>KNOWLEDGE BASE</span>
         </div>
-        <h2 class="cmsms-section-title">
-          Insights from the Ground
+        <h2 class="services-suite-title">
+          Insights from the <span class="highlight-crimson">Ground Operations</span>
         </h2>
-        <p class="cmsms-section-lead">
+        <p class="services-suite-subtitle">
           Expert articles on demurrage prevention, sub-meter laydown twins, and capital project inventory optimization.
         </p>
       </div>
 
       <div class="cmsms-blogs-grid">
-        <article class="cmsms-blog-card">
-          <div class="cmsms-blog-thumb" style="background-image: url('assest/images/port_container_decantation.jpg');">
-            <span class="cmsms-blog-tag">PORT LOGISTICS</span>
+        <article class="cmsms-blog-card logint-chamfer-tr">
+          <div class="cmsms-blog-media">
+            <img src="assest/images/port_container_decantation.jpg" alt="Demurrage Shield Article" loading="lazy">
+            <div class="cmsms-blog-date">NOV 2026</div>
           </div>
           <div class="cmsms-blog-body">
-            <h3 class="cmsms-blog-title">Eliminating Seaport Detention: The 24-Hr Decantation Playbook</h3>
-            <p class="cmsms-blog-desc">
-              How rapid mechanized destuffing at Mundra and Kandla saves mega capital projects millions in penal demurrage fees.
-            </p>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Read Article</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+            <div class="cmsms-blog-cat">Port Demurrage Strategy</div>
+            <h3 class="cmsms-blog-title"><a href="#blogs">Eliminating Port Demurrage: The 24-Hour Decantation Mandate at Mundra &amp; Kandla</a></h3>
+            <p class="cmsms-blog-snippet">How proactive shipping line coordination and off-dock staging prevent multimillion-dollar detention penalties.</p>
           </div>
         </article>
 
-        <article class="cmsms-blog-card">
-          <div class="cmsms-blog-thumb" style="background-image: url('assest/images/hero_supply_chain.jpg');">
-            <span class="cmsms-blog-tag">DIGITAL TWIN</span>
+        <article class="cmsms-blog-card logint-chamfer-tr">
+          <div class="cmsms-blog-media">
+            <img src="assest/images/hero_supply_chain.jpg" alt="Laydown Yard Twins" loading="lazy">
+            <div class="cmsms-blog-date">OCT 2026</div>
           </div>
           <div class="cmsms-blog-body">
-            <h3 class="cmsms-blog-title">3D Geotagged Stacking vs. Traditional Open-Yard Warehousing</h3>
-            <p class="cmsms-blog-desc">
-              Why sub-meter coordinates and live SAP synchronization reduce material handover delays by up to 78%.
-            </p>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Read Article</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+            <div class="cmsms-blog-cat">Laydown Architecture</div>
+            <h3 class="cmsms-blog-title"><a href="#blogs">Sub-Meter Laydown Geotagging: Managing 1,000+ Acre Solar &amp; Power Corridors</a></h3>
+            <p class="cmsms-blog-snippet">Using GPS spatial grid indexing to eradicate misplaced capital inventory and accelerate installation timelines.</p>
           </div>
         </article>
 
-        <article class="cmsms-blog-card">
-          <div class="cmsms-blog-thumb" style="background-image: url('assest/images/heavy_transport_logistics.jpg');">
-            <span class="cmsms-blog-tag">EHS &amp; COMPLIANCE</span>
+        <article class="cmsms-blog-card logint-chamfer-tr">
+          <div class="cmsms-blog-media">
+            <img src="assest/images/sap_erp_solutions.jpg" alt="SAP Reconciliation" loading="lazy">
+            <div class="cmsms-blog-date">SEP 2026</div>
           </div>
           <div class="cmsms-blog-body">
-            <h3 class="cmsms-blog-title">Zero-LTI Mechanized Rigging: Essential Protocols for Heavy Cargo</h3>
-            <p class="cmsms-blog-desc">
-              Contractor compliance frameworks, certified rigging equipment, and safety governance during high-tonnage lifting.
-            </p>
-            <a href="#contact" class="cmsms-service-link open-consult-modal">
-              <span>Read Article</span>
-              <div class="cmsms-link-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-            </a>
+            <div class="cmsms-blog-cat">Digital Twin &amp; SAP</div>
+            <h3 class="cmsms-blog-title"><a href="#blogs">Zero-Variance Audits: Synchronizing On-Site MIGO Receipts Directly with S/4HANA</a></h3>
+            <p class="cmsms-blog-snippet">Bridging the critical blindspot between physical gate passes and corporate enterprise resource planning.</p>
           </div>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="cmsms-cta-banner">
-    <div class="cmsms-cta-container">
-      <div>
-        <h2 class="cmsms-cta-title">
-          Ready to Eliminate Demurrage &amp; Secure Institutional Yard Custody?
-        </h2>
-        <p style="color: #cbd5e1; font-size: 16px; margin: 0; max-width: 650px;">
-          Partner with seasoned techno-commercial experts. Request a strategic site audit or customized proposal for your capital project today.
-        </p>
-      </div>
-      <div class="cmsms-cta-buttons">
-        <a href="#contact" class="cmsms-btn cmsms-btn-primary open-consult-modal">
-          <span>Book Strategy Consultation</span>
-          <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
-        </a>
-        <a href="#services" class="cmsms-btn cmsms-btn-outline" style="border-color: rgba(255,255,255,0.3); color: #ffffff;">
-          <span>Explore 8 Core Services</span>
-          <div class="cmsms-btn-arrow"><i class="fa-solid fa-boxes-stacked"></i></div>
-        </a>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       14. MODERN DARK FOOTER
+       13. MODERN DARK FOOTER (#111315) WITH AUTHENTIC SOCIAL ICONS
        ========================================================================== -->
-  <footer class="cmsms-footer" id="contact">
-    <div class="cmsms-footer-container">
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
       
-      <div class="cmsms-footer-grid">
+      <div class="footer-top-grid">
         
-        <!-- Column 1: Brand Info -->
-        <div>
-          <a href="index.html" class="cmsms-header-logo" style="margin-bottom: 20px;">
-            <img src="assest/images/thin_margin_favicon.jpeg" alt="Thin Margin Logo">
-            <span style="color: #ffffff;">Thin Margin</span>
+        <!-- Col 1: Brand & Overview -->
+        <div class="footer-col-brand">
+          <a href="index.html" class="footer-brand-logo">
+            <img src="assest/images/thin_margin_logo_white.png" alt="Thin Margin" class="footer-logo-img" onerror="this.src='assest/images/thin_margin_logo.png'">
           </a>
-          <p class="cmsms-footer-desc">
-            The Thin Margin (TM) is established by professionals with Techno-Commercial background with rich experience in Material Management during Construction to Steady-state stages across mega capital infrastructure projects in India and abroad.
+          <p class="footer-brand-desc">
+            The Thin Margin ( TM ) provides institutional-grade Material Management, Laydown Yard Stewardship, and Port Demurrage Shields for large-scale infrastructure projects across India and abroad.
           </p>
-          <div class="footer-social-row">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn linkedin" aria-label="LinkedIn">
+
+          <!-- Authentic Real-Color Social Media Icons with Smooth Hover Bounce -->
+          <div class="footer-social-icons">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="LinkedIn">
               <i class="fa-brands fa-linkedin-in"></i>
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn x-twitter" aria-label="X Twitter">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn social-x" aria-label="X / Twitter">
               <i class="fa-brands fa-x-twitter"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn facebook" aria-label="Facebook">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Facebook">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
-            <a href="https://wa.me/919558035477" target="_blank" rel="noopener noreferrer" class="footer-social-btn whatsapp" aria-label="WhatsApp">
+            <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team" target="_blank" rel="noopener noreferrer" class="social-btn social-whatsapp" aria-label="WhatsApp">
               <i class="fa-brands fa-whatsapp"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn instagram" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
             </a>
           </div>
         </div>
 
-        <!-- Column 2: 8 Core Services -->
-        <div>
-          <h3 class="cmsms-footer-heading">Our 8 Core Services</h3>
-          <ul class="cmsms-footer-links">
+        <!-- Col 2: Core Capabilities -->
+        <div class="footer-col-links">
+          <h4 class="footer-heading">8 Core Capabilities</h4>
+          <ul class="footer-links-list">
             <li><a href="#services">Warehouse &amp; Stores Management</a></li>
             <li><a href="#services">Material &amp; Inventory Management</a></li>
             <li><a href="#services">Logistics &amp; Supply Chain</a></li>
@@ -1448,56 +1125,63 @@
             <li><a href="#services">SAP / ERP Solutions</a></li>
             <li><a href="#services">EHS &amp; Compliance</a></li>
             <li><a href="#services">Asset &amp; Facility Management</a></li>
-            <li><a href="#services">EXIM &amp; Industrial Services</a></li>
+            <li><a href="#services">EXIM &amp; Port Operations</a></li>
           </ul>
         </div>
 
-        <!-- Column 3: Quick Links -->
-        <div>
-          <h3 class="cmsms-footer-heading">Quick Navigation</h3>
-          <ul class="cmsms-footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#about">About Our Genesis</a></li>
-            <li><a href="#services">Supply Chain Capabilities</a></li>
-            <li><a href="#digital-twin">3D Laydown Matrix</a></li>
-            <li><a href="#process">Execution Methodology</a></li>
-            <li><a href="#why-choose-us">Client Testimonials</a></li>
-            <li><a href="#faq">Frequently Asked Questions</a></li>
-            <li><a href="#contact">Contact &amp; Site Dispatch</a></li>
+        <!-- Col 3: Navigation -->
+        <div class="footer-col-links">
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#executive-intro">Corporate Genesis</a></li>
+            <li><a href="#about">About Thin Margin</a></li>
+            <li><a href="#workflow">Execution Methodology</a></li>
+            <li><a href="#why-choose-us">Why Choose Us</a></li>
+            <li><a href="#clients">Our Clients</a></li>
+            <li><a href="#career">Careers</a></li>
+            <li><a href="#blogs">Knowledge Base</a></li>
           </ul>
         </div>
 
-        <!-- Column 4: Contact & Site Dispatch -->
-        <div>
-          <h3 class="cmsms-footer-heading">Contact &amp; Dispatch</h3>
-          <p class="cmsms-footer-desc" style="margin-bottom: 16px;">
-            Headquarters &amp; Maritime Project Corridors:
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #a0aec0;">
-            <div><i class="fa-solid fa-location-dot" style="color: var(--color-accent); margin-right: 10px;"></i> Mundra &bull; Kandla &bull; Ahmedabad &bull; Mumbai</div>
-            <div><i class="fa-solid fa-phone" style="color: var(--color-accent); margin-right: 10px;"></i> +91 22 6123 4567 / +91 98765 43210</div>
-            <div><i class="fa-solid fa-envelope" style="color: var(--color-accent); margin-right: 10px;"></i> info@thinmargin.com</div>
-            <div><i class="fa-solid fa-shield" style="color: var(--color-accent); margin-right: 10px;"></i> ISO 9001 / ISO 45001 Certified Operations</div>
+        <!-- Col 4: Contact & Operations Corridors -->
+        <div class="footer-col-contact">
+          <h4 class="footer-heading">Contact &amp; Dispatch</h4>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Headquarters &amp; Maritime Corridors: Mundra &bull; Kandla &bull; Ahmedabad &bull; Nhava Sheva</span>
           </div>
-          <div style="margin-top: 24px;">
-            <a href="#contact" class="cmsms-btn cmsms-btn-primary open-consult-modal" style="width: 100%; justify-content: center;">
-              <span>Schedule Site Audit</span>
-              <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 95580 35477 / +91 22 6123 4567</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>info@thinmargin.com</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-certificate"></i>
+            <span>ISO 9001:2015 &amp; ISO 45001:2018 Certified</span>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <a href="#contact" class="btn-services open-consult-modal" style="width: 100%; justify-content: center;">
+              <span class="btn-services-text">Schedule Site Strategy Audit</span>
+              <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
             </a>
           </div>
         </div>
 
       </div>
 
-      <!-- Footer Bottom Bar -->
-      <div class="cmsms-footer-bottom">
+      <!-- Footer Bottom Bar (No statutory compliance link) -->
+      <div class="footer-bottom-bar">
         <div>
           &copy; 2026 <strong>Thin Margin</strong>. All Rights Reserved. Engineered for Capital Infrastructure.
         </div>
-        <div style="display: flex; gap: 24px;">
-          <a href="#" style="color: #a0aec0; text-decoration: none;">Privacy Policy</a>
-          <a href="#" style="color: #a0aec0; text-decoration: none;">Terms of Custody</a>
-          
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Custody</a>
         </div>
       </div>
 
@@ -1505,14 +1189,14 @@
   </footer>
 
   <!-- ==========================================================================
-       STRATEGIC CONSULTATION MODAL
+       14. STRATEGIC CONSULTATION MODAL (DEMURRAGE SHIELD AUDIT)
        ========================================================================== -->
   <div class="consult-modal-backdrop" id="consultModal">
     <div class="consult-modal-container">
       <button type="button" class="consult-modal-close" id="closeConsultModal" aria-label="Close modal">&times;</button>
+      
       <div class="consult-modal-header">
-        <div class="cmsms-sub-kicker">
-          <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="intro-tag-pill" style="margin-bottom: 12px;">
           <span>SITE STRATEGY CONSULTATION</span>
         </div>
         <h3 class="consult-modal-title">Request Demurrage Shield Audit</h3>
@@ -1560,21 +1244,17 @@
           <label for="consultNotes">Project Scope / Volume / Location</label>
           <textarea id="consultNotes" name="notes" rows="3" placeholder="Provide details on project volume, laydown acreage, or port container arrival schedules..."></textarea>
         </div>
-        <button type="submit" class="cmsms-btn cmsms-btn-primary" style="width: 100%; justify-content: center;">
-          <span>Submit Strategy Request</span>
-          <div class="cmsms-btn-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <button type="submit" class="btn-services" style="width: 100%; justify-content: center; height: 50px;">
+          <span class="btn-services-text">Submit Strategy Request</span>
+          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
         </button>
       </form>
     </div>
   </div>
 
-  <!-- Three.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
-  <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=5.0"></script>
-
-  <!-- Sticky Vertical Side Action Bar (Service Enquiry & Free Consultation) -->
+  <!-- ==========================================================================
+       15. PERFECT ZERO-FLICKER RIGHT-EDGE STICKY ACTION TABS
+       ========================================================================== -->
   <div class="sticky-side-bar" id="stickySideBar">
     <button type="button" class="side-tab-btn side-tab-enquiry open-consult-modal" data-service-default="Service Enquiry" title="Service Enquiry">
       <i class="fa-solid fa-clipboard-list"></i>
@@ -1584,36 +1264,12 @@
       <i class="fa-solid fa-comments"></i>
       <span>Free Consultation</span>
     </button>
-  </div>  <!-- Floating WhatsApp Action Button & Automatic Greeting Prompt -->
-  <div class="floating-whatsapp-wrap" id="whatsappWrap">
-    
-    <!-- Auto Floating Greeting Message Card -->
-    <div class="whatsapp-chat-bubble" id="whatsappBubble">
-      <button type="button" class="bubble-close-btn" id="closeWhatsappBubble" aria-label="Close chat prompt">&times;</button>
-      <div class="bubble-header">
-        <div class="bubble-avatar">
-          <img src="assest/images/thin_margin_favicon.jpeg" alt="Thin Margin Agent">
-          <span class="bubble-online-dot"></span>
-        </div>
-        <div class="bubble-info">
-          <div class="bubble-name">Thin Margin Support</div>
-          <div class="bubble-status">Online &bull; Immediate Assistance</div>
-        </div>
-      </div>
-      <div class="bubble-body">
-        <p>Welcome to <strong>Thin Margin</strong>.</p>
-        <p>Please type your query, and we shall provide immediate assistance.</p>
-      </div>
-      <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team,%20I%20would%20like%20to%20enquire%20about%20your%20services." 
-         target="_blank" 
-         rel="noopener noreferrer" 
-         class="bubble-cta-btn">
-        <span>Start WhatsApp Chat</span>
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-    </div>
+  </div>
 
-    <!-- Floating WhatsApp Button (No number on hover) -->
+  <!-- ==========================================================================
+       16. CLEAN STANDALONE FLOATING WHATSAPP BUTTON (NO BUBBLE, NO BOX ON HOVER)
+       ========================================================================== -->
+  <div class="floating-whatsapp-wrap" id="whatsappWrap">
     <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team,%20I%20would%20like%20to%20enquire%20about%20your%20services." 
        class="floating-whatsapp-btn" 
        id="floatingWhatsappBtn"
@@ -1625,5 +1281,7 @@
     </a>
   </div>
 
+  <!-- Main JavaScript File -->
+  <script src="assest/js/main.js?v=6.0"></script>
 </body>
 </html>
