@@ -1669,19 +1669,41 @@ function initCargoTruckingInteractions() {
     counters.forEach(c => counterObserver.observe(c));
   }
 
-  // 7. Automatic WhatsApp Greeting Chat Bubble
+  // 7. Automatic WhatsApp Greeting Chat Bubble (Displays and then disappears after a few seconds)
   const whatsappBubble = document.getElementById('whatsappBubble');
   const closeBubbleBtn = document.getElementById('closeWhatsappBubble');
   if (whatsappBubble) {
-    // Show prompt automatically after 3.2 seconds
+    let hideTimeout = null;
+
+    // Show prompt automatically after 2.5 seconds
     setTimeout(() => {
       whatsappBubble.classList.add('visible');
-    }, 3200);
+
+      // Automatically disappear after 6.5 seconds!
+      hideTimeout = setTimeout(() => {
+        whatsappBubble.classList.remove('visible');
+      }, 6500);
+    }, 2500);
+
+    // Re-show on hover over WhatsApp button
+    const whatsappBtn = document.getElementById('floatingWhatsappBtn');
+    if (whatsappBtn) {
+      whatsappBtn.addEventListener('mouseenter', () => {
+        clearTimeout(hideTimeout);
+        whatsappBubble.classList.add('visible');
+      });
+      whatsappBtn.addEventListener('mouseleave', () => {
+        hideTimeout = setTimeout(() => {
+          whatsappBubble.classList.remove('visible');
+        }, 3000);
+      });
+    }
 
     if (closeBubbleBtn) {
       closeBubbleBtn.addEventListener('click', (e) => {
         e.stopPropagation();
         e.preventDefault();
+        clearTimeout(hideTimeout);
         whatsappBubble.classList.remove('visible');
       });
     }
