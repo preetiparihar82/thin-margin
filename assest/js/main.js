@@ -18,6 +18,38 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentSlide = 0;
   let slideInterval = null;
 
+  const slideData = [
+    {
+      tag: 'GROUND REALITIES. ABSOLUTE ACCOUNTABILITY.',
+      title1: 'Where Margins Are Thin,',
+      title2: '<span class="highlight-crimson">Precision Defines</span> Every Capital Asset.',
+      desc: 'Institutional-grade material custody, 24-hour seaport container decantation at Mundra & Kandla, and SAP-integrated laydown yard management for mega infrastructure projects.'
+    },
+    {
+      tag: 'SMART STORES & RFID YARD CUSTODY',
+      title1: 'Where Margins Are Thin,',
+      title2: '<span class="highlight-crimson">Precision Defines</span> Institutional Yard Custody.',
+      desc: 'Multi-acre laydown coordinates, sub-meter geotagging, barcoded physical verification, and automated MIGO/GRN generation directly into client SAP.'
+    },
+    {
+      tag: 'MULTI-MODAL HEAVY-HAUL FREIGHT',
+      title1: 'Where Margins Are Thin,',
+      title2: '<span class="highlight-crimson">Precision Defines</span> Turnkey Logistics Velocity.',
+      desc: 'ODC multi-axle hydraulic trailers, rail-to-road transshipment, and route corridor surveys guaranteeing zero cargo distress and zero transit bottlenecks.'
+    },
+    {
+      tag: 'MECHANIZED RIGGING & EHS PRECISION',
+      title1: 'Where Margins Are Thin,',
+      title2: '<span class="highlight-crimson">Precision Defines</span> Zero Demurrage Yield.',
+      desc: 'Turnkey engineered crane rigging, heavy equipment staging, and specialized preservation maintenance executed under certified zero-incident EHS standards.'
+    }
+  ];
+
+  const heroTagPill = document.querySelector('.hero-tag-pill span');
+  const heroTitleLine1 = document.querySelector('.title-line-1');
+  const heroTitleLine2 = document.querySelector('.title-line-2');
+  const heroDesc = document.querySelector('.hero-description');
+
   function goToSlide(index) {
     if (!heroSlides.length) return;
     
@@ -26,24 +58,20 @@ document.addEventListener('DOMContentLoaded', () => {
     if (index < 0) index = heroSlides.length - 1;
 
     heroSlides.forEach((slide, i) => {
-      if (i === index) {
-        slide.classList.add('active');
-        const video = slide.querySelector('video');
-        if (video) {
-          video.currentTime = 0;
-          video.play().catch(() => {});
-        }
-      } else {
-        slide.classList.remove('active');
-        const video = slide.querySelector('video');
-        if (video) video.pause();
-      }
+      slide.classList.toggle('active', i === index);
     });
 
     dockDots.forEach((dot, i) => {
       dot.classList.toggle('active', i === index);
       dot.setAttribute('aria-selected', i === index ? 'true' : 'false');
     });
+
+    if (slideData[index]) {
+      if (heroTagPill) heroTagPill.textContent = slideData[index].tag;
+      if (heroTitleLine1) heroTitleLine1.textContent = slideData[index].title1;
+      if (heroTitleLine2) heroTitleLine2.innerHTML = slideData[index].title2;
+      if (heroDesc) heroDesc.textContent = slideData[index].desc;
+    }
 
     currentSlide = index;
   }

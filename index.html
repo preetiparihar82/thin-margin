@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=7.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=8.0">
   <link rel="stylesheet" href="assest/css/about.css?v=4.0">
 </head>
 <body class="light-theme">
@@ -175,36 +175,24 @@
     <!-- Hero Slider Track (Background Imagery & Videos) -->
     <div class="hero-slider-track" id="heroSliderTrack">
       
-      <!-- Slide 0: Seaport Container Decantation -->
+      <!-- Slide 0: Seaport Container Logistics & Terminal Decantation -->
       <div class="hero-slide active" data-slide="0">
         <div class="hero-slide-bg" style="background-image: url('assest/images/port_container_decantation.jpg');"></div>
-        <video class="hero-slide-video" autoplay muted loop playsinline preload="auto" poster="assest/images/port_container_decantation.jpg">
-          <source src="assest/images/hero_video.mp4" type="video/mp4">
-        </video>
       </div>
 
-      <!-- Slide 1: Smart Yard Stores & Warehousing -->
+      <!-- Slide 1: Modern High-Bay Laydown & Supply Chain Warehouse -->
       <div class="hero-slide" data-slide="1">
         <div class="hero-slide-bg" style="background-image: url('assest/images/hero_supply_chain.jpg');"></div>
-        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/hero_supply_chain.jpg">
-          <source src="assest/images/warehousevid.mp4" type="video/mp4">
-        </video>
       </div>
 
-      <!-- Slide 2: Heavy-Haul Multi-Modal Freight -->
+      <!-- Slide 2: Multi-Modal Heavy Freight & Overland Transport Logistics -->
       <div class="hero-slide" data-slide="2">
         <div class="hero-slide-bg" style="background-image: url('assest/images/heavy_transport_logistics.jpg');"></div>
-        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/heavy_transport_logistics.jpg">
-          <source src="assest/images/herovid2.mp4" type="video/mp4">
-        </video>
       </div>
 
-      <!-- Slide 3: Mechanized Crane Rigging -->
+      <!-- Slide 3: Mechanized Crane Rigging & Capital Infrastructure Staging -->
       <div class="hero-slide" data-slide="3">
         <div class="hero-slide-bg" style="background-image: url('assest/images/mechanized_crane_rigging.jpg');"></div>
-        <video class="hero-slide-video" muted loop playsinline preload="auto" poster="assest/images/mechanized_crane_rigging.jpg">
-          <source src="assest/images/herovid3.mp4" type="video/mp4">
-        </video>
       </div>
 
     </div>
@@ -275,102 +263,6 @@
     </div>
 
   </section>
-
-  <!-- ==========================================================================
-       4. SIGNATURE LOGINT FLOATING TRACK & FREIGHT QUOTE DOCK
-       ========================================================================== -->
-  <div class="hero-track-quote-bar reveal-fade-up">
-    <div class="track-quote-card">
-      <div class="track-quote-tabs" role="tablist">
-        <button type="button" class="track-tab-btn active" id="tabTrackBtn" role="tab" aria-selected="true" data-tab="paneTrack">
-          <i class="fa-solid fa-satellite-dish"></i>
-          <span>Track Consignment</span>
-        </button>
-        <button type="button" class="track-tab-btn" id="tabQuoteBtn" role="tab" aria-selected="false" data-tab="paneQuote">
-          <i class="fa-solid fa-calculator"></i>
-          <span>Request Freight Quote</span>
-        </button>
-      </div>
-
-      <div class="track-quote-body">
-        <!-- Tab 1: Track Consignment -->
-        <div class="track-quote-pane active" id="paneTrack" role="tabpanel">
-          <form id="trackConsignmentForm">
-            <div class="track-form-grid">
-              <div class="track-input-group">
-                <input type="text" id="trackInput" class="track-input-field" placeholder="Enter Consignment / LR Tracking ID (e.g. TM-98421)" required>
-                <i class="fa-solid fa-barcode track-input-icon"></i>
-              </div>
-              <div class="track-input-group">
-                <select id="trackFreightMode" class="track-input-field track-select-field">
-                  <option value="all">All Freight Modes</option>
-                  <option value="ftl">Full Truckload (FTL)</option>
-                  <option value="multimodal">Multi-Modal Rail &amp; Port</option>
-                  <option value="air">Air Express Expedited</option>
-                  <option value="warehouse">Warehouse Storage</option>
-                </select>
-                <i class="fa-solid fa-truck-ramp-box track-input-icon"></i>
-              </div>
-              <div>
-                <button type="submit" class="btn-track-submit">
-                  <span>Track Consignment</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-
-          <!-- Simulated Live Telemetry Result Display -->
-          <div class="tracking-status-display" id="trackStatusDisplay">
-            <div class="track-status-header">
-              <span class="track-id-badge" id="resTrackId">CONSIGNMENT TM-984210</span>
-              <span class="track-eta">Status: <strong>IN TRANSIT (ON SCHEDULE)</strong></span>
-            </div>
-            <div class="track-route-text" id="resTrackRoute">
-              <i class="fa-solid fa-location-dot" style="color:var(--color-accent); margin-right:6px;"></i>
-              Mundra Port, Gujarat &rarr; Bhadla Solar Park Laydown Yard, Rajasthan
-            </div>
-            <div class="track-telemetry-tags">
-              <span><i class="fa-solid fa-satellite"></i> GPS Telemetry Active</span>
-              <span><i class="fa-solid fa-clock"></i> 24-Hr Decantation Guaranteed</span>
-              <span><i class="fa-solid fa-shield-check"></i> 100% Zero-Loss SLA</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tab 2: Request Freight Quote -->
-        <div class="track-quote-pane" id="paneQuote" role="tabpanel">
-          <form id="quickQuoteForm">
-            <div class="quote-form-grid">
-              <div class="track-input-group">
-                <input type="text" id="quoteOrigin" class="track-input-field" placeholder="Origin Port / City (e.g. Mundra, Kandla)" required>
-                <i class="fa-solid fa-location-arrow track-input-icon"></i>
-              </div>
-              <div class="track-input-group">
-                <input type="text" id="quoteDest" class="track-input-field" placeholder="Project Site (e.g. Kota, Khavda, Bhadla)" required>
-                <i class="fa-solid fa-location-dot track-input-icon"></i>
-              </div>
-              <div class="track-input-group">
-                <select id="quoteCargoType" class="track-input-field track-select-field">
-                  <option value="odc">ODC Heavy Equipment</option>
-                  <option value="containers">Import Container Cargo</option>
-                  <option value="solar">Solar PV Modules / Inverters</option>
-                  <option value="industrial">General Industrial Cargo</option>
-                </select>
-                <i class="fa-solid fa-box-archive track-input-icon"></i>
-              </div>
-              <div>
-                <button type="submit" class="btn-track-submit">
-                  <span>Calculate Quote</span>
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- =========================================================================
        5. EXECUTIVE INTRO & CORPORATE GENESIS MANIFESTO (LIGHT THEME)
@@ -1353,6 +1245,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=7.0"></script>
+  <script src="assest/js/main.js?v=8.0"></script>
 </body>
 </html>
