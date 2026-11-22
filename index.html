@@ -19,8 +19,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=6.0">
-  <link rel="stylesheet" href="assest/css/about.css?v=3.5">
+  <link rel="stylesheet" href="assest/css/style.css?v=7.0">
+  <link rel="stylesheet" href="assest/css/about.css?v=4.0">
 </head>
 <body class="light-theme">
 
@@ -55,7 +55,7 @@
   <!-- ==========================================================================
        2. CLEAN ENTERPRISE HEADER & NAVIGATION (LOGINT ARCHITECTURE)
        ========================================================================== -->
-  <header class="site-header" id="siteHeader">
+  <header class="site-header loaded" id="siteHeader">
     <div class="header-container">
       
       <!-- Thin Margin Brand Logo -->
@@ -170,7 +170,7 @@
   <!-- ==========================================================================
        3. LOGINT HERO SECTION (BACKGROUND CAROUSEL + CURVED NOTCH DOCK)
        ========================================================================== -->
-  <section class="hero-section" id="home">
+  <section class="hero-section loaded" id="home">
     
     <!-- Hero Slider Track (Background Imagery & Videos) -->
     <div class="hero-slider-track" id="heroSliderTrack">
@@ -859,26 +859,54 @@
       
       <div class="services-suite-header reveal-fade-up">
         <div class="intro-tag-pill">
-          <span>CLIENT TESTIMONIALS</span>
+          <span>CLIENT TESTIMONIALS &amp; AUDIT SCORES</span>
         </div>
         <h2 class="services-suite-title" style="color: #ffffff;">
           Trusted by <span class="highlight-crimson">India's Infrastructure Leaders</span>
         </h2>
         <p class="services-suite-subtitle" style="color: #94a3b8;">
-          Hear how our techno-commercial custody teams eliminate container detention and maintain flawless audit trails for Tier-1 EPC projects.
+          Independently verified audit performance, zero demurrage track records, and operational custody ratings across mega capital projects.
         </p>
       </div>
 
+      <!-- Top Executive Aggregate Rating KPI Bar -->
+      <div class="testi-summary-dock">
+        <div class="testi-summary-stat">
+          <div class="summary-score"><span class="highlight-crimson">4.9</span> / 5.0</div>
+          <div class="summary-label"><i class="fa-solid fa-star" style="color: #f59e0b;"></i> Overall EPC Rating</div>
+        </div>
+        <div class="testi-summary-divider"></div>
+        <div class="testi-summary-stat">
+          <div class="summary-score">100%</div>
+          <div class="summary-label"><i class="fa-solid fa-shield-check" style="color: #22c55e;"></i> Zero Demurrage SLA</div>
+        </div>
+        <div class="testi-summary-divider"></div>
+        <div class="testi-summary-stat">
+          <div class="summary-score">1.2GW+</div>
+          <div class="summary-label"><i class="fa-solid fa-solar-panel" style="color: #38bdf8;"></i> Assets in Custody</div>
+        </div>
+        <div class="testi-summary-divider"></div>
+        <div class="testi-summary-stat">
+          <div class="summary-score">99.98%</div>
+          <div class="summary-label"><i class="fa-solid fa-check-double" style="color: #a855f7;"></i> Inventory Accuracy</div>
+        </div>
+      </div>
+
+      <!-- Auto-Scrolling Testimonials Ticker with Distinct Ratings -->
       <div class="testimonial-ticker-wrap">
         <div class="testimonial-ticker-track">
           
-          <!-- Testimonial 1: Adani Solar & Power -->
+          <!-- Card 1: Adani Solar & Power (5.0 / 5.0) -->
           <div class="testimonial-card">
             <div class="testi-card-top">
+              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+            </div>
+            <div class="testi-card-rating-row">
               <div class="testi-stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+              <span class="testi-sla-pill"><i class="fa-solid fa-shield-halved"></i> 100% Zero-Demurrage SLA</span>
             </div>
             <p class="testi-quote">
               &ldquo;Thin Margin’s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
@@ -892,13 +920,17 @@
             </div>
           </div>
 
-          <!-- Testimonial 2: L&T Hydrocarbon Engineering -->
+          <!-- Card 2: L&T Hydrocarbon Engineering (4.9 / 5.0) -->
           <div class="testimonial-card">
             <div class="testi-card-top">
+              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 4.9 / 5.0</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+            </div>
+            <div class="testi-card-rating-row">
               <div class="testi-stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+              <span class="testi-sla-pill"><i class="fa-solid fa-network-wired"></i> 99.98% SAP Reconciliation</span>
             </div>
             <p class="testi-quote">
               &ldquo;Their sub-meter geotagged laydown yard management and strict SAP S/4HANA MIGO bookings brought absolute transparency to our heavy capital equipment laydown operations.&rdquo;
@@ -912,13 +944,17 @@
             </div>
           </div>
 
-          <!-- Testimonial 3: Tata Power Renewable Energy -->
+          <!-- Card 3: Tata Power Renewable Energy (5.0 / 5.0) -->
           <div class="testimonial-card">
             <div class="testi-card-top">
+              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+            </div>
+            <div class="testi-card-rating-row">
               <div class="testi-stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+              <span class="testi-sla-pill"><i class="fa-solid fa-warehouse"></i> 1,200-Acre Laydown Custody</span>
             </div>
             <p class="testi-quote">
               &ldquo;Managing material across a 1,200-acre site is complex. Thin Margin’s RFID tagging and zero-variance reconciliation ensured every transformer and inverter was tracked without a single mismatch.&rdquo;
@@ -932,13 +968,17 @@
             </div>
           </div>
 
-          <!-- Testimonial 4: NTPC Green Energy -->
+          <!-- Card 4: NTPC Green Energy (4.8 / 5.0) -->
           <div class="testimonial-card">
             <div class="testi-card-top">
+              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 4.8 / 5.0</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+            </div>
+            <div class="testi-card-rating-row">
               <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
               </div>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+              <span class="testi-sla-pill"><i class="fa-solid fa-certificate"></i> Zero-Harm EHS Compliance</span>
             </div>
             <p class="testi-quote">
               &ldquo;The level of statutory EHS and labor law compliance provided by Thin Margin is second to none. They deliver complete peace of mind on regulatory safety and contractor management.&rdquo;
@@ -952,22 +992,50 @@
             </div>
           </div>
 
-          <!-- Duplicated for seamless continuous ticker loop -->
+          <!-- Card 5: Aditya Birla Group (4.9 / 5.0) -->
           <div class="testimonial-card">
             <div class="testi-card-top">
+              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 4.9 / 5.0</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+            </div>
+            <div class="testi-card-rating-row">
               <div class="testi-stars">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+              <span class="testi-sla-pill"><i class="fa-solid fa-ship"></i> 24-Hr Seaport Decantation</span>
             </div>
             <p class="testi-quote">
-              &ldquo;Thin Margin’s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
+              &ldquo;Turnaround times at Kandla Port were reduced by over 60%. Empty containers were returned within the free demurrage window without fail.&rdquo;
             </p>
             <div class="testi-author-bar">
-              <div class="testi-author-avatar">RV</div>
+              <div class="testi-author-avatar">VS</div>
               <div>
-                <div class="testi-author-name">Rajesh Varma</div>
-                <div class="testi-author-role">VP - Supply Chain &bull; <span class="testi-author-company">Adani Solar &amp; Power</span></div>
+                <div class="testi-author-name">Vikram Singhania</div>
+                <div class="testi-author-role">VP - Logistics &amp; Infrastructure &bull; <span class="testi-author-company">Aditya Birla Group</span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Vishakha Renewables (5.0 / 5.0) -->
+          <div class="testimonial-card">
+            <div class="testi-card-top">
+              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
+              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+            </div>
+            <div class="testi-card-rating-row">
+              <div class="testi-stars">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="testi-sla-pill"><i class="fa-solid fa-boxes-stacked"></i> 100% Traceability SLA</span>
+            </div>
+            <p class="testi-quote">
+              &ldquo;Real-time reconciliation of solar EVA and glass shipments directly into SAP eliminated month-end inventory variance completely.&rdquo;
+            </p>
+            <div class="testi-author-bar">
+              <div class="testi-author-avatar">PP</div>
+              <div>
+                <div class="testi-author-name">Pratik Patel</div>
+                <div class="testi-author-role">Director of Operations &bull; <span class="testi-author-company">Vishakha Renewables</span></div>
               </div>
             </div>
           </div>
@@ -1285,6 +1353,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=6.0"></script>
+  <script src="assest/js/main.js?v=7.0"></script>
 </body>
 </html>

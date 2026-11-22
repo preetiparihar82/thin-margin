@@ -4,6 +4,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Ensure header and hero have 'loaded' class immediately
+  const siteHeader = document.querySelector('.site-header');
+  if (siteHeader) siteHeader.classList.add('loaded');
+  const heroSection = document.querySelector('.hero-section');
+  if (heroSection) heroSection.classList.add('loaded');
+
   // ==========================================================================
   // 1. HERO SLIDER CAROUSEL & RIGHT NOTCH DOCK
   // ==========================================================================
