@@ -1668,6 +1668,39 @@ function initCargoTruckingInteractions() {
 
     counters.forEach(c => counterObserver.observe(c));
   }
+
+  // 7. Automatic WhatsApp Greeting Chat Bubble
+  const whatsappBubble = document.getElementById('whatsappBubble');
+  const closeBubbleBtn = document.getElementById('closeWhatsappBubble');
+  if (whatsappBubble) {
+    // Show prompt automatically after 3.2 seconds
+    setTimeout(() => {
+      whatsappBubble.classList.add('visible');
+    }, 3200);
+
+    if (closeBubbleBtn) {
+      closeBubbleBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        whatsappBubble.classList.remove('visible');
+      });
+    }
+  }
+
+  // 8. Scroll-triggered Heading & Card Reveals
+  const revealElements = document.querySelectorAll('.cmsms-section-title, .cmsms-service-card, .cmsms-cred-card, .cmsms-blog-card');
+  if (revealElements.length && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+  }
 }
 
 if (document.readyState === 'loading') {

@@ -6895,8 +6895,8 @@ textarea.pill-input {
 
 /* --- 1. FONTS & THEME VARIABLES --- */
 :root {
-  --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  --font-heading: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 
   --color-primary: #121417;
   --color-secondary: #1a1c20;
@@ -8428,7 +8428,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-typewriter-text {
   display: inline-block;
   min-width: 180px;
-  border-bottom: 3px solid rgba(238, 33, 48, 0.6);
+  border-bottom: none !important; text-decoration: none !important;
   padding-bottom: 2px;
   transition: color 0.3s ease;
 }
@@ -9172,5 +9172,457 @@ h1, h2, h3, h4, h5, h6 {
   .cmsms-career-grid,
   .cmsms-blogs-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   ENHANCED MODERN TYPOGRAPHY & ZERO UNDERLINE SYSTEM
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6, .cmsms-hero-title, .cmsms-section-title {
+  font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+  text-decoration: none !important;
+  border-bottom: none !important;
+  letter-spacing: -0.025em;
+}
+
+.hero-typewriter-text {
+  border-bottom: none !important;
+  text-decoration: none !important;
+  color: var(--color-accent) !important;
+  font-weight: 800 !important;
+}
+
+/* ==========================================================================
+   TOPBAR REFINEMENT (CLEAN & PROPORTIONED)
+   ========================================================================== */
+.cmsms-topbar {
+  background: #0b0d10 !important;
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 10px 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cmsms-topbar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.topbar-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12.5px;
+}
+
+.topbar-badge-pill strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.topbar-badge-pill span {
+  color: #cbd5e1;
+}
+
+/* ==========================================================================
+   SLEEK DOCKED SIDE ACTION BAR (SLIDES OUT ON HOVER, HORIZONTAL FONT)
+   ========================================================================== */
+.sticky-side-bar {
+  position: fixed !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  z-index: 9998 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.side-tab-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 12px 20px 12px 16px !important;
+  border-radius: 28px 0 0 28px !important;
+  font-family: var(--font-heading) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.01em !important;
+  cursor: pointer !important;
+  border: none !important;
+  box-shadow: -4px 8px 24px rgba(0, 0, 0, 0.35) !important;
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease !important;
+  transform: translateX(calc(100% - 46px)) !important;
+  white-space: nowrap !important;
+  outline: none !important;
+}
+
+.side-tab-btn:hover {
+  transform: translateX(0) !important;
+}
+
+.side-tab-enquiry {
+  background: #ee2130 !important;
+  color: #ffffff !important;
+  border-left: 3px solid #ffffff !important;
+}
+
+.side-tab-enquiry:hover {
+  background: #c81422 !important;
+  box-shadow: -6px 12px 28px rgba(238, 33, 48, 0.5) !important;
+}
+
+.side-tab-consult {
+  background: #111317 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-right: none !important;
+  border-left: 3px solid #ee2130 !important;
+}
+
+.side-tab-consult:hover {
+  background: #1b1e24 !important;
+  box-shadow: -6px 12px 28px rgba(0, 0, 0, 0.6) !important;
+}
+
+.side-tab-btn i {
+  font-size: 17px !important;
+  min-width: 18px !important;
+  text-align: center !important;
+}
+
+@media (max-width: 768px) {
+  .sticky-side-bar {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   AUTOMATIC WHATSAPP GREETING CARD (SIDE CHAT PROMPT)
+   ========================================================================== */
+.floating-whatsapp-wrap {
+  position: fixed !important;
+  bottom: 28px !important;
+  right: 28px !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  gap: 16px !important;
+}
+
+.whatsapp-chat-bubble {
+  position: absolute !important;
+  bottom: 74px !important;
+  right: 0 !important;
+  width: 300px !important;
+  background: #ffffff !important;
+  border-radius: 14px !important;
+  padding: 18px !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.06) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(16px) scale(0.95) !important;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  pointer-events: none !important;
+  font-family: var(--font-body) !important;
+}
+
+.whatsapp-chat-bubble.visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+  pointer-events: auto !important;
+}
+
+.bubble-close-btn {
+  position: absolute !important;
+  top: 10px !important;
+  right: 10px !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: #f1f5f9 !important;
+  color: #64748b !important;
+  font-size: 16px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.2s !important;
+}
+
+.bubble-close-btn:hover {
+  background: #fee2e2 !important;
+  color: #ee2130 !important;
+}
+
+.bubble-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-bottom: 12px !important;
+  padding-bottom: 10px !important;
+  border-bottom: 1px solid #f1f5f9 !important;
+}
+
+.bubble-avatar {
+  position: relative !important;
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.bubble-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid #25D366 !important;
+}
+
+.bubble-online-dot {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  border: 2px solid #ffffff !important;
+}
+
+.bubble-name {
+  font-family: var(--font-heading) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #0f172a !important;
+}
+
+.bubble-status {
+  font-size: 11px !important;
+  color: #16a34a !important;
+  font-weight: 600 !important;
+}
+
+.bubble-body {
+  font-size: 13px !important;
+  line-height: 1.5 !important;
+  color: #334155 !important;
+  margin-bottom: 14px !important;
+}
+
+.bubble-body p {
+  margin: 0 0 6px !important;
+}
+
+.bubble-cta-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  background: #25D366 !important;
+  color: #ffffff !important;
+  padding: 9px 14px !important;
+  border-radius: 8px !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.35) !important;
+  box-sizing: border-box !important;
+}
+
+.bubble-cta-btn:hover {
+  background: #20ba59 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.5) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   REDESIGNED INSTITUTIONAL CREDENTIAL CARDS (3RD IMAGE FIX)
+   ========================================================================== */
+.cmsms-cred-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 24px !important;
+  margin-top: 48px !important;
+}
+
+.cmsms-cred-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-top: 3px solid #1a1c20 !important;
+  padding: 32px 26px !important;
+  border-radius: 12px !important;
+  position: relative !important;
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+}
+
+.cmsms-cred-card:hover {
+  transform: translateY(-8px) !important;
+  border-top-color: var(--color-accent) !important;
+  box-shadow: 0 22px 45px rgba(238, 33, 48, 0.12), 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+}
+
+.cmsms-cred-card.highlight-card {
+  border-top-color: var(--color-accent) !important;
+}
+
+.cred-card-top {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 20px !important;
+}
+
+.cred-badge-icon {
+  width: 50px !important;
+  height: 50px !important;
+  border-radius: 12px !important;
+  background: rgba(238, 33, 48, 0.08) !important;
+  border: 1px solid rgba(238, 33, 48, 0.2) !important;
+  color: var(--color-accent) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cmsms-cred-card:hover .cred-badge-icon {
+  background: var(--color-accent) !important;
+  color: #ffffff !important;
+  transform: scale(1.08) rotate(6deg) !important;
+}
+
+.cred-metric-num {
+  font-family: var(--font-heading) !important;
+  font-size: 34px !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  line-height: 1 !important;
+}
+
+.cred-metric-plus,
+.cred-metric-unit {
+  color: var(--color-accent) !important;
+  font-size: 20px !important;
+  margin-left: 2px !important;
+}
+
+.cred-card-title {
+  font-family: var(--font-heading) !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--color-secondary) !important;
+  margin-bottom: 4px !important;
+}
+
+.cred-card-subtitle {
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: var(--color-accent) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 12px !important;
+}
+
+.cred-card-desc {
+  font-size: 14px !important;
+  color: var(--color-text-muted) !important;
+  line-height: 1.6 !important;
+  margin-bottom: 20px !important;
+  flex-grow: 1 !important;
+}
+
+.cred-pill-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px !important;
+  padding-top: 14px !important;
+  border-top: 1px solid #f1f5f9 !important;
+}
+
+.cred-pill {
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  color: #475569 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.cred-pill i {
+  color: var(--color-accent) !important;
+  font-size: 11px !important;
+}
+
+@media (max-width: 1200px) {
+  .cmsms-cred-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cmsms-cred-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ==========================================================================
+   DYNAMIC HEADING ANIMATIONS
+   ========================================================================== */
+.cmsms-section-title {
+  position: relative !important;
+  display: inline-block !important;
+  transition: all 0.4s ease !important;
+}
+
+.kicker-arrow-box {
+  animation: kickerPulse 2.5s infinite !important;
+}
+
+@keyframes kickerPulse {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+.pulse-red {
+  display: inline-block !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #ee2130 !important;
+  box-shadow: 0 0 0 rgba(238, 33, 48, 0.6) !important;
+  animation: redPulseDot 1.8s infinite !important;
+}
+
+@keyframes redPulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(238, 33, 48, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(238, 33, 48, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(238, 33, 48, 0);
   }
 }
