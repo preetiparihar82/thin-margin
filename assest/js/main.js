@@ -1372,7 +1372,206 @@ function initCargoTruckingInteractions() {
     }, { passive: true });
   }
 
-  // 2. FAQ Accordion
+  // 2. Consultation Modal Open & Close Handler
+  const consultModal = document.getElementById('consultModal');
+  const openModalBtns = document.querySelectorAll('.open-consult-modal');
+  const closeModalBtn = document.getElementById('closeConsultModal');
+
+  if (consultModal) {
+    openModalBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        consultModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', () => {
+        consultModal.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    }
+
+    consultModal.addEventListener('click', (e) => {
+      if (e.target === consultModal) {
+        consultModal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && consultModal.classList.contains('open')) {
+        consultModal.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // 3. Hero Background Carousel & Typewriter Animation
+  const heroBgCarousel = document.getElementById('heroBgCarousel');
+  const heroTypedEl = document.getElementById('heroTypewriterText');
+  const heroKickerText = document.getElementById('heroKickerText');
+  const heroDescText = document.getElementById('heroDescText');
+  const hudPills = document.querySelectorAll('.hero-hud-pill');
+  const prevBtn = document.getElementById('heroPrevBtn');
+  const nextBtn = document.getElementById('heroNextBtn');
+
+  if (heroBgCarousel && heroTypedEl) {
+    const slides = heroBgCarousel.querySelectorAll('.hero-bg-slide');
+    const slideData = [
+      {
+        kicker: "GROUND REALITIES. ABSOLUTE ACCOUNTABILITY",
+        typedText: "Every Capital Asset.",
+        desc: "Institutional-grade material custody, 24-hour seaport container decantation at Mundra & Kandla, and SAP-integrated laydown yard management for mega infrastructure projects."
+      },
+      {
+        kicker: "SMART STORES & RFID YARD CUSTODY",
+        typedText: "Institutional Yard Custody.",
+        desc: "Multi-acre laydown coordinates, sub-meter geotagging, barcoded physical verification, and automated MIGO/GRN generation directly into client SAP S/4HANA."
+      },
+      {
+        kicker: "HEAVY-HAUL & MULTIMODAL FREIGHT",
+        typedText: "24-Hr Port Decantation.",
+        desc: "Rapid container de-stuffing at key maritime gateways and inland container depots, guaranteeing zero detention fees and zero demurrage liability."
+      },
+      {
+        kicker: "MECHANIZED RIGGING & EHS PRECISION",
+        typedText: "Zero Demurrage Yield.",
+        desc: "Turnkey engineered crane rigging, heavy equipment staging, and specialized preservation maintenance executed under certified zero-incident EHS standards."
+      }
+    ];
+
+    let currentSlide = 0;
+    let isTyping = false;
+    let autoSlideTimer = null;
+    let typeTimeout = null;
+
+    function typeWriterEffect(targetText, callback) {
+      isTyping = true;
+      const currentText = heroTypedEl.innerText;
+      let charIdx = currentText.length;
+
+      // First delete current text
+      function deleteChar() {
+        if (charIdx > 0) {
+          heroTypedEl.innerText = currentText.substring(0, charIdx - 1);
+          charIdx--;
+          typeTimeout = setTimeout(deleteChar, 25);
+        } else {
+          // Pause then type new text
+          setTimeout(() => {
+            let addIdx = 0;
+            function addChar() {
+              if (addIdx < targetText.length) {
+                heroTypedEl.innerText = targetText.substring(0, addIdx + 1);
+                addIdx++;
+                typeTimeout = setTimeout(addChar, 55);
+              } else {
+                isTyping = false;
+                if (callback) callback();
+              }
+            }
+            addChar();
+          }, 150);
+        }
+      }
+
+      deleteChar();
+    }
+
+    function goToHeroSlide(index) {
+      if (index === currentSlide && isTyping) return;
+      clearTimeout(typeTimeout);
+
+      currentSlide = (index + slides.length) % slides.length;
+
+      // Update background slides with Ken Burns zoom reset
+      slides.forEach((slide, idx) => {
+        if (idx === currentSlide) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+
+      // Update HUD pills
+      hudPills.forEach((pill, idx) => {
+        if (idx === currentSlide) {
+          pill.classList.add('active');
+        } else {
+          pill.classList.remove('active');
+        }
+      });
+
+      // Smoothly update kicker and description
+      const data = slideData[currentSlide];
+      if (heroKickerText) {
+        heroKickerText.style.opacity = '0';
+        setTimeout(() => {
+          heroKickerText.innerText = data.kicker;
+          heroKickerText.style.opacity = '1';
+        }, 200);
+      }
+
+      if (heroDescText) {
+        heroDescText.style.opacity = '0';
+        setTimeout(() => {
+          heroDescText.innerText = data.desc;
+          heroDescText.style.opacity = '1';
+        }, 200);
+      }
+
+      // Execute typewriter transition
+      typeWriterEffect(data.typedText);
+    }
+
+    function startAutoSlide() {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(() => {
+        goToHeroSlide(currentSlide + 1);
+      }, 6500);
+    }
+
+    function stopAutoSlide() {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    }
+
+    // HUD Pills Click Listeners
+    hudPills.forEach((pill, idx) => {
+      pill.addEventListener('click', () => {
+        goToHeroSlide(idx);
+        startAutoSlide();
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        goToHeroSlide(currentSlide - 1);
+        startAutoSlide();
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        goToHeroSlide(currentSlide + 1);
+        startAutoSlide();
+      });
+    }
+
+    const heroSection = document.getElementById('home');
+    if (heroSection) {
+      heroSection.addEventListener('mouseenter', stopAutoSlide);
+      heroSection.addEventListener('mouseleave', startAutoSlide);
+    }
+
+    startAutoSlide();
+  }
+
+  // 4. FAQ Accordion
   const accordionHeaders = document.querySelectorAll('.cmsms-accordion-header');
   accordionHeaders.forEach(headerBtn => {
     headerBtn.addEventListener('click', () => {
@@ -1382,14 +1581,12 @@ function initCargoTruckingInteractions() {
       const isOpen = parentItem.classList.contains('active');
       const allItems = document.querySelectorAll('.cmsms-accordion-item');
       
-      // Close others
       allItems.forEach(item => {
         item.classList.remove('active');
         const body = item.querySelector('.cmsms-accordion-body');
         if (body) body.style.maxHeight = null;
       });
 
-      // Toggle clicked
       if (!isOpen) {
         parentItem.classList.add('active');
         const body = parentItem.querySelector('.cmsms-accordion-body');
@@ -1400,7 +1597,7 @@ function initCargoTruckingInteractions() {
     });
   });
 
-  // 3. Mobile Navigation Toggle
+  // 5. Mobile Navigation Toggle
   const mobileToggle = document.querySelector('.mobile-toggle');
   const headerNav = document.querySelector('.cmsms-header-nav');
   if (mobileToggle && headerNav) {
@@ -1418,7 +1615,7 @@ function initCargoTruckingInteractions() {
     });
   }
 
-  // 4. Counter Animation
+  // 6. Metric Counter Animation
   const counters = document.querySelectorAll('.cmsms-counter-val');
   if (counters.length && 'IntersectionObserver' in window) {
     const counterObserver = new IntersectionObserver((entries, observer) => {
@@ -1437,7 +1634,6 @@ function initCargoTruckingInteractions() {
           function updateCounter(now) {
             const elapsed = now - startTime;
             const progress = Math.min(elapsed / duration, 1);
-            // Ease out quad
             const easeProgress = 1 - (1 - progress) * (1 - progress);
             current = targetNum * easeProgress;
 

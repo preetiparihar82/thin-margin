@@ -159,25 +159,37 @@
        3. CARGO TRUCKING HERO SECTION (DIAGONAL SKEW DIVIDER)
        ========================================================================== -->
   <section class="cmsms-hero-section" id="home">
+    
+    <!-- Hero Background Carousel with Ken Burns Zoom-In Effect -->
+    <div class="hero-bg-carousel" id="heroBgCarousel">
+      <div class="hero-bg-slide active" style="background-image: url('assest/images/port_container_decantation.jpg');" data-index="0"></div>
+      <div class="hero-bg-slide" style="background-image: url('assest/images/hero_supply_chain.jpg');" data-index="1"></div>
+      <div class="hero-bg-slide" style="background-image: url('assest/images/heavy_transport_logistics.jpg');" data-index="2"></div>
+      <div class="hero-bg-slide" style="background-image: url('assest/images/mechanized_crane_rigging.jpg');" data-index="3"></div>
+      <!-- Cinematic Vignette & Deep Black Gradient Overlay -->
+      <div class="hero-bg-overlay"></div>
+    </div>
+
     <div class="cmsms-hero-container">
       
       <!-- Hero Content -->
       <div class="cmsms-hero-content">
         
-        <!-- Theme Kicker Tag -->
-        <div class="cmsms-kicker-tag">
+        <!-- Theme Kicker Tag with Red Arrow Box -->
+        <div class="cmsms-kicker-tag" id="heroKickerTag">
           <div class="kicker-arrow-box"><i class="fa-solid fa-arrow-right"></i></div>
-          <span>GROUND REALITIES. ABSOLUTE ACCOUNTABILITY</span>
+          <span id="heroKickerText">GROUND REALITIES. ABSOLUTE ACCOUNTABILITY</span>
         </div>
 
-        <!-- Space Grotesk Headline -->
+        <!-- Space Grotesk Headline with Typewriter Transition -->
         <h1 class="cmsms-hero-title">
-          Where Margins Are Thin, Precision Defines <span class="highlight-accent">Every Capital Asset.</span>
+          Where Margins Are Thin, Precision Defines <br>
+          <span class="highlight-accent hero-typewriter-text" id="heroTypewriterText">Every Capital Asset.</span><span class="hero-typewriter-cursor">|</span>
         </h1>
 
-        <!-- Subtitle -->
-        <p class="cmsms-hero-desc">
-          Institutional-grade material custody, 24-hour seaport container decantation, and SAP-integrated laydown yard management for India's foremost capital infrastructure projects.
+        <!-- Subtitle smoothly synchronized with active slide -->
+        <p class="cmsms-hero-desc" id="heroDescText">
+          Institutional-grade material custody, 24-hour seaport container decantation at Mundra &amp; Kandla, and SAP-integrated laydown yard management for mega infrastructure projects.
         </p>
 
         <!-- Action Buttons -->
@@ -213,6 +225,36 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Hero Slide Controls & Indicators -->
+      <div class="hero-slider-hud">
+        <div class="hero-hud-pills">
+          <button type="button" class="hero-hud-pill active" data-slide="0">
+            <span class="hud-pill-num">01</span>
+            <span class="hud-pill-name">Seaport Decantation</span>
+            <div class="hud-pill-progress"></div>
+          </button>
+          <button type="button" class="hero-hud-pill" data-slide="1">
+            <span class="hud-pill-num">02</span>
+            <span class="hud-pill-name">Smart Yard Stores</span>
+            <div class="hud-pill-progress"></div>
+          </button>
+          <button type="button" class="hero-hud-pill" data-slide="2">
+            <span class="hud-pill-num">03</span>
+            <span class="hud-pill-name">Heavy-Haul Freight</span>
+            <div class="hud-pill-progress"></div>
+          </button>
+          <button type="button" class="hero-hud-pill" data-slide="3">
+            <span class="hud-pill-num">04</span>
+            <span class="hud-pill-name">Crane Rigging</span>
+            <div class="hud-pill-progress"></div>
+          </button>
+        </div>
+        <div class="hero-hud-arrows">
+          <button type="button" class="hero-hud-arrow prev" id="heroPrevBtn" aria-label="Previous slide"><i class="fa-solid fa-chevron-left"></i></button>
+          <button type="button" class="hero-hud-arrow next" id="heroNextBtn" aria-label="Next slide"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
       </div>
 
     </div>

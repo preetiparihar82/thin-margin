@@ -6885,8 +6885,8 @@ textarea.pill-input {
    Typography: Space Grotesk (Headings) & Manrope (Body)
    Color Palette:
    - Primary Dark: #282a2c / #1e2125
-   - Accent Orange/Crimson: #ff5a24 / #ee2130
-   - Accent Hover: #e04815
+   - Accent Orange/Crimson: #ee2130 / #ee2130
+   - Accent Hover: #c81422
    - Light Background: #f2f2f2 / #f8fafc
    - Card Background: #ffffff
    - Border: #d8d5d2 / #e2e8f0
@@ -6898,12 +6898,12 @@ textarea.pill-input {
   --font-heading: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
 
-  --color-primary: #2e3135;
-  --color-secondary: #282a2c;
-  --color-accent: #ff5a24;
-  --color-accent-hover: #e04815;
+  --color-primary: #121417;
+  --color-secondary: #1a1c20;
+  --color-accent: #ee2130;
+  --color-accent-hover: #c81422;
   --color-accent-crimson: #ee2130;
-  --color-dark: #1b1e22;
+  --color-dark: #0f1115;
   --color-bg-light: #f2f2f2;
   --color-card-bg: #ffffff;
   --color-text: #3c4449;
@@ -8306,5 +8306,430 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 640px) {
   .cmsms-process-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+
+.cmsms-header-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.cmsms-header-logo img {
+  height: 46px;
+  width: auto;
+  border-radius: 6px;
+  object-fit: contain;
+}
+
+.cmsms-header-logo span {
+  font-family: var(--font-heading) !important;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff !important;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+
+/* ==========================================================================
+   CARGO TRUCKING HERO CAROUSEL WITH KEN BURNS ZOOM-IN EFFECT & RED/BLACK THEME
+   ========================================================================== */
+.cmsms-hero-section {
+  position: relative;
+  min-height: 100vh;
+  padding: 160px 48px 120px;
+  background-color: #0b0d10;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.hero-bg-carousel {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.0);
+  transition: opacity 1.2s ease-in-out, visibility 1.2s ease-in-out;
+  will-change: transform, opacity;
+}
+
+.hero-bg-slide.active {
+  opacity: 1;
+  visibility: visible;
+  animation: heroKenBurns 7s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+}
+
+@keyframes heroKenBurns {
+  0% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(11, 13, 16, 0.94) 0%, rgba(11, 13, 16, 0.85) 45%, rgba(11, 13, 16, 0.58) 100%),
+              linear-gradient(180deg, rgba(11, 13, 16, 0.4) 0%, rgba(11, 13, 16, 0.85) 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.cmsms-hero-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+.cmsms-hero-content {
+  max-width: 760px;
+}
+
+.cmsms-hero-title {
+  font-family: var(--font-heading) !important;
+  font-size: 52px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+.highlight-accent {
+  color: var(--color-accent) !important;
+}
+
+.hero-typewriter-text {
+  display: inline-block;
+  min-width: 180px;
+  border-bottom: 3px solid rgba(238, 33, 48, 0.6);
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+}
+
+.hero-typewriter-cursor {
+  display: inline-block;
+  color: var(--color-accent);
+  font-weight: 300;
+  font-size: 0.95em;
+  margin-left: 4px;
+  animation: typewriterBlink 0.8s infinite;
+}
+
+@keyframes typewriterBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cmsms-hero-desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: #e2e8f0;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 660px;
+  min-height: 60px;
+  transition: opacity 0.4s ease;
+}
+
+/* Hero HUD Controls */
+.hero-slider-hud {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.hero-hud-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 360px;
+}
+
+.hero-hud-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #cbd5e1;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  outline: none;
+}
+
+.hero-hud-pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(238, 33, 48, 0.4);
+  transform: translateX(-4px);
+}
+
+.hero-hud-pill.active {
+  background: rgba(238, 33, 48, 0.18);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.hud-pill-num {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.hud-pill-name {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.hud-pill-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--color-accent);
+  transition: width 0.1s linear;
+}
+
+.hero-hud-pill.active .hud-pill-progress {
+  width: 100%;
+}
+
+.hero-hud-arrows {
+  display: flex;
+  gap: 12px;
+}
+
+.hero-hud-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.hero-hud-arrow:hover {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  transform: scale(1.08);
+}
+
+@media (max-width: 1080px) {
+  .cmsms-hero-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cmsms-hero-title {
+    font-size: 42px;
+  }
+  .hero-slider-hud {
+    align-items: flex-start;
+  }
+  .hero-hud-pills {
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cmsms-hero-title {
+    font-size: 32px;
+  }
+  .hero-hud-pills {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   CONSULTATION MODAL BACKDROP & BOX (FIX HIDDEN POSITION & RED/BLACK THEME)
+   ========================================================================== */
+.consult-modal-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(11, 13, 16, 0.88) !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  z-index: 999999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), visibility 0.3s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.consult-modal-backdrop.open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.consult-modal-container {
+  background: #ffffff !important;
+  border: 1px solid rgba(238, 33, 48, 0.3) !important;
+  border-radius: 12px !important;
+  max-width: 620px !important;
+  width: 100% !important;
+  padding: 36px 32px !important;
+  position: relative !important;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6) !important;
+  transform: translateY(24px) scale(0.96) !important;
+  transition: transform 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  -webkit-clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%) !important;
+  clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 0 100%) !important;
+}
+
+.consult-modal-backdrop.open .consult-modal-container {
+  transform: translateY(0) scale(1) !important;
+}
+
+.consult-modal-close {
+  position: absolute !important;
+  top: 16px !important;
+  right: 18px !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 50% !important;
+  background: #f1f5f9 !important;
+  color: #334155 !important;
+  border: none !important;
+  font-size: 22px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.25s ease !important;
+  line-height: 1 !important;
+  z-index: 10 !important;
+}
+
+.consult-modal-close:hover {
+  background: #fee2e2 !important;
+  color: var(--color-accent) !important;
+  transform: rotate(90deg) !important;
+}
+
+.consult-modal-header {
+  margin-bottom: 22px !important;
+  padding-right: 36px !important;
+}
+
+.consult-modal-title {
+  font-family: var(--font-heading) !important;
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: var(--color-secondary) !important;
+  margin: 6px 0 8px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.consult-modal-sub {
+  font-family: var(--font-body) !important;
+  font-size: 14px !important;
+  color: var(--color-text-muted) !important;
+  margin: 0 !important;
+  line-height: 1.5 !important;
+}
+
+.consult-modal-form .form-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 14px !important;
+  margin-bottom: 14px !important;
+}
+
+.consult-modal-form .form-group {
+  margin-bottom: 14px !important;
+}
+
+.consult-modal-form label {
+  display: block !important;
+  font-family: var(--font-heading) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #1e293b !important;
+  margin-bottom: 6px !important;
+}
+
+.consult-modal-form input,
+.consult-modal-form select,
+.consult-modal-form textarea {
+  width: 100% !important;
+  background: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  padding: 10px 14px !important;
+  font-size: 14px !important;
+  color: #0f172a !important;
+  font-family: var(--font-body) !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
+
+.consult-modal-form input:focus,
+.consult-modal-form select:focus,
+.consult-modal-form textarea:focus {
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 0 0 3px rgba(238, 33, 48, 0.15) !important;
+}
+
+@media (max-width: 640px) {
+  .consult-modal-form .form-row {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
   }
 }
