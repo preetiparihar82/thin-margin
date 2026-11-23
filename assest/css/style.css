@@ -26,8 +26,9 @@
   --color-text-light: #9ba6b5;      /* Subtext */
   
   /* Unique Stylish Typography: Syne (Titles) & Plus Jakarta Sans (Body) */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-heading: 'Manrope', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-cursive: 'Caveat', 'Alex Brush', cursive;
   
   --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.22s ease;
@@ -85,9 +86,9 @@ button {
 
 .tm-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1260px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 24px;
 }
 
 .text-accent {
@@ -284,7 +285,7 @@ button {
 
 .section-title-wrap.center-align {
   text-align: center;
-  max-width: 820px;
+  max-width: 760px;
   margin: 0 auto 55px;
 }
 
@@ -301,7 +302,7 @@ button {
 
 .section-heading-large {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 3.4vw, 3rem);
+  font-size: clamp(1.85rem, 2.7vw, 2.45rem);
   font-weight: 800;
   line-height: 1.2;
   color: var(--color-dark);
@@ -621,9 +622,28 @@ button {
 }
 
 .hero-center-content {
-  max-width: 1020px;
+  max-width: 940px;
   margin: 0 auto;
   text-align: center;
+}
+
+
+/* Elegant Cursive Script Accents */
+.hero-cursive-kicker {
+  font-family: var(--font-cursive);
+  font-size: clamp(20px, 1.8vw, 26px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.font-cursive,
+.cursive-accent,
+.cursive-sign {
+  font-family: var(--font-cursive);
+  font-style: normal;
 }
 
 .hero-kicker-tag {
@@ -642,7 +662,7 @@ button {
 
 .hero-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(2.1rem, 3.8vw, 3.35rem);
   font-weight: 800;
   line-height: 1.15;
   color: #ffffff;
@@ -662,10 +682,10 @@ button {
 }
 
 .hero-subtext {
-  font-size: clamp(16px, 1.2vw, 18px);
+  font-size: clamp(15px, 1.12vw, 17px);
   line-height: 1.7;
   color: rgba(255, 255, 255, 0.92);
-  max-width: 820px;
+  max-width: 760px;
   margin: 0 auto 36px;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
 }
@@ -999,10 +1019,19 @@ button {
 }
 
 .leader-signature {
-  font-family: cursive;
-  font-size: 18px;
+  font-family: var(--font-cursive);
+  font-size: 32px;
+  font-weight: 600;
   color: #ffffff;
-  opacity: 0.9;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  margin-top: 14px;
+}
+.leader-signature .cursive-sign {
+  font-family: var(--font-cursive);
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
 }
 
 /* ==========================================================================
@@ -2158,4 +2187,48 @@ button {
 
 .partner-item:hover {
   transform: translateY(-6px);
+}
+
+
+/* Responsive Standard Typography & Mobile Optimization */
+@media screen and (max-width: 768px) {
+  .hero-main-title {
+    font-size: 1.9rem !important;
+    line-height: 1.25 !important;
+  }
+  .section-heading-large {
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
+  }
+  .hero-subtext {
+    font-size: 14.5px !important;
+  }
+  .section-lead-text {
+    font-size: 14.5px !important;
+  }
+  .hero-cursive-kicker {
+    font-size: 19px !important;
+  }
+  .leader-signature {
+    font-size: 26px !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-main-title {
+    font-size: 1.68rem !important;
+  }
+  .section-heading-large {
+    font-size: 1.48rem !important;
+  }
+  .tm-container {
+    padding: 0 16px !important;
+  }
+  .hero-btn-row {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-btn-row .btn-swipe {
+    width: 100%;
+  }
 }
