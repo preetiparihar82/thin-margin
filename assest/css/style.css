@@ -618,7 +618,7 @@ button {
   transform: translateX(4px);
 }
 
-/* Default / Inactive State Icon Box: Attractive Visible Red-Pearlescent Gradient */
+/* Default State Icon Box: Attractive Visible Red-Pearlescent Gradient */
 .dropdown-item i {
   width: 44px;
   height: 44px;
@@ -632,16 +632,16 @@ button {
   font-size: 17px;
   flex-shrink: 0;
   box-shadow: 0 3px 8px rgba(238, 33, 48, 0.08), inset 0 1px 1px #ffffff;
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Hover State Icon Box: Vibrant Crimson Gradient, Zero Glow Halo */
+/* On hover: NO icon box color changes, only text color changes */
 .dropdown-item:hover i {
-  background: linear-gradient(135deg, #ff2e3e 0%, #ee2130 50%, #c81423 100%) !important;
-  color: #ffffff !important;
-  border-color: #0c0e12 !important;
-  box-shadow: 0 6px 14px rgba(238, 33, 48, 0.28) !important;
-  transform: scale(1.06) rotate(-3deg);
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f1 40%, #fed7d9 100%) !important;
+  color: var(--color-accent) !important;
+  border: 1.5px solid rgba(238, 33, 48, 0.22) !important;
+  box-shadow: 0 3px 8px rgba(238, 33, 48, 0.08), inset 0 1px 1px #ffffff !important;
+  transform: none !important;
 }
 
 .dropdown-title {
@@ -2072,22 +2072,22 @@ button {
   animation: radarPing 2.2s infinite;
 }
 
-/* Centered Modal Dialog (Enquiry & Free Consultation) */
+/* Centered Modal Dialog (Enquiry & Free Consultation) - Compact One-View Design */
 .consult-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(12, 14, 18, 0.84);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(12, 14, 18, 0.65);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   z-index: 2000;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 20px !important;
+  padding: 16px !important;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.28s;
 }
 
 .consult-modal-backdrop.open {
@@ -2104,18 +2104,18 @@ button {
   bottom: auto !important;
   left: auto !important;
   width: 100% !important;
-  max-width: 580px !important;
-  max-height: 90vh !important;
+  max-width: 550px !important;
+  max-height: 96vh !important;
   height: auto !important;
   background: #ffffff !important;
-  border-radius: 16px !important;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45) !important;
   display: flex !important;
   flex-direction: column !important;
   z-index: 2001 !important;
-  transform: scale(0.92) translateY(14px) !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  overflow: hidden !important;
+  transform: scale(0.94) translateY(10px) !important;
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: visible !important;
   margin: auto !important;
 }
 
@@ -2126,23 +2126,25 @@ button {
 
 .side-drawer-header,
 .consult-modal-header {
-  padding: 20px 28px 16px;
+  padding: 14px 22px 10px;
   border-bottom: 1px solid #edf2f7;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: #ffffff;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
 }
 
 .side-drawer-close,
 .consult-modal-close {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   border: 1px solid #e2e8f0;
   background: #f8fafc;
   color: #4a5568;
-  font-size: 22px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2164,11 +2166,11 @@ button {
 .drawer-tabs-nav,
 .modal-tabs-nav {
   display: flex;
-  padding: 6px;
+  padding: 4px;
   background: #f1f5f9;
-  border-radius: 10px;
-  margin: 18px 28px 0;
-  gap: 8px;
+  border-radius: 8px;
+  margin: 10px 22px 0;
+  gap: 6px;
 }
 
 .drawer-tab-btn,
@@ -2177,15 +2179,15 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 10px 14px;
+  gap: 7px;
+  padding: 7px 12px;
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 700;
   color: #64748b;
   background: transparent;
   border: none;
-  border-radius: 7px;
+  border-radius: 6px;
   cursor: pointer;
   transition: all 0.22s ease;
   white-space: nowrap;
@@ -2193,27 +2195,26 @@ button {
 
 .drawer-tab-btn i,
 .modal-tab-btn i {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .drawer-tab-btn.active,
 .modal-tab-btn.active {
   background: #ffffff;
   color: var(--color-accent);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .side-drawer-body,
 .consult-modal-body {
-  flex: 1;
-  padding: 20px 28px 28px;
-  overflow-y: auto;
+  padding: 12px 22px 18px;
+  overflow: visible;
 }
 
 .drawer-tab-pane,
 .modal-tab-pane {
   display: none;
-  animation: fadeInPane 0.25s ease;
+  animation: fadeInPane 0.22s ease;
 }
 
 .drawer-tab-pane.active,
@@ -2222,39 +2223,39 @@ button {
 }
 
 @keyframes fadeInPane {
-  from { opacity: 0; transform: translateY(6px); }
+  from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 .drawer-pane-title,
 .modal-pane-title {
   font-family: var(--font-heading);
-  font-size: 21px;
+  font-size: 18px;
   font-weight: 800;
   color: var(--color-dark);
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
 
 .drawer-pane-sub,
 .modal-pane-sub {
-  font-size: 13.5px;
+  font-size: 12px;
   color: var(--color-text-muted);
-  margin-bottom: 20px;
-  line-height: 1.5;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
 .side-drawer-form .form-group,
 .consult-modal-form .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 9px;
 }
 
 .side-drawer-form label,
 .consult-modal-form label {
   display: block;
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 6px;
+  margin-bottom: 3px;
   letter-spacing: 0.2px;
 }
 
@@ -2265,15 +2266,25 @@ button {
 .consult-modal-form textarea,
 .consult-modal-form select {
   width: 100%;
-  padding: 11px 14px;
+  padding: 7px 11px;
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
-  border-radius: 8px;
+  border-radius: 6px;
   font-family: inherit;
-  font-size: 13.5px;
+  font-size: 13px;
   color: var(--color-dark);
   outline: none;
   transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  height: 37px;
+  box-sizing: border-box;
+}
+
+.side-drawer-form textarea,
+.consult-modal-form textarea {
+  height: 52px !important;
+  min-height: 52px !important;
+  resize: none !important;
+  line-height: 1.4;
 }
 
 .side-drawer-form input:focus,
@@ -2291,21 +2302,21 @@ button {
 .consult-modal-form .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 10px;
 }
 
 .side-drawer-submit-btn,
 .consult-modal-submit-btn {
   width: 100%;
-  margin-top: 10px;
-  padding: 13px 22px;
-  border-radius: 8px;
+  margin-top: 8px;
+  padding: 10px 18px;
+  border-radius: 7px;
   background: var(--color-accent);
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.8px;
+  letter-spacing: 0.6px;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
@@ -2319,7 +2330,7 @@ button {
 .consult-modal-submit-btn:hover {
   background: var(--color-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(238, 33, 48, 0.35);
+  box-shadow: 0 5px 15px rgba(238, 33, 48, 0.35);
 }
 
 .form-row {
