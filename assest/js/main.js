@@ -139,19 +139,19 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 5. ANIMATED NUMBER COUNTERS (IMAGE 4)
+  // 5. ANIMATED NUMBER COUNTERS WITH FLUID EASING
   // ==========================================================================
   const counterEls = document.querySelectorAll('.counter-number-val');
   let hasCountersAnimated = false;
 
   function countUp(el, targetNum, suffix = '') {
-    let start = 0;
-    const duration = 1800;
+    const duration = 1600;
     const startTime = performance.now();
     function update(now) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      const val = Math.floor(progress * targetNum);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const val = Math.floor(easeOut * targetNum);
       el.textContent = `${val}${suffix}`;
       if (progress < 1) {
         requestAnimationFrame(update);
@@ -162,29 +162,57 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(update);
   }
 
+  function countFloat(el, targetNum, suffix = '') {
+    const duration = 1600;
+    const startTime = performance.now();
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeOut = 1 - Math.pow(1 - progress, 3);
+      const val = (easeOut * targetNum).toFixed(1);
+      el.textContent = `${val}${suffix}`;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = `${targetNum.toFixed(1)}${suffix}`;
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  const triggerCounters = () => {
+    if (hasCountersAnimated) return;
+    hasCountersAnimated = true;
+    counterEls.forEach((el) => {
+      const raw = el.textContent.trim();
+      if (raw.includes('10')) {
+        countUp(el, 10, '+');
+      } else if (raw.includes('1.2') || raw.includes('GW')) {
+        countFloat(el, 1.2, 'GW+');
+      } else if (raw.includes('24')) {
+        countUp(el, 24, '-Hr');
+      } else if (raw.includes('100')) {
+        countUp(el, 100, '%');
+      }
+    });
+  };
+
   const counterSection = document.querySelector('.upfronts-counters-row');
   if (counterSection) {
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && !hasCountersAnimated) {
-          hasCountersAnimated = true;
-          counterEls.forEach((el) => {
-            const raw = el.textContent.trim();
-            if (raw.includes('10+')) {
-              countUp(el, 10, '+');
-            } else if (raw.includes('1.2GW+')) {
-              el.innerHTML = '<span style="color:#ffffff;">1.2GW+</span>';
-            } else if (raw.includes('24-Hr')) {
-              countUp(el, 24, '-Hr');
-            } else if (raw.includes('100%')) {
-              countUp(el, 100, '%');
-            }
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-
-    counterObserver.observe(counterSection);
+    const rect = counterSection.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      triggerCounters();
+    } else {
+      const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            triggerCounters();
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+      counterObserver.observe(counterSection);
+    }
   }
 
   // ==========================================================================
