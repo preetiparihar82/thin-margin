@@ -333,4 +333,27 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ==========================================================================
+  // 9. CONTINUOUS-FLOW BUTTON SWIPE ANIMATION
+  // Hover: Sweeps in from left
+  // Unhover: Sweeps out to right (revealing real original color from the left)
+  // ==========================================================================
+  const swipeButtons = document.querySelectorAll('.btn-custom, .btn-swipe');
+  swipeButtons.forEach((btn) => {
+    btn.addEventListener('mouseenter', () => {
+      btn.classList.remove('btn-unhovering');
+      btn.classList.add('btn-hovering');
+    });
+
+    btn.addEventListener('mouseleave', () => {
+      btn.classList.remove('btn-hovering');
+      btn.classList.add('btn-unhovering');
+      setTimeout(() => {
+        if (!btn.matches(':hover') && !btn.classList.contains('btn-hovering')) {
+          btn.classList.remove('btn-unhovering');
+        }
+      }, 360);
+    });
+  });
 });
