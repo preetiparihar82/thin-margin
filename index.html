@@ -10,41 +10,40 @@
   <link rel="icon" type="image/x-icon" href="assest/images/favicon.ico">
   <link rel="shortcut icon" type="image/png" href="assest/images/thin_margin_favicon.jpeg">
 
-  <!-- Google Fonts: Plus Jakarta Sans, Outfit & Inter (Executive, Modern Typography) -->
+  <!-- Google Fonts: Outfit & Inter (Upfronts Logistics Typography) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=8.0">
-  <link rel="stylesheet" href="assest/css/about.css?v=4.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=11.0">
 </head>
-<body class="light-theme">
+<body class="upfronts-body">
 
   <!-- ==========================================================================
-       1. TOPBAR - PAN-INDIA PORTS & CONTACT TELEMETRY
+       1. UPFRONTS TOPBAR - CONTACT & TELEMETRY
        ========================================================================== -->
-  <div class="cmsms-topbar">
-    <div class="cmsms-topbar-container">
-      <div class="cmsms-topbar-left">
-        <div class="cmsms-topbar-item">
+  <div class="upfronts-topbar">
+    <div class="upfronts-container topbar-flex">
+      <div class="topbar-left">
+        <div class="topbar-item">
           <i class="fa-solid fa-location-dot"></i>
           <span>Pan-India Ports: Mundra &bull; Kandla &bull; Nhava Sheva</span>
         </div>
-        <div class="cmsms-topbar-item">
+        <div class="topbar-item">
           <i class="fa-solid fa-shield-halved"></i>
           <span>24/7 GROUND OPS: Rapid Decantation &amp; Zero Demurrage Shield</span>
         </div>
       </div>
-      <div class="cmsms-topbar-right">
-        <a href="mailto:info@thinmargin.com" class="cmsms-topbar-link">
+      <div class="topbar-right">
+        <a href="mailto:info@thinmargin.com" class="topbar-link">
           <i class="fa-solid fa-envelope"></i>
           <span>info@thinmargin.com</span>
         </a>
-        <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team" class="cmsms-topbar-link" target="_blank" rel="noopener noreferrer">
+        <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team" class="topbar-link" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i>
           <span>+91 95580 35477</span>
         </a>
@@ -53,111 +52,116 @@
   </div>
 
   <!-- ==========================================================================
-       2. CLEAN ENTERPRISE HEADER & NAVIGATION (LOGINT ARCHITECTURE)
+       2. UPFRONTS HEADER & NAVIGATION (IMAGE 1)
        ========================================================================== -->
-  <header class="site-header loaded" id="siteHeader">
-    <div class="header-container">
+  <header class="upfronts-header" id="siteHeader">
+    <div class="upfronts-container header-flex">
       
-      <!-- Thin Margin Brand Logo -->
-      <a href="index.html" class="header-logo" aria-label="Thin Margin Home">
-        <img src="assest/images/thin_margin_logo.png" alt="Thin Margin Logo" class="brand-logo-img">
+      <!-- Brand Logo -->
+      <a href="index.html" class="upfronts-logo" aria-label="Thin Margin Home">
+        <img src="assest/images/thin_margin_logo_white.png" alt="Thin Margin Logo" class="brand-logo-img" onerror="this.src='assest/images/thin_margin_logo.png'">
       </a>
 
-      <!-- Desktop Navigation Menu (No square box, clean active indicator) -->
-      <nav class="header-nav" aria-label="Primary Navigation">
-        <ul class="nav-menu-list">
-          <li class="nav-menu-item">
-            <a href="index.html" class="nav-menu-link active">Home</a>
+      <!-- Navigation Menu -->
+      <nav class="upfronts-nav" aria-label="Primary Navigation">
+        <ul class="upfronts-nav-list">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link active">HOME</a>
           </li>
-          <li class="nav-menu-item">
-            <a href="#about" class="nav-menu-link">About Us</a>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">ABOUT US</a>
           </li>
-          
-          <!-- Services Dropdown (8 Core Capabilities) -->
-          <li class="nav-menu-item has-dropdown">
-            <a href="#services" class="nav-menu-link">
-              <span>Services</span>
-              <i class="fa-solid fa-chevron-down nav-chevron"></i>
+          <li class="nav-item has-dropdown">
+            <a href="#services" class="nav-link">
+              <span>SERVICES</span>
+              <i class="fa-solid fa-chevron-down nav-arrow"></i>
             </a>
-            <div class="services-dropdown-panel">
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-warehouse"></i></div>
+            <div class="upfronts-dropdown">
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-warehouse"></i>
                 <div>
-                  <div class="dropdown-service-title">Warehouse &amp; Stores Management</div>
-                  <div class="dropdown-service-sub">Laydown yards &amp; RFID tracking</div>
+                  <div class="dropdown-title">Warehouse &amp; Stores Management</div>
+                  <div class="dropdown-sub">Laydown yards &amp; RFID tracking</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-boxes-stacked"></i>
                 <div>
-                  <div class="dropdown-service-title">Material &amp; Inventory Management</div>
-                  <div class="dropdown-service-sub">Zero-variance reconciliation</div>
+                  <div class="dropdown-title">Material &amp; Inventory Management</div>
+                  <div class="dropdown-sub">Zero-variance reconciliation</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-truck-fast"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-truck-fast"></i>
                 <div>
-                  <div class="dropdown-service-title">Logistics &amp; Supply Chain</div>
-                  <div class="dropdown-service-sub">24-hr port decantation &amp; transit</div>
+                  <div class="dropdown-title">Logistics &amp; Supply Chain</div>
+                  <div class="dropdown-sub">24-hr port decantation &amp; transit</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-dolly"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-dolly"></i>
                 <div>
-                  <div class="dropdown-service-title">Procurement &amp; Material Handling</div>
-                  <div class="dropdown-service-sub">QA/QC expediting &amp; crane rigging</div>
+                  <div class="dropdown-title">Procurement &amp; Material Handling</div>
+                  <div class="dropdown-sub">QA/QC expediting &amp; crane rigging</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-network-wired"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-network-wired"></i>
                 <div>
-                  <div class="dropdown-service-title">SAP / ERP Solutions</div>
-                  <div class="dropdown-service-sub">S/4HANA MIGO/GRN sync</div>
+                  <div class="dropdown-title">SAP / ERP Solutions</div>
+                  <div class="dropdown-sub">S/4HANA MIGO/GRN sync</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-shield-halved"></i>
                 <div>
-                  <div class="dropdown-service-title">EHS &amp; Compliance</div>
-                  <div class="dropdown-service-sub">ISO 45001 / Zero-harm execution</div>
+                  <div class="dropdown-title">EHS &amp; Compliance</div>
+                  <div class="dropdown-sub">ISO 45001 / Zero-harm execution</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-building-circle-check"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-building-circle-check"></i>
                 <div>
-                  <div class="dropdown-service-title">Asset &amp; Facility Management</div>
-                  <div class="dropdown-service-sub">Preservation maintenance &amp; security</div>
+                  <div class="dropdown-title">Asset &amp; Facility Management</div>
+                  <div class="dropdown-sub">Preservation maintenance &amp; security</div>
                 </div>
               </a>
-              <a href="#services" class="dropdown-service-item">
-                <div class="dropdown-icon-box"><i class="fa-solid fa-ship"></i></div>
+              <a href="#services" class="dropdown-item">
+                <i class="fa-solid fa-ship"></i>
                 <div>
-                  <div class="dropdown-service-title">EXIM &amp; Industrial Services</div>
-                  <div class="dropdown-service-sub">Customs bonded clearance</div>
+                  <div class="dropdown-title">EXIM &amp; Port Operations</div>
+                  <div class="dropdown-sub">Customs bonded clearance</div>
                 </div>
               </a>
             </div>
           </li>
-
-          <li class="nav-menu-item">
-            <a href="#clients" class="nav-menu-link">Our Clients</a>
+          <li class="nav-item">
+            <a href="#why-choose-us" class="nav-link">WHY CHOOSE US</a>
           </li>
-          <li class="nav-menu-item">
-            <a href="#career" class="nav-menu-link">Career</a>
+          <li class="nav-item">
+            <a href="#clients" class="nav-link">OUR CLIENTS</a>
           </li>
-          <li class="nav-menu-item">
-            <a href="#blogs" class="nav-menu-link">Blogs</a>
+          <li class="nav-item">
+            <a href="#career" class="nav-link">CAREER</a>
+          </li>
+          <li class="nav-item">
+            <a href="#blogs" class="nav-link">BLOGS</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">CONTACT</a>
           </li>
         </ul>
       </nav>
 
-      <!-- Right Header Actions (CTA Button) -->
+      <!-- Right Header Actions (Search & Free Quote Button with Swipe Effect) -->
       <div class="header-actions">
-        <a href="#contact" class="btn-header-quote open-consult-modal">
-          <span>Get a Quote</span>
-          <span class="btn-quote-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        <button type="button" class="header-search-btn open-consult-modal" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <a href="#contact" class="btn-swipe open-consult-modal">
+          <span>FREE QUOTE</span>
         </a>
-        <button type="button" class="mobile-toggle" aria-label="Toggle Mobile Navigation">
+        <button type="button" class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle navigation">
           <span></span>
           <span></span>
           <span></span>
@@ -168,522 +172,203 @@
   </header>
 
   <!-- ==========================================================================
-       3. LOGINT HERO SECTION (BACKGROUND CAROUSEL + CURVED NOTCH DOCK)
+       3. UPFRONTS HERO SECTION (IMAGE 1)
+       Full-width port & maritime background with bold headline & swipe CTA buttons
        ========================================================================== -->
-  <section class="hero-section loaded" id="home">
-    
-    <!-- Hero Slider Track (Background Imagery & Videos) -->
-    <div class="hero-slider-track" id="heroSliderTrack">
-      
-      <!-- Slide 0: Seaport Container Logistics & Terminal Decantation -->
-      <div class="hero-slide active" data-slide="0">
-        <div class="hero-slide-bg" style="background-image: url('assest/images/port_container_decantation.jpg');"></div>
-      </div>
+  <section class="upfronts-hero" id="home">
+    <div class="hero-bg-layer img-flash-hover" style="background-image: url('assest/images/port_container_decantation.jpg');"></div>
+    <div class="hero-overlay-dark"></div>
 
-      <!-- Slide 1: Modern High-Bay Laydown & Supply Chain Warehouse -->
-      <div class="hero-slide" data-slide="1">
-        <div class="hero-slide-bg" style="background-image: url('assest/images/hero_supply_chain.jpg');"></div>
-      </div>
-
-      <!-- Slide 2: Multi-Modal Heavy Freight & Overland Transport Logistics -->
-      <div class="hero-slide" data-slide="2">
-        <div class="hero-slide-bg" style="background-image: url('assest/images/heavy_transport_logistics.jpg');"></div>
-      </div>
-
-      <!-- Slide 3: Mechanized Crane Rigging & Capital Infrastructure Staging -->
-      <div class="hero-slide" data-slide="3">
-        <div class="hero-slide-bg" style="background-image: url('assest/images/mechanized_crane_rigging.jpg');"></div>
-      </div>
-
-    </div>
-
-    <!-- Cinematic Gradients for Crisp Text Readability -->
-    <div class="hero-overlay">
-      <div class="hero-overlay-gradient"></div>
-      <div class="hero-overlay-radial"></div>
-    </div>
-
-    <!-- Logint Signature Right Notch Pagination Dock -->
-    <aside class="hero-pagination-dock" aria-label="Hero Slider Pagination">
-      <button type="button" class="dock-dot active" data-slide-index="0" aria-label="01 / Seaport Decantation">
-        <span class="dot-tooltip">01 / Seaport Decantation</span>
-      </button>
-      <button type="button" class="dock-dot" data-slide-index="1" aria-label="02 / Smart Yard Stores">
-        <span class="dot-tooltip">02 / Smart Yard Stores</span>
-      </button>
-      <button type="button" class="dock-dot" data-slide-index="2" aria-label="03 / Heavy-Haul Freight">
-        <span class="dot-tooltip">03 / Heavy-Haul Freight</span>
-      </button>
-      <button type="button" class="dock-dot" data-slide-index="3" aria-label="04 / Crane Rigging">
-        <span class="dot-tooltip">04 / Crane Rigging</span>
-      </button>
-    </aside>
-
-    <!-- Bottom Content Container (Split Grid) -->
-    <div class="hero-content-container">
-      <div class="hero-content-grid">
-        
-        <!-- Left Side: Tag Pill + Big Bold Headline -->
-        <div class="hero-left-content">
-          <div class="hero-tag-pill">
-            <span>GROUND REALITIES. ABSOLUTE ACCOUNTABILITY.</span>
-          </div>
-
-          <h1 class="hero-title">
-            <span class="title-line-mask">
-              <span class="title-line title-line-1">Where Margins Are Thin,</span>
-            </span>
-            <span class="title-line-mask">
-              <span class="title-line title-line-2"><span class="highlight-crimson">Precision Defines</span> Every Capital Asset.</span>
-            </span>
-          </h1>
-        </div>
-
-        <!-- Right Side: Description + Dual CTA -->
-        <div class="hero-right-content">
-          <p class="hero-description">
-            Institutional-grade material custody, 24-hour seaport container decantation at Mundra &amp; Kandla, and SAP-integrated laydown yard management for mega infrastructure projects.
-          </p>
-
-          <div class="hero-cta-group">
-            <a href="#services" class="btn-services">
-              <span class="btn-services-text">Explore 8 Core Services</span>
-              <span class="arrow-circle">
-                <i class="fa-solid fa-arrow-right"></i>
-              </span>
-            </a>
-            <a href="#contact" class="btn-services-secondary open-consult-modal">
-              <span>Book Strategy Consultation</span>
-              <i class="fa-solid fa-calendar-check" style="margin-left: 8px;"></i>
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </section>
-
-  <!-- =========================================================================
-       5. EXECUTIVE INTRO & CORPORATE GENESIS MANIFESTO (LIGHT THEME)
-       ========================================================================= -->
-  <section class="about-intro-section" id="executive-intro">
-    <div class="about-intro-container">
-      
-      <div class="intro-tag-pill">
-        <span>CORPORATE GENESIS</span>
-      </div>
-
-      <h2 class="intro-title">
-        From Industry Professionals to <span class="highlight-crimson">Entrepreneurial Leaders</span>
-      </h2>
-
-      <!-- Corporate Genesis Narrative -->
-      <div class="genesis-narrative-card">
-        <p class="genesis-para">
-          <strong>The Thin Margin ( TM )</strong> is established by professionals with Techno-Commercial background who gained rich experience while working with several world / country’s prestigious construction of projects and contributed significantly in implementing projects with expertise in Material Management during Construction to Steady state stage.
+    <div class="upfronts-container hero-container">
+      <div class="hero-center-content">
+        <span class="hero-kicker-tag">PORT LOGISTICS &bull; YARD STEWARDSHIP &bull; SUPPLY CHAIN</span>
+        <h1 class="hero-main-title">
+          Where Margins Are Thin,<br>
+          <span class="text-accent">Precision Defines</span> Every Capital Asset.
+        </h1>
+        <p class="hero-subtext">
+          Institutional-grade material custody, 24-hour seaport container decantation at Mundra &amp; Kandla, and SAP S/4HANA integrated laydown yard management for mega infrastructure projects.
         </p>
-        <p class="genesis-para">
-          The team of highly motivated and result oriented individuals with exemplary levels of commitment are brought to an umbrella to become employees to entrepreneur with the ambition to be known as leader in Material Management Partner to large size projects in India and abroad.
-        </p>
-      </div>
 
-      <!-- 4 Key Performance Metrics Cards -->
-      <div class="credentials-4-grid">
-        <div class="credential-box">
-          <div class="credential-icon"><i class="fa-solid fa-helmet-safety"></i></div>
-          <div class="credential-stat">10+ Years On-Ground</div>
-          <div class="credential-desc">Proven execution across mega power, solar, and industrial sites from construction break-ground to steady-state operations.</div>
-        </div>
-        <div class="credential-box">
-          <div class="credential-icon"><i class="fa-solid fa-solar-panel"></i></div>
-          <div class="credential-stat">1.2GW+ Assets in Custody</div>
-          <div class="credential-desc">Direct institutional stewardship over high-value capital equipment, power transformers, modules, and balance-of-plant assets.</div>
-        </div>
-        <div class="credential-box">
-          <div class="credential-icon"><i class="fa-solid fa-stopwatch"></i></div>
-          <div class="credential-stat">24-Hr Decantation SLA</div>
-          <div class="credential-desc">Rapid container de-stuffing at key seaports (Mundra, Kandla, Nhava Sheva) and ICDs, guaranteeing zero detention fees.</div>
-        </div>
-        <div class="credential-box">
-          <div class="credential-icon"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="credential-stat">100% Zero Demurrage</div>
-          <div class="credential-desc">Backed by 100% statutory EHS and labor compliance certifications, eliminating penalty exposure entirely.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       6. CREATIVE ABOUT US SECTION (LOGINT 2-COLUMN GRID)
-       ========================================================================== -->
-  <section class="about-creative-section" id="about">
-    <div class="about-creative-container">
-      <div class="about-creative-grid">
-        
-        <!-- Left Side: Visual Showcase + 10+ Years Experience Badge -->
-        <div class="about-creative-media-wrap">
-          <div class="creative-image-frame logint-chamfer-tr">
-            <img src="assest/images/why_choose_us_crystal.jpg" alt="Thin Margin Material Management Ground Operations" class="creative-main-img" onerror="this.src='assest/images/about_hero_banner.jpg'">
-            
-            <!-- Logint Floating Experience Badge -->
-            <div class="logint-exp-badge">
-              <div class="exp-badge-icon"><i class="fa-solid fa-shield-check"></i></div>
-              <div class="exp-badge-info">
-                <h5>10+ Years</h5>
-                <p>Ground Realities &amp; Zero Demurrage</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Side: Narrative & Value Pillars -->
-        <div class="about-creative-content">
-          <div class="intro-tag-pill">
-            <span>ABOUT THIN MARGIN</span>
-          </div>
-          
-          <h2 class="about-creative-title">
-            Techno-Commercial Leadership in <span class="highlight-crimson">Mega Project Supply Chain</span> &amp; Laydown Yards
-          </h2>
-
-          <p class="about-creative-lead">
-            Where margins are thin, execution certainty is everything. We bridge the critical gap between high-level project schedules and the granular, high-friction reality of port gates, laydown yards, and physical store management.
-          </p>
-
-          <p class="about-creative-desc">
-            Operating across India's largest infrastructure hubs, our senior custody teams take on-site responsibility for heavy equipment offloading, sub-meter GPS stacking, and instantaneous ERP synchronization.
-          </p>
-
-          <!-- 4 Pillars with Red Indicators -->
-          <div class="about-creative-features">
-            <div class="creative-feature-item">
-              <div class="feature-indicator-line"></div>
-              <div class="feature-content-wrap">
-                <h4 class="feature-title">Sub-Meter Yard Geotagging</h4>
-                <p class="feature-desc">Accurate laydown grid indexing eliminating lost materials and equipment misplacement.</p>
-              </div>
-            </div>
-            <div class="creative-feature-item">
-              <div class="feature-indicator-line"></div>
-              <div class="feature-content-wrap">
-                <h4 class="feature-title">24-Hr Decantation Shield</h4>
-                <p class="feature-desc">Swift container de-stuffing at Mundra and Kandla preventing catastrophic shipping demurrage.</p>
-              </div>
-            </div>
-            <div class="creative-feature-item">
-              <div class="feature-indicator-line"></div>
-              <div class="feature-content-wrap">
-                <h4 class="feature-title">Zero-Variance Reconciliation</h4>
-                <p class="feature-desc">Physical counts matched 100% against purchase orders and project bills of materials.</p>
-              </div>
-            </div>
-            <div class="creative-feature-item">
-              <div class="feature-indicator-line"></div>
-              <div class="feature-content-wrap">
-                <h4 class="feature-title">SAP S/4HANA Sync</h4>
-                <p class="feature-desc">Automated MIGO/GRN bookings directly aligned with client ERP ledgers.</p>
-              </div>
-            </div>
-          </div>
-
-          <a href="#contact" class="btn-services open-consult-modal">
-            <span class="btn-services-text">Schedule Site Strategy Audit</span>
-            <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        <!-- Buttons with Slide & Swipe Hover Animation -->
+        <div class="hero-btn-row">
+          <a href="#services" class="btn-swipe btn-hero-primary">
+            <span>EXPLORE 8 CORE SERVICES</span>
           </a>
-
+          <a href="#contact" class="btn-swipe btn-hero-secondary open-consult-modal">
+            <span>BOOK STRATEGY CONSULTATION</span>
+          </a>
         </div>
-
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       7. 8 CORE SERVICES SUITE (LOGINT CHAMFERED CARDS & REALISTIC IMAGES)
+       4. ABOUT COMPANY SECTION (IMAGE 2)
+       Left narrative + Center image with rotating badge + Right leadership card
        ========================================================================== -->
-  <section class="services-suite-section" id="services">
-    <div class="services-suite-container">
-      
-      <!-- Section Header -->
-      <div class="services-suite-header reveal-fade-up">
-        <div class="intro-tag-pill">
-          <span>OUR 8 CORE CAPABILITIES</span>
-        </div>
-        <h2 class="services-suite-title">
-          Integrated Supply Chain &amp; <span class="highlight-crimson">Warehouse Management</span>
-        </h2>
-        <p class="services-suite-subtitle">
-          Turnkey material stewardship, automated warehouse laydowns, and zero-loss container operations engineered for India's largest infrastructure assets.
-        </p>
-      </div>
-
-      <!-- 8 Services Grid with Logint Chamfers & Realistic Imagery -->
-      <div class="services-suite-grid-8">
+  <section class="upfronts-about-section" id="about">
+    <div class="upfronts-container">
+      <div class="about-style01-grid">
         
-        <!-- 01. Warehouse & Stores Management -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/warehouseimgcompany.webp" alt="Warehouse and Stores Management" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-warehouse"></i>
-            </div>
-          </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">Warehouse &amp; Stores Management</h3>
-            <p class="logint-service-desc">
-              Multi-tier laydown yard layout, heavy racking design, bin-location indexing, temperature-controlled stores, and RFID/barcoded yard inventory control.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Sub-meter Laydown Indexing</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Barcode / RFID Tagging</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
+        <!-- Left Column: Narrative & Feature Items -->
+        <div class="about-col-left">
+          <span class="section-kicker-pill">ABOUT COMPANY.</span>
+          <h2 class="about-title-heading">Committed to your logistics success</h2>
+          <p class="about-lead-paragraph">
+            We specialize in providing reliable, efficient, and cost-effective transport and logistics solutions tailored to meet the diverse needs of our clients.
+          </p>
 
-        <!-- 02. Material & Inventory Management -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/Expert Services.jpg" alt="Material and Inventory Management" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-boxes-stacked"></i>
+          <!-- 2 Feature Items with Outline Icons -->
+          <div class="about-features-list">
+            
+            <div class="about-feature-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-boxes-packing"></i>
+              </div>
+              <div class="feature-content">
+                <h4 class="feature-heading">Innovative Solutions</h4>
+                <p class="feature-desc">Innovative solution means using modern technology and creative strategies to deliver sub-meter geotagged laydowns and real-time ERP synchronization.</p>
+              </div>
             </div>
-          </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">Material &amp; Inventory Management</h3>
-            <p class="logint-service-desc">
-              Turnkey custody from break-ground to commercial operation. Rigorous 100% physical verification, cycle-count audits, and zero-variance reconciliation.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Zero Inventory Variance</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Daily Cycle Counts &amp; Audits</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <!-- 03. Logistics & Supply Chain Solutions -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/heavy_transport_logistics.jpg" alt="Logistics and Supply Chain Solutions" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-truck-fast"></i>
+            <div class="about-feature-item">
+              <div class="feature-icon-circle">
+                <i class="fa-solid fa-ship"></i>
+              </div>
+              <div class="feature-content">
+                <h4 class="feature-heading">Industry Experience</h4>
+                <p class="feature-desc">Industry experience reflects our deep knowledge and proven expertise gained through years of ground operations across mega power, solar, and port corridors.</p>
+              </div>
             </div>
-          </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">Logistics &amp; Supply Chain Solutions</h3>
-            <p class="logint-service-desc">
-              Multimodal freight coordination, specialized ODC route survey, transit risk monitoring, and guaranteed 24-hr container decantation at Mundra &amp; Kandla.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> 24-Hr Decantation SLA</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Multimodal Freight Coordination</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <!-- 04. Procurement & Material Handling -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/mechanized_crane_rigging.jpg" alt="Procurement and Material Handling Support" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-dolly"></i>
-            </div>
           </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">Procurement &amp; Material Handling</h3>
-            <p class="logint-service-desc">
-              Vendor expediting, factory acceptance testing QA/QC, mill test certificate validation, and mechanized crane rigging deployment for capital equipment.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> QA/QC Mill Test Validation</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Mechanized Crane Rigging</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <!-- 05. SAP / ERP Solutions -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/sap_erp_solutions.jpg" alt="SAP and ERP Solutions" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-network-wired"></i>
-            </div>
-          </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">SAP / ERP Solutions</h3>
-            <p class="logint-service-desc">
-              Real-time SAP MM &amp; S/4HANA material synchronization, digitized MIGO/GRN generation, custom reservation tracking, and automated inventory ledger sync.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> SAP S/4HANA MIGO / GRN Sync</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Real-Time Ledger Reconciliation</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
+          <!-- About Us Button with Slide & Swipe Animation -->
+          <a href="#contact" class="btn-swipe open-consult-modal">
+            <span>ABOUT US</span>
+          </a>
+        </div>
 
-        <!-- 06. EHS, Safety & Statutory Compliance -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/EHS Commitment.jpg" alt="EHS and Compliance" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-shield-halved"></i>
+        <!-- Center Column: Operations Photo with Diagonal Flash + Overlapping Rotating Badge -->
+        <div class="about-col-center">
+          <div class="about-img-wrapper img-flash-hover">
+            <img src="assest/images/why_choose_us_crystal.jpg" alt="Thin Margin Material Management Ground Operations" class="about-hero-img" onerror="this.src='assest/images/about_hero_banner.jpg'">
+            
+            <!-- Circular Rotating Badge -->
+            <div class="rotating-badge-container">
+              <div class="rotating-badge-circle">
+                <svg class="rotating-svg-text" viewBox="0 0 200 200" width="160" height="160">
+                  <path id="badgeCirclePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0" fill="none" />
+                  <text font-size="13" font-weight="700" fill="#ffffff" letter-spacing="2.8">
+                    <textPath href="#badgeCirclePath" startOffset="0%">
+                      THIN MARGIN &bull; THE SOLUTIONS &bull; THIN MARGIN &bull;
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="badge-center-icon">
+                  <i class="fa-solid fa-truck-fast"></i>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">EHS, Safety &amp; Statutory Compliance</h3>
-            <p class="logint-service-desc">
-              ISO 45001 &amp; ISO 9001 certified execution, zero-LTI safety protocols, hazardous material stewardship, and 100% statutory labor law, PF, and ESIC adherence.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Zero-LTI Safety Standards</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> 100% PF / ESIC Labor Compliance</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
 
-        <!-- 07. Asset & Facility Management -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/Value Added Services.jpg" alt="Asset and Facility Management" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-building-circle-check"></i>
-            </div>
           </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">Asset &amp; Facility Management</h3>
-            <p class="logint-service-desc">
-              High-value capital preservation, nitrogen purging monitoring for transformers, perimeter surveillance, secure laydown access control, and facility upkeep.
-            </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Nitrogen Purging Monitoring</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> 24/7 Perimeter Security Staging</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
-            </div>
-          </div>
-        </article>
+        </div>
 
-        <!-- 08. EXIM, Port Operations & Demurrage Shield -->
-        <article class="logint-service-card logint-chamfer-tr">
-          <div class="logint-service-media">
-            <img src="assest/images/port_container_decantation.jpg" alt="EXIM and Port Operations" class="logint-service-img" loading="lazy">
-            <div class="logint-card-icon-badge">
-              <i class="fa-solid fa-ship"></i>
+        <!-- Right Column: Solid Orange/Red Leadership Card -->
+        <div class="about-col-right">
+          <div class="leadership-card-orange">
+            <div class="leader-avatar-wrap">
+              <img src="assest/images/award_adani_agile.png" alt="Executive Director" class="leader-avatar-img" onerror="this.src='assest/images/award1.png'">
             </div>
-          </div>
-          <div class="logint-service-content">
-            <h3 class="logint-service-title">EXIM &amp; Port Operations Shield</h3>
-            <p class="logint-service-desc">
-              Customs bonded warehousing, MOOWR advisory, import container clearance, bill of entry reconciliation, and fast turnaround eliminating detention penalties.
+            <h3 class="leader-name">Techno-Commercial Team</h3>
+            <p class="leader-role">Founders &amp; Ground Stewards</p>
+            <p class="leader-quote">
+              &ldquo;We pride ourselves on providing best transport &amp; material custody services available all over the country and abroad.&rdquo;
             </p>
-            <div class="logint-service-specs">
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Zero Port Demurrage Shield</span>
-              <span class="logint-spec-item"><i class="fa-solid fa-check"></i> Customs &amp; MOOWR Advisory</span>
-            </div>
-            <div class="logint-service-action">
-              <a href="#contact" class="logint-action-link open-consult-modal">
-                <span>Request Service Audit</span>
-                <span class="logint-action-circle"><i class="fa-solid fa-arrow-right"></i></span>
-              </a>
+            <div class="leader-signature">
+              <span>Thin Margin Leadership</span>
             </div>
           </div>
-        </article>
+        </div>
 
       </div>
-
     </div>
   </section>
 
   <!-- ==========================================================================
-       8. LOGINT 4-STEP EXECUTION WORKFLOW
+       5. 4 FULL-HEIGHT SERVICES CARDS WITH DIAGONAL FLASH HOVER (IMAGE 3)
+       Air Freight, Road Freight, Ocean Freight, Warehousing
        ========================================================================== -->
-  <section class="workflow-section" id="workflow">
-    <div class="workflow-container">
+  <section class="upfronts-services-section" id="services">
+    <div class="upfronts-container">
       
-      <div class="services-suite-header reveal-fade-up">
-        <div class="intro-tag-pill">
-          <span>OPERATIONAL METHODOLOGY</span>
-        </div>
-        <h2 class="services-suite-title">
-          How Thin Margin <span class="highlight-crimson">Secures Your Supply Chain</span>
-        </h2>
-        <p class="services-suite-subtitle">
-          From seaport berth to active installation, our structured four-phase custody protocol ensures zero demurrage and zero inventory loss.
-        </p>
+      <div class="section-header-center">
+        <span class="section-kicker-pill">OUR SERVICES.</span>
+        <h2 class="section-title-large">Efficient logistics solutions for every project</h2>
       </div>
 
-      <div class="workflow-steps-grid">
+      <!-- 4 Full-Height Background Image Cards (Image 3) -->
+      <div class="services-cards-row">
         
-        <!-- Step 1 -->
-        <div class="workflow-step-card logint-chamfer-tr">
-          <div class="step-num-badge">01</div>
-          <div class="step-icon"><i class="fa-solid fa-ship"></i></div>
-          <h4 class="step-title">Port Arrival &amp; Custody Handover</h4>
-          <p class="step-desc">Real-time vessel tracking, customs bonded documentation, and immediate container gate-out at Mundra &amp; Kandla.</p>
+        <!-- Card 1: Seaport Decantation & Air/Port Logistics -->
+        <div class="service-image-card img-flash-hover">
+          <div class="card-bg-img" style="background-image: url('assest/images/port_container_decantation.jpg');"></div>
+          <div class="card-gradient-overlay"></div>
+          <div class="card-bottom-content">
+            <h3 class="card-title">Port Decantation</h3>
+            <div class="card-divider-line"></div>
+            <p class="card-desc">Rapid 24-hr de-stuffing at Mundra &amp; Kandla preventing heavy shipping demurrage penalties.</p>
+            <a href="#contact" class="card-action-link open-consult-modal">
+              <span>Read More</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Step 2 -->
-        <div class="workflow-step-card logint-chamfer-tr">
-          <div class="step-num-badge">02</div>
-          <div class="step-icon"><i class="fa-solid fa-truck-ramp-box"></i></div>
-          <h4 class="step-title">Rapid 24-Hr Decantation</h4>
-          <p class="step-desc">Mechanized de-stuffing at off-dock laydowns and prompt empty container return within the free window.</p>
+        <!-- Card 2: Road Freight & Heavy-Haul Transport -->
+        <div class="service-image-card img-flash-hover">
+          <div class="card-bg-img" style="background-image: url('assest/images/heavy_transport_logistics.jpg');"></div>
+          <div class="card-gradient-overlay"></div>
+          <div class="card-bottom-content">
+            <h3 class="card-title">Road Freight</h3>
+            <div class="card-divider-line"></div>
+            <p class="card-desc">Specialized multi-axle hydraulic trailers and turnkey ODC overland corridor surveys.</p>
+            <a href="#contact" class="card-action-link open-consult-modal">
+              <span>Read More</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Step 3 -->
-        <div class="workflow-step-card logint-chamfer-tr">
-          <div class="step-num-badge">03</div>
-          <div class="step-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
-          <h4 class="step-title">Sub-Meter Yard Stacking</h4>
-          <p class="step-desc">GPS-coordinated laydown placement, barcoding, weather preservation, and protective packaging.</p>
+        <!-- Card 3: Ocean Freight & EXIM Port Shield -->
+        <div class="service-image-card img-flash-hover">
+          <div class="card-bg-img" style="background-image: url('assest/images/mechanized_crane_rigging.jpg');"></div>
+          <div class="card-gradient-overlay"></div>
+          <div class="card-bottom-content">
+            <h3 class="card-title">Crane Rigging</h3>
+            <div class="card-divider-line"></div>
+            <p class="card-desc">Engineered heavy crane rigging, high-value capital equipment staging, and zero-LTI safety.</p>
+            <a href="#contact" class="card-action-link open-consult-modal">
+              <span>Read More</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Step 4 -->
-        <div class="workflow-step-card logint-chamfer-tr">
-          <div class="step-num-badge">04</div>
-          <div class="step-icon"><i class="fa-solid fa-network-wired"></i></div>
-          <h4 class="step-title">Real-Time SAP MIGO Sync</h4>
-          <p class="step-desc">Digitized GRN booking into client SAP S/4HANA systems, ensuring 100% ledger transparency.</p>
+        <!-- Card 4: Warehousing & Smart Stores -->
+        <div class="service-image-card img-flash-hover">
+          <div class="card-bg-img" style="background-image: url('assest/images/hero_supply_chain.jpg');"></div>
+          <div class="card-gradient-overlay"></div>
+          <div class="card-bottom-content">
+            <h3 class="card-title">Warehousing</h3>
+            <div class="card-divider-line"></div>
+            <p class="card-desc">Sub-meter GPS laydown indexing, automated barcode scanning, and direct SAP MIGO receipts.</p>
+            <a href="#contact" class="card-action-link open-consult-modal">
+              <span>Read More</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
 
       </div>
@@ -692,242 +377,175 @@
   </section>
 
   <!-- ==========================================================================
-       9. TELEMETRY & INFRASTRUCTURE VIDEO SHOWCASE (DARK CONTRAST SECTION #111315)
+       6. WHY CHOOSE US & 4 COUNTERS SECTION (IMAGE 4)
+       Split: Left narrative + Right 3 features with dividers.
+       Bottom: 4 Counter Boxes (Box 1 Solid Orange/Red, Boxes 2-4 White with dividers)
        ========================================================================== -->
-  <section class="why-video-section" id="why-choose-us">
-    <div class="why-video-container">
+  <section class="upfronts-why-section" id="why-choose-us">
+    <div class="upfronts-container">
       
-      <div class="video-showcase-header">
-        <div class="intro-tag-pill" style="border-color: rgba(238, 33, 48, 0.4); background: rgba(238, 33, 48, 0.12);">
-          <span>ON-GROUND EXECUTION</span>
-        </div>
-        <h2 class="video-section-title">
-          Where Complex Engineering Meets <span class="highlight-crimson">Zero-Loss Discipline</span>
-        </h2>
-        <p class="video-section-subtitle">
-          Watch our ground operations teams decant multi-acre laydown yards and execute heavy turbine and module custody with precision.
-        </p>
-      </div>
-
-      <!-- Video Player Frame -->
-      <div class="video-player-frame">
-        <video class="showcase-video-elem" autoplay muted loop playsinline poster="assest/images/why_choose_us_hd.png">
-          <source src="assest/images/warehousevid.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay-gradient"></div>
+      <!-- Top Split Grid -->
+      <div class="why-choose-grid">
         
-        <!-- Center Floating Stats Banner -->
-        <div class="video-stats-dock">
-          <div class="stat-pill-item">
-            <span class="stat-num">100%</span>
-            <span class="stat-lbl">Demurrage Shield</span>
-          </div>
-          <div class="stat-pill-divider"></div>
-          <div class="stat-pill-item">
-            <span class="stat-num">1.2GW+</span>
-            <span class="stat-lbl">Managed Assets</span>
-          </div>
-          <div class="stat-pill-divider"></div>
-          <div class="stat-pill-item">
-            <span class="stat-num">10,000+</span>
-            <span class="stat-lbl">Decanted TEUs</span>
-          </div>
-          <div class="stat-pill-divider"></div>
-          <div class="stat-pill-item">
-            <span class="stat-num">99.98%</span>
-            <span class="stat-lbl">Reconciliation Yield</span>
+        <!-- Left Side: Subtitle, Heading, Paragraph & Avatars -->
+        <div class="why-left-content">
+          <span class="section-kicker-pill">WHY CHOOSE US.</span>
+          <h2 class="why-title-heading">The smart choice in trusted logistics</h2>
+          <p class="why-description-text">
+            We provide dependable, efficient, and technology-driven logistics and transport solutions that keep your supply chain moving. Whether it&rsquo;s domestic freight, maritime container decantation, or multi-acre laydown yard stewardship.
+          </p>
+          <div class="trusted-leaders-row">
+            <div class="avatar-group">
+              <span class="avatar-pill">EPC</span>
+              <span class="avatar-pill" style="background:#ee2130;">TM</span>
+              <span class="avatar-pill" style="background:#10b981;">ISO</span>
+            </div>
+            <span class="trusted-text">Trusted by industry leaders across India.</span>
           </div>
         </div>
-      </div>
 
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       10. AUTO-SCROLLING INDIAN LEADERSHIP TESTIMONIALS TICKER
-       ========================================================================== -->
-  <section class="cmsms-testimonials-section" id="testimonials">
-    <div class="testimonials-container">
-      
-      <div class="services-suite-header reveal-fade-up">
-        <div class="intro-tag-pill">
-          <span>CLIENT TESTIMONIALS &amp; AUDIT SCORES</span>
-        </div>
-        <h2 class="services-suite-title" style="color: #ffffff;">
-          Trusted by <span class="highlight-crimson">India's Infrastructure Leaders</span>
-        </h2>
-        <p class="services-suite-subtitle" style="color: #94a3b8;">
-          Independently verified audit performance, zero demurrage track records, and operational custody ratings across mega capital projects.
-        </p>
-      </div>
-
-      <!-- Top Executive Aggregate Rating KPI Bar -->
-      <div class="testi-summary-dock">
-        <div class="testi-summary-stat">
-          <div class="summary-score"><span class="highlight-crimson">4.9</span> / 5.0</div>
-          <div class="summary-label"><i class="fa-solid fa-star" style="color: #f59e0b;"></i> Overall EPC Rating</div>
-        </div>
-        <div class="testi-summary-divider"></div>
-        <div class="testi-summary-stat">
-          <div class="summary-score">100%</div>
-          <div class="summary-label"><i class="fa-solid fa-shield-check" style="color: #22c55e;"></i> Zero Demurrage SLA</div>
-        </div>
-        <div class="testi-summary-divider"></div>
-        <div class="testi-summary-stat">
-          <div class="summary-score">1.2GW+</div>
-          <div class="summary-label"><i class="fa-solid fa-solar-panel" style="color: #38bdf8;"></i> Assets in Custody</div>
-        </div>
-        <div class="testi-summary-divider"></div>
-        <div class="testi-summary-stat">
-          <div class="summary-score">99.98%</div>
-          <div class="summary-label"><i class="fa-solid fa-check-double" style="color: #a855f7;"></i> Inventory Accuracy</div>
-        </div>
-      </div>
-
-      <!-- Auto-Scrolling Testimonials Ticker with Distinct Ratings -->
-      <div class="testimonial-ticker-wrap">
-        <div class="testimonial-ticker-track">
+        <!-- Right Side: 3 Features with Outline Icons & Dividers -->
+        <div class="why-right-features">
           
-          <!-- Card 1: Adani Solar & Power (5.0 / 5.0) -->
-          <div class="testimonial-card">
-            <div class="testi-card-top">
-              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+          <div class="why-feature-row">
+            <div class="why-feature-icon">
+              <i class="fa-solid fa-award"></i>
             </div>
-            <div class="testi-card-rating-row">
-              <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="testi-sla-pill"><i class="fa-solid fa-shield-halved"></i> 100% Zero-Demurrage SLA</span>
+            <div class="why-feature-body">
+              <h4 class="why-feature-title">Customer-Focused Service</h4>
+              <p class="why-feature-desc">Personalized logistics solutions built around mega EPC site schedules and on-ground realities.</p>
             </div>
-            <p class="testi-quote">
-              &ldquo;Thin Margin’s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
+          </div>
+
+          <div class="why-feature-row">
+            <div class="why-feature-icon">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div class="why-feature-body">
+              <h4 class="why-feature-title">Cost-Effective Operations</h4>
+              <p class="why-feature-desc">Through smart route planning, 24-hr port turnaround, and zero demurrage guarantees.</p>
+            </div>
+          </div>
+
+          <div class="why-feature-row">
+            <div class="why-feature-icon">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+            <div class="why-feature-body">
+              <h4 class="why-feature-title">Flexible Transport Options</h4>
+              <p class="why-feature-desc">From heavy ODC freight and port decantation to multi-tier RFID laydown warehousing.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Counter Row (Image 4): Box 1 Red + Boxes 2-4 White with dividers -->
+      <div class="upfronts-counters-row">
+        
+        <!-- Box 1: Solid Orange/Red Box -->
+        <div class="counter-box counter-box-orange">
+          <div class="counter-number-val" data-target="10">10+</div>
+          <div class="counter-label-text">YEARS ON-GROUND</div>
+        </div>
+
+        <!-- Box 2: White Box with Left Border -->
+        <div class="counter-box counter-box-white">
+          <div class="counter-number-val" data-target="1.2">1.2GW+</div>
+          <div class="counter-label-text">ASSETS IN CUSTODY</div>
+        </div>
+
+        <!-- Box 3: White Box with Left Border -->
+        <div class="counter-box counter-box-white">
+          <div class="counter-number-val" data-target="24">24-Hr</div>
+          <div class="counter-label-text">DECANTATION SLA</div>
+        </div>
+
+        <!-- Box 4: White Box with Left Border -->
+        <div class="counter-box counter-box-white">
+          <div class="counter-number-val" data-target="100">100%</div>
+          <div class="counter-label-text">ZERO DEMURRAGE</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. TRUSTED CONGLOMERATE PARTNERS CAROUSEL
+       ========================================================================== -->
+  <section class="upfronts-partners-section" id="clients">
+    <div class="upfronts-container">
+      <div class="partners-kicker-label">TRUSTED BY INDUSTRY CONGLOMERATES</div>
+      <div class="partners-logo-grid">
+        <div class="partner-item"><img src="assest/images/adanilogo_clean.png" alt="Adani Group"></div>
+        <div class="partner-item"><img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla"></div>
+        <div class="partner-item"><img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables"></div>
+        <div class="partner-item"><img src="assest/images/Ecomexpress_clean.png" alt="Ecom Express"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. TESTIMONIALS SECTION (INDIAN LEADERSHIP MARQUEE)
+       ========================================================================== -->
+  <section class="upfronts-testimonials-section" id="testimonials">
+    <div class="upfronts-container">
+      
+      <div class="section-header-center">
+        <span class="section-kicker-pill">OUR TESTIMONIAL.</span>
+        <h2 class="section-title-large" style="color:#ffffff;">Success stories from our customers</h2>
+      </div>
+
+      <div class="testimonials-ticker-container">
+        <div class="testimonials-track" id="testimonialTrack">
+          
+          <div class="testi-card">
+            <div class="testi-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="testi-quote-p">
+              &ldquo;Thin Margin&rsquo;s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
             </p>
-            <div class="testi-author-bar">
-              <div class="testi-author-avatar">RV</div>
+            <div class="testi-author-info">
+              <div class="author-avatar-circle">RV</div>
               <div>
-                <div class="testi-author-name">Rajesh Varma</div>
-                <div class="testi-author-role">VP - Supply Chain &bull; <span class="testi-author-company">Adani Solar &amp; Power</span></div>
+                <div class="author-name-text">Rajesh Varma</div>
+                <div class="author-role-text">VP - Supply Chain &bull; <span class="author-comp">Adani Solar &amp; Power</span></div>
               </div>
             </div>
           </div>
 
-          <!-- Card 2: L&T Hydrocarbon Engineering (4.9 / 5.0) -->
-          <div class="testimonial-card">
-            <div class="testi-card-top">
-              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 4.9 / 5.0</span>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+          <div class="testi-card">
+            <div class="testi-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <div class="testi-card-rating-row">
-              <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="testi-sla-pill"><i class="fa-solid fa-network-wired"></i> 99.98% SAP Reconciliation</span>
-            </div>
-            <p class="testi-quote">
+            <p class="testi-quote-p">
               &ldquo;Their sub-meter geotagged laydown yard management and strict SAP S/4HANA MIGO bookings brought absolute transparency to our heavy capital equipment laydown operations.&rdquo;
             </p>
-            <div class="testi-author-bar">
-              <div class="testi-author-avatar">AS</div>
+            <div class="testi-author-info">
+              <div class="author-avatar-circle">AS</div>
               <div>
-                <div class="testi-author-name">Col. Arvind Sharma</div>
-                <div class="testi-author-role">Chief Project Director &bull; <span class="testi-author-company">L&amp;T Hydrocarbon</span></div>
+                <div class="author-name-text">Col. Arvind Sharma</div>
+                <div class="author-role-text">Chief Project Director &bull; <span class="author-comp">L&amp;T Hydrocarbon</span></div>
               </div>
             </div>
           </div>
 
-          <!-- Card 3: Tata Power Renewable Energy (5.0 / 5.0) -->
-          <div class="testimonial-card">
-            <div class="testi-card-top">
-              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
+          <div class="testi-card">
+            <div class="testi-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
-            <div class="testi-card-rating-row">
-              <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="testi-sla-pill"><i class="fa-solid fa-warehouse"></i> 1,200-Acre Laydown Custody</span>
-            </div>
-            <p class="testi-quote">
-              &ldquo;Managing material across a 1,200-acre site is complex. Thin Margin’s RFID tagging and zero-variance reconciliation ensured every transformer and inverter was tracked without a single mismatch.&rdquo;
+            <p class="testi-quote-p">
+              &ldquo;Managing material across a 1,200-acre site is complex. Thin Margin&rsquo;s RFID tagging and zero-variance reconciliation ensured every transformer was tracked without mismatch.&rdquo;
             </p>
-            <div class="testi-author-bar">
-              <div class="testi-author-avatar">SM</div>
+            <div class="testi-author-info">
+              <div class="author-avatar-circle">SM</div>
               <div>
-                <div class="testi-author-name">Sanjay Mukherjee</div>
-                <div class="testi-author-role">Head of Materials &amp; Contracts &bull; <span class="testi-author-company">Tata Power Renewables</span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4: NTPC Green Energy (4.8 / 5.0) -->
-          <div class="testimonial-card">
-            <div class="testi-card-top">
-              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 4.8 / 5.0</span>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-card-rating-row">
-              <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-              </div>
-              <span class="testi-sla-pill"><i class="fa-solid fa-certificate"></i> Zero-Harm EHS Compliance</span>
-            </div>
-            <p class="testi-quote">
-              &ldquo;The level of statutory EHS and labor law compliance provided by Thin Margin is second to none. They deliver complete peace of mind on regulatory safety and contractor management.&rdquo;
-            </p>
-            <div class="testi-author-bar">
-              <div class="testi-author-avatar">AK</div>
-              <div>
-                <div class="testi-author-name">Alok K. Srivastav</div>
-                <div class="testi-author-role">General Manager - Procurement &bull; <span class="testi-author-company">NTPC Green Energy</span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5: Aditya Birla Group (4.9 / 5.0) -->
-          <div class="testimonial-card">
-            <div class="testi-card-top">
-              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 4.9 / 5.0</span>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-card-rating-row">
-              <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="testi-sla-pill"><i class="fa-solid fa-ship"></i> 24-Hr Seaport Decantation</span>
-            </div>
-            <p class="testi-quote">
-              &ldquo;Turnaround times at Kandla Port were reduced by over 60%. Empty containers were returned within the free demurrage window without fail.&rdquo;
-            </p>
-            <div class="testi-author-bar">
-              <div class="testi-author-avatar">VS</div>
-              <div>
-                <div class="testi-author-name">Vikram Singhania</div>
-                <div class="testi-author-role">VP - Logistics &amp; Infrastructure &bull; <span class="testi-author-company">Aditya Birla Group</span></div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6: Vishakha Renewables (5.0 / 5.0) -->
-          <div class="testimonial-card">
-            <div class="testi-card-top">
-              <span class="testi-rating-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
-              <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-card-rating-row">
-              <div class="testi-stars">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <span class="testi-sla-pill"><i class="fa-solid fa-boxes-stacked"></i> 100% Traceability SLA</span>
-            </div>
-            <p class="testi-quote">
-              &ldquo;Real-time reconciliation of solar EVA and glass shipments directly into SAP eliminated month-end inventory variance completely.&rdquo;
-            </p>
-            <div class="testi-author-bar">
-              <div class="testi-author-avatar">PP</div>
-              <div>
-                <div class="testi-author-name">Pratik Patel</div>
-                <div class="testi-author-role">Director of Operations &bull; <span class="testi-author-company">Vishakha Renewables</span></div>
+                <div class="author-name-text">Sanjay Mukherjee</div>
+                <div class="author-role-text">Head of Materials &bull; <span class="author-comp">Tata Power Renewables</span></div>
               </div>
             </div>
           </div>
@@ -939,148 +557,86 @@
   </section>
 
   <!-- ==========================================================================
-       11. OUR CLIENTS & PARTNERS CAROUSEL
+       9. CAREER & BLOGS SECTION
        ========================================================================== -->
-  <section class="partners-section" id="clients">
-    <div class="partners-container">
-      <div class="partners-kicker">
-        <span>TRUSTED BY INDUSTRY CONGLOMERATES</span>
-      </div>
-      <div class="partners-logos-grid">
-        <div class="partner-logo-item">
-          <img src="assest/images/adanilogo_clean.png" alt="Adani Group" loading="lazy">
-        </div>
-        <div class="partner-logo-item">
-          <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla" loading="lazy">
-        </div>
-        <div class="partner-logo-item">
-          <img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables" loading="lazy">
-        </div>
-        <div class="partner-logo-item">
-          <img src="assest/images/Ecomexpress_clean.png" alt="Ecom Express" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       12. CAREER & BLOGS (GROUND INSIGHTS)
-       ========================================================================== -->
-  <section class="cmsms-career-section" id="career">
-    <div class="cmsms-career-container">
-      <div class="cmsms-career-banner">
-        <div class="career-text-col">
-          <div class="intro-tag-pill" style="border-color: rgba(238, 33, 48, 0.4); background: rgba(238, 33, 48, 0.1);">
-            <span>JOIN OUR TEAM</span>
-          </div>
-          <h2 class="career-title">Build Your Career with <span class="highlight-crimson">India's Custody Leaders</span></h2>
-          <p class="career-desc">
-            We are actively hiring Techno-Commercial Material Managers, SAP S/4HANA Specialists, Rigging Supervisors, and Port Operations Controllers across Mundra, Kandla, and capital project corridors.
-          </p>
-          <a href="#contact" class="btn-services open-consult-modal">
-            <span class="btn-services-text">Explore Career Opportunities</span>
-            <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cmsms-blogs-section" id="blogs">
-    <div class="cmsms-blogs-container">
-      <div class="services-suite-header reveal-fade-up">
-        <div class="intro-tag-pill">
-          <span>KNOWLEDGE BASE</span>
-        </div>
-        <h2 class="services-suite-title">
-          Insights from the <span class="highlight-crimson">Ground Operations</span>
-        </h2>
-        <p class="services-suite-subtitle">
-          Expert articles on demurrage prevention, sub-meter laydown twins, and capital project inventory optimization.
-        </p>
-      </div>
-
-      <div class="cmsms-blogs-grid">
-        <article class="cmsms-blog-card logint-chamfer-tr">
-          <div class="cmsms-blog-media">
-            <img src="assest/images/port_container_decantation.jpg" alt="Demurrage Shield Article" loading="lazy">
-            <div class="cmsms-blog-date">NOV 2026</div>
-          </div>
-          <div class="cmsms-blog-body">
-            <div class="cmsms-blog-cat">Port Demurrage Strategy</div>
-            <h3 class="cmsms-blog-title"><a href="#blogs">Eliminating Port Demurrage: The 24-Hour Decantation Mandate at Mundra &amp; Kandla</a></h3>
-            <p class="cmsms-blog-snippet">How proactive shipping line coordination and off-dock staging prevent multimillion-dollar detention penalties.</p>
-          </div>
-        </article>
-
-        <article class="cmsms-blog-card logint-chamfer-tr">
-          <div class="cmsms-blog-media">
-            <img src="assest/images/hero_supply_chain.jpg" alt="Laydown Yard Twins" loading="lazy">
-            <div class="cmsms-blog-date">OCT 2026</div>
-          </div>
-          <div class="cmsms-blog-body">
-            <div class="cmsms-blog-cat">Laydown Architecture</div>
-            <h3 class="cmsms-blog-title"><a href="#blogs">Sub-Meter Laydown Geotagging: Managing 1,000+ Acre Solar &amp; Power Corridors</a></h3>
-            <p class="cmsms-blog-snippet">Using GPS spatial grid indexing to eradicate misplaced capital inventory and accelerate installation timelines.</p>
-          </div>
-        </article>
-
-        <article class="cmsms-blog-card logint-chamfer-tr">
-          <div class="cmsms-blog-media">
-            <img src="assest/images/sap_erp_solutions.jpg" alt="SAP Reconciliation" loading="lazy">
-            <div class="cmsms-blog-date">SEP 2026</div>
-          </div>
-          <div class="cmsms-blog-body">
-            <div class="cmsms-blog-cat">Digital Twin &amp; SAP</div>
-            <h3 class="cmsms-blog-title"><a href="#blogs">Zero-Variance Audits: Synchronizing On-Site MIGO Receipts Directly with S/4HANA</a></h3>
-            <p class="cmsms-blog-snippet">Bridging the critical blindspot between physical gate passes and corporate enterprise resource planning.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       13. MODERN DARK FOOTER (#111315) WITH AUTHENTIC SOCIAL ICONS
-       ========================================================================== -->
-  <footer class="site-footer" id="siteFooter">
-    <div class="footer-container">
+  <section class="upfronts-blogs-section" id="blogs">
+    <div class="upfronts-container">
       
-      <div class="footer-top-grid">
-        
-        <!-- Col 1: Brand & Overview -->
-        <div class="footer-col-brand">
-          <a href="index.html" class="footer-brand-logo">
-            <img src="assest/images/thin_margin_logo_white.png" alt="Thin Margin" class="footer-logo-img" onerror="this.src='assest/images/thin_margin_logo.png'">
-          </a>
-          <p class="footer-brand-desc">
-            The Thin Margin ( TM ) provides institutional-grade Material Management, Laydown Yard Stewardship, and Port Demurrage Shields for large-scale infrastructure projects across India and abroad.
-          </p>
+      <div class="section-header-center">
+        <span class="section-kicker-pill">OUR BLOG.</span>
+        <h2 class="section-title-large">Future of logistics and supply chains</h2>
+      </div>
 
-          <!-- Authentic Real-Color Social Media Icons with Smooth Hover Bounce -->
-          <div class="footer-social-icons">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn social-linkedin" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn social-x" aria-label="X / Twitter">
-              <i class="fa-brands fa-x-twitter"></i>
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn social-facebook" aria-label="Facebook">
-              <i class="fa-brands fa-facebook-f"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn social-instagram" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team" target="_blank" rel="noopener noreferrer" class="social-btn social-whatsapp" aria-label="WhatsApp">
-              <i class="fa-brands fa-whatsapp"></i>
-            </a>
+      <div class="blogs-grid-3">
+        
+        <article class="blog-post-card img-flash-hover">
+          <div class="blog-media-wrap">
+            <img src="assest/images/port_container_decantation.jpg" alt="Demurrage Shield Article">
+            <div class="blog-date-badge">NOV 2026</div>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-category">Port Demurrage</span>
+            <h3 class="blog-title"><a href="#blogs">Eliminating Port Demurrage: The 24-Hour Decantation Mandate at Mundra &amp; Kandla</a></h3>
+            <p class="blog-excerpt">Proactive shipping line coordination and off-dock staging prevent multimillion-dollar penalties.</p>
+          </div>
+        </article>
+
+        <article class="blog-post-card img-flash-hover">
+          <div class="blog-media-wrap">
+            <img src="assest/images/hero_supply_chain.jpg" alt="Laydown Yard Twins">
+            <div class="blog-date-badge">OCT 2026</div>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-category">Laydown Technology</span>
+            <h3 class="blog-title"><a href="#blogs">Sub-Meter Laydown Geotagging: Managing 1,000+ Acre Solar &amp; Power Corridors</a></h3>
+            <p class="blog-excerpt">Using GPS spatial indexing to eradicate misplaced inventory and accelerate commissioning.</p>
+          </div>
+        </article>
+
+        <article class="blog-post-card img-flash-hover">
+          <div class="blog-media-wrap">
+            <img src="assest/images/mechanized_crane_rigging.jpg" alt="SAP S/4HANA Reconciliation">
+            <div class="blog-date-badge">SEP 2026</div>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-category">Digital Twin</span>
+            <h3 class="blog-title"><a href="#blogs">Zero-Variance Audits: Synchronizing On-Site MIGO Receipts Directly with S/4HANA</a></h3>
+            <p class="blog-excerpt">Bridging the critical blindspot between physical gate passes and enterprise ERP.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. UPFRONTS DARK FOOTER (#0e2f3e)
+       ========================================================================== -->
+  <footer class="upfronts-footer" id="siteFooter">
+    <div class="upfronts-container">
+      
+      <div class="footer-grid-4">
+        
+        <div class="footer-brand-col">
+          <a href="index.html" class="footer-brand-logo">
+            <img src="assest/images/thin_margin_logo_white.png" alt="Thin Margin Logo" onerror="this.src='assest/images/thin_margin_logo.png'">
+          </a>
+          <p class="footer-desc-text">
+            The Thin Margin provides institutional-grade Material Management, Laydown Yard Stewardship, and Port Demurrage Shields for large-scale infrastructure projects across India and abroad.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-circle linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-circle twitter" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-circle facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-circle instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://wa.me/919558035477" target="_blank" rel="noopener noreferrer" class="social-circle whatsapp" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
 
-        <!-- Col 2: Core Capabilities -->
-        <div class="footer-col-links">
-          <h4 class="footer-heading">8 Core Capabilities</h4>
-          <ul class="footer-links-list">
+        <div class="footer-col">
+          <h4 class="footer-title">8 Core Services</h4>
+          <ul class="footer-links">
             <li><a href="#services">Warehouse &amp; Stores Management</a></li>
             <li><a href="#services">Material &amp; Inventory Management</a></li>
             <li><a href="#services">Logistics &amp; Supply Chain</a></li>
@@ -1092,24 +648,21 @@
           </ul>
         </div>
 
-        <!-- Col 3: Navigation -->
-        <div class="footer-col-links">
-          <h4 class="footer-heading">Navigation</h4>
-          <ul class="footer-links-list">
+        <div class="footer-col">
+          <h4 class="footer-title">Quick Links</h4>
+          <ul class="footer-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#executive-intro">Corporate Genesis</a></li>
-            <li><a href="#about">About Thin Margin</a></li>
-            <li><a href="#workflow">Execution Methodology</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#why-choose-us">Why Choose Us</a></li>
             <li><a href="#clients">Our Clients</a></li>
-            <li><a href="#career">Careers</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#blogs">Knowledge Base</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Contact & Operations Corridors -->
-        <div class="footer-col-contact">
-          <h4 class="footer-heading">Contact &amp; Dispatch</h4>
+        <div class="footer-col">
+          <h4 class="footer-title">Contact &amp; Dispatch</h4>
           <div class="footer-contact-item">
             <i class="fa-solid fa-location-dot"></i>
             <span>Headquarters &amp; Maritime Corridors: Mundra &bull; Kandla &bull; Ahmedabad &bull; Nhava Sheva</span>
@@ -1122,27 +675,18 @@
             <i class="fa-solid fa-envelope"></i>
             <span>info@thinmargin.com</span>
           </div>
-          <div class="footer-contact-item">
-            <i class="fa-solid fa-certificate"></i>
-            <span>ISO 9001:2015 &amp; ISO 45001:2018 Certified</span>
-          </div>
-
-          <div style="margin-top: 20px;">
-            <a href="#contact" class="btn-services open-consult-modal" style="width: 100%; justify-content: center;">
-              <span class="btn-services-text">Schedule Site Strategy Audit</span>
-              <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          <div style="margin-top: 18px;">
+            <a href="#contact" class="btn-swipe open-consult-modal" style="width: 100%; text-align: center;">
+              <span>SCHEDULE SITE AUDIT</span>
             </a>
           </div>
         </div>
 
       </div>
 
-      <!-- Footer Bottom Bar (No statutory compliance link) -->
-      <div class="footer-bottom-bar">
-        <div>
-          &copy; 2026 <strong>Thin Margin</strong>. All Rights Reserved. Engineered for Capital Infrastructure.
-        </div>
-        <div class="footer-legal-links">
+      <div class="footer-bottom-row">
+        <div>&copy; 2026 <strong>Thin Margin</strong>. All Rights Reserved. Engineered for Capital Infrastructure.</div>
+        <div class="footer-legal">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Custody</a>
         </div>
@@ -1152,16 +696,14 @@
   </footer>
 
   <!-- ==========================================================================
-       14. STRATEGIC CONSULTATION MODAL (DEMURRAGE SHIELD AUDIT)
+       11. STRATEGIC CONSULTATION MODAL
        ========================================================================== -->
   <div class="consult-modal-backdrop" id="consultModal">
     <div class="consult-modal-container">
       <button type="button" class="consult-modal-close" id="closeConsultModal" aria-label="Close modal">&times;</button>
       
       <div class="consult-modal-header">
-        <div class="intro-tag-pill" style="margin-bottom: 12px;">
-          <span>SITE STRATEGY CONSULTATION</span>
-        </div>
+        <span class="section-kicker-pill" style="margin-bottom: 8px;">SITE STRATEGY CONSULTATION</span>
         <h3 class="consult-modal-title">Request Demurrage Shield Audit</h3>
         <p class="consult-modal-sub">
           Connect with our techno-commercial leadership to eliminate container detention fees and optimize laydown operations.
@@ -1207,16 +749,15 @@
           <label for="consultNotes">Project Scope / Volume / Location</label>
           <textarea id="consultNotes" name="notes" rows="3" placeholder="Provide details on project volume, laydown acreage, or port container arrival schedules..."></textarea>
         </div>
-        <button type="submit" class="btn-services" style="width: 100%; justify-content: center; height: 50px;">
-          <span class="btn-services-text">Submit Strategy Request</span>
-          <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+        <button type="submit" class="btn-swipe" style="width: 100%;">
+          <span>SUBMIT STRATEGY REQUEST</span>
         </button>
       </form>
     </div>
   </div>
 
   <!-- ==========================================================================
-       15. PERFECT ZERO-FLICKER RIGHT-EDGE STICKY ACTION TABS
+       12. ZERO-FLICKER RIGHT-EDGE STICKY ACTION TABS
        ========================================================================== -->
   <div class="sticky-side-bar" id="stickySideBar">
     <button type="button" class="side-tab-btn side-tab-enquiry open-consult-modal" data-service-default="Service Enquiry" title="Service Enquiry">
@@ -1230,7 +771,7 @@
   </div>
 
   <!-- ==========================================================================
-       16. CLEAN STANDALONE FLOATING WHATSAPP BUTTON (NO BUBBLE, NO BOX ON HOVER)
+       13. CLEAN STANDALONE FLOATING WHATSAPP BUTTON
        ========================================================================== -->
   <div class="floating-whatsapp-wrap" id="whatsappWrap">
     <a href="https://wa.me/919558035477?text=Hello%20Thin%20Margin%20Team,%20I%20would%20like%20to%20enquire%20about%20your%20services." 
@@ -1245,6 +786,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=8.0"></script>
+  <script src="assest/js/main.js?v=11.0"></script>
 </body>
 </html>
