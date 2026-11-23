@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const typingElement = document.getElementById('heroTypingText');
   const phrases = [
-    'Every Capital Asset',
-    'Zero Demurrage Yield',
-    'Institutional Yard Custody',
-    'Turnkey Logistics Velocity'
+    'Every Asset',
+    'Zero Demurrage',
+    'Yard Custody',
+    'Supply Velocity'
   ];
 
   let phraseIndex = 0;
