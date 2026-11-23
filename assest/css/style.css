@@ -26,7 +26,7 @@
   --color-text-light: #9ba6b5;      /* Subtext */
   
   /* Unique Stylish Typography: Syne (Titles) & Plus Jakarta Sans (Body) */
-  --font-heading: 'Syne', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
   --font-body: 'Plus Jakarta Sans', sans-serif;
   
   --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -2068,4 +2068,94 @@ button {
   .hero-pagination-dock {
     display: none;
   }
+}
+
+
+/* --- FULL WEBSITE CORPORATE & BUSINESS ANIMATIONS --- */
+
+/* Smooth Heading Underline Accent Animation */
+.section-heading-large {
+  position: relative;
+  transition: transform 0.4s ease;
+}
+
+/* Staggered Delay on Grid Cards for Flowing Entry Animation */
+.services-cards-grid .service-card:nth-child(1) { transition-delay: 0.05s; }
+.services-cards-grid .service-card:nth-child(2) { transition-delay: 0.12s; }
+.services-cards-grid .service-card:nth-child(3) { transition-delay: 0.19s; }
+.services-cards-grid .service-card:nth-child(4) { transition-delay: 0.26s; }
+.services-cards-grid .service-card:nth-child(5) { transition-delay: 0.33s; }
+.services-cards-grid .service-card:nth-child(6) { transition-delay: 0.40s; }
+.services-cards-grid .service-card:nth-child(7) { transition-delay: 0.47s; }
+.services-cards-grid .service-card:nth-child(8) { transition-delay: 0.54s; }
+
+.workflow-steps-grid .workflow-step-card:nth-child(1) { transition-delay: 0.08s; }
+.workflow-steps-grid .workflow-step-card:nth-child(2) { transition-delay: 0.18s; }
+.workflow-steps-grid .workflow-step-card:nth-child(3) { transition-delay: 0.28s; }
+.workflow-steps-grid .workflow-step-card:nth-child(4) { transition-delay: 0.38s; }
+
+.blogs-grid-3 .blog-card:nth-child(1) { transition-delay: 0.08s; }
+.blogs-grid-3 .blog-card:nth-child(2) { transition-delay: 0.18s; }
+.blogs-grid-3 .blog-card:nth-child(3) { transition-delay: 0.28s; }
+
+.upfronts-counters-row .counter-box:nth-child(1) { transition-delay: 0.05s; }
+.upfronts-counters-row .counter-box:nth-child(2) { transition-delay: 0.15s; }
+.upfronts-counters-row .counter-box:nth-child(3) { transition-delay: 0.25s; }
+.upfronts-counters-row .counter-box:nth-child(4) { transition-delay: 0.35s; }
+
+/* Interactive Hover Lift & Glow on Cards Across Sections */
+.genesis-narrative-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(238, 33, 48, 0.15);
+  border-left-color: var(--color-accent);
+  transition: var(--transition);
+}
+
+.about-feature-item {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.about-feature-item:hover {
+  transform: translateX(6px);
+  background: rgba(238, 33, 48, 0.04);
+}
+
+.why-feature-row {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  padding: 18px 14px !important;
+  border-radius: 8px;
+}
+
+.why-feature-row:hover {
+  transform: translateX(8px);
+  background: rgba(238, 33, 48, 0.03);
+}
+
+/* Service Card Hover Micro-Interaction */
+.service-card:hover .card-title {
+  color: #ffffff;
+  transform: translateX(4px);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover .card-divider-line {
+  background: var(--color-accent);
+  transition: background 0.35s ease;
+}
+
+/* Workflow Step Card Step Number Glow on Hover */
+.workflow-step-card:hover .step-num-badge {
+  transform: scale(1.1);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Partner Logo Smooth Hover Float */
+.partner-item {
+  transition: transform 0.35s ease;
+}
+
+.partner-item:hover {
+  transform: translateY(-6px);
 }

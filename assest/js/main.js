@@ -130,7 +130,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   revealElements.forEach((el) => {
-    revealObserver.observe(el);
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      el.classList.add('revealed');
+    } else {
+      revealObserver.observe(el);
+    }
   });
 
   // ==========================================================================
