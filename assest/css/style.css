@@ -188,6 +188,33 @@ button {
   transform: translateX(2px) rotate(-15deg);
 }
 
+/* Dual Hero Action Buttons: Symmetrical Interactive Contrast Swipe */
+.btn-hero-primary {
+  background: var(--color-accent) !important;
+  color: #ffffff !important;
+  border: 1.5px solid transparent !important;
+  border-radius: 30px;
+}
+
+.btn-hero-primary .btn-circle-badge {
+  background: #0c0e12;
+  color: #ffffff;
+}
+
+.btn-hero-primary::before {
+  background: #0c0e12 !important;
+}
+
+.btn-hero-primary:hover {
+  border-color: #0c0e12 !important;
+}
+
+.btn-hero-primary:hover .btn-circle-badge {
+  background: var(--color-accent) !important;
+  color: #ffffff !important;
+  transform: translateX(2px) rotate(-15deg);
+}
+
 /* Secondary Button: Solid Obsidian Black with Crisp Red Border */
 .btn-hero-secondary {
   background: #0c0e12 !important;
@@ -210,7 +237,9 @@ button {
 }
 
 .btn-hero-secondary:hover .btn-circle-badge {
-  background: #0c0e12;
+  background: #0c0e12 !important;
+  color: #ffffff !important;
+  transform: translateX(2px) rotate(-15deg);
 }
 
 /* Compact Nav CTA Button */
@@ -844,7 +873,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 26px;
   flex-wrap: wrap;
 }
 
@@ -2143,22 +2172,34 @@ button {
   border-radius: 50%;
   border: 1px solid #e2e8f0;
   background: #f8fafc;
-  color: #4a5568;
-  font-size: 20px;
+  color: #64748b;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  line-height: 1;
-  transition: all 0.2s ease;
+  padding: 0;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   margin-left: auto;
+}
+
+.side-drawer-close i,
+.consult-modal-close i {
+  font-size: 14px;
+  line-height: 1;
+  transition: transform 0.25s ease;
 }
 
 .side-drawer-close:hover,
 .consult-modal-close:hover {
-  background: var(--color-accent);
-  color: #ffffff;
-  border-color: var(--color-accent);
+  background: #fee2e2;
+  color: var(--color-accent);
+  border-color: #fca5a5;
+  transform: scale(1.08);
+}
+
+.side-drawer-close:hover i,
+.consult-modal-close:hover i {
   transform: rotate(90deg);
 }
 
