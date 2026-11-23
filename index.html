@@ -13,13 +13,13 @@
   <!-- Google Fonts: Syne (Unique, Stylish, High-Impact Headlines) & Plus Jakarta Sans (Executive Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Montserrat:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Allerta+Stencil&family=Big+Shoulders+Stencil+Display:wght@700;800;900&family=Caveat:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=Montserrat:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Saira+Stencil+One&family=Sirin+Stencil&display=swap" rel="stylesheet">
 
   <!-- Font Awesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=14.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=15.0">
 </head>
 <body class="tm-body">
 
@@ -59,7 +59,7 @@
       
       <!-- Thin Margin Brand Logo -->
       <a href="index.html" class="tm-logo" aria-label="Thin Margin Home">
-        <img src="assest/images/thin_margin_logo_white.png" alt="Thin Margin Logo" class="brand-logo-img" onerror="this.src='assest/images/thin_margin_logo.png'">
+        <img src="assest/images/thin_margin_logo_tight.png" alt="Thin Margin Logo" class="brand-logo-img" onerror="this.src='assest/images/thin_margin_logo.png'">
       </a>
 
       <!-- Desktop Navigation Menu -->
@@ -158,11 +158,8 @@
 
       <!-- Right Header Actions (Search & Free Quote with Red & Black Swipe Effect) -->
       <div class="header-actions">
-        <button type="button" class="header-search-btn open-consult-modal" aria-label="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
         <a href="#contact" class="btn-swipe open-consult-modal">
-          <span>FREE QUOTE</span>
+          <span>FREE QUOTE</span><i class="fa-solid fa-bolt btn-icon-arrow"></i>
         </a>
         <button type="button" class="mobile-nav-toggle" id="mobileToggle" aria-label="Toggle navigation">
           <span></span>
@@ -200,10 +197,12 @@
         <!-- Headline with Typescript / Typewriter Animation -->
         <h1 class="hero-main-title reveal-fade-up">
           Where Margins Are Thin,<br>
-          <span class="text-accent">Precision Defines</span> 
-          <span class="typing-text-wrap">
-            <span class="typing-text" id="heroTypingText">Every Capital Asset</span>
-            <span class="typing-cursor">|</span>
+          <span class="hero-headline-line2">
+            <span class="text-accent">Precision Defines</span> 
+            <span class="typing-text-wrap">
+              <span class="typing-text" id="heroTypingText">Every Capital Asset</span>
+              <span class="typing-cursor">|</span>
+            </span>
           </span>
         </h1>
         
@@ -214,10 +213,10 @@
         <!-- CTA Buttons with Slide & Swipe Hover Animation -->
         <div class="hero-btn-row reveal-fade-up">
           <a href="#services" class="btn-swipe btn-hero-primary">
-            <span>EXPLORE 8 CORE SERVICES</span>
+            <span>EXPLORE 8 CORE SERVICES</span><i class="fa-solid fa-arrow-right-long btn-icon-arrow"></i>
           </a>
           <a href="#contact" class="btn-swipe btn-hero-secondary open-consult-modal">
-            <span>BOOK STRATEGY CONSULTATION</span>
+            <span>BOOK STRATEGY CONSULTATION</span><i class="fa-solid fa-calendar-check btn-icon-arrow"></i>
           </a>
         </div>
 
@@ -925,7 +924,7 @@
         
         <div class="footer-brand-col">
           <a href="index.html" class="footer-brand-logo">
-            <img src="assest/images/thin_margin_logo_white.png" alt="Thin Margin Logo" onerror="this.src='assest/images/thin_margin_logo.png'">
+            <img src="assest/images/thin_margin_logo_white_tight.png" alt="Thin Margin Logo" onerror="this.src='assest/images/thin_margin_logo_white.png'">
           </a>
           <p class="footer-desc-text">
             The Thin Margin provides institutional-grade Material Management, Laydown Yard Stewardship, and Port Demurrage Shields for large-scale infrastructure projects across India and abroad.
@@ -1070,9 +1069,9 @@
       <i class="fa-solid fa-clipboard-list"></i>
       <span>Service Enquiry</span>
     </button>
-    <button type="button" class="side-tab-btn side-tab-consult open-consult-modal" data-service-default="Free Consultation" title="Free Consultation">
-      <i class="fa-solid fa-comments"></i>
-      <span>Free Consultation</span>
+    <button type="button" class="side-tab-btn side-tab-consult open-consult-modal" data-service-default="Service Expert" title="Service Expert">
+      <i class="fa-solid fa-user-tie"></i>
+      <span>Service Expert</span>
     </button>
   </div>
 
@@ -1092,6 +1091,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=14.0"></script>
+  <script src="assest/js/main.js?v=15.0"></script>
 </body>
 </html>

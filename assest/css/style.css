@@ -29,6 +29,7 @@
   --font-heading: 'Manrope', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-cursive: 'Caveat', 'Alex Brush', cursive;
+  --font-number: 'Big Shoulders Stencil Display', 'Saira Stencil One', 'Sirin Stencil', 'Allerta Stencil', sans-serif;
   
   --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: all 0.22s ease;
@@ -86,9 +87,9 @@ button {
 
 .tm-container {
   width: 100%;
-  max-width: 1260px;
+  max-width: 1320px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 26px;
 }
 
 .text-accent {
@@ -105,66 +106,77 @@ button {
    F) Scroll Reveal Section & Card Transitions
    ========================================================================== */
 
-/* A) Button Slide & Swipe Hover Animation */
+
+/* ==========================================================================
+   UNIQUE BESPOKE INDUSTRIAL BUTTON ENGINE (Precision Chamfer & Dual-Tone Depth)
+   ========================================================================== */
 .btn-swipe {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 13px 32px;
+  gap: 12px;
+  padding: 14px 34px;
   font-family: var(--font-heading);
   font-size: 13.5px;
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  border-radius: 4px;
   color: #ffffff !important;
-  background-color: var(--color-accent);
-  overflow: hidden;
-  z-index: 1;
-  transition: color 0.4s ease, box-shadow 0.35s ease, transform 0.25s ease;
-  cursor: pointer;
+  background: #ee2130;
   border: none;
-  text-align: center;
+  /* Precision Angled Chamfer Corners */
+  clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
+  box-shadow: 0 6px 20px rgba(238, 33, 48, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  z-index: 1;
 }
 
 .btn-swipe::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--color-dark);
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  inset: 0;
+  background: #0c0e12;
+  transform: translateX(-101%);
+  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: -1;
 }
 
-.btn-swipe:hover::before {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
 .btn-swipe:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px var(--color-accent-glow);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(12, 14, 18, 0.45);
 }
 
-.btn-swipe.btn-hero-secondary {
-  background-color: transparent;
-  border: 1.5px solid rgba(255, 255, 255, 0.45);
+.btn-swipe:hover::before {
+  transform: translateX(0);
 }
 
-.btn-swipe.btn-hero-secondary::before {
-  background-color: var(--color-accent);
+.btn-icon-arrow {
+  font-size: 13px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.btn-swipe.btn-hero-secondary:hover {
-  border-color: var(--color-accent);
+.btn-swipe:hover .btn-icon-arrow {
+  transform: translateX(6px);
 }
+
+/* Secondary Hero Button: Obsidian Black Base with Radiant Red Bevel Accent */
+.btn-hero-secondary {
+  background: #0c0e12 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 0 1.5px rgba(238, 33, 48, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-hero-secondary::before {
+  background: #ee2130 !important;
+}
+
+.btn-hero-secondary:hover {
+  box-shadow: 0 0 0 1.5px #ee2130, 0 10px 28px rgba(238, 33, 48, 0.5) !important;
+}
+
 
 /* B) Image Diagonal Light Flash / Sheen Sweep Animation */
 .img-flash-hover {
@@ -320,12 +332,13 @@ button {
    4. TOPBAR (RED & BLACK)
    ========================================================================== */
 .tm-topbar {
-  background-color: var(--color-dark);
-  color: #c4cdd8;
-  font-size: 13px;
-  font-weight: 500;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  color: #495057;
+  font-size: 12.5px;
+  font-weight: 600;
   padding: 8px 0;
+  transition: var(--transition-fast);
 }
 
 .topbar-flex {
@@ -344,9 +357,10 @@ button {
 }
 
 .topbar-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
+  color: #495057;
 }
 
 .topbar-item i {
@@ -356,8 +370,13 @@ button {
 .topbar-link {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: #c4cdd8;
+  gap: 6px;
+  color: #495057;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+.topbar-link:hover {
+  color: var(--color-accent);
 }
 
 .topbar-link:hover {
@@ -376,16 +395,17 @@ button {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--color-dark-surface);
-  border-bottom: 1px solid var(--color-dark-border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
   z-index: 1000;
   transition: var(--transition);
 }
 
 .tm-header.scrolled {
-  background-color: var(--color-dark);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
+  background-color: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
 }
 
 .header-flex {
@@ -398,14 +418,20 @@ button {
 }
 
 .tm-logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1;
 }
 
 .brand-logo-img {
   height: 44px;
   width: auto;
   object-fit: contain;
+  display: block;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .tm-nav {
@@ -430,7 +456,7 @@ button {
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 700;
-  color: #ffffff !important;
+  color: #111317 !important;
   letter-spacing: 0.6px;
   padding: 8px 0;
   transition: color 0.2s ease;
@@ -443,11 +469,14 @@ button {
 
 .nav-arrow {
   font-size: 10px;
-  transition: transform 0.25s ease;
+  color: #64748b;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
 .nav-item.has-dropdown:hover .nav-arrow {
-  transform: rotate(180deg);
+  font-size: 10px;
+  color: #64748b;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
 /* 8 Core Capabilities Mega Dropdown */
@@ -456,35 +485,53 @@ button {
   top: 100%;
   left: 0;
   width: 580px;
-  background: var(--color-dark-surface);
-  border-radius: 8px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
-  border: 1px solid var(--color-dark-border);
-  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  padding: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
   opacity: 0;
   visibility: hidden;
   transform: translateY(12px);
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-  z-index: 1010;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
 }
 
 .nav-item.has-dropdown:hover .tm-dropdown-panel {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 580px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 100;
 }
 
 .dropdown-item {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
   padding: 10px 12px;
-  border-radius: 6px;
-  background: transparent;
-  transition: var(--transition-fast);
+  border-radius: 8px;
+  background: transparent !important;
+  transition: transform 0.2s ease;
+}
+.dropdown-item:hover {
+  background: transparent !important;
+  transform: translateX(4px);
 }
 
 .dropdown-item:hover {
@@ -492,17 +539,25 @@ button {
 }
 
 .dropdown-item i {
-  font-size: 16px;
-  color: var(--color-accent);
-  width: 36px;
-  height: 36px;
-  border-radius: 6px;
-  background: rgba(238, 33, 48, 0.12);
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #f4f6fa;
+  color: #0c0e12;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 17px;
   flex-shrink: 0;
-  transition: var(--transition-fast);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dropdown-item:hover i {
+  background: #ee2130 !important;
+  color: #ffffff !important;
+  border-color: #0c0e12 !important;
+  box-shadow: 0 6px 16px rgba(238, 33, 48, 0.4) !important;
+  transform: scale(1.08) rotate(-4deg);
 }
 
 .dropdown-item:hover i {
@@ -512,14 +567,19 @@ button {
 
 .dropdown-title {
   font-family: var(--font-heading);
-  font-size: 13.5px;
+  font-size: 13.8px;
   font-weight: 700;
-  color: #ffffff;
+  color: #111317 !important;
+  transition: color 0.2s ease;
+}
+.dropdown-item:hover .dropdown-title {
+  color: #ee2130 !important;
 }
 
 .dropdown-sub {
-  font-size: 11.5px;
-  color: var(--color-text-light);
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
 }
 
 .header-actions {
@@ -610,9 +670,9 @@ button {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-    rgba(12, 14, 18, 0.88) 0%,
-    rgba(17, 19, 23, 0.72) 50%,
-    rgba(12, 14, 18, 0.94) 100%);
+    rgba(12, 14, 18, 0.62) 0%,
+    rgba(20, 24, 33, 0.48) 50%,
+    rgba(12, 14, 18, 0.70) 100%);
   z-index: 2;
 }
 
@@ -622,7 +682,7 @@ button {
 }
 
 .hero-center-content {
-  max-width: 940px;
+  max-width: 1160px;
   margin: 0 auto;
   text-align: center;
 }
@@ -661,6 +721,9 @@ button {
 }
 
 .hero-main-title {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
   font-family: var(--font-heading);
   font-size: clamp(2.1rem, 3.8vw, 3.35rem);
   font-weight: 800;
@@ -701,32 +764,42 @@ button {
 /* Hero Vertical Pagination Dock */
 .hero-pagination-dock {
   position: absolute;
-  right: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(17, 19, 23, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 30px;
-  padding: 16px 10px;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  top: auto;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 14px;
-  z-index: 50;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  gap: 12px;
+  background: rgba(12, 14, 18, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 8px 18px;
+  border-radius: 30px;
+  z-index: 10;
 }
 
 .dock-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+  width: 28px;
+  height: 6px;
+  border-radius: 4px;
   background: rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  position: relative;
   border: none;
+  cursor: pointer;
   padding: 0;
-  transition: var(--transition-fast);
+  transition: all 0.3s ease;
+  position: relative;
+}
+.dock-dot:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+.dock-dot.active {
+  width: 46px;
+  background: var(--color-accent);
+  box-shadow: 0 0 12px rgba(238, 33, 48, 0.7);
 }
 
 .dock-dot.active {
@@ -1842,25 +1915,45 @@ button {
   z-index: 1050;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .side-tab-btn {
-  display: inline-flex !important;
+  display: flex !important;
   align-items: center !important;
   gap: 10px !important;
-  padding: 12px 18px 12px 16px !important;
+  padding: 11px 16px 11px 14px !important;
   border-top-left-radius: 8px !important;
   border-bottom-left-radius: 8px !important;
   border: none !important;
   font-family: var(--font-heading) !important;
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
   white-space: nowrap !important;
-  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.25) !important;
   cursor: pointer !important;
-  transform: translateX(calc(100% - 46px)) !important;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  transform: translateX(0) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+.side-tab-btn:hover {
+  transform: translateX(-6px) !important;
+  box-shadow: -8px 8px 24px rgba(0, 0, 0, 0.35) !important;
+}
+.side-tab-btn i {
+  font-size: 15px !important;
+  flex-shrink: 0 !important;
+}
+.side-tab-btn span {
+  display: inline-block !important;
+  color: #ffffff !important;
+}
+.side-tab-enquiry {
+  background: var(--color-accent) !important;
+}
+.side-tab-consult {
+  background: #0c0e12 !important;
+  border-left: 3px solid var(--color-accent) !important;
 }
 
 .side-tab-btn:hover {
@@ -2095,8 +2188,24 @@ button {
     justify-content: center;
   }
   .hero-pagination-dock {
-    display: none;
-  }
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  right: auto;
+  top: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: rgba(12, 14, 18, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 8px 18px;
+  border-radius: 30px;
+  z-index: 10;
+}
 }
 
 
@@ -2193,6 +2302,9 @@ button {
 /* Responsive Standard Typography & Mobile Optimization */
 @media screen and (max-width: 768px) {
   .hero-main-title {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
     font-size: 1.9rem !important;
     line-height: 1.25 !important;
   }
@@ -2216,6 +2328,9 @@ button {
 
 @media screen and (max-width: 480px) {
   .hero-main-title {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
     font-size: 1.68rem !important;
   }
   .section-heading-large {
@@ -2231,4 +2346,39 @@ button {
   .hero-btn-row .btn-swipe {
     width: 100%;
   }
+}
+
+
+.hero-headline-line2 {
+  display: inline-block;
+}
+@media screen and (min-width: 992px) {
+  .hero-headline-line2 {
+    white-space: nowrap;
+  }
+}
+
+
+/* Stencil Numbers Engine (Crescent / Curved Slices Aesthetic) */
+.counter-number-val {
+  font-family: var(--font-number) !important;
+  font-size: clamp(2.8rem, 4.2vw, 3.8rem) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: 2px !important;
+  display: inline-block;
+  position: relative;
+}
+
+.step-badge {
+  font-family: var(--font-number) !important;
+  font-size: 2.2rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 1px !important;
+}
+
+.blog-date-badge {
+  font-family: var(--font-number) !important;
+  font-weight: 900 !important;
+  letter-spacing: 1.5px !important;
 }
