@@ -423,18 +423,37 @@ button {
   gap: 6px;
   color: #495057;
   font-weight: 600;
-  transition: color 0.2s ease;
-}
-.topbar-link:hover {
-  color: var(--color-accent);
+  transition: color 0.22s ease, transform 0.2s ease;
 }
 
 .topbar-link:hover {
-  color: #ffffff;
+  color: var(--color-accent) !important; /* Bold Brand Red on hover */
+  transform: translateY(-1px);
+}
+
+.topbar-link:hover span {
+  color: var(--color-accent) !important;
 }
 
 .topbar-link i {
   color: var(--color-accent);
+  transition: transform 0.22s ease;
+}
+
+.topbar-link:hover i {
+  transform: scale(1.1);
+}
+
+.topbar-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #495057;
+  transition: color 0.22s ease;
+}
+
+.topbar-item:hover {
+  color: #111317; /* Deep Black on hover */
 }
 
 /* ==========================================================================
@@ -832,14 +851,14 @@ button {
 /* Hero Minimal Micro-Dots Pagination Dock */
 .hero-pagination-dock {
   position: absolute;
-  bottom: 14px;
+  bottom: 18px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 7px;
   background: transparent !important;
   padding: 0 !important;
   border: none !important;
@@ -847,25 +866,25 @@ button {
 }
 
 .dock-dot {
-  width: 4px !important;
-  height: 4px !important;
+  width: 7px !important;
+  height: 7px !important;
   border-radius: 50% !important;
   background: rgba(255, 255, 255, 0.45) !important;
   border: none !important;
   cursor: pointer !important;
   padding: 0 !important;
-  transition: all 0.22s ease !important;
+  transition: all 0.25s ease !important;
 }
 
 .dock-dot:hover {
   background: rgba(255, 255, 255, 0.95) !important;
-  transform: scale(1.2) !important;
+  transform: scale(1.15) !important;
 }
 
 .dock-dot.active {
-  width: 6px !important;
-  height: 6px !important;
-  border-radius: 50% !important;
+  width: 18px !important;
+  height: 7px !important;
+  border-radius: 4px !important;
   background: var(--color-accent) !important;
   box-shadow: none !important; /* Zero glow */
 }
