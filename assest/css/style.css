@@ -618,29 +618,29 @@ button {
   transform: translateX(4px);
 }
 
-/* Default / Inactive State Icon Box: Attractive Light Gradient */
+/* Default / Inactive State Icon Box: Attractive Visible Red-Pearlescent Gradient */
 .dropdown-item i {
   width: 44px;
   height: 44px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #f8fafd 0%, #eef3f9 100%);
-  color: #1e293b;
-  border: 1px solid #dfe6ef;
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f1 40%, #fed7d9 100%) !important;
+  color: var(--color-accent) !important;
+  border: 1.5px solid rgba(238, 33, 48, 0.22) !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
+  font-size: 17px;
   flex-shrink: 0;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 3px 8px rgba(238, 33, 48, 0.08), inset 0 1px 1px #ffffff;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Hover State Icon Box: Vibrant Gradient, Zero Glow Halo */
+/* Hover State Icon Box: Vibrant Crimson Gradient, Zero Glow Halo */
 .dropdown-item:hover i {
   background: linear-gradient(135deg, #ff2e3e 0%, #ee2130 50%, #c81423 100%) !important;
   color: #ffffff !important;
   border-color: #0c0e12 !important;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15) !important; /* Clean solid shadow, zero fuzzy glow */
+  box-shadow: 0 6px 14px rgba(238, 33, 48, 0.28) !important;
   transform: scale(1.06) rotate(-3deg);
 }
 
@@ -2072,14 +2072,18 @@ button {
   animation: radarPing 2.2s infinite;
 }
 
-/* Modal / Side Drawer */
+/* Centered Modal Dialog (Enquiry & Free Consultation) */
 .consult-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(12, 14, 18, 0.75);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(12, 14, 18, 0.84);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   z-index: 2000;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -2092,30 +2096,37 @@ button {
   pointer-events: auto !important;
 }
 
+.consult-modal-container,
 .side-drawer-container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  max-width: 480px;
-  height: 100vh;
-  background: #ffffff;
-  box-shadow: -10px 0 45px rgba(0, 0, 0, 0.28);
-  display: flex;
-  flex-direction: column;
-  z-index: 2001;
-  transform: translateX(100%);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  width: 100% !important;
+  max-width: 580px !important;
+  max-height: 90vh !important;
+  height: auto !important;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  z-index: 2001 !important;
+  transform: scale(0.92) translateY(14px) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  overflow: hidden !important;
+  margin: auto !important;
 }
 
+.consult-modal-backdrop.open .consult-modal-container,
 .consult-modal-backdrop.open .side-drawer-container {
-  transform: translateX(0) !important;
+  transform: scale(1) translateY(0) !important;
 }
 
-.side-drawer-header {
-  padding: 18px 24px 14px;
+.side-drawer-header,
+.consult-modal-header {
+  padding: 20px 28px 16px;
   border-bottom: 1px solid #edf2f7;
   display: flex;
   align-items: center;
@@ -2123,7 +2134,8 @@ button {
   background: #ffffff;
 }
 
-.side-drawer-close {
+.side-drawer-close,
+.consult-modal-close {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -2140,64 +2152,72 @@ button {
   margin-left: auto;
 }
 
-.side-drawer-close:hover {
+.side-drawer-close:hover,
+.consult-modal-close:hover {
   background: var(--color-accent);
   color: #ffffff;
   border-color: var(--color-accent);
   transform: rotate(90deg);
 }
 
-/* Switcher Tabs at top of drawer */
-.drawer-tabs-nav {
+/* Switcher Tabs at top of centered modal */
+.drawer-tabs-nav,
+.modal-tabs-nav {
   display: flex;
-  padding: 5px;
+  padding: 6px;
   background: #f1f5f9;
-  border-radius: 8px;
-  margin: 16px 24px 0;
-  gap: 6px;
+  border-radius: 10px;
+  margin: 18px 28px 0;
+  gap: 8px;
 }
 
-.drawer-tab-btn {
+.drawer-tab-btn,
+.modal-tab-btn {
   flex: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 10px 12px;
+  padding: 10px 14px;
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   color: #64748b;
   background: transparent;
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   cursor: pointer;
   transition: all 0.22s ease;
   white-space: nowrap;
 }
 
-.drawer-tab-btn i {
-  font-size: 14px;
+.drawer-tab-btn i,
+.modal-tab-btn i {
+  font-size: 15px;
 }
 
-.drawer-tab-btn.active {
+.drawer-tab-btn.active,
+.modal-tab-btn.active {
   background: #ffffff;
   color: var(--color-accent);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-.side-drawer-body {
+.side-drawer-body,
+.consult-modal-body {
   flex: 1;
-  padding: 20px 24px 28px;
+  padding: 20px 28px 28px;
   overflow-y: auto;
 }
 
-.drawer-tab-pane {
+.drawer-tab-pane,
+.modal-tab-pane {
   display: none;
   animation: fadeInPane 0.25s ease;
 }
 
-.drawer-tab-pane.active {
+.drawer-tab-pane.active,
+.modal-tab-pane.active {
   display: block;
 }
 
@@ -2206,42 +2226,49 @@ button {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.drawer-pane-title {
+.drawer-pane-title,
+.modal-pane-title {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 800;
   color: var(--color-dark);
   margin-bottom: 4px;
 }
 
-.drawer-pane-sub {
-  font-size: 13px;
+.drawer-pane-sub,
+.modal-pane-sub {
+  font-size: 13.5px;
   color: var(--color-text-muted);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
-.side-drawer-form .form-group {
-  margin-bottom: 14px;
+.side-drawer-form .form-group,
+.consult-modal-form .form-group {
+  margin-bottom: 15px;
 }
 
-.side-drawer-form label {
+.side-drawer-form label,
+.consult-modal-form label {
   display: block;
   font-size: 12.5px;
   font-weight: 700;
   color: #1e293b;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
   letter-spacing: 0.2px;
 }
 
 .side-drawer-form input,
 .side-drawer-form textarea,
-.side-drawer-form select {
+.side-drawer-form select,
+.consult-modal-form input,
+.consult-modal-form textarea,
+.consult-modal-form select {
   width: 100%;
-  padding: 10px 14px;
+  padding: 11px 14px;
   background: #f8fafc;
   border: 1.5px solid #e2e8f0;
-  border-radius: 7px;
+  border-radius: 8px;
   font-family: inherit;
   font-size: 13.5px;
   color: var(--color-dark);
@@ -2251,27 +2278,32 @@ button {
 
 .side-drawer-form input:focus,
 .side-drawer-form textarea:focus,
-.side-drawer-form select:focus {
+.side-drawer-form select:focus,
+.consult-modal-form input:focus,
+.consult-modal-form textarea:focus,
+.consult-modal-form select:focus {
   border-color: var(--color-accent);
   background: #ffffff;
   box-shadow: 0 0 0 3px rgba(238, 33, 48, 0.1);
 }
 
-.side-drawer-form .form-row {
+.side-drawer-form .form-row,
+.consult-modal-form .form-row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
-.side-drawer-submit-btn {
+.side-drawer-submit-btn,
+.consult-modal-submit-btn {
   width: 100%;
-  margin-top: 8px;
-  padding: 13px 20px;
+  margin-top: 10px;
+  padding: 13px 22px;
   border-radius: 8px;
   background: var(--color-accent);
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 800;
   letter-spacing: 0.8px;
   border: none;
@@ -2283,7 +2315,8 @@ button {
   gap: 8px;
 }
 
-.side-drawer-submit-btn:hover {
+.side-drawer-submit-btn:hover,
+.consult-modal-submit-btn:hover {
   background: var(--color-accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(238, 33, 48, 0.35);
