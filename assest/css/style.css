@@ -2072,21 +2072,18 @@ button {
   animation: radarPing 2.2s infinite;
 }
 
-/* Modal */
+/* Modal / Side Drawer */
 .consult-modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(12, 14, 18, 0.88);
-  backdrop-filter: blur(8px);
+  background: rgba(12, 14, 18, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
-  padding: 20px;
 }
 
 .consult-modal-backdrop.open {
@@ -2095,60 +2092,201 @@ button {
   pointer-events: auto !important;
 }
 
-.consult-modal-container {
+.side-drawer-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  max-width: 620px;
+  max-width: 480px;
+  height: 100vh;
   background: #ffffff;
-  border-radius: 12px;
-  padding: 36px 32px;
-  position: relative;
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
-  max-height: 90vh;
-  overflow-y: auto;
-  transform: scale(0.92) translateY(18px);
+  box-shadow: -10px 0 45px rgba(0, 0, 0, 0.28);
+  display: flex;
+  flex-direction: column;
+  z-index: 2001;
+  transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
 }
 
-.consult-modal-backdrop.open .consult-modal-container {
-  transform: scale(1) translateY(0) !important;
+.consult-modal-backdrop.open .side-drawer-container {
+  transform: translateX(0) !important;
 }
 
-.consult-modal-close {
-  position: absolute;
-  top: 16px;
-  right: 18px;
+.side-drawer-header {
+  padding: 18px 24px 14px;
+  border-bottom: 1px solid #edf2f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+}
+
+.side-drawer-close {
   width: 36px;
   height: 36px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: #f8fafc;
+  color: #4a5568;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  color: #9ba6b5;
-  background: transparent;
-  border: none;
   cursor: pointer;
   line-height: 1;
-  border-radius: 50%;
-  transition: color 0.2s, background 0.2s;
+  transition: all 0.2s ease;
+  margin-left: auto;
 }
 
-.consult-modal-close:hover {
-  color: var(--color-accent);
+.side-drawer-close:hover {
+  background: var(--color-accent);
+  color: #ffffff;
+  border-color: var(--color-accent);
+  transform: rotate(90deg);
+}
+
+/* Switcher Tabs at top of drawer */
+.drawer-tabs-nav {
+  display: flex;
+  padding: 5px;
   background: #f1f5f9;
+  border-radius: 8px;
+  margin: 16px 24px 0;
+  gap: 6px;
 }
 
-.consult-modal-title {
+.drawer-tab-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
   font-family: var(--font-heading);
-  font-size: 23px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  white-space: nowrap;
+}
+
+.drawer-tab-btn i {
+  font-size: 14px;
+}
+
+.drawer-tab-btn.active {
+  background: #ffffff;
+  color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.side-drawer-body {
+  flex: 1;
+  padding: 20px 24px 28px;
+  overflow-y: auto;
+}
+
+.drawer-tab-pane {
+  display: none;
+  animation: fadeInPane 0.25s ease;
+}
+
+.drawer-tab-pane.active {
+  display: block;
+}
+
+@keyframes fadeInPane {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.drawer-pane-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
   font-weight: 800;
   color: var(--color-dark);
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
-.consult-modal-sub {
-  font-size: 13.5px;
+.drawer-pane-sub {
+  font-size: 13px;
   color: var(--color-text-muted);
-  margin-bottom: 22px;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+.side-drawer-form .form-group {
+  margin-bottom: 14px;
+}
+
+.side-drawer-form label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 5px;
+  letter-spacing: 0.2px;
+}
+
+.side-drawer-form input,
+.side-drawer-form textarea,
+.side-drawer-form select {
+  width: 100%;
+  padding: 10px 14px;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 13.5px;
+  color: var(--color-dark);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+
+.side-drawer-form input:focus,
+.side-drawer-form textarea:focus,
+.side-drawer-form select:focus {
+  border-color: var(--color-accent);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(238, 33, 48, 0.1);
+}
+
+.side-drawer-form .form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.side-drawer-submit-btn {
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px 20px;
+  border-radius: 8px;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.side-drawer-submit-btn:hover {
+  background: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(238, 33, 48, 0.35);
 }
 
 .form-row {

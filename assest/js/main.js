@@ -199,31 +199,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 7. STRATEGIC CONSULTATION MODAL LOGIC
+  // 7. STRATEGIC CONSULTATION & ENQUIRY SIDE DRAWER LOGIC
   // ==========================================================================
   const consultModal = document.getElementById('consultModal');
   const closeConsultModal = document.getElementById('closeConsultModal');
-  const consultForm = document.getElementById('consultForm');
   const openButtons = document.querySelectorAll('.open-consult-modal');
 
-  const openModal = (defaultService) => {
-    if (!consultModal) return;
-    if (defaultService) {
-      const select = document.getElementById('consultService');
-      if (select) {
-        for (let i = 0; i < select.options.length; i++) {
-          if (select.options[i].value.toLowerCase().includes(defaultService.toLowerCase())) {
-            select.selectedIndex = i;
-            break;
-          }
-        }
-      }
+  const tabBtnEnquiry = document.getElementById('tabBtnEnquiry');
+  const tabBtnConsultation = document.getElementById('tabBtnConsultation');
+  const paneEnquiry = document.getElementById('paneEnquiry');
+  const paneConsultation = document.getElementById('paneConsultation');
+
+  const switchDrawerTab = (tabName) => {
+    if (tabName === 'consultation') {
+      tabBtnConsultation?.classList.add('active');
+      tabBtnEnquiry?.classList.remove('active');
+      paneConsultation?.classList.add('active');
+      paneEnquiry?.classList.remove('active');
+    } else {
+      tabBtnEnquiry?.classList.add('active');
+      tabBtnConsultation?.classList.remove('active');
+      paneEnquiry?.classList.add('active');
+      paneConsultation?.classList.remove('active');
     }
+  };
+
+  tabBtnEnquiry?.addEventListener('click', () => switchDrawerTab('enquiry'));
+  tabBtnConsultation?.addEventListener('click', () => switchDrawerTab('consultation'));
+
+  const openDrawer = (tabName) => {
+    if (!consultModal) return;
+    switchDrawerTab(tabName || 'enquiry');
     consultModal.classList.add('open');
     document.body.style.overflow = 'hidden';
   };
 
-  const closeModal = () => {
+  const closeDrawer = () => {
     if (!consultModal) return;
     consultModal.classList.remove('open');
     document.body.style.overflow = '';
@@ -232,41 +243,65 @@ document.addEventListener('DOMContentLoaded', () => {
   openButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const defaultService = btn.getAttribute('data-service-default');
-      openModal(defaultService);
+      const targetTab = btn.getAttribute('data-drawer-tab') || (btn.classList.contains('btn-hero-secondary') ? 'consultation' : 'enquiry');
+      openDrawer(targetTab);
     });
   });
 
   closeConsultModal?.addEventListener('click', () => {
-    closeModal();
+    closeDrawer();
   });
 
   consultModal?.addEventListener('click', (e) => {
     if (e.target === consultModal) {
-      closeModal();
+      closeDrawer();
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && consultModal?.classList.contains('open')) {
-      closeModal();
+      closeDrawer();
     }
   });
 
-  if (consultForm) {
-    consultForm.addEventListener('submit', (e) => {
+  // Handle Enquiry Form Submit
+  const enquiryForm = document.getElementById('enquiryForm');
+  if (enquiryForm) {
+    enquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const submitBtn = consultForm.querySelector('button[type="submit"]');
-      const origText = submitBtn ? submitBtn.innerHTML : '';
+      const submitBtn = enquiryForm.querySelector('button[type="submit"]');
+      const origHtml = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
-        submitBtn.innerHTML = '<span>DISPATCHED! OUR OPERATIONS TEAM WILL CONTACT YOU.</span>';
+        submitBtn.innerHTML = '<span>ENQUIRY RECEIVED! WE WILL CONTACT YOU.</span>';
         submitBtn.style.backgroundColor = '#10b981';
       }
       setTimeout(() => {
-        closeModal();
-        consultForm.reset();
+        closeDrawer();
+        enquiryForm.reset();
         if (submitBtn) {
-          submitBtn.innerHTML = origText;
+          submitBtn.innerHTML = origHtml;
+          submitBtn.style.backgroundColor = '';
+        }
+      }, 2500);
+    });
+  }
+
+  // Handle Free Consultation Form Submit
+  const consultationForm = document.getElementById('consultationForm');
+  if (consultationForm) {
+    consultationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const submitBtn = consultationForm.querySelector('button[type="submit"]');
+      const origHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.innerHTML = '<span>CONSULTATION SCHEDULED! CHECK YOUR EMAIL.</span>';
+        submitBtn.style.backgroundColor = '#10b981';
+      }
+      setTimeout(() => {
+        closeDrawer();
+        consultationForm.reset();
+        if (submitBtn) {
+          submitBtn.innerHTML = origHtml;
           submitBtn.style.backgroundColor = '';
         }
       }, 2500);
