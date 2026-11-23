@@ -69,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   const typingElement = document.getElementById('heroTypingText');
   const phrases = [
-    'Warehouse Custody',
-    'Supply Chain Yield',
-    'Material Stewardship',
-    'Zero Demurrage'
+    'Zero Demurrage',
+    'Warehouse Excellence',
+    'Supply Chain Success',
+    'Material Stewardship'
   ];
 
   let phraseIndex = 0;
