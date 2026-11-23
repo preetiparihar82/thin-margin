@@ -108,29 +108,28 @@ button {
 
 
 /* ==========================================================================
-   UNIQUE BESPOKE INDUSTRIAL BUTTON ENGINE (Precision Chamfer & Dual-Tone Depth)
+   CLEAN EXECUTIVE BUTTON ENGINE (Solid Slide, Modern Radius, NO GLOW)
    ========================================================================== */
 .btn-swipe {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  padding: 14px 34px;
+  gap: 10px;
+  padding: 13px 30px;
   font-family: var(--font-heading);
   font-size: 13.5px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: #ffffff !important;
-  background: #ee2130;
-  border: none;
-  /* Precision Angled Chamfer Corners */
-  clip-path: polygon(12px 0%, 100% 0%, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0% 100%, 0% 12px);
-  box-shadow: 0 6px 20px rgba(238, 33, 48, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  background: var(--color-accent);
+  border: 1.5px solid transparent;
+  border-radius: 5px;
+  box-shadow: none !important; /* Zero glow effect */
   cursor: pointer;
   overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease;
   z-index: 1;
 }
 
@@ -140,13 +139,14 @@ button {
   inset: 0;
   background: #0c0e12;
   transform: translateX(-101%);
-  transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: -1;
+  border-radius: 4px;
 }
 
 .btn-swipe:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(12, 14, 18, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important; /* Clean subtle shadow, no glow */
 }
 
 .btn-swipe:hover::before {
@@ -155,27 +155,31 @@ button {
 
 .btn-icon-arrow {
   font-size: 13px;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.28s ease;
 }
 
 .btn-swipe:hover .btn-icon-arrow {
-  transform: translateX(6px);
+  transform: translateX(5px);
 }
 
-/* Secondary Hero Button: Obsidian Black Base with Radiant Red Bevel Accent */
+/* Secondary Button: Solid Obsidian Black with Crisp Red Border (NO GLOW) */
 .btn-hero-secondary {
   background: #0c0e12 !important;
   color: #ffffff !important;
-  box-shadow: 0 0 0 1.5px rgba(238, 33, 48, 0.6), 0 6px 20px rgba(0, 0, 0, 0.4);
+  border: 1.5px solid var(--color-accent) !important;
+  border-radius: 5px;
+  box-shadow: none !important; /* Zero glow */
 }
 
 .btn-hero-secondary::before {
-  background: #ee2130 !important;
+  background: var(--color-accent) !important;
 }
 
 .btn-hero-secondary:hover {
-  box-shadow: 0 0 0 1.5px #ee2130, 0 10px 28px rgba(238, 33, 48, 0.5) !important;
+  border-color: var(--color-accent) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
 }
+
 
 
 /* B) Image Diagonal Light Flash / Sheen Sweep Animation */
@@ -450,16 +454,32 @@ button {
 }
 
 .nav-link {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   font-family: var(--font-heading);
   font-size: 14px;
   font-weight: 700;
   color: #111317 !important;
   letter-spacing: 0.6px;
   padding: 8px 0;
-  transition: color 0.2s ease;
+  transition: color 0.25s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2.5px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-link:hover,
@@ -482,42 +502,74 @@ button {
 /* 8 Core Capabilities Mega Dropdown */
 .tm-dropdown-panel {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
   width: 580px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
   padding: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(12px);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 100;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  pointer-events: none;
+}
+.tm-dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+.nav-item.has-dropdown:hover .tm-dropdown-panel,
+.nav-item.has-dropdown:focus-within .tm-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .nav-item.has-dropdown:hover .tm-dropdown-panel {
   position: absolute;
-  top: 100%;
+  top: calc(100% + 4px);
   left: 0;
   width: 580px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 10px;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
   padding: 16px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(12px);
-  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 100;
+  transform: translateY(10px);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 1000;
+  pointer-events: none;
+}
+.tm-dropdown-panel::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  width: 100%;
+  height: 16px;
+}
+.nav-item.has-dropdown:hover .tm-dropdown-panel,
+.nav-item.has-dropdown:focus-within .tm-dropdown-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .dropdown-item {
@@ -670,9 +722,9 @@ button {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-    rgba(12, 14, 18, 0.62) 0%,
-    rgba(20, 24, 33, 0.48) 50%,
-    rgba(12, 14, 18, 0.70) 100%);
+    rgba(12, 14, 18, 0.75) 0%,
+    rgba(18, 22, 28, 0.64) 50%,
+    rgba(12, 14, 18, 0.82) 100%);
   z-index: 2;
 }
 
@@ -764,34 +816,42 @@ button {
 /* Hero Vertical Pagination Dock */
 .hero-pagination-dock {
   position: absolute;
-  bottom: 24px;
+  bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
-  right: auto;
-  top: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   background: rgba(12, 14, 18, 0.65);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 8px 18px;
-  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 14px;
+  border-radius: 20px;
   z-index: 10;
 }
 
 .dock-dot {
-  width: 28px;
-  height: 6px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.4);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: all 0.3s ease;
-  position: relative;
+  transition: all 0.28s ease;
+}
+.dock-dot:hover {
+  background: rgba(255, 255, 255, 0.85);
+  transform: scale(1.25);
+}
+.dock-dot.active {
+  width: 22px;
+  height: 8px;
+  border-radius: 6px;
+  background: var(--color-accent);
+  box-shadow: none !important;
 }
 .dock-dot:hover {
   background: rgba(255, 255, 255, 0.85);
@@ -1916,37 +1976,44 @@ button {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  pointer-events: none;
 }
 
 .side-tab-btn {
+  pointer-events: auto;
   display: flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  padding: 11px 16px 11px 14px !important;
+  gap: 12px !important;
+  padding: 12px 18px 12px 14px !important;
   border-top-left-radius: 8px !important;
   border-bottom-left-radius: 8px !important;
   border: none !important;
   font-family: var(--font-heading) !important;
-  font-size: 13px !important;
+  font-size: 13.5px !important;
   font-weight: 700 !important;
   letter-spacing: 0.4px !important;
   white-space: nowrap !important;
-  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.25) !important;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.22) !important;
   cursor: pointer !important;
-  transform: translateX(0) !important;
-  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+  /* Parked on right edge: only icon is visible until hovered */
+  transform: translateX(calc(100% - 48px)) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
 }
 .side-tab-btn:hover {
-  transform: translateX(-6px) !important;
+  /* Slides out completely to display full text properly! */
+  transform: translateX(0) !important;
   box-shadow: -8px 8px 24px rgba(0, 0, 0, 0.35) !important;
 }
 .side-tab-btn i {
-  font-size: 15px !important;
+  font-size: 17px !important;
+  width: 20px !important;
+  text-align: center !important;
   flex-shrink: 0 !important;
 }
 .side-tab-btn span {
   display: inline-block !important;
   color: #ffffff !important;
+  white-space: nowrap !important;
 }
 .side-tab-enquiry {
   background: var(--color-accent) !important;
@@ -2189,21 +2256,19 @@ button {
   }
   .hero-pagination-dock {
   position: absolute;
-  bottom: 24px;
+  bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
-  right: auto;
-  top: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 8px;
   background: rgba(12, 14, 18, 0.65);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 8px 18px;
-  border-radius: 30px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 6px 14px;
+  border-radius: 20px;
   z-index: 10;
 }
 }
