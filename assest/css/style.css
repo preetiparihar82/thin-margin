@@ -923,16 +923,16 @@ button {
 
 .hero-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 2.6vw, 2.35rem); /* Smaller refined font size */
+  font-size: clamp(2.2rem, 3.8vw, 3.15rem); /* Increased properly */
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.2;
   color: #ffffff;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  max-width: 880px; /* Short, compact width */
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
 }
 
 .typing-text-wrap {
@@ -965,7 +965,7 @@ button {
 /* Hero Vertical Pagination Dock */
 .hero-pagination-dock {
   position: absolute;
-  bottom: 20px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -973,32 +973,30 @@ button {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: rgba(12, 14, 18, 0.45);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px 10px;
-  border-radius: 14px;
+  background: transparent;
+  padding: 0;
+  border: none;
   z-index: 10;
 }
 
 .dock-dot {
   width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.45);
   border: none;
   cursor: pointer;
   padding: 0;
   transition: all 0.25s ease;
 }
 .dock-dot:hover {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
   transform: scale(1.2);
 }
 .dock-dot.active {
-  width: 14px;
-  height: 5px;
-  border-radius: 3px;
+  width: 12px;
+  height: 3px;
+  border-radius: 2px;
   background: var(--color-accent);
   box-shadow: none !important;
 }
@@ -2418,7 +2416,7 @@ button {
   }
   .hero-pagination-dock {
   position: absolute;
-  bottom: 20px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -2426,11 +2424,9 @@ button {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  background: rgba(12, 14, 18, 0.45);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 4px 10px;
-  border-radius: 14px;
+  background: transparent;
+  padding: 0;
+  border: none;
   z-index: 10;
 }
 }
@@ -2530,16 +2526,16 @@ button {
 @media screen and (max-width: 768px) {
   .hero-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 2.6vw, 2.35rem); /* Smaller refined font size */
+  font-size: clamp(2.2rem, 3.8vw, 3.15rem); /* Increased properly */
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.2;
   color: #ffffff;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  max-width: 880px; /* Short, compact width */
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
 }
   .section-heading-large {
     font-size: 1.65rem !important;
@@ -2562,16 +2558,16 @@ button {
 @media screen and (max-width: 480px) {
   .hero-main-title {
   font-family: var(--font-heading);
-  font-size: clamp(1.75rem, 2.6vw, 2.35rem); /* Smaller refined font size */
+  font-size: clamp(2.2rem, 3.8vw, 3.15rem); /* Increased properly */
   font-weight: 800;
-  line-height: 1.22;
+  line-height: 1.2;
   color: #ffffff;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  max-width: 880px; /* Short, compact width */
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+  max-width: 1080px;
   margin-left: auto;
   margin-right: auto;
-  text-shadow: 0 3px 16px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
 }
   .section-heading-large {
     font-size: 1.48rem !important;
