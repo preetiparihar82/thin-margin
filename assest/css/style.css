@@ -1969,39 +1969,54 @@ button {
   z-index: 1050;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none;
 }
 
 .side-tab-btn {
-  display: flex !important;
+  pointer-events: auto;
+  position: relative;
+  display: inline-flex !important;
   align-items: center !important;
-  justify-content: center !important;
-  width: 44px !important;
-  height: 44px !important;
-  padding: 0 !important;
+  justify-content: flex-start !important;
+  height: 48px !important;
+  padding: 0 18px 0 14px !important;
   border-top-left-radius: 8px !important;
   border-bottom-left-radius: 8px !important;
   border-top-right-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
   border: none !important;
-  box-shadow: -3px 4px 12px rgba(0, 0, 0, 0.22) !important;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.25) !important;
   cursor: pointer !important;
+  white-space: nowrap !important;
+  transform: translateX(calc(100% - 46px)) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background 0.25s ease !important;
+}
+
+.side-tab-btn:hover,
+.side-tab-btn:focus-visible {
   transform: translateX(0) !important;
-  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
-}
-
-.side-tab-btn span {
-  display: none !important; /* Word will NOT display on hover */
-}
-
-.side-tab-btn:hover {
-  transform: translateX(-4px) !important;
-  box-shadow: -5px 6px 16px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: -8px 8px 24px rgba(0, 0, 0, 0.35) !important;
 }
 
 .side-tab-btn i {
   font-size: 18px !important;
+  width: 20px !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
   color: #ffffff !important;
+}
+
+.side-tab-btn span {
+  display: inline-block !important;
+  color: #ffffff !important;
+  font-family: var(--font-heading) !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  white-space: nowrap !important;
+  padding-left: 10px !important;
 }
 
 .side-tab-enquiry {
@@ -2069,39 +2084,57 @@ button {
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.35s ease, visibility 0.35s;
+  pointer-events: none;
+  transition: opacity 0.32s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.32s;
   padding: 20px;
 }
 
 .consult-modal-backdrop.open {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
 .consult-modal-container {
   width: 100%;
   max-width: 620px;
   background: #ffffff;
-  border-radius: 10px;
-  padding: 36px;
+  border-radius: 12px;
+  padding: 36px 32px;
   position: relative;
   box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55);
   max-height: 90vh;
   overflow-y: auto;
+  transform: scale(0.92) translateY(18px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.consult-modal-backdrop.open .consult-modal-container {
+  transform: scale(1) translateY(0) !important;
 }
 
 .consult-modal-close {
   position: absolute;
   top: 16px;
   right: 18px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 28px;
   color: #9ba6b5;
+  background: transparent;
+  border: none;
   cursor: pointer;
   line-height: 1;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
 }
 
 .consult-modal-close:hover {
   color: var(--color-accent);
+  background: #f1f5f9;
 }
 
 .consult-modal-title {

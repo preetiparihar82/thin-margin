@@ -206,38 +206,50 @@ document.addEventListener('DOMContentLoaded', () => {
   const consultForm = document.getElementById('consultForm');
   const openButtons = document.querySelectorAll('.open-consult-modal');
 
+  const openModal = (defaultService) => {
+    if (!consultModal) return;
+    if (defaultService) {
+      const select = document.getElementById('consultService');
+      if (select) {
+        for (let i = 0; i < select.options.length; i++) {
+          if (select.options[i].value.toLowerCase().includes(defaultService.toLowerCase())) {
+            select.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    }
+    consultModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    if (!consultModal) return;
+    consultModal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
   openButtons.forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const defaultService = btn.getAttribute('data-service-default');
-      if (defaultService && consultModal) {
-        const select = document.getElementById('consultService');
-        if (select) {
-          for (let i = 0; i < select.options.length; i++) {
-            if (select.options[i].value.toLowerCase().includes(defaultService.toLowerCase())) {
-              select.selectedIndex = i;
-              break;
-            }
-          }
-        }
-      }
-      consultModal?.classList.add('open');
+      openModal(defaultService);
     });
   });
 
   closeConsultModal?.addEventListener('click', () => {
-    consultModal?.classList.remove('open');
+    closeModal();
   });
 
   consultModal?.addEventListener('click', (e) => {
     if (e.target === consultModal) {
-      consultModal.classList.remove('open');
+      closeModal();
     }
   });
 
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && consultModal?.classList.contains('open')) {
-      consultModal.classList.remove('open');
+      closeModal();
     }
   });
 
@@ -251,7 +263,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.style.backgroundColor = '#10b981';
       }
       setTimeout(() => {
-        consultModal?.classList.remove('open');
+        closeModal();
         consultForm.reset();
         if (submitBtn) {
           submitBtn.innerHTML = origText;
