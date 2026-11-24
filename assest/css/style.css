@@ -389,7 +389,6 @@ button {
 .reveal-fade-up.revealed {
   opacity: 1 !important;
   transform: translateY(0) !important;
-  transition-delay: 0s !important;
 }
 
 /* Word-by-Word Scroll Entrance Animation for Headings */
@@ -1429,17 +1428,31 @@ h3 .text-accent {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   border: none !important;
   outline: none !important;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+}
+
+.service-card.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(48px) scale(0.96);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.service-card.reveal-fade-up.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
 }
 
 .service-card:hover,
 .service-card.is-active {
-  transform: translateY(-8px);
+  transform: translateY(-8px) scale(1) !important;
   border: none !important;
   outline: none !important;
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28) !important;
+  transition-delay: 0s !important;
+  transition-duration: 0.35s !important;
 }
 
 .service-card .card-bg-img {
@@ -2798,29 +2811,108 @@ h3 .text-accent {
   transition: transform 0.4s ease;
 }
 
-/* Staggered Delay on Grid Cards for Flowing Entry Animation */
-.services-cards-grid .service-card:nth-child(1) { transition-delay: 0.05s; }
-.services-cards-grid .service-card:nth-child(2) { transition-delay: 0.12s; }
-.services-cards-grid .service-card:nth-child(3) { transition-delay: 0.19s; }
-.services-cards-grid .service-card:nth-child(4) { transition-delay: 0.26s; }
-.services-cards-grid .service-card:nth-child(5) { transition-delay: 0.33s; }
-.services-cards-grid .service-card:nth-child(6) { transition-delay: 0.40s; }
-.services-cards-grid .service-card:nth-child(7) { transition-delay: 0.47s; }
-.services-cards-grid .service-card:nth-child(8) { transition-delay: 0.54s; }
+/* Staggered Delay & Entrance Wave on Service Cards When Entering Section */
+.services-cards-grid .service-card.reveal-fade-up:nth-child(1) { transition-delay: 0.06s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(2) { transition-delay: 0.16s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(3) { transition-delay: 0.26s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(4) { transition-delay: 0.36s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(5) { transition-delay: 0.12s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(6) { transition-delay: 0.22s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(7) { transition-delay: 0.32s !important; }
+.services-cards-grid .service-card.reveal-fade-up:nth-child(8) { transition-delay: 0.42s !important; }
 
-.workflow-steps-grid .workflow-step-card:nth-child(1) { transition-delay: 0.08s; }
-.workflow-steps-grid .workflow-step-card:nth-child(2) { transition-delay: 0.18s; }
-.workflow-steps-grid .workflow-step-card:nth-child(3) { transition-delay: 0.28s; }
-.workflow-steps-grid .workflow-step-card:nth-child(4) { transition-delay: 0.38s; }
+/* Micro-entrance for card inner elements on scroll reveal */
+.service-card.reveal-fade-up .card-title {
+  transform: translateY(10px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.1s, color 0.3s ease;
+}
 
-.blogs-grid-3 .blog-card:nth-child(1) { transition-delay: 0.08s; }
-.blogs-grid-3 .blog-card:nth-child(2) { transition-delay: 0.18s; }
-.blogs-grid-3 .blog-card:nth-child(3) { transition-delay: 0.28s; }
+.service-card.reveal-fade-up.revealed .card-title {
+  transform: translateY(0);
+}
 
-.upfronts-counters-row .counter-box:nth-child(1) { transition-delay: 0.05s; }
-.upfronts-counters-row .counter-box:nth-child(2) { transition-delay: 0.15s; }
-.upfronts-counters-row .counter-box:nth-child(3) { transition-delay: 0.25s; }
-.upfronts-counters-row .counter-box:nth-child(4) { transition-delay: 0.35s; }
+.service-card.reveal-fade-up .card-divider-line {
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.18s, background 0.35s ease;
+}
+
+.service-card.reveal-fade-up.revealed .card-divider-line {
+  transform: scaleX(1);
+}
+
+.service-card:hover .card-divider-line,
+.service-card.is-active .card-divider-line {
+  transition-delay: 0s !important;
+}
+
+/* Methodology Workflow Step Cards Entrance */
+.workflow-step-card.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(42px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease;
+  will-change: opacity, transform;
+}
+
+.workflow-step-card.reveal-fade-up.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.workflow-steps-grid .workflow-step-card.reveal-fade-up:nth-child(1) { transition-delay: 0.08s !important; }
+.workflow-steps-grid .workflow-step-card.reveal-fade-up:nth-child(2) { transition-delay: 0.18s !important; }
+.workflow-steps-grid .workflow-step-card.reveal-fade-up:nth-child(3) { transition-delay: 0.28s !important; }
+.workflow-steps-grid .workflow-step-card.reveal-fade-up:nth-child(4) { transition-delay: 0.38s !important; }
+
+.workflow-step-card.reveal-fade-up.revealed:hover {
+  transform: translateY(-6px) scale(1) !important;
+  transition-delay: 0s !important;
+}
+
+/* Blog / Ground Insights Cards Entrance */
+.blog-card.reveal-fade-up {
+  opacity: 0;
+  transform: translateY(42px) scale(0.97);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease;
+  will-change: opacity, transform;
+}
+
+.blog-card.reveal-fade-up.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.blogs-grid-3 .blog-card.reveal-fade-up:nth-child(1) { transition-delay: 0.08s !important; }
+.blogs-grid-3 .blog-card.reveal-fade-up:nth-child(2) { transition-delay: 0.20s !important; }
+.blogs-grid-3 .blog-card.reveal-fade-up:nth-child(3) { transition-delay: 0.32s !important; }
+
+.blog-card.reveal-fade-up.revealed:hover {
+  transform: translateY(-8px) scale(1) !important;
+  transition-delay: 0s !important;
+}
+
+/* Corporate Genesis Stat Counter Boxes Cascading Entrance */
+.upfronts-counters-row.reveal-fade-up .counter-box {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s ease;
+}
+
+.upfronts-counters-row.reveal-fade-up.revealed .counter-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.upfronts-counters-row.reveal-fade-up.revealed .counter-box:nth-child(1) { transition-delay: 0.08s !important; }
+.upfronts-counters-row.reveal-fade-up.revealed .counter-box:nth-child(2) { transition-delay: 0.18s !important; }
+.upfronts-counters-row.reveal-fade-up.revealed .counter-box:nth-child(3) { transition-delay: 0.28s !important; }
+.upfronts-counters-row.reveal-fade-up.revealed .counter-box:nth-child(4) { transition-delay: 0.38s !important; }
 
 /* Interactive Hover Lift & Glow on Cards Across Sections */
 .genesis-narrative-card:hover {
