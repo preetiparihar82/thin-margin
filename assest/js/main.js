@@ -413,4 +413,111 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 360);
     });
   });
+
+  // ==========================================================================
+  // 10. SERVICE CARDS AUTO-CYCLE & INTERACTIVE SPOTLIGHT
+  // - In resting state: Only card title & divider line show.
+  // - Auto-cycle activates cards one by one (adding .is-active) every 3 seconds
+  //   when the services grid is visible in viewport.
+  // - Manual mouse hover immediately pauses auto-cycle, clears .is-active,
+  //   and lets CSS :hover smoothly expand whichever card the user points to.
+  // - On mouseleave, auto-cycle resumes after a brief pause.
+  // ==========================================================================
+  const servicesGrid = document.querySelector('.services-cards-grid');
+  const serviceCards = document.querySelectorAll('.services-cards-grid .service-card');
+
+  if (servicesGrid && serviceCards.length > 0) {
+    let currentActiveIdx = -1;
+    let autoCycleTimer = null;
+    let isUserHoveringGrid = false;
+    let isGridVisible = false;
+
+    const setCardActive = (index) => {
+      serviceCards.forEach((card, idx) => {
+        if (idx === index) {
+          card.classList.add('is-active');
+        } else {
+          card.classList.remove('is-active');
+        }
+      });
+    };
+
+    const clearActiveCards = () => {
+      serviceCards.forEach((card) => {
+        card.classList.remove('is-active');
+      });
+    };
+
+    const startAutoCycle = () => {
+      if (autoCycleTimer || isUserHoveringGrid || !isGridVisible) return;
+      if (currentActiveIdx < 0) {
+        currentActiveIdx = 0;
+      }
+      setCardActive(currentActiveIdx);
+
+      autoCycleTimer = setInterval(() => {
+        if (isUserHoveringGrid || !isGridVisible) return;
+        currentActiveIdx = (currentActiveIdx + 1) % serviceCards.length;
+        setCardActive(currentActiveIdx);
+      }, 3000);
+    };
+
+    const stopAutoCycle = () => {
+      if (autoCycleTimer) {
+        clearInterval(autoCycleTimer);
+        autoCycleTimer = null;
+      }
+    };
+
+    // Viewport Intersection Observer so auto-cycle only runs when visible
+    if ('IntersectionObserver' in window) {
+      const cardsObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            isGridVisible = true;
+            startAutoCycle();
+          } else {
+            isGridVisible = false;
+            stopAutoCycle();
+            clearActiveCards();
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+      cardsObserver.observe(servicesGrid);
+    } else {
+      isGridVisible = true;
+      startAutoCycle();
+    }
+
+    // Grid Mouse Listeners: pause on hover, resume on leave
+    servicesGrid.addEventListener('mouseenter', () => {
+      isUserHoveringGrid = true;
+      stopAutoCycle();
+      clearActiveCards();
+    });
+
+    servicesGrid.addEventListener('mouseleave', () => {
+      isUserHoveringGrid = false;
+      setTimeout(() => {
+        if (!isUserHoveringGrid && isGridVisible) {
+          startAutoCycle();
+        }
+      }, 800);
+    });
+
+    // Touch support for mobile devices
+    serviceCards.forEach((card, idx) => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.card-action-link')) return;
+        currentActiveIdx = idx;
+        const wasActive = card.classList.contains('is-active');
+        clearActiveCards();
+        if (!wasActive) {
+          card.classList.add('is-active');
+        }
+      });
+    });
+  }
 });

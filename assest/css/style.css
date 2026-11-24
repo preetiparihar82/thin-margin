@@ -388,6 +388,32 @@ button {
 .reveal-fade-up.revealed {
   opacity: 1 !important;
   transform: translateY(0) !important;
+  transition-delay: 0s !important;
+}
+
+/* Animated section kicker pill */
+@keyframes kickerPillPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(238, 33, 48, 0);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 12px rgba(238, 33, 48, 0.22);
+  }
+}
+
+/* Gradient shimmer for highlighted accent text in headings */
+@keyframes textAccentShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /* Section Title & Subtitle Kicker Pill */
@@ -410,6 +436,12 @@ button {
   color: var(--color-accent);
   letter-spacing: 1.5px;
   margin-bottom: 12px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(238, 33, 48, 0.07);
+  border: 1px solid rgba(238, 33, 48, 0.18);
+  animation: kickerPillPulse 3.5s ease-in-out infinite;
+  transition: all 0.3s ease;
 }
 
 .section-heading-large {
@@ -419,6 +451,16 @@ button {
   line-height: 1.2;
   color: var(--color-dark);
   letter-spacing: -0.02em;
+}
+
+.section-heading-large .text-accent,
+.about-title-heading .text-accent {
+  background: linear-gradient(120deg, #ee2130 0%, #ff5263 45%, #ee2130 90%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textAccentShimmer 4s ease-in-out infinite;
+  display: inline-block;
 }
 
 .section-lead-text {
@@ -955,12 +997,32 @@ button {
   padding: 24px 30px;
   margin-bottom: 26px;
   box-shadow: 0 4px 16px rgba(12, 14, 18, 0.04), 0 0 22px rgba(238, 33, 48, 0.14);
-  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.genesis-narrative-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(238, 33, 48, 0.07), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.85s ease;
+  pointer-events: none;
 }
 
 .genesis-narrative-card:hover {
-  border-color: rgba(238, 33, 48, 0.32);
+  transform: translateY(-2px);
+  border-color: rgba(238, 33, 48, 0.35);
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07), 0 0 28px rgba(238, 33, 48, 0.22);
+}
+
+.genesis-narrative-card:hover::before {
+  left: 140%;
 }
 
 .genesis-para {
@@ -1221,30 +1283,62 @@ button {
 
 /* Solid Red Leadership Card (#ee2130) */
 .leadership-card-red {
-  background-color: var(--color-accent);
+  background: linear-gradient(145deg, #ee2130 0%, #d81423 100%);
   color: #ffffff;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 38px 28px;
-  box-shadow: 0 15px 40px var(--color-accent-glow);
+  box-shadow: 0 15px 40px rgba(238, 33, 48, 0.35);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.leadership-card-red:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(238, 33, 48, 0.45);
+}
+
+.leadership-card-red::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.leadership-card-red:hover::before {
+  opacity: 1;
 }
 
 .leader-avatar-wrap {
-  width: 86px;
-  height: 86px;
+  width: 92px;
+  height: 92px;
   border-radius: 50%;
-  border: 4px solid #ffffff;
+  border: 3.5px solid #ffffff;
   overflow: hidden;
   margin-bottom: 22px;
   background-color: #ffffff;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+  transition: transform 0.3s ease;
+}
+
+.leadership-card-red:hover .leader-avatar-wrap {
+  transform: scale(1.05);
 }
 
 .leader-avatar-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center top;
 }
 
 .leader-name {
@@ -1302,16 +1396,18 @@ button {
 
 .service-card {
   position: relative;
-  height: 480px;
+  height: 470px;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: var(--transition);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
-.service-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(238, 33, 48, 0.2);
+.service-card:hover,
+.service-card.is-active {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.22), 0 0 26px rgba(238, 33, 48, 0.26);
 }
 
 .service-card .card-bg-img {
@@ -1323,7 +1419,8 @@ button {
   z-index: 1;
 }
 
-.service-card:hover .card-bg-img {
+.service-card:hover .card-bg-img,
+.service-card.is-active .card-bg-img {
   transform: scale(1.08);
 }
 
@@ -1332,35 +1429,27 @@ button {
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(12, 14, 18, 0.15) 0%,
-    rgba(12, 14, 18, 0.55) 45%,
-    rgba(12, 14, 18, 0.96) 100%
+    rgba(12, 14, 18, 0) 35%,
+    rgba(12, 14, 18, 0.65) 75%,
+    rgba(12, 14, 18, 0.95) 100%
   );
+  transition: background 0.45s ease;
   z-index: 2;
 }
 
-.card-icon-badge {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  background: rgba(12, 14, 18, 0.85);
-  backdrop-filter: blur(8px);
-  color: var(--color-accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  z-index: 3;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  transition: var(--transition-fast);
+.service-card:hover .card-gradient-overlay,
+.service-card.is-active .card-gradient-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 14, 18, 0.2) 0%,
+    rgba(12, 14, 18, 0.85) 50%,
+    rgba(12, 14, 18, 0.98) 100%
+  );
 }
 
-.service-card:hover .card-icon-badge {
-  background: var(--color-accent);
-  color: #ffffff;
+/* Remove icon on cards per request */
+.card-icon-badge {
+  display: none !important;
 }
 
 .card-bottom-content {
@@ -1368,7 +1457,7 @@ button {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: 26px 22px;
+  padding: 24px 22px;
   z-index: 3;
   color: #ffffff;
 }
@@ -1378,14 +1467,40 @@ button {
   font-size: 19px;
   font-weight: 700;
   color: #ffffff;
-  line-height: 1.3;
+  line-height: 1.35;
+  margin: 0;
+  transition: color 0.3s ease;
 }
 
 .card-divider-line {
   width: 100%;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.25);
-  margin: 10px 0 12px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 12px 0;
+  transition: background 0.35s ease, width 0.35s ease;
+}
+
+.service-card:hover .card-divider-line,
+.service-card.is-active .card-divider-line {
+  background: var(--color-accent);
+}
+
+/* Collapsed by default, expands on hover or when auto-activated */
+.card-body-expand {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(18px);
+  overflow: hidden;
+  pointer-events: none;
+  transition: max-height 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-card:hover .card-body-expand,
+.service-card.is-active .card-body-expand {
+  max-height: 280px;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .card-desc {
@@ -1422,8 +1537,18 @@ button {
   font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
-  color: var(--color-accent);
-  transition: transform 0.25s ease, color 0.2s ease;
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 4px;
+  background: var(--color-accent);
+  margin-top: 4px;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-action-link:hover {
+  background: var(--color-accent-hover);
+  transform: translateX(4px);
+  box-shadow: 0 4px 14px rgba(238, 33, 48, 0.4);
 }
 
 .card-action-link i {
@@ -1431,12 +1556,8 @@ button {
   transition: transform 0.25s ease;
 }
 
-.service-card:hover .card-action-link {
-  color: #ffffff;
-}
-
-.service-card:hover .card-action-link i {
-  transform: translate(3px, -3px);
+.card-action-link:hover i {
+  transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -2669,14 +2790,16 @@ button {
   background: rgba(238, 33, 48, 0.03);
 }
 
-/* Service Card Hover Micro-Interaction */
-.service-card:hover .card-title {
+/* Service Card Hover & Auto-Active Micro-Interaction */
+.service-card:hover .card-title,
+.service-card.is-active .card-title {
   color: #ffffff;
   transform: translateX(4px);
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.service-card:hover .card-divider-line {
+.service-card:hover .card-divider-line,
+.service-card.is-active .card-divider-line {
   background: var(--color-accent);
   transition: background 0.35s ease;
 }
