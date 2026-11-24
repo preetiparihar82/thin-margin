@@ -1645,7 +1645,7 @@ h3 .text-accent {
 .tm-methodology-section {
   position: relative;
   padding: 110px 0;
-  background-color: #0c0e12;
+  background-color: #181b22;
   clip-path: inset(0);
   color: #ffffff;
   overflow: hidden;
@@ -1660,15 +1660,13 @@ h3 .text-accent {
   height: 100vh;
   pointer-events: none;
   z-index: 1;
+  background-color: #181b22;
 }
 
 .fixed-gradient-backdrop {
   position: absolute;
   inset: 0;
-  background: 
-    radial-gradient(circle at 10% 20%, rgba(238, 33, 48, 0.08) 0%, transparent 45%),
-    radial-gradient(circle at 90% 75%, rgba(238, 33, 48, 0.05) 0%, transparent 40%),
-    linear-gradient(155deg, #171a22 0%, #111318 45%, #0c0e12 100%);
+  background-color: #181b22;
 }
 
 .fixed-curve-svg {
@@ -1810,10 +1808,11 @@ h3 .text-accent {
   grid-template-columns: 56px 200px 1fr;
   align-items: center;
   gap: 22px;
-  padding: 22px 12px;
+  padding: 22px 6px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 10px;
-  transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+  background: transparent !important;
+  box-shadow: none !important;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .methodology-step-item:last-child {
@@ -1821,9 +1820,10 @@ h3 .text-accent {
 }
 
 .methodology-step-item:hover {
-  background: rgba(255, 255, 255, 0.035);
-  transform: translateX(6px);
-  border-bottom-color: rgba(238, 33, 48, 0.3);
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: translateX(4px);
+  border-bottom-color: rgba(238, 33, 48, 0.35);
 }
 
 .step-badge-circle {
