@@ -1669,12 +1669,14 @@ h3 .text-accent {
   background: linear-gradient(180deg, #ffffff 0%, #f4f6fa 50%, #edf2f7 100%);
 }
 
-.fixed-curve-svg {
+.fixed-curve-svg,
+.methodology-blob-canvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  pointer-events: none;
 }
 
 .tm-methodology-section .tm-container {

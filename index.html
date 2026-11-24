@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=51.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=52.0">
 </head>
 <body class="tm-body">
 
@@ -611,34 +611,27 @@
     <div class="methodology-fixed-bg" aria-hidden="true">
       <div class="fixed-gradient-backdrop"></div>
       
-      <!-- Standard & Professional Architectural Trajectory Curves (Light Theme) -->
-      <svg class="fixed-curve-svg" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="execLineGrad1" x1="0%" y1="0%" x2="100%" y2="80%">
-            <stop offset="0%" stop-color="#ee2130" stop-opacity="0.25"/>
-            <stop offset="50%" stop-color="#64748b" stop-opacity="0.12"/>
-            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="execLineGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#64748b" stop-opacity="0.12"/>
-            <stop offset="50%" stop-color="#ee2130" stop-opacity="0.18"/>
-            <stop offset="100%" stop-color="transparent" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
+      <!-- Organic Ambient Side Spots in Light Black / Charcoal Shade -->
+      <svg class="methodology-blob-canvas" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <!-- Left Side Organic Spot (Curving Smoothly Behind the Video Frame) -->
+        <path d="M -120 -80 
+                 C 260 60, 480 30, 520 280 
+                 C 560 520, 310 680, 490 830 
+                 C 550 880, 380 980, -120 980 Z" 
+              fill="rgba(17, 19, 23, 0.05)"/>
         
-        <!-- Upper Horizon Trajectory Arc (Framing Above Video & Heading) -->
-        <path d="M -100 80 C 450 30 1050 110 1750 50" stroke="url(#execLineGrad2)" stroke-width="1.5"/>
+        <!-- Left Subtle Inner Contour -->
+        <path d="M -120 100 
+                 C 160 180, 360 170, 380 370 
+                 C 400 560, 210 710, 310 860 
+                 C 350 910, 190 980, -120 980 Z" 
+              fill="rgba(238, 33, 48, 0.02)"/>
 
-        <!-- Bottom Grounding Trajectory Arc (Framing Below Video & Steps) -->
-        <path d="M -100 830 C 450 780 1050 860 1750 810" stroke="url(#execLineGrad1)" stroke-width="1.6"/>
-        <path d="M -100 860 C 470 810 1070 890 1750 840" stroke="rgba(0, 0, 0, 0.04)" stroke-width="1"/>
-
-        <!-- Standard Technical Engineering CAD Coordinate Crosshairs -->
-        <g opacity="0.3" stroke="#ee2130" stroke-width="1">
-          <path d="M 120 120 L 140 120 M 130 110 L 130 130" />
-          <path d="M 740 70 L 760 70 M 750 60 L 750 80" />
-          <path d="M 1480 820 L 1500 820 M 1490 810 L 1490 830" />
-        </g>
+        <!-- Top-Right Organic Spot (Softly Framing the Top-Right Perimeter) -->
+        <path d="M 1720 -100 
+                 C 1340 -30, 1180 140, 1310 320 
+                 C 1420 460, 1610 390, 1760 500 Z" 
+              fill="rgba(17, 19, 23, 0.04)"/>
       </svg>
     </div>
 
@@ -1218,6 +1211,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=51.0"></script>
+  <script src="assest/js/main.js?v=52.0"></script>
 </body>
 </html>
