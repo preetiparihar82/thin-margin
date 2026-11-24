@@ -408,6 +408,10 @@ button {
 .reveal-fade-up.revealed .word-anim:nth-child(4) { transition-delay: 0.26s; }
 .reveal-fade-up.revealed .word-anim:nth-child(5) { transition-delay: 0.33s; }
 .reveal-fade-up.revealed .word-anim:nth-child(6) { transition-delay: 0.40s; }
+.reveal-fade-up.revealed .word-anim:nth-child(7) { transition-delay: 0.47s; }
+.reveal-fade-up.revealed .word-anim:nth-child(8) { transition-delay: 0.54s; }
+.reveal-fade-up.revealed .word-anim:nth-child(9) { transition-delay: 0.61s; }
+.reveal-fade-up.revealed .word-anim:nth-child(10) { transition-delay: 0.68s; }
 
 .reveal-fade-up.revealed .word-anim {
   opacity: 1;
