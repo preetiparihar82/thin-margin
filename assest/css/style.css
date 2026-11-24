@@ -1783,17 +1783,35 @@ h3 .text-accent {
 
 /* Vertical Steps List (Icon Circle | Title | Description) */
 .methodology-steps-container {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 
+/* Standard & Professional Engineering Timeline Rail */
+.methodology-steps-container::before {
+  content: '';
+  position: absolute;
+  top: 45px;
+  bottom: 45px;
+  left: 39px;
+  width: 2px;
+  background: linear-gradient(180deg, 
+    #ee2130 0%, 
+    rgba(238, 33, 48, 0.45) 50%, 
+    rgba(238, 33, 48, 0.15) 100%);
+  z-index: 1;
+}
+
 .methodology-step-item {
+  position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 56px 200px 1fr;
   align-items: center;
   gap: 22px;
   padding: 22px 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
   transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
 }
@@ -1809,6 +1827,8 @@ h3 .text-accent {
 }
 
 .step-badge-circle {
+  position: relative;
+  z-index: 3;
   width: 54px;
   height: 54px;
   border-radius: 50%;
