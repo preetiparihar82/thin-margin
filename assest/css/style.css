@@ -962,16 +962,15 @@ button {
   margin-bottom: 0;
 }
 
-/* 4 Upfronts Counters Row: Interactive Hover Glow & Lift */
+/* 4 Upfronts Counters Row: Clean Segmented Grid */
 .upfronts-counters-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid var(--color-border);
-  border-radius: 10px;
+  border-radius: 8px;
   background: #ffffff;
-  box-shadow: var(--shadow-sm);
-  overflow: visible !important;
-  position: relative;
+  box-shadow: 0 4px 16px rgba(12, 14, 18, 0.05);
+  overflow: hidden;
 }
 
 .counter-box {
@@ -981,48 +980,18 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
-  border-radius: 8px;
+  transition: background-color 0.25s ease, color 0.25s ease;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, background 0.3s ease, border-color 0.3s ease;
-  z-index: 1;
-}
-
-/* Top Accent Glow Line on Hover */
-.counter-box::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 10%;
-  right: 10%;
-  height: 3px;
-  background: var(--color-accent);
-  border-radius: 3px;
-  transform: scaleX(0);
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 0 8px var(--color-accent);
-}
-
-.counter-box:hover::after {
-  transform: scaleX(1);
-}
-
-.counter-box:hover {
-  transform: translateY(-8px);
-  z-index: 5;
 }
 
 /* Box 1: Solid Red Box (#ee2130) */
 .counter-box-red {
-  background: linear-gradient(145deg, #ff2e3e 0%, #ee2130 50%, #c81423 100%);
+  background-color: var(--color-accent);
   color: #ffffff;
-  border-top-left-radius: 9px;
-  border-bottom-left-radius: 9px;
 }
 
 .counter-box-red:hover {
-  box-shadow: 0 16px 36px rgba(238, 33, 48, 0.42), 0 0 24px rgba(238, 33, 48, 0.35) !important;
-  transform: translateY(-8px) scale(1.02);
+  background-color: var(--color-accent-hover);
 }
 
 .counter-box-red .counter-number-val {
@@ -1041,7 +1010,7 @@ button {
   margin-top: 8px;
 }
 
-/* Boxes 2-4: White Box with Left Border & Interactive Glow */
+/* Boxes 2-4: White Box with Left Border */
 .counter-box-white {
   background-color: #ffffff;
   color: var(--color-dark);
@@ -1049,18 +1018,11 @@ button {
 }
 
 .counter-box-white:hover {
-  background-color: #ffffff !important;
-  box-shadow: 0 16px 36px rgba(12, 14, 18, 0.12), 0 0 20px rgba(238, 33, 48, 0.25) !important;
-  border-color: transparent !important;
+  background-color: #f8fafc;
 }
 
 .counter-box-white:hover .counter-number-val {
   color: var(--color-accent) !important;
-  transform: scale(1.06);
-}
-
-.counter-box-white:hover .counter-label-text {
-  color: var(--color-dark) !important;
 }
 
 .counter-box-white .counter-sub-info {
@@ -1077,7 +1039,7 @@ button {
   color: var(--color-dark);
   line-height: 1.1;
   margin-bottom: 5px;
-  transition: transform 0.3s ease, color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 .counter-label-text {
@@ -1087,7 +1049,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--color-text-muted);
-  transition: color 0.3s ease;
+  transition: color 0.25s ease;
 }
 
 /* ==========================================================================

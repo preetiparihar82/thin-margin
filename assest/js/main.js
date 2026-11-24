@@ -185,14 +185,14 @@ document.addEventListener('DOMContentLoaded', () => {
     hasCountersAnimated = true;
     counterEls.forEach((el) => {
       const raw = el.textContent.trim();
-      if (raw.includes('10')) {
-        countUp(el, 10, '+');
+      if (raw.includes('100') || raw.includes('%')) {
+        countUp(el, 100, '%');
       } else if (raw.includes('1.2') || raw.includes('GW')) {
         countFloat(el, 1.2, 'GW+');
-      } else if (raw.includes('24')) {
+      } else if (raw.includes('24') || raw.includes('Hr')) {
         countUp(el, 24, '-Hr');
-      } else if (raw.includes('100')) {
-        countUp(el, 100, '%');
+      } else if (raw.includes('10') || raw.includes('+')) {
+        countUp(el, 10, '+');
       }
     });
   };
