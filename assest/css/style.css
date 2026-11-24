@@ -470,6 +470,28 @@ h3 .text-accent {
   vertical-align: baseline;
 }
 
+@keyframes leadTextShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.heading-lead-anim {
+  background: linear-gradient(120deg, #0f172a 0%, #475569 45%, #0f172a 90%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: leadTextShine 5s ease-in-out infinite;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
 .section-lead-text {
   font-size: 16px;
   line-height: 1.7;
@@ -1026,6 +1048,19 @@ h3 .text-accent {
   margin-bottom: 0;
 }
 
+.genesis-narrative-card .highlight-term {
+  font-weight: 700;
+  color: #0f172a;
+  position: relative;
+  display: inline;
+  transition: color 0.3s ease;
+}
+
+.genesis-narrative-card:hover .highlight-term,
+.genesis-narrative-card .highlight-term:hover {
+  color: var(--color-accent);
+}
+
 /* 4 Upfronts Counters Row: Clean Segmented Grid with Still Glow */
 .upfronts-counters-row {
   display: grid;
@@ -1109,6 +1144,23 @@ h3 .text-accent {
   margin-top: 8px;
 }
 
+.counter-label-text {
+  transition: letter-spacing 0.3s ease, transform 0.3s ease;
+}
+
+.counter-box:hover .counter-label-text {
+  letter-spacing: 1.5px;
+  transform: translateY(-1px);
+}
+
+.counter-sub-info {
+  transition: transform 0.3s ease;
+}
+
+.counter-box:hover .counter-sub-info {
+  transform: translateY(-1px);
+}
+
 .counter-number-val {
   font-family: var(--font-number) !important;
   font-size: clamp(2.4rem, 3.6vw, 3.2rem);
@@ -1116,7 +1168,7 @@ h3 .text-accent {
   color: var(--color-dark);
   line-height: 1.18;
   margin-bottom: 5px;
-  transition: color 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
   display: inline-flex;
   align-items: baseline;
   justify-content: center;
@@ -1124,6 +1176,10 @@ h3 .text-accent {
   overflow: hidden;
   height: 1.18em;
   vertical-align: middle;
+}
+
+.counter-box:hover .counter-number-val {
+  transform: scale(1.04);
 }
 
 /* 3D Rotating Odometer / Amount Slider Engine */
