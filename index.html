@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=45.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=46.0">
 </head>
 <body class="tm-body">
 
@@ -600,108 +600,115 @@
   <!-- ==========================================================================
        7. 4-STEP OPERATIONAL METHODOLOGY
        ========================================================================== -->
-  <section class="tm-workflow-section" id="workflow">
-    <div class="tm-container">
-      
-      <div class="section-title-wrap center-align reveal-fade-up">
-        <span class="section-kicker-pill">OPERATIONAL METHODOLOGY</span>
-        <h2 class="section-heading-large">
-          <span class="word-anim">How</span>
-          <span class="word-anim">Thin</span>
-          <span class="word-anim">Margin</span>
-          <span class="word-anim text-accent">Secures</span>
-          <span class="word-anim text-accent">Your</span>
-          <span class="word-anim text-accent">Supply</span>
-          <span class="word-anim text-accent">Chain</span>
-        </h2>
-        <p class="section-lead-text">
-          From seaport berth to active installation, our structured four-phase custody protocol ensures zero demurrage and zero inventory loss.
-        </p>
-      </div>
-
-      <div class="workflow-steps-grid">
-        
-        <div class="workflow-step-card reveal-fade-up">
-          <div class="step-num-badge">01</div>
-          <div class="step-icon-wrap"><i class="fa-solid fa-ship"></i></div>
-          <h4 class="step-title">Port Arrival &amp; Custody Handover</h4>
-          <p class="step-desc">Real-time vessel tracking, customs bonded documentation, and immediate container gate-out at Mundra &amp; Kandla.</p>
-        </div>
-
-        <div class="workflow-step-card reveal-fade-up">
-          <div class="step-num-badge">02</div>
-          <div class="step-icon-wrap"><i class="fa-solid fa-truck-ramp-box"></i></div>
-          <h4 class="step-title">Rapid 24-Hr Decantation</h4>
-          <p class="step-desc">Mechanized de-stuffing at off-dock laydowns and prompt empty container return within the free window.</p>
-        </div>
-
-        <div class="workflow-step-card reveal-fade-up">
-          <div class="step-num-badge">03</div>
-          <div class="step-icon-wrap"><i class="fa-solid fa-location-crosshairs"></i></div>
-          <h4 class="step-title">Sub-Meter Yard Stacking</h4>
-          <p class="step-desc">GPS-coordinated laydown placement, barcoding, weather preservation, and protective packaging.</p>
-        </div>
-
-        <div class="workflow-step-card reveal-fade-up">
-          <div class="step-num-badge">04</div>
-          <div class="step-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
-          <h4 class="step-title">Real-Time SAP MIGO Sync</h4>
-          <p class="step-desc">Digitized GRN booking into client SAP S/4HANA systems, ensuring 100% ledger transparency.</p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
   <!-- ==========================================================================
-       8. ON-GROUND EXECUTION VIDEO SHOWCASE & TELEMETRY
+       7. OPERATIONAL METHODOLOGY & CUSTODY PROTOCOL (2-COLUMN SHOWCASE)
+       Video Showcase (Left) + 4-Step Custody Handover Protocol (Right)
        ========================================================================== -->
-  <section class="tm-video-section" id="why-choose-us">
+  <section class="tm-methodology-section" id="workflow">
+    <div id="why-choose-us" style="position: relative; top: -100px;"></div>
     <div class="tm-container">
       
-      <div class="section-title-wrap center-align reveal-fade-up">
-        <span class="section-kicker-pill">ON-GROUND EXECUTION</span>
-        <h2 class="section-heading-large" style="color:#ffffff;">
-          <span class="word-anim">Where</span>
-          <span class="word-anim">Complex</span>
-          <span class="word-anim">Engineering</span>
-          <span class="word-anim">Meets</span>
-          <span class="word-anim text-accent">Zero-Loss</span>
-          <span class="word-anim text-accent">Discipline</span>
-        </h2>
-        <p class="section-lead-text" style="color:#94a3b8;">
-          Watch our ground operations teams decant multi-acre laydown yards and execute heavy turbine and module custody with precision.
-        </p>
-      </div>
+      <div class="methodology-grid-2col">
+        
+        <!-- Left Column: Video Media Frame with Floating Telemetry Badge -->
+        <div class="methodology-media-wrap reveal-fade-up">
+          <div class="methodology-video-card">
+            <video class="methodology-video-player" autoplay muted loop playsinline poster="assest/images/why_choose_us_hd.png">
+              <source src="assest/images/warehousevid.mp4" type="video/mp4">
+            </video>
+            <div class="methodology-video-overlay"></div>
 
-      <div class="video-player-container reveal-fade-up">
-        <video class="video-media-elem" autoplay muted loop playsinline poster="assest/images/why_choose_us_hd.png">
-          <source src="assest/images/warehousevid.mp4" type="video/mp4">
-        </video>
-        <div class="video-overlay-gradient"></div>
+            <!-- Top Corner Live Badge -->
+            <div class="methodology-live-tag">
+              <span class="live-pulse-dot"></span>
+              <span>LIVE GROUND OPERATIONS</span>
+            </div>
 
-        <!-- Floating Telemetry KPI Dock -->
-        <div class="video-kpi-dock">
-          <div class="kpi-dock-item">
-            <span class="kpi-num">100%</span>
-            <span class="kpi-lbl">Demurrage Shield</span>
+            <!-- Floating Telemetry Badge (Inspired by Reference Design) -->
+            <div class="methodology-floating-badge">
+              <div class="float-badge-icon">
+                <i class="fa-solid fa-check"></i>
+              </div>
+              <div class="float-badge-data">
+                <div class="float-badge-val">100%</div>
+                <div class="float-badge-label">Zero Demurrage</div>
+              </div>
+            </div>
           </div>
-          <div class="kpi-divider"></div>
-          <div class="kpi-dock-item">
-            <span class="kpi-num">1.2GW+</span>
-            <span class="kpi-lbl">Managed Assets</span>
+        </div>
+
+        <!-- Right Column: Heading & Vertical Methodology Steps -->
+        <div class="methodology-info-wrap reveal-fade-up">
+          <div class="methodology-title-block">
+            <span class="section-kicker-pill">OPERATIONAL METHODOLOGY</span>
+            <h2 class="methodology-main-heading">
+              <span class="word-anim">Securing</span>
+              <span class="word-anim text-accent">Your</span>
+              <span class="word-anim text-accent">Supply</span>
+              <span class="word-anim text-accent">Chain</span>
+            </h2>
+            <p class="methodology-sub-desc">
+              From seaport berth to active installation, our structured four-phase custody protocol ensures zero demurrage and complete audit compliance.
+            </p>
           </div>
-          <div class="kpi-divider"></div>
-          <div class="kpi-dock-item">
-            <span class="kpi-num">10,000+</span>
-            <span class="kpi-lbl">Decanted TEUs</span>
+
+          <!-- Vertical Steps List (Reference Layout: Icon Circle | Title | Description) -->
+          <div class="methodology-steps-container">
+            
+            <!-- Step 1 -->
+            <div class="methodology-step-item">
+              <div class="step-badge-circle">
+                <i class="fa-solid fa-ship"></i>
+              </div>
+              <div class="step-text-title">
+                <h4>Port Arrival &amp; Custody</h4>
+              </div>
+              <div class="step-text-desc">
+                <p>Real-time vessel tracking, customs bonded gate-out, and immediate container custody handover at Mundra &amp; Kandla.</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="methodology-step-item">
+              <div class="step-badge-circle">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+              </div>
+              <div class="step-text-title">
+                <h4>Rapid 24-Hr Decantation</h4>
+              </div>
+              <div class="step-text-desc">
+                <p>Mechanized container de-stuffing at off-dock laydowns and prompt empty container return within the free window.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="methodology-step-item">
+              <div class="step-badge-circle">
+                <i class="fa-solid fa-location-crosshairs"></i>
+              </div>
+              <div class="step-text-title">
+                <h4>Sub-Meter Yard Indexing</h4>
+              </div>
+              <div class="step-text-desc">
+                <p>GPS-coordinated laydown placement, RFID asset tagging, weatherproof preservation, and layout optimization.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="methodology-step-item">
+              <div class="step-badge-circle">
+                <i class="fa-solid fa-network-wired"></i>
+              </div>
+              <div class="step-text-title">
+                <h4>Real-Time SAP MIGO Sync</h4>
+              </div>
+              <div class="step-text-desc">
+                <p>Instant digitized GRN booking directly into client SAP S/4HANA systems, ensuring 100% audit transparency.</p>
+              </div>
+            </div>
+
           </div>
-          <div class="kpi-divider"></div>
-          <div class="kpi-dock-item">
-            <span class="kpi-num">99.98%</span>
-            <span class="kpi-lbl">Reconciliation Yield</span>
-          </div>
+
         </div>
 
       </div>
@@ -1187,6 +1194,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=45.0"></script>
+  <script src="assest/js/main.js?v=46.0"></script>
 </body>
 </html>
