@@ -991,38 +991,20 @@ button {
 
 .genesis-narrative-card {
   background: var(--color-light-bg);
-  border: 1px solid rgba(238, 33, 48, 0.16);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-left: 4px solid var(--color-accent);
   border-radius: 8px;
   padding: 24px 30px;
   margin-bottom: 26px;
-  box-shadow: 0 4px 16px rgba(12, 14, 18, 0.04), 0 0 22px rgba(238, 33, 48, 0.14);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
   position: relative;
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.genesis-narrative-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -120%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(238, 33, 48, 0.07), transparent);
-  transform: skewX(-25deg);
-  transition: left 0.85s ease;
-  pointer-events: none;
+  transform: none !important;
 }
 
 .genesis-narrative-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(238, 33, 48, 0.35);
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07), 0 0 28px rgba(238, 33, 48, 0.22);
-}
-
-.genesis-narrative-card:hover::before {
-  left: 140%;
+  transform: none !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .genesis-para {
@@ -1036,21 +1018,22 @@ button {
   margin-bottom: 0;
 }
 
-/* 4 Upfronts Counters Row: Clean Segmented Grid with Ambient Glow */
+/* 4 Upfronts Counters Row: Clean Segmented Grid */
 .upfronts-counters-row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid rgba(238, 33, 48, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
   background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04), 0 0 24px rgba(238, 33, 48, 0.16);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   overflow: hidden;
-  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  transform: none !important;
 }
 
 .upfronts-counters-row:hover {
-  border-color: rgba(238, 33, 48, 0.38);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.07), 0 0 32px rgba(238, 33, 48, 0.22);
+  transform: none !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
 }
 
 .counter-box {
@@ -1060,8 +1043,7 @@ button {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.25s ease, color 0.25s ease;
-  cursor: pointer;
+  cursor: default;
   transform: none !important;
 }
 
@@ -1072,7 +1054,7 @@ button {
 }
 
 .counter-box-red:hover {
-  background-color: var(--color-accent-hover);
+  background-color: var(--color-accent) !important;
   transform: none !important;
 }
 
@@ -1097,17 +1079,16 @@ button {
   background-color: #ffffff;
   color: var(--color-dark);
   border-left: 1px solid var(--color-border);
-  transition: background-color 0.25s ease, color 0.25s ease;
   transform: none !important;
 }
 
 .counter-box-white:hover {
-  background-color: #fef8f8;
+  background-color: #ffffff !important;
   transform: none !important;
 }
 
 .counter-box-white:hover .counter-number-val {
-  color: var(--color-accent) !important;
+  color: var(--color-dark) !important;
 }
 
 .counter-box-white .counter-sub-info {
@@ -2797,10 +2778,8 @@ button {
 
 /* Interactive Hover Lift & Glow on Cards Across Sections */
 .genesis-narrative-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 30px rgba(238, 33, 48, 0.15);
-  border-left-color: var(--color-accent);
-  transition: var(--transition);
+  transform: none !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
 .about-feature-item {
