@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   revealElements.forEach((el) => {
     const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight) {
+    if (rect.top < window.innerHeight * 0.7 && rect.bottom > 0) {
       el.classList.add('revealed');
     } else {
       revealObserver.observe(el);
