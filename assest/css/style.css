@@ -1058,11 +1058,56 @@ button {
 .counter-number-val {
   font-family: var(--font-number) !important;
   font-size: clamp(2.4rem, 3.6vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--color-dark);
-  line-height: 1.1;
+  line-height: 1.18;
   margin-bottom: 5px;
   transition: color 0.25s ease;
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  height: 1.18em;
+  vertical-align: middle;
+}
+
+/* 3D Rotating Odometer / Amount Slider Engine */
+.counter-roller-col {
+  display: inline-block;
+  height: 1.18em;
+  overflow: hidden;
+  position: relative;
+  vertical-align: bottom;
+  text-align: center;
+  perspective: 600px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%);
+}
+
+.counter-roller-strip {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  transform-style: preserve-3d;
+  transition: transform 1.8s cubic-bezier(0.12, 0.8, 0.2, 1);
+}
+
+.counter-roller-digit {
+  height: 1.18em;
+  line-height: 1.18em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-number) !important;
+}
+
+.counter-roller-static {
+  display: inline-block;
+  height: 1.18em;
+  line-height: 1.18em;
+  vertical-align: bottom;
+  font-family: var(--font-number) !important;
 }
 
 .counter-label-text {
@@ -2812,15 +2857,20 @@ button {
 }
 
 
-/* Stencil Numbers Engine (Exact Curved / Crescent Incision Slices Aesthetic) */
+/* Stencil Numbers Engine (Exact Curved / Crescent Incision Slices Aesthetic & 3D Rotating Roller) */
 .counter-number-val {
   font-family: var(--font-number) !important;
   font-size: clamp(2.6rem, 3.8vw, 3.4rem) !important;
   font-weight: 800 !important;
-  line-height: 1.1 !important;
+  line-height: 1.18 !important;
   letter-spacing: 1px !important;
-  display: inline-block;
+  display: inline-flex !important;
+  align-items: baseline;
+  justify-content: center;
   position: relative;
+  overflow: hidden;
+  height: 1.18em;
+  vertical-align: middle;
 }
 
 .step-num-badge,

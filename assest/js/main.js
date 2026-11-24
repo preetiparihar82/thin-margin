@@ -139,69 +139,98 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==========================================================================
-  // 5. ANIMATED NUMBER COUNTERS WITH FLUID EASING
+  // 5. ANIMATED NUMBER COUNTERS: INDIVIDUAL ROTATING ODOMETER / SLIDER TICKER
   // ==========================================================================
   const counterEls = document.querySelectorAll('.counter-number-val');
   let hasCountersAnimated = false;
+  const rollerInstances = [];
 
-  function countUp(el, targetNum, suffix = '') {
-    const duration = 1600;
-    const startTime = performance.now();
-    function update(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const val = Math.floor(easeOut * targetNum);
-      el.textContent = `${val}${suffix}`;
-      if (progress < 1) {
-        requestAnimationFrame(update);
+  function initCounterRoller(el) {
+    const rawValue = (el.getAttribute('data-value') || el.textContent || '').trim();
+    if (!rawValue) return null;
+
+    el.setAttribute('data-value', rawValue);
+    el.innerHTML = '';
+    const chars = rawValue.split('');
+    const digitRollers = [];
+
+    chars.forEach((ch, colIdx) => {
+      if (/[0-9]/.test(ch)) {
+        const targetDigit = parseInt(ch, 10);
+        const col = document.createElement('span');
+        col.className = 'counter-roller-col';
+
+        const strip = document.createElement('span');
+        strip.className = 'counter-roller-strip';
+
+        // Build 2 full cycles (0-9, 0-9) + up to targetDigit for smooth rolling reel
+        const sequence = [];
+        for (let cycle = 0; cycle < 2; cycle++) {
+          for (let d = 0; d <= 9; d++) sequence.push(d);
+        }
+        for (let d = 0; d <= targetDigit; d++) sequence.push(d);
+
+        sequence.forEach((d) => {
+          const digitSpan = document.createElement('span');
+          digitSpan.className = 'counter-roller-digit';
+          digitSpan.textContent = d;
+          strip.appendChild(digitSpan);
+        });
+
+        col.appendChild(strip);
+        el.appendChild(col);
+
+        const finalIndex = sequence.length - 1;
+        // Staggered delay for each digit like a bank amount odometer
+        const delay = colIdx * 0.12;
+        digitRollers.push({ strip, finalIndex, delay });
       } else {
-        el.textContent = `${targetNum}${suffix}`;
+        const staticSpan = document.createElement('span');
+        staticSpan.className = 'counter-roller-static';
+        staticSpan.textContent = ch;
+        el.appendChild(staticSpan);
       }
-    }
-    requestAnimationFrame(update);
+    });
+
+    const roll = (duration = 1800) => {
+      digitRollers.forEach(({ strip, finalIndex, delay }) => {
+        strip.style.transition = 'none';
+        strip.style.transform = 'translateY(0)';
+        // Force layout reflow
+        void strip.offsetHeight;
+        strip.style.transition = `transform ${duration}ms cubic-bezier(0.12, 0.8, 0.2, 1) ${delay}s`;
+        strip.style.transform = `translateY(-${finalIndex * 1.18}em)`;
+      });
+    };
+
+    return roll;
   }
 
-  function countFloat(el, targetNum, suffix = '') {
-    const duration = 1600;
-    const startTime = performance.now();
-    function update(now) {
-      const elapsed = now - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeOut = 1 - Math.pow(1 - progress, 3);
-      const val = (easeOut * targetNum).toFixed(1);
-      el.textContent = `${val}${suffix}`;
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = `${targetNum.toFixed(1)}${suffix}`;
+  counterEls.forEach((el) => {
+    const rollFn = initCounterRoller(el);
+    if (rollFn) {
+      rollerInstances.push(rollFn);
+      // Interactive re-roll on hovering over the parent counter box
+      const parentBox = el.closest('.counter-box');
+      if (parentBox) {
+        parentBox.addEventListener('mouseenter', () => {
+          rollFn(1300);
+        });
       }
     }
-    requestAnimationFrame(update);
-  }
+  });
 
   const triggerCounters = () => {
     if (hasCountersAnimated) return;
     hasCountersAnimated = true;
-    counterEls.forEach((el) => {
-      const raw = el.textContent.trim();
-      if (raw.includes('100') || raw.includes('%')) {
-        countUp(el, 100, '%');
-      } else if (raw.includes('1.2') || raw.includes('GW')) {
-        countFloat(el, 1.2, 'GW+');
-      } else if (raw.includes('24') || raw.includes('Hr')) {
-        countUp(el, 24, '-Hr');
-      } else if (raw.includes('10') || raw.includes('+')) {
-        countUp(el, 10, '+');
-      }
-    });
+    rollerInstances.forEach((rollFn) => rollFn(1800));
   };
 
   const counterSection = document.querySelector('.upfronts-counters-row');
   if (counterSection) {
     const rect = counterSection.getBoundingClientRect();
     if (rect.top < window.innerHeight && rect.bottom > 0) {
-      triggerCounters();
+      setTimeout(triggerCounters, 250);
     } else {
       const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -210,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             counterObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+      }, { threshold: 0.15, rootMargin: '0px 0px -20px 0px' });
       counterObserver.observe(counterSection);
     }
   }
