@@ -392,55 +392,26 @@ button {
   transition-delay: 0s !important;
 }
 
-/* Animated section kicker pill */
-@keyframes kickerPillPulse {
-  0%, 100% {
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(238, 33, 48, 0);
-    border-color: rgba(238, 33, 48, 0.25);
-  }
-  50% {
-    transform: scale(1.03);
-    box-shadow: 0 0 16px rgba(238, 33, 48, 0.35);
-    border-color: rgba(238, 33, 48, 0.7);
-  }
-}
-
-.kicker-pulse-dot {
+/* Word-by-Word Scroll Entrance Animation for Headings */
+.word-anim {
   display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  box-shadow: 0 0 8px var(--color-accent);
-  animation: dotPulse 1.8s infinite ease-in-out;
-  margin-right: 6px;
-  vertical-align: middle;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-right: 0.18em;
+  color: inherit;
 }
 
-@keyframes dotPulse {
-  0%, 100% {
-    transform: scale(0.85);
-    opacity: 0.65;
-  }
-  50% {
-    transform: scale(1.4);
-    opacity: 1;
-    box-shadow: 0 0 12px var(--color-accent);
-  }
-}
+.reveal-fade-up.revealed .word-anim:nth-child(1) { transition-delay: 0.05s; }
+.reveal-fade-up.revealed .word-anim:nth-child(2) { transition-delay: 0.12s; }
+.reveal-fade-up.revealed .word-anim:nth-child(3) { transition-delay: 0.19s; }
+.reveal-fade-up.revealed .word-anim:nth-child(4) { transition-delay: 0.26s; }
+.reveal-fade-up.revealed .word-anim:nth-child(5) { transition-delay: 0.33s; }
+.reveal-fade-up.revealed .word-anim:nth-child(6) { transition-delay: 0.40s; }
 
-/* Gradient shimmer for highlighted accent text in headings */
-@keyframes textAccentShimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.reveal-fade-up.revealed .word-anim {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Section Title & Subtitle Kicker Pill */
@@ -455,8 +426,7 @@ button {
 }
 
 .section-kicker-pill {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   font-family: var(--font-heading);
   font-size: 13px;
   font-weight: 700;
@@ -464,11 +434,10 @@ button {
   color: var(--color-accent);
   letter-spacing: 1.5px;
   margin-bottom: 12px;
-  padding: 5px 15px;
+  padding: 5px 16px;
   border-radius: 20px;
   background: rgba(238, 33, 48, 0.08);
   border: 1px solid rgba(238, 33, 48, 0.22);
-  animation: kickerPillPulse 3.2s ease-in-out infinite;
   transition: all 0.3s ease;
 }
 
@@ -481,6 +450,7 @@ button {
   letter-spacing: -0.02em;
 }
 
+.text-accent,
 .section-heading-large .text-accent,
 .about-title-heading .text-accent,
 .career-title .text-accent,
@@ -489,72 +459,12 @@ button {
 h1 .text-accent,
 h2 .text-accent,
 h3 .text-accent {
-  background: linear-gradient(
-    90deg,
-    #ee2130 0%,
-    #ff4f5e 25%,
-    #ffffff 48%,
-    #ff4f5e 52%,
-    #ee2130 80%,
-    #ff707b 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: textAccentShimmer 3.2s ease-in-out infinite;
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-@keyframes leadTextShine {
-  0% {
-    background-position: 200% 0%;
-  }
-  100% {
-    background-position: -200% 0%;
-  }
-}
-
-.heading-lead-anim {
-  background: linear-gradient(
-    90deg,
-    #111317 0%,
-    #111317 30%,
-    #ee2130 48%,
-    #ffffff 50%,
-    #ee2130 52%,
-    #111317 70%,
-    #111317 100%
-  );
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: leadTextShine 4.5s linear infinite;
-  display: inline-block;
-  vertical-align: baseline;
-}
-
-.heading-accent-bar {
-  width: 75px;
-  height: 3.5px;
-  border-radius: 3px;
-  background: linear-gradient(90deg, #ee2130, #ff5e62, #ee2130);
-  background-size: 200% auto;
-  margin-top: 14px;
-  box-shadow: 0 0 10px rgba(238, 33, 48, 0.35);
-  animation: barGleam 3.5s ease-in-out infinite;
-}
-
-@keyframes barGleam {
-  0%, 100% {
-    background-position: 0% 50%;
-    width: 65px;
-  }
-  50% {
-    background-position: 100% 50%;
-    width: 105px;
-    box-shadow: 0 0 14px rgba(238, 33, 48, 0.65);
-  }
+  color: var(--color-accent) !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+  animation: none !important;
+  display: inline;
 }
 
 .section-lead-text {
