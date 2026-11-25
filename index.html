@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=54.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=55.0">
 </head>
 <body class="tm-body">
 
@@ -758,150 +758,337 @@
   </section>
 
   <!-- ==========================================================================
-       9. INDIAN LEADERSHIP TESTIMONIALS SECTION (AUTO-SCROLLING TICKER)
+       9. CLIENT TESTIMONIALS & EXECUTIVE ENDORSEMENTS (INTERACTIVE SHOWCASE)
        ========================================================================== -->
   <section class="tm-testimonials-section" id="testimonials">
+    <!-- Ambient Atmospheric Glows -->
+    <div class="testi-ambient-glow glow-top-left" aria-hidden="true"></div>
+    <div class="testi-ambient-glow glow-bottom-right" aria-hidden="true"></div>
+
     <div class="tm-container">
       
-      <div class="section-title-wrap center-align reveal-fade-up">
-        <span class="section-kicker-pill">CLIENT TESTIMONIALS &amp; AUDIT SCORES</span>
-        <h2 class="section-heading-large" style="color:#ffffff;">
-          <span class="word-anim">Trusted</span>
-          <span class="word-anim">by</span>
-          <span class="word-anim text-accent">India's</span>
-          <span class="word-anim text-accent">Infrastructure</span>
-          <span class="word-anim text-accent">Leaders</span>
-        </h2>
-        <p class="section-lead-text" style="color:#94a3b8;">
-          Independently verified audit performance, zero demurrage track records, and operational custody ratings across mega capital projects.
-        </p>
-      </div>
+      <!-- Section Heading & Controls Header -->
+      <div class="testi-header-row reveal-fade-up">
+        <div class="testi-header-text">
+          <span class="section-kicker-pill">CLIENT TESTIMONIALS &amp; EXECUTIVE ENDORSEMENTS</span>
+          <h2 class="section-heading-large" style="color:#ffffff;">
+            <span class="word-anim">Trusted</span>
+            <span class="word-anim">by</span>
+            <span class="word-anim text-accent">India's</span>
+            <span class="word-anim text-accent">Industry</span>
+            <span class="word-anim text-accent">Leaders</span>
+          </h2>
+          <p class="section-lead-text" style="color:#94a3b8; max-width:620px;">
+            Authentic operational endorsements from executive leaders across mega solar, industrial infrastructure, and utility supply chains.
+          </p>
+        </div>
 
-      <!-- Aggregate Rating Summary Dock -->
-      <div class="testi-summary-dock reveal-fade-up">
-        <div class="testi-summary-item">
-          <div class="summary-score"><span class="text-accent">4.9</span> / 5.0</div>
-          <div class="summary-label"><i class="fa-solid fa-star" style="color: #f59e0b;"></i> Overall EPC Rating</div>
-        </div>
-        <div class="testi-summary-divider"></div>
-        <div class="testi-summary-item">
-          <div class="summary-score">100%</div>
-          <div class="summary-label"><i class="fa-solid fa-shield-check" style="color: #22c55e;"></i> Zero Demurrage SLA</div>
-        </div>
-        <div class="testi-summary-divider"></div>
-        <div class="testi-summary-item">
-          <div class="summary-score">1.2GW+</div>
-          <div class="summary-label"><i class="fa-solid fa-solar-panel" style="color: #38bdf8;"></i> Assets in Custody</div>
-        </div>
-        <div class="testi-summary-divider"></div>
-        <div class="testi-summary-item">
-          <div class="summary-score">99.98%</div>
-          <div class="summary-label"><i class="fa-solid fa-check-double" style="color: #a855f7;"></i> Inventory Accuracy</div>
+        <!-- Interactive Slider Controls (Prev / Next Arrows) -->
+        <div class="testi-slider-controls">
+          <button class="testi-nav-arrow" id="testiPrevBtn" aria-label="Previous Testimonials">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button class="testi-nav-arrow" id="testiNextBtn" aria-label="Next Testimonials">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </div>
 
-      <!-- Infinite Auto-Scrolling Testimonial Marquee Ticker -->
-      <div class="testimonials-ticker-wrap">
-        <div class="testimonials-track" id="testimonialTrack">
-          
-          <!-- Card 1: Adani Solar & Power -->
-          <div class="testi-card">
-            <div class="testi-card-top">
-              <span class="testi-score-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
-              <span class="verified-epc-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-stars-row">
-              <div class="stars-gold">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+      <!-- Interactive Category Filter Tabs -->
+      <div class="testi-filter-bar reveal-fade-up">
+        <button class="testi-filter-btn active" data-filter="all">
+          <i class="fa-solid fa-layer-group"></i> All Endorsements
+        </button>
+        <button class="testi-filter-btn" data-filter="renewables">
+          <i class="fa-solid fa-solar-panel"></i> Solar &amp; Renewables
+        </button>
+        <button class="testi-filter-btn" data-filter="industrial">
+          <i class="fa-solid fa-industry"></i> Industrial EPC
+        </button>
+        <button class="testi-filter-btn" data-filter="logistics">
+          <i class="fa-solid fa-truck-fast"></i> Supply Chain &amp; Ports
+        </button>
+      </div>
+
+      <!-- Interactive Carousel Viewport & Cards Grid -->
+      <div class="testi-carousel-wrapper reveal-fade-up">
+        <div class="testi-cards-slider" id="testiSlider">
+
+          <!-- Card 1: Adani Solar -->
+          <div class="testi-card-item" data-category="renewables">
+            <div class="testi-card-inner">
+              <div class="testi-card-header">
+                <div class="testi-client-brand">
+                  <div class="testi-brand-logo-wrap">
+                    <img src="assest/images/adanilogo_clean.png" alt="Adani Group" class="testi-brand-img">
+                  </div>
+                  <span class="testi-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+                </div>
+                <!-- Star Rating at Dedicated Top-Right Side (NO NUMBERS) -->
+                <div class="testi-stars-side" aria-label="5 Star Rating">
+                  <div class="stars-gold-cluster">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
-              <span class="sla-badge">100% Zero Demurrage</span>
-            </div>
-            <p class="testi-quote-p">
-              &ldquo;Thin Margin’s 24-hr container decantation team at Mundra Port saved us crores in detention fees during our mega solar module mobilization. Flawless execution and zero demurrage.&rdquo;
-            </p>
-            <div class="testi-author-info">
-              <div class="author-avatar-circle">RV</div>
-              <div>
-                <div class="author-name-text">Rajesh Varma</div>
-                <div class="author-role-text">VP - Supply Chain &bull; <span class="author-comp">Adani Solar &amp; Power</span></div>
+
+              <div class="testi-card-body">
+                <div class="testi-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testi-endorsement-text">
+                  &ldquo;Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module imports. Their rapid 24-hr de-stuffing and strict turnaround protocol gave us total delivery assurance.&rdquo;
+                </p>
+                <div class="testi-scope-tag">
+                  <i class="fa-solid fa-shield-halved"></i> Zero Demurrage Port Decantation
+                </div>
+              </div>
+
+              <div class="testi-card-footer">
+                <div class="testi-avatar-frame">
+                  <span class="avatar-initials">RV</span>
+                </div>
+                <div class="testi-author-meta">
+                  <h4 class="author-fullname">Rajesh Varma</h4>
+                  <p class="author-designation">VP &bull; Project Procurement &amp; Logistics</p>
+                  <span class="author-company-name">Adani Solar &amp; Infra Projects</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 2: L&T Hydrocarbon Engineering -->
-          <div class="testi-card">
-            <div class="testi-card-top">
-              <span class="testi-score-badge"><i class="fa-solid fa-star"></i> 4.9 / 5.0</span>
-              <span class="verified-epc-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-stars-row">
-              <div class="stars-gold">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <!-- Card 2: Aditya Birla Group -->
+          <div class="testi-card-item" data-category="industrial">
+            <div class="testi-card-inner">
+              <div class="testi-card-header">
+                <div class="testi-client-brand">
+                  <div class="testi-brand-logo-wrap">
+                    <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla Group" class="testi-brand-img">
+                  </div>
+                  <span class="testi-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+                </div>
+                <!-- Star Rating at Dedicated Top-Right Side (NO NUMBERS) -->
+                <div class="testi-stars-side" aria-label="5 Star Rating">
+                  <div class="stars-gold-cluster">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
-              <span class="sla-badge">99.98% SAP MIGO Sync</span>
-            </div>
-            <p class="testi-quote-p">
-              &ldquo;Their sub-meter geotagged laydown yard management and strict SAP S/4HANA MIGO bookings brought absolute transparency to our heavy capital equipment laydown operations.&rdquo;
-            </p>
-            <div class="testi-author-info">
-              <div class="author-avatar-circle">AS</div>
-              <div>
-                <div class="author-name-text">Col. Arvind Sharma</div>
-                <div class="author-role-text">Chief Project Director &bull; <span class="author-comp">L&amp;T Hydrocarbon</span></div>
+
+              <div class="testi-card-body">
+                <div class="testi-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testi-endorsement-text">
+                  &ldquo;Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance throughout.&rdquo;
+                </p>
+                <div class="testi-scope-tag">
+                  <i class="fa-solid fa-cubes-stacked"></i> Heavy Equipment Laydown &amp; Custody
+                </div>
+              </div>
+
+              <div class="testi-card-footer">
+                <div class="testi-avatar-frame">
+                  <span class="avatar-initials">SS</span>
+                </div>
+                <div class="testi-author-meta">
+                  <h4 class="author-fullname">Siddharth Sengupta</h4>
+                  <p class="author-designation">Head of Capital Projects Logistics</p>
+                  <span class="author-company-name">Aditya Birla Group</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 3: Tata Power Renewable Energy -->
-          <div class="testi-card">
-            <div class="testi-card-top">
-              <span class="testi-score-badge"><i class="fa-solid fa-star"></i> 5.0 / 5.0</span>
-              <span class="verified-epc-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-stars-row">
-              <div class="stars-gold">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <!-- Card 3: Vishakha Renewables -->
+          <div class="testi-card-item" data-category="renewables">
+            <div class="testi-card-inner">
+              <div class="testi-card-header">
+                <div class="testi-client-brand">
+                  <div class="testi-brand-logo-wrap">
+                    <img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables" class="testi-brand-img">
+                  </div>
+                  <span class="testi-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+                </div>
+                <!-- Star Rating at Dedicated Top-Right Side (NO NUMBERS) -->
+                <div class="testi-stars-side" aria-label="5 Star Rating">
+                  <div class="stars-gold-cluster">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
-              <span class="sla-badge">1,200-Acre Laydown Custody</span>
-            </div>
-            <p class="testi-quote-p">
-              &ldquo;Managing material across a 1,200-acre site is complex. Thin Margin’s RFID tagging and zero-variance reconciliation ensured every transformer was tracked without a single mismatch.&rdquo;
-            </p>
-            <div class="testi-author-info">
-              <div class="author-avatar-circle">SM</div>
-              <div>
-                <div class="author-name-text">Sanjay Mukherjee</div>
-                <div class="author-role-text">Head of Materials &bull; <span class="author-comp">Tata Power Renewables</span></div>
+
+              <div class="testi-card-body">
+                <div class="testi-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testi-endorsement-text">
+                  &ldquo;Pristine component preservation and weatherproof yard storage were critical for our manufacturing supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single transit mismatch.&rdquo;
+                </p>
+                <div class="testi-scope-tag">
+                  <i class="fa-solid fa-box-archive"></i> Weatherproof Component Preservation
+                </div>
+              </div>
+
+              <div class="testi-card-footer">
+                <div class="testi-avatar-frame">
+                  <span class="avatar-initials">PD</span>
+                </div>
+                <div class="testi-author-meta">
+                  <h4 class="author-fullname">Prashant Dave</h4>
+                  <p class="author-designation">Chief Operating Officer &bull; Solar Division</p>
+                  <span class="author-company-name">Vishakha Renewables</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Card 4: NTPC Green Energy -->
-          <div class="testi-card">
-            <div class="testi-card-top">
-              <span class="testi-score-badge"><i class="fa-solid fa-star"></i> 4.8 / 5.0</span>
-              <span class="verified-epc-badge"><i class="fa-solid fa-circle-check"></i> Verified EPC</span>
-            </div>
-            <div class="testi-stars-row">
-              <div class="stars-gold">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+          <!-- Card 4: SB Energy -->
+          <div class="testi-card-item" data-category="renewables">
+            <div class="testi-card-inner">
+              <div class="testi-card-header">
+                <div class="testi-client-brand">
+                  <div class="testi-brand-logo-wrap">
+                    <img src="assest/images/SBENERGY_clean.png" alt="SB Energy" class="testi-brand-img">
+                  </div>
+                  <span class="testi-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+                </div>
+                <!-- Star Rating at Dedicated Top-Right Side (NO NUMBERS) -->
+                <div class="testi-stars-side" aria-label="5 Star Rating">
+                  <div class="stars-gold-cluster">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
               </div>
-              <span class="sla-badge">Zero-Harm EHS Compliance</span>
+
+              <div class="testi-card-body">
+                <div class="testi-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testi-endorsement-text">
+                  &ldquo;Thin Margin’s sub-meter yard indexing and RFID tagging brought remarkable transparency to our multi-acre desert installation. Locating and dispatching serialized inverters and trackers became friction-free.&rdquo;
+                </p>
+                <div class="testi-scope-tag">
+                  <i class="fa-solid fa-location-crosshairs"></i> Sub-Meter RFID Yard Indexing
+                </div>
+              </div>
+
+              <div class="testi-card-footer">
+                <div class="testi-avatar-frame">
+                  <span class="avatar-initials">VR</span>
+                </div>
+                <div class="testi-author-meta">
+                  <h4 class="author-fullname">Vikramaditya Roy</h4>
+                  <p class="author-designation">Project Director &bull; Utility Solar</p>
+                  <span class="author-company-name">SB Energy Projects</span>
+                </div>
+              </div>
             </div>
-            <p class="testi-quote-p">
-              &ldquo;The level of statutory EHS and labor law compliance provided by Thin Margin is second to none. They deliver complete peace of mind on regulatory safety and contractor management.&rdquo;
-            </p>
-            <div class="testi-author-info">
-              <div class="author-avatar-circle">AK</div>
-              <div>
-                <div class="author-name-text">Alok K. Srivastav</div>
-                <div class="author-role-text">General Manager &bull; <span class="author-comp">NTPC Green Energy</span></div>
+          </div>
+
+          <!-- Card 5: Ecom Express -->
+          <div class="testi-card-item" data-category="logistics">
+            <div class="testi-card-inner">
+              <div class="testi-card-header">
+                <div class="testi-client-brand">
+                  <div class="testi-brand-logo-wrap">
+                    <img src="assest/images/Ecomexpress_clean.png" alt="Ecom Express" class="testi-brand-img">
+                  </div>
+                  <span class="testi-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+                </div>
+                <!-- Star Rating at Dedicated Top-Right Side (NO NUMBERS) -->
+                <div class="testi-stars-side" aria-label="5 Star Rating">
+                  <div class="stars-gold-cluster">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card-body">
+                <div class="testi-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testi-endorsement-text">
+                  &ldquo;Their synchronized line-haul management and mechanized cross-dock operations deliver the velocity and reliability essential for national transit networks. Round-the-clock visibility with zero dispatch variances.&rdquo;
+                </p>
+                <div class="testi-scope-tag">
+                  <i class="fa-solid fa-truck-ramp-box"></i> High-Velocity Cross-Dock &amp; Dispatch
+                </div>
+              </div>
+
+              <div class="testi-card-footer">
+                <div class="testi-avatar-frame">
+                  <span class="avatar-initials">AS</span>
+                </div>
+                <div class="testi-author-meta">
+                  <h4 class="author-fullname">Col. Arvind Sharma (Retd.)</h4>
+                  <p class="author-designation">Senior Director &bull; Network Operations</p>
+                  <span class="author-company-name">Ecom Express Logistics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: IRCLASS -->
+          <div class="testi-card-item" data-category="industrial">
+            <div class="testi-card-inner">
+              <div class="testi-card-header">
+                <div class="testi-client-brand">
+                  <div class="testi-brand-logo-wrap">
+                    <img src="assest/images/IRCCLASS_clean.png" alt="IRCLASS" class="testi-brand-img">
+                  </div>
+                  <span class="testi-verified-pill"><i class="fa-solid fa-circle-check"></i> Verified Partner</span>
+                </div>
+                <!-- Star Rating at Dedicated Top-Right Side (NO NUMBERS) -->
+                <div class="testi-stars-side" aria-label="5 Star Rating">
+                  <div class="stars-gold-cluster">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="testi-card-body">
+                <div class="testi-quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+                <p class="testi-endorsement-text">
+                  &ldquo;During statutory safety and third-party custody audits, Thin Margin consistently demonstrates textbook compliance with mechanized lifting protocols, labor law governance, and rigorous EHS standards.&rdquo;
+                </p>
+                <div class="testi-scope-tag">
+                  <i class="fa-solid fa-clipboard-check"></i> Statutory EHS &amp; Audit Governance
+                </div>
+              </div>
+
+              <div class="testi-card-footer">
+                <div class="testi-avatar-frame">
+                  <span class="avatar-initials">AS</span>
+                </div>
+                <div class="testi-author-meta">
+                  <h4 class="author-fullname">Anand Swaminathan</h4>
+                  <p class="author-designation">Lead Quality &amp; Safety Auditor</p>
+                  <span class="author-company-name">IRCLASS Systems &amp; Solutions</span>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
       </div>
+
+      <!-- Interactive Dot Pagination Indicator -->
+      <div class="testi-pagination-dots" id="testiDots"></div>
 
     </div>
   </section>
@@ -1235,6 +1422,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=54.0"></script>
+  <script src="assest/js/main.js?v=55.0"></script>
 </body>
 </html>

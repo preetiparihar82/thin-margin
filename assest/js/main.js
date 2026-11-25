@@ -245,14 +245,187 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. SEAMLESS INFINITE MARQUEE ON TESTIMONIAL TICKER
+  // 6. INTERACTIVE CLIENT TESTIMONIALS SLIDER & CATEGORY FILTER
   // ==========================================================================
-  const testimonialTrack = document.getElementById('testimonialTrack');
-  if (testimonialTrack) {
-    const originalCards = Array.from(testimonialTrack.children);
-    originalCards.forEach((c) => {
-      testimonialTrack.appendChild(c.cloneNode(true));
+  const testiSlider = document.getElementById('testiSlider');
+  const testiPrevBtn = document.getElementById('testiPrevBtn');
+  const testiNextBtn = document.getElementById('testiNextBtn');
+  const testiDotsContainer = document.getElementById('testiDots');
+  const testiFilterBtns = document.querySelectorAll('.testi-filter-btn');
+
+  if (testiSlider) {
+    let currentIndex = 0;
+    let activeCategory = 'all';
+    let autoplayTimer = null;
+
+    const getVisibleCards = () => {
+      const allCards = Array.from(testiSlider.querySelectorAll('.testi-card-item'));
+      return allCards.filter(card => !card.classList.contains('is-hidden'));
+    };
+
+    const getCardsPerPage = () => {
+      const width = window.innerWidth;
+      if (width <= 680) return 1;
+      if (width <= 1024) return 2;
+      return 3;
+    };
+
+    const updateSlider = () => {
+      const visibleCards = getVisibleCards();
+      const perPage = getCardsPerPage();
+      const maxIndex = Math.max(0, visibleCards.length - perPage);
+
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+
+      if (visibleCards.length === 0) {
+        testiSlider.style.transform = 'translateX(0)';
+        return;
+      }
+
+      const firstCard = visibleCards[0];
+      const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 340;
+      const gap = 28;
+      const offset = currentIndex * (cardWidth + gap);
+
+      testiSlider.style.transform = `translateX(-${offset}px)`;
+
+      // Update Dots
+      const totalDots = maxIndex + 1;
+      if (testiDotsContainer) {
+        testiDotsContainer.innerHTML = '';
+        if (totalDots > 1) {
+          for (let i = 0; i < totalDots; i++) {
+            const dot = document.createElement('button');
+            dot.className = `testi-dot ${i === currentIndex ? 'active' : ''}`;
+            dot.setAttribute('aria-label', `Go to testimonial slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+              currentIndex = i;
+              updateSlider();
+              resetAutoplay();
+            });
+            testiDotsContainer.appendChild(dot);
+          }
+        }
+      }
+    };
+
+    const nextSlide = () => {
+      const visibleCards = getVisibleCards();
+      const perPage = getCardsPerPage();
+      const maxIndex = Math.max(0, visibleCards.length - perPage);
+
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+      } else {
+        currentIndex = 0;
+      }
+      updateSlider();
+    };
+
+    const prevSlide = () => {
+      const visibleCards = getVisibleCards();
+      const perPage = getCardsPerPage();
+      const maxIndex = Math.max(0, visibleCards.length - perPage);
+
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = maxIndex;
+      }
+      updateSlider();
+    };
+
+    if (testiNextBtn) {
+      testiNextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoplay();
+      });
+    }
+
+    if (testiPrevBtn) {
+      testiPrevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoplay();
+      });
+    }
+
+    // Category Filter Buttons
+    testiFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        testiFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        activeCategory = btn.getAttribute('data-filter') || 'all';
+        const allCards = testiSlider.querySelectorAll('.testi-card-item');
+
+        allCards.forEach(card => {
+          const cardCat = card.getAttribute('data-category');
+          if (activeCategory === 'all' || cardCat === activeCategory) {
+            card.classList.remove('is-hidden');
+          } else {
+            card.classList.add('is-hidden');
+          }
+        });
+
+        currentIndex = 0;
+        updateSlider();
+        resetAutoplay();
+      });
     });
+
+    // Autoplay Timer with Hover Pause
+    const startAutoplay = () => {
+      stopAutoplay();
+      autoplayTimer = setInterval(nextSlide, 5000);
+    };
+
+    const stopAutoplay = () => {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+    };
+
+    const resetAutoplay = () => {
+      startAutoplay();
+    };
+
+    const carouselWrapper = document.querySelector('.testi-carousel-wrapper');
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener('mouseenter', stopAutoplay);
+      carouselWrapper.addEventListener('mouseleave', startAutoplay);
+    }
+
+    // Touch Swipe Support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    if (carouselWrapper) {
+      carouselWrapper.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carouselWrapper.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchStartX - touchEndX > 50) {
+          nextSlide();
+          resetAutoplay();
+        } else if (touchEndX - touchStartX > 50) {
+          prevSlide();
+          resetAutoplay();
+        }
+      }, { passive: true });
+    }
+
+    // Window Resize Handler
+    window.addEventListener('resize', () => {
+      updateSlider();
+    });
+
+    // Initial setup
+    updateSlider();
+    startAutoplay();
   }
 
   // ==========================================================================
