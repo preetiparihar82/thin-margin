@@ -245,187 +245,166 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. INTERACTIVE CLIENT TESTIMONIALS SLIDER & CATEGORY FILTER
+  // 6. LIGHT THEME INTERACTIVE TESTIMONIAL CARD SWITCHER
   // ==========================================================================
-  const testiSlider = document.getElementById('testiSlider');
-  const testiPrevBtn = document.getElementById('testiPrevBtn');
-  const testiNextBtn = document.getElementById('testiNextBtn');
-  const testiDotsContainer = document.getElementById('testiDots');
-  const testiFilterBtns = document.querySelectorAll('.testi-filter-btn');
-
-  if (testiSlider) {
-    let currentIndex = 0;
-    let activeCategory = 'all';
-    let autoplayTimer = null;
-
-    const getVisibleCards = () => {
-      const allCards = Array.from(testiSlider.querySelectorAll('.testi-card-item'));
-      return allCards.filter(card => !card.classList.contains('is-hidden'));
-    };
-
-    const getCardsPerPage = () => {
-      const width = window.innerWidth;
-      if (width <= 680) return 1;
-      if (width <= 1024) return 2;
-      return 3;
-    };
-
-    const updateSlider = () => {
-      const visibleCards = getVisibleCards();
-      const perPage = getCardsPerPage();
-      const maxIndex = Math.max(0, visibleCards.length - perPage);
-
-      if (currentIndex > maxIndex) {
-        currentIndex = maxIndex;
-      }
-
-      if (visibleCards.length === 0) {
-        testiSlider.style.transform = 'translateX(0)';
-        return;
-      }
-
-      const firstCard = visibleCards[0];
-      const cardWidth = firstCard ? firstCard.getBoundingClientRect().width : 340;
-      const gap = 28;
-      const offset = currentIndex * (cardWidth + gap);
-
-      testiSlider.style.transform = `translateX(-${offset}px)`;
-
-      // Update Dots
-      const totalDots = maxIndex + 1;
-      if (testiDotsContainer) {
-        testiDotsContainer.innerHTML = '';
-        if (totalDots > 1) {
-          for (let i = 0; i < totalDots; i++) {
-            const dot = document.createElement('button');
-            dot.className = `testi-dot ${i === currentIndex ? 'active' : ''}`;
-            dot.setAttribute('aria-label', `Go to testimonial slide ${i + 1}`);
-            dot.addEventListener('click', () => {
-              currentIndex = i;
-              updateSlider();
-              resetAutoplay();
-            });
-            testiDotsContainer.appendChild(dot);
-          }
-        }
-      }
-    };
-
-    const nextSlide = () => {
-      const visibleCards = getVisibleCards();
-      const perPage = getCardsPerPage();
-      const maxIndex = Math.max(0, visibleCards.length - perPage);
-
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-      } else {
-        currentIndex = 0;
-      }
-      updateSlider();
-    };
-
-    const prevSlide = () => {
-      const visibleCards = getVisibleCards();
-      const perPage = getCardsPerPage();
-      const maxIndex = Math.max(0, visibleCards.length - perPage);
-
-      if (currentIndex > 0) {
-        currentIndex--;
-      } else {
-        currentIndex = maxIndex;
-      }
-      updateSlider();
-    };
-
-    if (testiNextBtn) {
-      testiNextBtn.addEventListener('click', () => {
-        nextSlide();
-        resetAutoplay();
-      });
+  const testimonialsData = [
+    {
+      name: "Rajesh Varma",
+      role: "VP • Project Procurement, Adani Solar",
+      initials: "RV",
+      avatarBg: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
+      quote: "Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module imports. Their rapid 24-hr de-stuffing and strict turnaround protocol gave us total delivery assurance.",
+      scope: "Zero Demurrage Port Decantation"
+    },
+    {
+      name: "Siddharth Sengupta",
+      role: "Head of Capital Projects Logistics, Aditya Birla Group",
+      initials: "SS",
+      avatarBg: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
+      quote: "Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance throughout.",
+      scope: "Heavy Cargo Laydown Custody"
+    },
+    {
+      name: "Prashant Dave",
+      role: "Chief Operating Officer • Solar Division, Vishakha Renewables",
+      initials: "PD",
+      avatarBg: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
+      quote: "Pristine component preservation and weatherproof yard storage were critical for our manufacturing supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single transit mismatch.",
+      scope: "Weatherproof Preservation"
+    },
+    {
+      name: "Vikramaditya Roy",
+      role: "Project Director • Utility Solar, SB Energy Projects",
+      initials: "VR",
+      avatarBg: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
+      quote: "Thin Margin’s sub-meter yard indexing and RFID tagging brought remarkable transparency to our multi-acre desert installation. Locating and dispatching serialized inverters and trackers became friction-free.",
+      scope: "Sub-Meter RFID Yard Indexing"
+    },
+    {
+      name: "Col. Arvind Sharma (Retd.)",
+      role: "Senior Director • Network Operations, Ecom Express Logistics",
+      initials: "AS",
+      avatarBg: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)",
+      quote: "Their synchronized line-haul management and mechanized cross-dock operations deliver the velocity and reliability essential for national transit networks. Round-the-clock visibility with zero dispatch variances.",
+      scope: "High-Velocity Cross-Dock"
+    },
+    {
+      name: "Anand Swaminathan",
+      role: "Lead Quality & Safety Auditor, IRCLASS Systems & Solutions",
+      initials: "AS",
+      avatarBg: "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)",
+      quote: "During statutory safety and third-party custody audits, Thin Margin consistently demonstrates textbook compliance with mechanized lifting protocols, labor law governance, and rigorous EHS standards.",
+      scope: "Statutory EHS & Audit Governance"
     }
+  ];
 
-    if (testiPrevBtn) {
-      testiPrevBtn.addEventListener('click', () => {
-        prevSlide();
-        resetAutoplay();
-      });
-    }
+  const cardAuthorAvatar = document.getElementById('cardAuthorAvatar');
+  const cardAuthorName = document.getElementById('cardAuthorName');
+  const cardAuthorRole = document.getElementById('cardAuthorRole');
+  const cardQuoteText = document.getElementById('cardQuoteText');
+  const cardScopeBadge = document.getElementById('cardScopeBadge');
+  const cardPrevArrow = document.getElementById('cardPrevArrow');
+  const cardNextArrow = document.getElementById('cardNextArrow');
+  const cardDotsGroup = document.getElementById('cardDotsGroup');
+  const testiInteractiveCard = document.getElementById('testiInteractiveCard');
 
-    // Category Filter Buttons
-    testiFilterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        testiFilterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  if (cardQuoteText && cardAuthorName) {
+    let activeTestiIndex = 0;
+    let testiAutoTimer = null;
 
-        activeCategory = btn.getAttribute('data-filter') || 'all';
-        const allCards = testiSlider.querySelectorAll('.testi-card-item');
-
-        allCards.forEach(card => {
-          const cardCat = card.getAttribute('data-category');
-          if (activeCategory === 'all' || cardCat === activeCategory) {
-            card.classList.remove('is-hidden');
-          } else {
-            card.classList.add('is-hidden');
-          }
+    // Render interactive dots
+    if (cardDotsGroup) {
+      cardDotsGroup.innerHTML = '';
+      testimonialsData.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `card-dot-btn ${idx === 0 ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `View testimonial ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          showTestimonial(idx);
+          resetTestiAutoplay();
         });
-
-        currentIndex = 0;
-        updateSlider();
-        resetAutoplay();
+        cardDotsGroup.appendChild(dot);
       });
-    });
+    }
 
-    // Autoplay Timer with Hover Pause
-    const startAutoplay = () => {
-      stopAutoplay();
-      autoplayTimer = setInterval(nextSlide, 5000);
-    };
+    const showTestimonial = (index) => {
+      activeTestiIndex = (index + testimonialsData.length) % testimonialsData.length;
+      const data = testimonialsData[activeTestiIndex];
 
-    const stopAutoplay = () => {
-      if (autoplayTimer) {
-        clearInterval(autoplayTimer);
-        autoplayTimer = null;
+      // Subtle smooth transition
+      cardQuoteText.style.opacity = '0';
+      cardQuoteText.style.transform = 'translateY(8px)';
+      cardAuthorName.style.opacity = '0';
+      cardAuthorRole.style.opacity = '0';
+
+      setTimeout(() => {
+        cardAuthorName.textContent = data.name;
+        cardAuthorRole.textContent = data.role;
+        cardQuoteText.textContent = `“${data.quote}”`;
+        
+        if (cardAuthorAvatar) {
+          cardAuthorAvatar.innerHTML = `<span>${data.initials}</span>`;
+          cardAuthorAvatar.style.background = data.avatarBg;
+        }
+
+        if (cardScopeBadge) {
+          cardScopeBadge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${data.scope}`;
+        }
+
+        // Fade back in smoothly
+        cardQuoteText.style.opacity = '1';
+        cardQuoteText.style.transform = 'translateY(0)';
+        cardAuthorName.style.opacity = '1';
+        cardAuthorRole.style.opacity = '1';
+      }, 200);
+
+      // Update dots
+      if (cardDotsGroup) {
+        const dots = cardDotsGroup.querySelectorAll('.card-dot-btn');
+        dots.forEach((dot, dIdx) => {
+          dot.classList.toggle('active', dIdx === activeTestiIndex);
+        });
       }
     };
 
-    const resetAutoplay = () => {
-      startAutoplay();
+    if (cardNextArrow) {
+      cardNextArrow.addEventListener('click', () => {
+        showTestimonial(activeTestiIndex + 1);
+        resetTestiAutoplay();
+      });
+    }
+
+    if (cardPrevArrow) {
+      cardPrevArrow.addEventListener('click', () => {
+        showTestimonial(activeTestiIndex - 1);
+        resetTestiAutoplay();
+      });
+    }
+
+    const startTestiAutoplay = () => {
+      stopTestiAutoplay();
+      testiAutoTimer = setInterval(() => {
+        showTestimonial(activeTestiIndex + 1);
+      }, 6000);
     };
 
-    const carouselWrapper = document.querySelector('.testi-carousel-wrapper');
-    if (carouselWrapper) {
-      carouselWrapper.addEventListener('mouseenter', stopAutoplay);
-      carouselWrapper.addEventListener('mouseleave', startAutoplay);
+    const stopTestiAutoplay = () => {
+      if (testiAutoTimer) {
+        clearInterval(testiAutoTimer);
+        testiAutoTimer = null;
+      }
+    };
+
+    const resetTestiAutoplay = () => {
+      startTestiAutoplay();
+    };
+
+    if (testiInteractiveCard) {
+      testiInteractiveCard.addEventListener('mouseenter', stopTestiAutoplay);
+      testiInteractiveCard.addEventListener('mouseleave', startTestiAutoplay);
     }
 
-    // Touch Swipe Support
-    let touchStartX = 0;
-    let touchEndX = 0;
-    if (carouselWrapper) {
-      carouselWrapper.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-      }, { passive: true });
-
-      carouselWrapper.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        if (touchStartX - touchEndX > 50) {
-          nextSlide();
-          resetAutoplay();
-        } else if (touchEndX - touchStartX > 50) {
-          prevSlide();
-          resetAutoplay();
-        }
-      }, { passive: true });
-    }
-
-    // Window Resize Handler
-    window.addEventListener('resize', () => {
-      updateSlider();
-    });
-
-    // Initial setup
-    updateSlider();
-    startAutoplay();
+    startTestiAutoplay();
   }
 
   // ==========================================================================
