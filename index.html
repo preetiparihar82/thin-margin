@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=52.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=53.0">
 </head>
 <body class="tm-body">
 
@@ -611,27 +611,51 @@
     <div class="methodology-fixed-bg" aria-hidden="true">
       <div class="fixed-gradient-backdrop"></div>
       
-      <!-- Organic Ambient Side Spots in Light Black / Charcoal Shade -->
-      <svg class="methodology-blob-canvas" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-        <!-- Left Side Organic Spot (Curving Smoothly Behind the Video Frame) -->
-        <path d="M -120 -80 
-                 C 260 60, 480 30, 520 280 
-                 C 560 520, 310 680, 490 830 
-                 C 550 880, 380 980, -120 980 Z" 
-              fill="rgba(17, 19, 23, 0.05)"/>
-        
-        <!-- Left Subtle Inner Contour -->
-        <path d="M -120 100 
-                 C 160 180, 360 170, 380 370 
-                 C 400 560, 210 710, 310 860 
-                 C 350 910, 190 980, -120 980 Z" 
-              fill="rgba(238, 33, 48, 0.02)"/>
+      <!-- Dynamic Organic Ambient Spot Orbs (Charcoal / Light Black) -->
+      <div class="methodology-ambient-orb orb-left"></div>
+      <div class="methodology-ambient-orb orb-right"></div>
 
-        <!-- Top-Right Organic Spot (Softly Framing the Top-Right Perimeter) -->
-        <path d="M 1720 -100 
-                 C 1340 -30, 1180 140, 1310 320 
-                 C 1420 460, 1610 390, 1760 500 Z" 
-              fill="rgba(17, 19, 23, 0.04)"/>
+      <!-- Organic Ambient Side Spots in Light Black / Charcoal Shade with Dynamic Drift -->
+      <svg class="methodology-blob-canvas" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="spotCharcoalLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#111317" stop-opacity="0.08"/>
+            <stop offset="50%" stop-color="#1e293b" stop-opacity="0.045"/>
+            <stop offset="100%" stop-color="#334155" stop-opacity="0.015"/>
+          </linearGradient>
+          <linearGradient id="spotCharcoalRight" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#111317" stop-opacity="0.065"/>
+            <stop offset="60%" stop-color="#1e293b" stop-opacity="0.035"/>
+            <stop offset="100%" stop-color="#334155" stop-opacity="0.01"/>
+          </linearGradient>
+          <linearGradient id="spotRedContour" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#ee2130" stop-opacity="0.04"/>
+            <stop offset="100%" stop-color="#ee2130" stop-opacity="0.005"/>
+          </linearGradient>
+        </defs>
+
+        <!-- Left Side Organic Spot Group (Dynamic Floating & Curving Behind Video Frame) -->
+        <g class="methodology-dynamic-spot spot-left">
+          <path d="M -120 -80 
+                   C 260 60, 480 30, 520 280 
+                   C 560 520, 310 680, 490 830 
+                   C 550 880, 380 980, -120 980 Z" 
+                fill="url(#spotCharcoalLeft)"/>
+          
+          <path d="M -120 100 
+                   C 160 180, 360 170, 380 370 
+                   C 400 560, 210 710, 310 860 
+                   C 350 910, 190 980, -120 980 Z" 
+                fill="url(#spotRedContour)"/>
+        </g>
+
+        <!-- Top-Right Organic Spot Group (Dynamic Floating & Framing Upper Perimeter) -->
+        <g class="methodology-dynamic-spot spot-right">
+          <path d="M 1720 -100 
+                   C 1340 -30, 1180 140, 1310 320 
+                   C 1420 460, 1610 390, 1760 500 Z" 
+                fill="url(#spotCharcoalRight)"/>
+        </g>
       </svg>
     </div>
 
@@ -673,7 +697,7 @@
           <div class="methodology-steps-container">
             
             <!-- Step 1 -->
-            <div class="methodology-step-item">
+            <div class="methodology-step-item reveal-fade-up">
               <div class="step-badge-circle">
                 <i class="fa-solid fa-ship"></i>
               </div>
@@ -686,7 +710,7 @@
             </div>
 
             <!-- Step 2 -->
-            <div class="methodology-step-item">
+            <div class="methodology-step-item reveal-fade-up">
               <div class="step-badge-circle">
                 <i class="fa-solid fa-truck-ramp-box"></i>
               </div>
@@ -699,7 +723,7 @@
             </div>
 
             <!-- Step 3 -->
-            <div class="methodology-step-item">
+            <div class="methodology-step-item reveal-fade-up">
               <div class="step-badge-circle">
                 <i class="fa-solid fa-location-crosshairs"></i>
               </div>
@@ -712,7 +736,7 @@
             </div>
 
             <!-- Step 4 -->
-            <div class="methodology-step-item">
+            <div class="methodology-step-item reveal-fade-up">
               <div class="step-badge-circle">
                 <i class="fa-solid fa-network-wired"></i>
               </div>
@@ -1211,6 +1235,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=52.0"></script>
+  <script src="assest/js/main.js?v=53.0"></script>
 </body>
 </html>
