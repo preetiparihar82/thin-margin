@@ -2131,18 +2131,18 @@ h3 .text-accent {
 }
 
 /* ==========================================================================
-   12. CLIENT TESTIMONIALS — 2-CARD SPOTLIGHT WITH DYNAMIC LIGHT GRADIENT
+   12. CLIENT TESTIMONIALS — 2-CARD SHOWCASE (ARCHITECTURAL & DYNAMIC)
    ========================================================================== */
 .rv-testimonials {
   position: relative;
-  padding: 105px 0 115px;
-  background: linear-gradient(160deg, #ffffff 0%, #fff7f7 32%, #fffdfa 68%, #f8fafc 100%);
+  padding: 100px 0 110px;
+  background: linear-gradient(165deg, #ffffff 0%, #fff8f8 35%, #fffbf8 70%, #f8fafc 100%);
   overflow: hidden;
   border-top: 1px solid rgba(226, 232, 240, 0.95);
   border-bottom: 1px solid rgba(226, 232, 240, 0.95);
 }
 
-/* --- Animated Gradient Orbs in Background --- */
+/* --- Animated Gradient Orbs in Background (Strictly No Stars) --- */
 .rv-bg-orb {
   position: absolute;
   border-radius: 50%;
@@ -2216,36 +2216,7 @@ h3 .text-accent {
   opacity: 1;
 }
 
-/* Floating Geometric Particle Accents */
-.rv-floating-shapes {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.rv-shape {
-  position: absolute;
-  color: #ee2130;
-  opacity: 0.16;
-  font-size: 20px;
-  animation: rvFloatParticle 12s ease-in-out infinite alternate;
-}
-
-.shape-1 { top: 15%; left: 8%; font-size: 24px; animation-duration: 14s; }
-.shape-2 { top: 22%; right: 10%; font-size: 18px; color: #f59e0b; animation-duration: 11s; animation-delay: 1s; }
-.shape-3 { bottom: 25%; left: 12%; font-size: 22px; animation-duration: 16s; animation-delay: 2s; }
-.shape-4 { bottom: 20%; right: 14%; font-size: 20px; color: #f59e0b; animation-duration: 13s; animation-delay: 3s; }
-.shape-5 { top: 55%; right: 6%; font-size: 16px; animation-duration: 10s; animation-delay: 0.5s; }
-
-@keyframes rvFloatParticle {
-  0% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-25px) rotate(15deg) scale(1.15); }
-  100% { transform: translateY(18px) rotate(-10deg) scale(0.9); }
-}
-
-/* --- Animated Section Header --- */
+/* --- Animated Section Header (Strictly No Pills) --- */
 .rv-header {
   text-align: center;
   margin-bottom: 45px;
@@ -2256,42 +2227,26 @@ h3 .text-accent {
 .rv-kicker-wrap {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #ffffff;
-  padding: 6px 18px;
-  border-radius: 30px;
-  border: 1.5px solid rgba(238, 33, 48, 0.25);
-  box-shadow: 0 4px 14px rgba(238, 33, 48, 0.08);
+  gap: 10px;
+  background: rgba(238, 33, 48, 0.05);
+  border-left: 3px solid #ee2130;
+  padding: 6px 14px;
+  border-radius: 4px; /* Crisp architectural badge — NO PILL */
   margin-bottom: 16px;
 }
 
-.rv-kicker-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+.rv-kicker-bar {
+  width: 14px;
+  height: 2.5px;
   background: #ee2130;
-  position: relative;
-}
-
-.rv-kicker-dot::after {
-  content: "";
-  position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  border: 2px solid #ee2130;
-  animation: rvRadarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-@keyframes rvRadarPing {
-  0% { transform: scale(0.8); opacity: 1; }
-  100% { transform: scale(2.2); opacity: 0; }
+  border-radius: 2px;
 }
 
 .rv-kicker-text {
   font-family: var(--font-heading);
-  font-size: 12px;
+  font-size: 11.5px;
   font-weight: 800;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   color: #0b192c;
   text-transform: uppercase;
 }
@@ -2323,7 +2278,7 @@ h3 .text-accent {
   width: 80px;
   height: 4px;
   background: rgba(238, 33, 48, 0.2);
-  border-radius: 4px;
+  border-radius: 2px;
   margin: 0 auto 20px;
   position: relative;
   overflow: hidden;
@@ -2336,7 +2291,7 @@ h3 .text-accent {
   width: 50%;
   height: 100%;
   background: linear-gradient(90deg, transparent, #ee2130, transparent);
-  border-radius: 4px;
+  border-radius: 2px;
   animation: rvBarLaser 2.8s ease-in-out infinite;
 }
 
@@ -2360,7 +2315,7 @@ h3 .text-accent {
   z-index: 1;
 }
 
-/* Stage Topbar (Audit summary on left, Arrows on right) */
+/* Stage Topbar (Strictly No Pills) */
 .rv-stage-topbar {
   display: flex;
   align-items: center;
@@ -2376,9 +2331,9 @@ h3 .text-accent {
   gap: 12px;
   background: #ffffff;
   padding: 8px 18px;
-  border-radius: 30px;
+  border-radius: 6px; /* Architectural rectangle — NO PILL */
   border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.04);
 }
 
 .rv-summary-score {
@@ -2397,10 +2352,15 @@ h3 .text-accent {
   font-size: 15px;
 }
 
+.rv-summary-divider {
+  color: #cbd5e1;
+  font-weight: 300;
+}
+
 .rv-summary-label {
   font-size: 13px;
   font-weight: 600;
-  color: #64748b;
+  color: #475569;
 }
 
 .rv-nav-arrows {
@@ -2410,9 +2370,9 @@ h3 .text-accent {
 }
 
 .rv-nav-btn {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px; /* Architectural squircle — NO PILL */
   border: 1.5px solid #e2e8f0;
   background: #ffffff;
   color: #0b192c;
@@ -2422,15 +2382,15 @@ h3 .text-accent {
   justify-content: center;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
 .rv-nav-btn:hover {
   background: #ee2130;
   border-color: #ee2130;
   color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 8px 22px rgba(238, 33, 48, 0.32);
+  transform: scale(1.06);
+  box-shadow: 0 6px 18px rgba(238, 33, 48, 0.3);
 }
 
 /* Track Wrapper for Two Cards */
@@ -2449,13 +2409,13 @@ h3 .text-accent {
 
 /* Two Feedback in One View Cards */
 .rv-dual-card {
-  flex: 0 0 calc(50% - 14px); /* Exactly 2 cards in view on desktop */
+  flex: 0 0 calc(50% - 14px); /* 2 cards in one view */
   background: #ffffff;
-  border-radius: 28px 8px 28px 8px; /* Sculpted non-rectangular silhouette */
+  border-radius: 20px 6px 20px 6px; /* Sculpted non-rectangular silhouette — NO PILL */
   border: 1px solid rgba(226, 232, 240, 0.95);
   border-top: 3.5px solid transparent;
   color: #0b192c;
-  box-shadow: 0 18px 45px -12px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
+  box-shadow: 0 16px 40px -12px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(15, 23, 42, 0.03);
   transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   display: flex;
   flex-direction: column;
@@ -2465,7 +2425,7 @@ h3 .text-accent {
   transform: translateY(-6px);
   border-top-color: #ee2130;
   border-color: #cbd5e1;
-  box-shadow: 0 28px 60px -15px rgba(238, 33, 48, 0.16), 0 8px 20px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 26px 55px -15px rgba(238, 33, 48, 0.16), 0 8px 20px rgba(15, 23, 42, 0.04);
 }
 
 .rv-card-inner {
@@ -2476,7 +2436,7 @@ h3 .text-accent {
   justify-content: space-between;
 }
 
-/* Card Header: Glowing Avatar + Name + Client Logo */
+/* Card Header: Executive Monogram + Name + Company Tag (No Cartoons, No Logo Image) */
 .rv-card-header {
   display: flex;
   align-items: center;
@@ -2484,46 +2444,43 @@ h3 .text-accent {
   margin-bottom: 22px;
 }
 
-.rv-avatar-ring {
-  width: 62px;
-  height: 62px;
-  border-radius: 50%;
-  padding: 3px;
-  background: linear-gradient(135deg, #ee2130 0%, #ff6b6b 50%, #f59e0b 100%);
-  position: relative;
-  flex-shrink: 0;
-  box-shadow: 0 6px 16px rgba(238, 33, 48, 0.22);
-  transition: transform 0.35s ease;
-}
-
-.rv-dual-card:hover .rv-avatar-ring {
-  transform: scale(1.06);
-}
-
-.rv-avatar-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2.5px solid #ffffff;
-  display: block;
-  background: #fff1f2;
-}
-
-.rv-avatar-badge-icon {
-  position: absolute;
-  bottom: 0;
-  right: -2px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: #10b981;
-  border: 2px solid #ffffff;
+.rv-avatar-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px; /* Sleek rounded square monogram badge — NO CARTOONS, NO PILLS */
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   color: #ffffff;
-  font-size: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  border: 2px solid #ffffff;
+  position: relative;
+  transition: transform 0.35s ease;
+}
+
+.rv-avatar-badge::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #ee2130;
+}
+
+.rv-dual-card:hover .rv-avatar-badge {
+  transform: scale(1.06);
+}
+
+.rv-monogram {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #ffffff;
 }
 
 .rv-person-meta {
@@ -2554,24 +2511,19 @@ h3 .text-accent {
   font-weight: 500;
 }
 
-.rv-client-logo-box {
-  width: 52px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+/* Company Tag (Clean Text Badge — Strictly NO Logo Image) */
+.rv-company-tag {
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #334155;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  padding: 5px 8px;
-}
-
-.rv-client-logo-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  opacity: 0.9;
+  border-radius: 4px; /* Crisp rectangle — NO PILL */
+  padding: 5px 12px;
+  text-transform: uppercase;
+  flex-shrink: 0;
 }
 
 /* Card Body & Quote */
@@ -2583,7 +2535,7 @@ h3 .text-accent {
 
 .rv-quote-icon {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 44px;
+  font-size: 42px;
   line-height: 1;
   color: #ee2130;
   opacity: 0.35;
@@ -2601,7 +2553,7 @@ h3 .text-accent {
   font-weight: 450;
 }
 
-/* Card Footer: Tag & Gold Stars */
+/* Card Footer: Tag & Gold Stars (No Pills) */
 .rv-card-footer {
   display: flex;
   align-items: center;
@@ -2612,16 +2564,17 @@ h3 .text-accent {
 }
 
 .rv-verified-tag {
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
   font-weight: 700;
   color: #15803d;
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
-  padding: 4px 12px;
-  border-radius: 16px;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  border-left: 3px solid #16a34a;
+  padding: 4px 10px;
+  border-radius: 4px; /* Crisp rectangle — NO PILL */
 }
 
 .rv-verified-tag i {
@@ -2637,7 +2590,7 @@ h3 .text-accent {
   filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.25));
 }
 
-/* Dots Nav */
+/* Architectural Pagination Lines (Strictly No Pills) */
 .rv-dots-nav {
   display: flex;
   align-items: center;
@@ -2647,9 +2600,9 @@ h3 .text-accent {
 }
 
 .rv-dot-btn {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
+  width: 16px;
+  height: 4px;
+  border-radius: 2px; /* Architectural line/dash — NO PILL */
   background: #cbd5e1;
   border: none;
   cursor: pointer;
@@ -2658,10 +2611,11 @@ h3 .text-accent {
 }
 
 .rv-dot-btn.active {
-  width: 28px;
-  border-radius: 10px;
+  width: 34px;
+  height: 4px;
+  border-radius: 2px;
   background: #ee2130;
-  box-shadow: 0 2px 8px rgba(238, 33, 48, 0.4);
+  box-shadow: 0 2px 6px rgba(238, 33, 48, 0.35);
 }
 
 /* Responsive Media Queries */
@@ -2694,6 +2648,7 @@ h3 .text-accent {
     gap: 16px;
   }
 
+  .rv-summary-divider,
   .rv-summary-label {
     display: none;
   }
