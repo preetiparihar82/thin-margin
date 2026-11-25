@@ -245,22 +245,23 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. EXECUTIVE AUDIT TESTIMONIALS SLIDER CONTROLLER
+  // 6. TWO-CARD CLIENT TESTIMONIALS SLIDER & INTERACTIVE GLOW CONTROLLER
   // ==========================================================================
-  const sculptedSlider = document.getElementById('sculptedSlider');
-  const stagePrevBtn = document.getElementById('stagePrevBtn');
-  const stageNextBtn = document.getElementById('stageNextBtn');
-  const sculptedDots = document.getElementById('sculptedDots');
+  const rvSection = document.getElementById('testimonials');
+  const rvTrack = document.getElementById('rvCardsTrack');
+  const rvPrevBtn = document.getElementById('rvPrevBtn');
+  const rvNextBtn = document.getElementById('rvNextBtn');
+  const rvDotsNav = document.getElementById('rvDotsNav');
+  const rvInteractiveGlow = document.getElementById('rvInteractiveGlow');
 
-  if (sculptedSlider) {
-    const cards = sculptedSlider.querySelectorAll('.testi-sculpted-card');
+  if (rvTrack) {
+    const cards = rvTrack.querySelectorAll('.rv-dual-card');
     let currentIndex = 0;
     let autoSlideTimer = null;
     let touchStartX = 0;
-    let touchEndX = 0;
 
     const getVisibleCount = () => {
-      return window.innerWidth <= 720 ? 1 : 2;
+      return window.innerWidth <= 992 ? 1 : 2;
     };
 
     const getMaxIndex = () => {
@@ -277,15 +278,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!card) return;
 
       const cardWidth = card.getBoundingClientRect().width;
-      const gap = 24; // matching CSS gap
+      const gap = 28; // matching CSS gap
       const offset = (cardWidth + gap) * currentIndex;
 
-      sculptedSlider.style.transition = smooth ? 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
-      sculptedSlider.style.transform = `translateX(-${offset}px)`;
+      rvTrack.style.transition = smooth ? 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+      rvTrack.style.transform = `translateX(-${offset}px)`;
 
       // Update dots
-      if (sculptedDots) {
-        const dots = sculptedDots.querySelectorAll('.sculpted-dot-btn');
+      if (rvDotsNav) {
+        const dots = rvDotsNav.querySelectorAll('.rv-dot-btn');
         dots.forEach((dot, idx) => {
           dot.classList.toggle('active', idx === currentIndex);
         });
@@ -293,21 +294,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const buildDots = () => {
-      if (!sculptedDots) return;
-      sculptedDots.innerHTML = '';
+      if (!rvDotsNav) return;
+      rvDotsNav.innerHTML = '';
       const maxIdx = getMaxIndex();
       const dotCount = maxIdx + 1;
 
       for (let i = 0; i < dotCount; i++) {
         const dot = document.createElement('button');
-        dot.className = `sculpted-dot-btn ${i === currentIndex ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Navigate to review page ${i + 1}`);
+        dot.className = `rv-dot-btn ${i === currentIndex ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Navigate to testimonial slide ${i + 1}`);
         dot.addEventListener('click', () => {
           currentIndex = i;
           updateSlider();
           resetAutoSlide();
         });
-        sculptedDots.appendChild(dot);
+        rvDotsNav.appendChild(dot);
       }
     };
 
@@ -323,28 +324,28 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
     };
 
-    if (stageNextBtn) {
-      stageNextBtn.addEventListener('click', () => {
+    if (rvNextBtn) {
+      rvNextBtn.addEventListener('click', () => {
         nextSlide();
         resetAutoSlide();
       });
     }
 
-    if (stagePrevBtn) {
-      stagePrevBtn.addEventListener('click', () => {
+    if (rvPrevBtn) {
+      rvPrevBtn.addEventListener('click', () => {
         prevSlide();
         resetAutoSlide();
       });
     }
 
     // Touch Swipe Support
-    sculptedSlider.addEventListener('touchstart', (e) => {
+    rvTrack.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
       stopAutoSlide();
     }, { passive: true });
 
-    sculptedSlider.addEventListener('touchend', (e) => {
-      touchEndX = e.changedTouches[0].screenX;
+    rvTrack.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].screenX;
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 40) {
         if (diff > 0) nextSlide();
@@ -372,8 +373,19 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoSlide();
     };
 
-    sculptedSlider.addEventListener('mouseenter', stopAutoSlide);
-    sculptedSlider.addEventListener('mouseleave', startAutoSlide);
+    rvTrack.addEventListener('mouseenter', stopAutoSlide);
+    rvTrack.addEventListener('mouseleave', startAutoSlide);
+
+    // Dynamic Mouse-Tracking Glow Effect
+    if (rvSection && rvInteractiveGlow) {
+      rvSection.addEventListener('mousemove', (e) => {
+        const rect = rvSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        rvInteractiveGlow.style.left = `${x}px`;
+        rvInteractiveGlow.style.top = `${y}px`;
+      });
+    }
 
     // Initial setup and responsive listener
     buildDots();
