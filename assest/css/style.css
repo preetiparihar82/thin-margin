@@ -2131,165 +2131,213 @@ h3 .text-accent {
 }
 
 /* ==========================================================================
-   12. CLIENT TESTIMONIALS (LIGHT THEME VECTOR SHOWCASE)
+   12. CLIENT TESTIMONIALS & AUDIT RATINGS (EXECUTIVE AUDIT CONSOLE)
    ========================================================================== */
-.tm-testimonials-section.light-theme-testi {
+.tm-testimonials-section.executive-reviews-section {
   position: relative;
-  padding: 105px 0 115px;
-  background-color: #ebf5f7;
+  padding: 95px 0 105px;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
   color: #0f172a;
   overflow: hidden;
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
 }
 
-/* Vector Dotted Matrix Pattern */
-.testi-dots-pattern {
+/* Subtle architectural gradient shimmer - strictly no dots */
+.tm-testimonials-section.executive-reviews-section::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  background-image: radial-gradient(rgba(100, 116, 139, 0.28) 1.5px, transparent 1.5px);
-  background-size: 22px 22px;
-  pointer-events: none;
-  opacity: 0.75;
-  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #ee2130 0%, #1e293b 50%, #ee2130 100%);
 }
 
-.testi-grid-showcase {
-  display: grid;
-  grid-template-columns: 46% 54%;
-  gap: 50px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
+/* --- Section Top Lead Header --- */
+.testi-corporate-lead {
+  max-width: 860px;
+  margin-bottom: 45px;
 }
 
-/* --- Left Column: Vector Hero Visual with Concentric Target Rings --- */
-.testi-hero-col {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.testi-vector-visual-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 480px;
-  height: 480px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-/* SVG Concentric Target Ripple Rings (Brand Red) */
-.testi-concentric-rings-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 450px;
-  height: 450px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Small Floating Accent Ring (Bottom-Left) */
-.testi-floating-accent-ring {
-  position: absolute;
-  bottom: 80px;
-  left: 20px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 8px solid #ee2130;
-  background: transparent;
-  z-index: 3;
-  box-shadow: 0 4px 14px rgba(238, 33, 48, 0.25);
-  animation: floatAccentRing 6s ease-in-out infinite alternate;
-}
-
-@keyframes floatAccentRing {
-  0% { transform: translate(0, 0) scale(1); }
-  100% { transform: translate(-6px, 10px) scale(1.06); }
-}
-
-/* Cutout Worker Image with Transparent BG */
-.testi-worker-cutout-frame {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.testi-worker-cutout-img {
-  max-width: 100%;
-  max-height: 470px;
-  object-fit: contain;
-  display: block;
-  filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.12));
-}
-
-/* --- Right Column: Content & Card --- */
-.testi-content-col {
-  position: relative;
-  z-index: 2;
-}
-
-/* Reference Kicker Pill with Asterisk */
-.testi-kicker-pill {
+.corporate-lead-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 18px;
+  padding: 6px 16px;
   border-radius: 30px;
-  border: 1.5px solid rgba(238, 33, 48, 0.45);
   background: #ffffff;
-  color: #ee2130;
+  border: 1px solid rgba(238, 33, 48, 0.35);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
   font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.08em;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 8px rgba(238, 33, 48, 0.08);
+  color: #0f172a;
+  margin-bottom: 14px;
 }
 
-.kicker-asterisk {
-  font-size: 14px;
-  line-height: 1;
+.corporate-lead-pill .text-accent {
+  color: #ee2130;
 }
 
-.testi-main-heading {
-  font-family: var(--font-heading);
-  font-size: 42px;
-  font-weight: 800;
-  color: #0d1e38;
-  line-height: 1.22;
-  margin: 0 0 32px;
-  letter-spacing: -0.02em;
+.corporate-lead-sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: #334155;
+  font-weight: 500;
+  margin: 0;
 }
 
-.testi-main-heading .text-dark-bold {
-  color: #0b192c;
+/* --- 2-Column Grid: Rating Console (Left) + Testimonials Stage (Right) --- */
+.testi-executive-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 36px;
+  align-items: stretch;
 }
 
-/* Signature White Interactive Card */
-.testi-card-white {
-  background: #ffffff;
-  border-radius: 24px;
-  padding: 34px 38px;
-  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03);
-  border: 1px solid rgba(226, 232, 240, 0.8);
+/* --- Left Column: Audit Rating Console (Non-Simple Rectangle) --- */
+.testi-rating-console-card {
+  position: relative;
+  background: #0b0f17;
+  border-radius: 36px 10px 36px 10px; /* Sculpted non-rectangular silhouette */
+  padding: 36px 32px;
+  color: #ffffff;
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.16), 0 2px 6px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3.5px solid #ee2130;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.testi-card-white:hover {
+.testi-rating-console-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 30px 70px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.22);
 }
 
-/* Card Header: Author Profile (Left) vs Stylized Quote Mark (Right) */
-.card-white-header {
+.console-card-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hero Score Block */
+.console-hero-score-block {
+  text-align: left;
+  margin-bottom: 30px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-score-number {
+  font-family: var(--font-heading);
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.hero-score-stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #f59e0b;
+  font-size: 19px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 6px rgba(245, 158, 11, 0.4));
+}
+
+.hero-score-label {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+}
+
+/* Rating Distribution Stack (5 down to 1) */
+.console-rating-bars-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  margin-bottom: 24px;
+}
+
+.rating-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bar-star-num {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bar-progress-track {
+  flex: 1;
+  height: 14px;
+  background: #000000;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.bar-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: #cbd5e1; /* Clean high-contrast silver matching reference */
+  transition: width 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bar-progress-fill.fill-star-5 { width: 92%; }
+.bar-progress-fill.fill-star-4 { width: 78%; }
+.bar-progress-fill.fill-star-3 { width: 56%; }
+.bar-progress-fill.fill-star-2 { width: 26%; }
+.bar-progress-fill.fill-star-1 { width: 10%; }
+
+/* Console Footer Meta */
+.console-footer-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.console-meta-item {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.console-meta-item .text-accent {
+  color: #ee2130;
+}
+
+/* --- Right Column: Stage & Sculpted Cards Slider --- */
+.testi-cards-stage {
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Prevents overflow in grid flex context */
+}
+
+.testi-stage-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2297,214 +2345,273 @@ h3 .text-accent {
   margin-bottom: 20px;
 }
 
-.author-profile-cluster {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.author-avatar-badge {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.3);
-  transition: background 0.35s ease;
-}
-
-.author-avatar-badge span {
+.stage-title-text {
   font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: 16px;
-  color: #ffffff;
-  letter-spacing: 0.04em;
-}
-
-.author-meta-block {
-  display: flex;
-  flex-direction: column;
-}
-
-.author-title-name {
-  font-family: var(--font-heading);
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 800;
   color: #0f172a;
-  margin: 0 0 3px;
-  line-height: 1.25;
-  transition: opacity 0.25s ease;
-}
-
-.author-title-role {
-  font-size: 13.5px;
-  color: #64748b;
-  font-weight: 500;
+  letter-spacing: -0.01em;
   margin: 0;
-  transition: opacity 0.25s ease;
 }
 
-.card-quote-mark {
-  font-size: 38px;
-  color: #ee2130;
-  line-height: 1;
-  opacity: 0.9;
-}
-
-/* Inner Light Grey Quote Bubble Box */
-.card-white-quote-box {
-  background: #f8fafc;
-  border: 1px solid #edf2f7;
-  border-radius: 18px;
-  padding: 24px 28px;
-  margin-bottom: 24px;
-  transition: all 0.3s ease;
-}
-
-.quote-dialogue-text {
-  font-size: 15px;
-  line-height: 1.72;
-  color: #334155;
-  margin: 0 0 18px;
-  font-weight: 450;
-  min-height: 78px;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-}
-
-/* Rating Row (Dedicated Side, Strictly No Numbers) */
-.card-rating-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  padding-top: 14px;
-  border-top: 1px solid #e2e8f0;
-}
-
-.stars-gold-row {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  color: #f59e0b;
-  font-size: 16px;
-  filter: drop-shadow(0 2px 4px rgba(245, 158, 11, 0.3));
-}
-
-.card-scope-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 700;
-  color: #ee2130;
-  background: rgba(238, 33, 48, 0.08);
-  padding: 4px 12px;
-  border-radius: 20px;
-  transition: opacity 0.25s ease;
-}
-
-/* Interactive Navigation Controls & Dots */
-.card-interactive-controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 6px;
-}
-
-.card-dots-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.card-dot-btn {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #cbd5e1;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  padding: 0;
-}
-
-.card-dot-btn.active {
-  width: 28px;
-  border-radius: 10px;
-  background: #ee2130;
-  box-shadow: 0 2px 8px rgba(238, 33, 48, 0.4);
-}
-
-.card-arrow-buttons {
+.testi-stage-arrows {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.card-nav-arrow {
-  width: 44px;
-  height: 44px;
+.stage-arrow-btn {
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #cbd5e1;
   background: #ffffff;
-  color: #334155;
-  font-size: 14px;
+  color: #0f172a;
+  font-size: 13px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
-.card-nav-arrow:hover {
+.stage-arrow-btn:hover {
   background: #ee2130;
   border-color: #ee2130;
   color: #ffffff;
-  transform: scale(1.08);
-  box-shadow: 0 6px 16px rgba(238, 33, 48, 0.35);
+  transform: scale(1.06);
+  box-shadow: 0 6px 16px rgba(238, 33, 48, 0.32);
 }
 
-/* Responsive Adjustments */
+/* Slider Track Wrapper */
+.testi-sculpted-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+  padding: 6px 2px 14px;
+}
+
+.testi-sculpted-slider {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+/* Sculpted Non-Simple Rectangle Card */
+.testi-sculpted-card {
+  flex: 0 0 calc(50% - 12px);
+  background: #0b0f17;
+  border-radius: 32px 8px 32px 8px; /* Distinct non-rectangular sculpted geometry */
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-sculpted-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(238, 33, 48, 0.4);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.2);
+}
+
+.sculpted-card-inner {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+/* Card Top: Avatar Disc + Author Info + Logo */
+.sculpted-card-top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.sculpted-avatar-disc {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0b0f17;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.sculpted-author-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.sculpted-author-name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 3px;
+  line-height: 1.25;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sculpted-author-role {
+  font-size: 12.5px;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sculpted-brand-logo-tab {
+  width: 48px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.sculpted-brand-logo-tab img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.85);
+}
+
+/* Quote Box */
+.sculpted-quote-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+.sculpted-quote-glyph {
+  font-family: Georgia, serif;
+  font-size: 36px;
+  line-height: 1;
+  color: #ee2130;
+  font-weight: 900;
+  margin-top: -4px;
+}
+
+.sculpted-quote-body {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #e2e8f0;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Card Bottom */
+.sculpted-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  gap: 12px;
+}
+
+.sculpted-audit-pill {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 4px 12px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sculpted-audit-pill i {
+  color: #ee2130;
+}
+
+.sculpted-stars-gold {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #f59e0b;
+  font-size: 14px;
+}
+
+/* Dots wrap */
+.sculpted-dots-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.sculpted-dot-btn {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sculpted-dot-btn.active {
+  width: 26px;
+  border-radius: 10px;
+  background: #ee2130;
+  box-shadow: 0 2px 8px rgba(238, 33, 48, 0.4);
+}
+
+/* Responsive Breakpoints */
 @media (max-width: 1024px) {
-  .testi-grid-showcase {
+  .testi-executive-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 32px;
   }
-  .testi-vector-visual-wrap {
-    max-width: 400px;
-    height: 400px;
-  }
-  .testi-concentric-rings-svg {
-    width: 380px;
-    height: 380px;
+  
+  .testi-sculpted-card {
+    flex: 0 0 calc(50% - 12px);
   }
 }
 
-@media (max-width: 640px) {
-  .tm-testimonials-section.light-theme-testi {
+@media (max-width: 720px) {
+  .tm-testimonials-section.executive-reviews-section {
     padding: 70px 0 80px;
   }
-  .testi-main-heading {
-    font-size: 30px;
+  
+  .testi-sculpted-card {
+    flex: 0 0 100%;
   }
-  .testi-card-white {
-    padding: 24px 20px;
+
+  .sculpted-card-inner {
+    padding: 26px 22px;
   }
-  .card-white-quote-box {
-    padding: 18px 16px;
+
+  .testi-rating-console-card {
+    padding: 28px 22px;
+    border-radius: 28px 8px 28px 8px;
   }
-  .testi-vector-visual-wrap {
-    max-width: 300px;
-    height: 300px;
-  }
-  .testi-concentric-rings-svg {
-    width: 290px;
-    height: 290px;
+
+  .hero-score-number {
+    font-size: 52px;
   }
 }
 

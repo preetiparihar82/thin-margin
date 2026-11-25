@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=56.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=57.0">
 </head>
 <body class="tm-body">
 
@@ -758,124 +758,273 @@
   </section>
 
   <!-- ==========================================================================
-       9. CLIENT TESTIMONIALS (LIGHT THEME VECTOR SHOWCASE)
+       9. CLIENT TESTIMONIALS & AUDIT RATINGS (EXECUTIVE AUDIT CONSOLE)
        ========================================================================== -->
-  <section class="tm-testimonials-section light-theme-testi" id="testimonials">
-    <!-- Vector Dots Matrix Texture (Background) -->
-    <div class="testi-dots-pattern" aria-hidden="true"></div>
-
+  <section class="tm-testimonials-section executive-reviews-section" id="testimonials">
     <div class="tm-container">
-      <div class="testi-grid-showcase">
+      
+      <!-- Top Section Lead Intro (Matching Reference Header) -->
+      <div class="testi-corporate-lead reveal-fade-up">
+        <div class="corporate-lead-pill">
+          <i class="fa-solid fa-shield-halved text-accent"></i>
+          <span>CLIENT REVIEWS &amp; AUDIT EXCELLENCE</span>
+        </div>
+        <p class="corporate-lead-sub">
+          At Thin Margin, clients&rsquo; satisfaction and zero-loss operational custody is our top priority. Here you can find verified executive reviews on our services:
+        </p>
+      </div>
+
+      <!-- 2-Column Executive Layout: Rating Authority Hub (Left) + Sculpted Testimonial Cards (Right) -->
+      <div class="testi-executive-grid reveal-fade-up">
         
-        <!-- Left Column: Vector Cutout Hero with Concentric Ripple Circles & Accents -->
-        <div class="testi-hero-col reveal-fade-up">
-          <div class="testi-vector-visual-wrap">
+        <!-- Left Column: Audit Rating Console (5.0 + Star Distribution Bars) -->
+        <div class="testi-rating-console-card">
+          <div class="console-card-inner">
             
-            <!-- SVG Vector Concentric Ripple Rings (Brand Red) -->
-            <svg class="testi-concentric-rings-svg" viewBox="0 0 520 520" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <!-- Outer Ring -->
-              <circle cx="260" cy="260" r="225" stroke="#ee2130" stroke-width="26" opacity="0.95" />
-              <!-- Middle Ring -->
-              <circle cx="260" cy="260" r="160" stroke="#ee2130" stroke-width="26" opacity="0.95" />
-              <!-- Inner Ring -->
-              <circle cx="260" cy="260" r="95" stroke="#ee2130" stroke-width="24" opacity="0.95" />
-            </svg>
-
-            <!-- Small Floating Accent Ring (Bottom-Left) -->
-            <div class="testi-floating-accent-ring" aria-hidden="true"></div>
-
-            <!-- Transparent Cutout Vector Worker Image -->
-            <div class="testi-worker-cutout-frame">
-              <img src="assest/images/testimonial_hero_transparent.png" 
-                   alt="Operations Specialist" 
-                   class="testi-worker-cutout-img">
+            <div class="console-hero-score-block">
+              <div class="hero-score-number">5.0</div>
+              <div class="hero-score-stars" aria-label="5 Star Rating">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="hero-score-label">Overall Audit Score</span>
             </div>
 
+            <!-- Horizontal Rating Distribution Bars (5, 4, 3, 2, 1) -->
+            <div class="console-rating-bars-stack">
+              
+              <div class="rating-bar-row">
+                <span class="bar-star-num">5</span>
+                <div class="bar-progress-track">
+                  <div class="bar-progress-fill fill-star-5"></div>
+                </div>
+              </div>
+
+              <div class="rating-bar-row">
+                <span class="bar-star-num">4</span>
+                <div class="bar-progress-track">
+                  <div class="bar-progress-fill fill-star-4"></div>
+                </div>
+              </div>
+
+              <div class="rating-bar-row">
+                <span class="bar-star-num">3</span>
+                <div class="bar-progress-track">
+                  <div class="bar-progress-fill fill-star-3"></div>
+                </div>
+              </div>
+
+              <div class="rating-bar-row">
+                <span class="bar-star-num">2</span>
+                <div class="bar-progress-track">
+                  <div class="bar-progress-fill fill-star-2"></div>
+                </div>
+              </div>
+
+              <div class="rating-bar-row">
+                <span class="bar-star-num">1</span>
+                <div class="bar-progress-track">
+                  <div class="bar-progress-fill fill-star-1"></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="console-footer-meta">
+            <span class="console-meta-item"><i class="fa-solid fa-circle-check text-accent"></i> 100% Zero Demurrage SLA</span>
+            <span class="console-meta-item"><i class="fa-solid fa-certificate text-accent"></i> Verified EPC Standards</span>
           </div>
         </div>
 
-        <!-- Right Column: Heading, Badge, and Signature White Testimonial Card -->
-        <div class="testi-content-col reveal-fade-up">
+        <!-- Right Column: Sculpted Asymmetric Testimonials Slider -->
+        <div class="testi-cards-stage">
           
-          <!-- Testimonials Pill Kicker (Reference Style with Asterisk) -->
-          <div class="testi-kicker-pill">
-            <span class="kicker-asterisk">&#10038;</span>
-            <span class="kicker-label">TESTIMONIALS</span>
+          <div class="testi-stage-header">
+            <h3 class="stage-title-text">
+              What Infrastructure Leaders Say
+            </h3>
+            <!-- Interactive Arrow Controls -->
+            <div class="testi-stage-arrows">
+              <button class="stage-arrow-btn prev" id="stagePrevBtn" aria-label="Previous Review">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button class="stage-arrow-btn next" id="stageNextBtn" aria-label="Next Review">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
           </div>
 
-          <!-- Section Heading -->
-          <h2 class="testi-main-heading">
-            <span class="word-anim">Real</span>
-            <span class="word-anim">Stories</span>
-            <span class="word-anim">from</span>
-            <span class="word-anim">Our</span>
-            <span class="word-anim text-dark-bold">Satisfied</span>
-            <span class="word-anim text-dark-bold">Clients</span>
-          </h2>
+          <!-- Carousel Track Holding Sculpted Cards -->
+          <div class="testi-sculpted-track-wrapper">
+            <div class="testi-sculpted-slider" id="sculptedSlider">
 
-          <!-- Signature White Interactive Testimonial Card -->
-          <div class="testi-card-white" id="testiInteractiveCard">
-            
-            <!-- Card Header: Author Profile (Left) vs Stylized Quote Mark (Right) -->
-            <div class="card-white-header">
-              <div class="author-profile-cluster">
-                <div class="author-avatar-badge" id="cardAuthorAvatar">
-                  <span>RV</span>
-                </div>
-                <div class="author-meta-block">
-                  <h3 class="author-title-name" id="cardAuthorName">Rajesh Varma</h3>
-                  <p class="author-title-role" id="cardAuthorRole">VP &bull; Project Logistics, Adani Solar</p>
+              <!-- Card 1: Rupesh Pandey -->
+              <div class="testi-sculpted-card">
+                <div class="sculpted-card-inner">
+                  <div class="sculpted-card-top">
+                    <div class="sculpted-avatar-disc">
+                      <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="sculpted-author-details">
+                      <h4 class="sculpted-author-name">Rupesh Pandey</h4>
+                      <p class="sculpted-author-role">Project Director &bull; Clean Energy Infrastructure</p>
+                    </div>
+                    <div class="sculpted-brand-logo-tab">
+                      <img src="assest/images/adanilogo_clean.png" alt="Adani Group">
+                    </div>
+                  </div>
+
+                  <div class="sculpted-quote-box">
+                    <span class="sculpted-quote-glyph">&ldquo;</span>
+                    <p class="sculpted-quote-body">
+                      Thin Margin is a trusted execution partner for high-stakes capital logistics. Their 24-hr container de-stuffing at Mundra Port saved us detention fees, and their material reconciliation is flawless.
+                    </p>
+                  </div>
+
+                  <div class="sculpted-card-bottom">
+                    <span class="sculpted-audit-pill">
+                      <i class="fa-solid fa-shield-check"></i> Verified EPC Partner
+                    </span>
+                    <div class="sculpted-stars-gold">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <!-- Stylized Double Quote Icon in Red -->
-              <div class="card-quote-mark" aria-hidden="true">
-                <i class="fa-solid fa-quote-right"></i>
+              <!-- Card 2: Anubhav Agrawal -->
+              <div class="testi-sculpted-card">
+                <div class="sculpted-card-inner">
+                  <div class="sculpted-card-top">
+                    <div class="sculpted-avatar-disc">
+                      <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="sculpted-author-details">
+                      <h4 class="sculpted-author-name">Anubhav Agrawal</h4>
+                      <p class="sculpted-author-role">VP &bull; Supply Chain Management, Heavy Projects</p>
+                    </div>
+                    <div class="sculpted-brand-logo-tab">
+                      <img src="assest/images/ADITYA_BIRLA_clean.png" alt="Aditya Birla Group">
+                    </div>
+                  </div>
+
+                  <div class="sculpted-quote-box">
+                    <span class="sculpted-quote-glyph">&ldquo;</span>
+                    <p class="sculpted-quote-body">
+                      Thin Margin is a very commendable operational custody organization. Their sub-meter laydown management and strict SAP S/4HANA MIGO bookings brought absolute transparency to our mega expansions.
+                    </p>
+                  </div>
+
+                  <div class="sculpted-card-bottom">
+                    <span class="sculpted-audit-pill">
+                      <i class="fa-solid fa-shield-check"></i> Zero-Demurrage Certified
+                    </span>
+                    <div class="sculpted-stars-gold">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              <!-- Card 3: Prashant Dave -->
+              <div class="testi-sculpted-card">
+                <div class="sculpted-card-inner">
+                  <div class="sculpted-card-top">
+                    <div class="sculpted-avatar-disc">
+                      <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="sculpted-author-details">
+                      <h4 class="sculpted-author-name">Prashant Dave</h4>
+                      <p class="sculpted-author-role">Chief Operating Officer &bull; Solar Division</p>
+                    </div>
+                    <div class="sculpted-brand-logo-tab">
+                      <img src="assest/images/vishakharenewables_clean.png" alt="Vishakha Renewables">
+                    </div>
+                  </div>
+
+                  <div class="sculpted-quote-box">
+                    <span class="sculpted-quote-glyph">&ldquo;</span>
+                    <p class="sculpted-quote-body">
+                      Pristine component preservation and weatherproof yard storage are critical for our supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single mismatch.
+                    </p>
+                  </div>
+
+                  <div class="sculpted-card-bottom">
+                    <span class="sculpted-audit-pill">
+                      <i class="fa-solid fa-shield-check"></i> Weatherproof Audited
+                    </span>
+                    <div class="sculpted-stars-gold">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4: Col. Arvind Sharma -->
+              <div class="testi-sculpted-card">
+                <div class="sculpted-card-inner">
+                  <div class="sculpted-card-top">
+                    <div class="sculpted-avatar-disc">
+                      <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="sculpted-author-details">
+                      <h4 class="sculpted-author-name">Col. Arvind Sharma (Retd.)</h4>
+                      <p class="sculpted-author-role">Senior Director &bull; National Network Operations</p>
+                    </div>
+                    <div class="sculpted-brand-logo-tab">
+                      <img src="assest/images/Ecomexpress_clean.png" alt="Ecom Express">
+                    </div>
+                  </div>
+
+                  <div class="sculpted-quote-box">
+                    <span class="sculpted-quote-glyph">&ldquo;</span>
+                    <p class="sculpted-quote-body">
+                      Their synchronized line-haul scheduling and mechanized cross-dock operations deliver the velocity and reliability essential for national transit networks with zero dispatch variances.
+                    </p>
+                  </div>
+
+                  <div class="sculpted-card-bottom">
+                    <span class="sculpted-audit-pill">
+                      <i class="fa-solid fa-shield-check"></i> High-Throughput SLA
+                    </span>
+                    <div class="sculpted-stars-gold">
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                      <i class="fa-solid fa-star"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
-
-            <!-- Inner Light Grey Quote Bubble -->
-            <div class="card-white-quote-box">
-              <p class="quote-dialogue-text" id="cardQuoteText">
-                &ldquo;Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module imports. Their rapid 24-hr de-stuffing and strict turnaround protocol gave us total delivery assurance.&rdquo;
-              </p>
-
-              <!-- Star Rating on Dedicated Side (STRICTLY NO NUMBERS) -->
-              <div class="card-rating-footer">
-                <div class="stars-gold-row" aria-label="5 Star Rating">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="card-scope-badge" id="cardScopeBadge">
-                  <i class="fa-solid fa-shield-halved"></i> Zero Demurrage
-                </div>
-              </div>
-            </div>
-
-            <!-- Interactive Slider Controls & Dot Indicators -->
-            <div class="card-interactive-controls">
-              <!-- Dots Indicator -->
-              <div class="card-dots-group" id="cardDotsGroup"></div>
-
-              <!-- Prev / Next Navigation Arrows -->
-              <div class="card-arrow-buttons">
-                <button class="card-nav-arrow prev" id="cardPrevArrow" aria-label="Previous Testimonial">
-                  <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <button class="card-nav-arrow next" id="cardNextArrow" aria-label="Next Testimonial">
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Interactive Pagination Dots -->
+          <div class="sculpted-dots-wrap" id="sculptedDots"></div>
 
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -1208,6 +1357,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=56.0"></script>
+  <script src="assest/js/main.js?v=57.0"></script>
 </body>
 </html>

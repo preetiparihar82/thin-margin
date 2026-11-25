@@ -245,166 +245,149 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. LIGHT THEME INTERACTIVE TESTIMONIAL CARD SWITCHER
+  // 6. EXECUTIVE AUDIT TESTIMONIALS SLIDER CONTROLLER
   // ==========================================================================
-  const testimonialsData = [
-    {
-      name: "Rajesh Varma",
-      role: "VP • Project Procurement, Adani Solar",
-      initials: "RV",
-      avatarBg: "linear-gradient(135deg, #f59e0b 0%, #d97706 100%)",
-      quote: "Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module imports. Their rapid 24-hr de-stuffing and strict turnaround protocol gave us total delivery assurance.",
-      scope: "Zero Demurrage Port Decantation"
-    },
-    {
-      name: "Siddharth Sengupta",
-      role: "Head of Capital Projects Logistics, Aditya Birla Group",
-      initials: "SS",
-      avatarBg: "linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)",
-      quote: "Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance throughout.",
-      scope: "Heavy Cargo Laydown Custody"
-    },
-    {
-      name: "Prashant Dave",
-      role: "Chief Operating Officer • Solar Division, Vishakha Renewables",
-      initials: "PD",
-      avatarBg: "linear-gradient(135deg, #10b981 0%, #059669 100%)",
-      quote: "Pristine component preservation and weatherproof yard storage were critical for our manufacturing supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single transit mismatch.",
-      scope: "Weatherproof Preservation"
-    },
-    {
-      name: "Vikramaditya Roy",
-      role: "Project Director • Utility Solar, SB Energy Projects",
-      initials: "VR",
-      avatarBg: "linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%)",
-      quote: "Thin Margin’s sub-meter yard indexing and RFID tagging brought remarkable transparency to our multi-acre desert installation. Locating and dispatching serialized inverters and trackers became friction-free.",
-      scope: "Sub-Meter RFID Yard Indexing"
-    },
-    {
-      name: "Col. Arvind Sharma (Retd.)",
-      role: "Senior Director • Network Operations, Ecom Express Logistics",
-      initials: "AS",
-      avatarBg: "linear-gradient(135deg, #ec4899 0%, #be185d 100%)",
-      quote: "Their synchronized line-haul management and mechanized cross-dock operations deliver the velocity and reliability essential for national transit networks. Round-the-clock visibility with zero dispatch variances.",
-      scope: "High-Velocity Cross-Dock"
-    },
-    {
-      name: "Anand Swaminathan",
-      role: "Lead Quality & Safety Auditor, IRCLASS Systems & Solutions",
-      initials: "AS",
-      avatarBg: "linear-gradient(135deg, #14b8a6 0%, #0f766e 100%)",
-      quote: "During statutory safety and third-party custody audits, Thin Margin consistently demonstrates textbook compliance with mechanized lifting protocols, labor law governance, and rigorous EHS standards.",
-      scope: "Statutory EHS & Audit Governance"
-    }
-  ];
+  const sculptedSlider = document.getElementById('sculptedSlider');
+  const stagePrevBtn = document.getElementById('stagePrevBtn');
+  const stageNextBtn = document.getElementById('stageNextBtn');
+  const sculptedDots = document.getElementById('sculptedDots');
 
-  const cardAuthorAvatar = document.getElementById('cardAuthorAvatar');
-  const cardAuthorName = document.getElementById('cardAuthorName');
-  const cardAuthorRole = document.getElementById('cardAuthorRole');
-  const cardQuoteText = document.getElementById('cardQuoteText');
-  const cardScopeBadge = document.getElementById('cardScopeBadge');
-  const cardPrevArrow = document.getElementById('cardPrevArrow');
-  const cardNextArrow = document.getElementById('cardNextArrow');
-  const cardDotsGroup = document.getElementById('cardDotsGroup');
-  const testiInteractiveCard = document.getElementById('testiInteractiveCard');
+  if (sculptedSlider) {
+    const cards = sculptedSlider.querySelectorAll('.testi-sculpted-card');
+    let currentIndex = 0;
+    let autoSlideTimer = null;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-  if (cardQuoteText && cardAuthorName) {
-    let activeTestiIndex = 0;
-    let testiAutoTimer = null;
+    const getVisibleCount = () => {
+      return window.innerWidth <= 720 ? 1 : 2;
+    };
 
-    // Render interactive dots
-    if (cardDotsGroup) {
-      cardDotsGroup.innerHTML = '';
-      testimonialsData.forEach((_, idx) => {
-        const dot = document.createElement('button');
-        dot.className = `card-dot-btn ${idx === 0 ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `View testimonial ${idx + 1}`);
-        dot.addEventListener('click', () => {
-          showTestimonial(idx);
-          resetTestiAutoplay();
-        });
-        cardDotsGroup.appendChild(dot);
-      });
-    }
+    const getMaxIndex = () => {
+      const visible = getVisibleCount();
+      return Math.max(0, cards.length - visible);
+    };
 
-    const showTestimonial = (index) => {
-      activeTestiIndex = (index + testimonialsData.length) % testimonialsData.length;
-      const data = testimonialsData[activeTestiIndex];
+    const updateSlider = (smooth = true) => {
+      const maxIdx = getMaxIndex();
+      if (currentIndex > maxIdx) currentIndex = maxIdx;
+      if (currentIndex < 0) currentIndex = 0;
 
-      // Subtle smooth transition
-      cardQuoteText.style.opacity = '0';
-      cardQuoteText.style.transform = 'translateY(8px)';
-      cardAuthorName.style.opacity = '0';
-      cardAuthorRole.style.opacity = '0';
+      const card = cards[0];
+      if (!card) return;
 
-      setTimeout(() => {
-        cardAuthorName.textContent = data.name;
-        cardAuthorRole.textContent = data.role;
-        cardQuoteText.textContent = `“${data.quote}”`;
-        
-        if (cardAuthorAvatar) {
-          cardAuthorAvatar.innerHTML = `<span>${data.initials}</span>`;
-          cardAuthorAvatar.style.background = data.avatarBg;
-        }
+      const cardWidth = card.getBoundingClientRect().width;
+      const gap = 24; // matching CSS gap
+      const offset = (cardWidth + gap) * currentIndex;
 
-        if (cardScopeBadge) {
-          cardScopeBadge.innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${data.scope}`;
-        }
-
-        // Fade back in smoothly
-        cardQuoteText.style.opacity = '1';
-        cardQuoteText.style.transform = 'translateY(0)';
-        cardAuthorName.style.opacity = '1';
-        cardAuthorRole.style.opacity = '1';
-      }, 200);
+      sculptedSlider.style.transition = smooth ? 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+      sculptedSlider.style.transform = `translateX(-${offset}px)`;
 
       // Update dots
-      if (cardDotsGroup) {
-        const dots = cardDotsGroup.querySelectorAll('.card-dot-btn');
-        dots.forEach((dot, dIdx) => {
-          dot.classList.toggle('active', dIdx === activeTestiIndex);
+      if (sculptedDots) {
+        const dots = sculptedDots.querySelectorAll('.sculpted-dot-btn');
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
         });
       }
     };
 
-    if (cardNextArrow) {
-      cardNextArrow.addEventListener('click', () => {
-        showTestimonial(activeTestiIndex + 1);
-        resetTestiAutoplay();
-      });
-    }
+    const buildDots = () => {
+      if (!sculptedDots) return;
+      sculptedDots.innerHTML = '';
+      const maxIdx = getMaxIndex();
+      const dotCount = maxIdx + 1;
 
-    if (cardPrevArrow) {
-      cardPrevArrow.addEventListener('click', () => {
-        showTestimonial(activeTestiIndex - 1);
-        resetTestiAutoplay();
-      });
-    }
-
-    const startTestiAutoplay = () => {
-      stopTestiAutoplay();
-      testiAutoTimer = setInterval(() => {
-        showTestimonial(activeTestiIndex + 1);
-      }, 6000);
-    };
-
-    const stopTestiAutoplay = () => {
-      if (testiAutoTimer) {
-        clearInterval(testiAutoTimer);
-        testiAutoTimer = null;
+      for (let i = 0; i < dotCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = `sculpted-dot-btn ${i === currentIndex ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Navigate to review page ${i + 1}`);
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateSlider();
+          resetAutoSlide();
+        });
+        sculptedDots.appendChild(dot);
       }
     };
 
-    const resetTestiAutoplay = () => {
-      startTestiAutoplay();
+    const nextSlide = () => {
+      const maxIdx = getMaxIndex();
+      currentIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+      updateSlider();
     };
 
-    if (testiInteractiveCard) {
-      testiInteractiveCard.addEventListener('mouseenter', stopTestiAutoplay);
-      testiInteractiveCard.addEventListener('mouseleave', startTestiAutoplay);
+    const prevSlide = () => {
+      const maxIdx = getMaxIndex();
+      currentIndex = currentIndex <= 0 ? maxIdx : currentIndex - 1;
+      updateSlider();
+    };
+
+    if (stageNextBtn) {
+      stageNextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide();
+      });
     }
 
-    startTestiAutoplay();
+    if (stagePrevBtn) {
+      stagePrevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+    }
+
+    // Touch Swipe Support
+    sculptedSlider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoSlide();
+    }, { passive: true });
+
+    sculptedSlider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+      resetAutoSlide();
+    }, { passive: true });
+
+    // Autoplay & Hover Pausing
+    const startAutoSlide = () => {
+      stopAutoSlide();
+      autoSlideTimer = setInterval(() => {
+        nextSlide();
+      }, 5500);
+    };
+
+    const stopAutoSlide = () => {
+      if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+      }
+    };
+
+    const resetAutoSlide = () => {
+      startAutoSlide();
+    };
+
+    sculptedSlider.addEventListener('mouseenter', stopAutoSlide);
+    sculptedSlider.addEventListener('mouseleave', startAutoSlide);
+
+    // Initial setup and responsive listener
+    buildDots();
+    updateSlider(false);
+    startAutoSlide();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        buildDots();
+        updateSlider(false);
+      }, 150);
+    });
   }
 
   // ==========================================================================
