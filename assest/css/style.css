@@ -2135,56 +2135,55 @@ h3 .text-accent {
    ========================================================================== */
 .tm-testimonials-ref-section {
   position: relative;
-  padding: 100px 0 110px;
-  background: linear-gradient(180deg, #ffffff 0%, #fff8f8 35%, #fff0f1 70%, #ffffff 100%);
+  padding: 95px 0 105px;
+  background: linear-gradient(180deg, #ffffff 0%, #fffdfd 40%, #fffafa 75%, #ffffff 100%);
   overflow: hidden;
-  border-top: 1px solid rgba(226, 232, 240, 0.85);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  border-top: 1px solid rgba(241, 245, 249, 0.85);
+  border-bottom: 1px solid rgba(241, 245, 249, 0.85);
 }
 
-/* Radiant Ambient Glow */
+/* Radiant Ambient Glow (Lightened & Subtle) */
 .ref-ambient-glow {
   position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 800px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(238, 33, 48, 0.08) 0%, rgba(255, 77, 90, 0.04) 45%, transparent 72%);
+  width: 750px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(238, 33, 48, 0.025) 0%, rgba(255, 77, 90, 0.008) 45%, transparent 70%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(40px);
+  filter: blur(50px);
 }
 
-/* --- Section Header (Matching Reference with Brand Red Gradient) --- */
+/* --- Section Header (Matching Reference Image) --- */
 .ref-testi-header {
   text-align: center;
-  margin-bottom: 54px;
+  margin-bottom: 52px;
   position: relative;
   z-index: 1;
 }
 
 .ref-header-accent-bar {
-  width: 44px;
+  width: 38px;
   height: 4px;
   background: linear-gradient(90deg, #ee2130 0%, #ff4d5a 100%);
   border-radius: 4px;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
 }
 
 .ref-header-kicker {
-  display: inline-block;
+  display: block;
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ee2130;
-  background: linear-gradient(135deg, rgba(238, 33, 48, 0.08) 0%, rgba(255, 77, 90, 0.16) 100%);
-  border: 1px solid rgba(238, 33, 48, 0.2);
-  padding: 5px 16px;
-  border-radius: 30px;
-  margin-bottom: 12px;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 .ref-header-title {
@@ -2214,42 +2213,25 @@ h3 .text-accent {
   will-change: transform;
 }
 
-/* --- Testimonial Card (Exact Reference Geometry with Website Gradient Accents) --- */
+/* --- Testimonial Card (Exact Reference Geometry - No Top Line on Hover) --- */
 .ref-testi-card {
   flex: 0 0 calc(50% - 18px); /* Exactly two cards in one view */
   position: relative;
   background: #ffffff;
   border: 1.5px solid #edf1f6;
   border-radius: 20px;
-  padding: 42px 34px 36px 34px;
-  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03), 0 2px 6px rgba(238, 33, 48, 0.02);
+  padding: 42px 34px 38px 34px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03), 0 2px 6px rgba(15, 23, 42, 0.02);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.ref-testi-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 28px;
-  right: 28px;
-  height: 3px;
-  border-radius: 0 0 4px 4px;
-  background: linear-gradient(90deg, transparent, #ee2130, #ff4d5a, transparent);
-  opacity: 0;
-  transition: opacity 0.35s ease;
-}
-
 .ref-testi-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(238, 33, 48, 0.28);
-  box-shadow: 0 22px 48px rgba(238, 33, 48, 0.09), 0 4px 14px rgba(15, 23, 42, 0.03);
-}
-
-.ref-testi-card:hover::before {
-  opacity: 1;
+  transform: translateY(-5px);
+  border-color: rgba(238, 33, 48, 0.25);
+  box-shadow: 0 20px 45px rgba(238, 33, 48, 0.07), 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
 /* Giant Quotation Marks (Website Brand Gradient) */
@@ -2312,7 +2294,7 @@ h3 .text-accent {
 
 .ref-avatar-frame {
   position: absolute;
-  top: 8px;
+  top: -8px;
   left: -8px;
   width: 100%;
   height: 100%;
@@ -2322,12 +2304,12 @@ h3 .text-accent {
   pointer-events: none;
   z-index: 0;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 16px rgba(238, 33, 48, 0.16);
+  box-shadow: 0 3px 12px rgba(238, 33, 48, 0.14);
 }
 
 .ref-testi-card:hover .ref-avatar-frame {
-  transform: translate(-3px, 3px);
-  box-shadow: 0 6px 20px rgba(238, 33, 48, 0.28);
+  transform: translate(-2px, -2px);
+  box-shadow: 0 5px 16px rgba(238, 33, 48, 0.22);
 }
 
 .ref-avatar-box {
@@ -2338,7 +2320,7 @@ h3 .text-accent {
   border-radius: 16px;
   overflow: hidden;
   background: #edf2f7;
-  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.06);
+  box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
 }
 
 .ref-avatar-svg {
@@ -2347,7 +2329,7 @@ h3 .text-accent {
   display: block;
 }
 
-/* Card Details Column: Person Name, Meta, Quote, Stars */
+/* Card Details Column: Clean Typography (No Tags, Matching 2nd Reference Image) */
 .ref-card-details {
   flex: 1;
   min-width: 0;
@@ -2358,17 +2340,9 @@ h3 .text-accent {
   font-size: 17px;
   font-weight: 800;
   color: #0b192c;
-  margin: 0 0 4px;
+  margin: 0 0 3px;
   line-height: 1.3;
   letter-spacing: -0.01em;
-}
-
-.ref-person-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px;
-  margin-bottom: 12px;
 }
 
 .ref-person-role {
@@ -2377,18 +2351,7 @@ h3 .text-accent {
   font-weight: 600;
   color: #64748b;
   line-height: 1.4;
-}
-
-.ref-person-company {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 700;
-  color: #ee2130;
-  background: linear-gradient(135deg, rgba(238, 33, 48, 0.08) 0%, rgba(255, 77, 90, 0.12) 100%);
-  border: 1px solid rgba(238, 33, 48, 0.18);
-  padding: 2px 8px;
-  border-radius: 6px;
-  letter-spacing: 0.01em;
+  margin: 0 0 12px;
 }
 
 .ref-quote-text {
