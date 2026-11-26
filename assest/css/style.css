@@ -2234,10 +2234,10 @@ h3 .text-accent {
   box-shadow: 0 20px 45px rgba(238, 33, 48, 0.07), 0 4px 12px rgba(15, 23, 42, 0.03);
 }
 
-/* Giant Quotation Marks (Website Brand Gradient - Correct Orientation Matching Reference) */
+/* Giant Quotation Marks (Website Brand Gradient - Properly Inverted Pair) */
 .ref-quote-glyph-top {
   position: absolute;
-  top: -18px;
+  top: -16px;
   left: 24px;
   pointer-events: none;
   z-index: 2;
@@ -2248,7 +2248,7 @@ h3 .text-accent {
 
 .ref-quote-glyph-bottom {
   position: absolute;
-  bottom: -18px;
+  bottom: -16px;
   right: 28px;
   pointer-events: none;
   z-index: 2;
@@ -2257,9 +2257,13 @@ h3 .text-accent {
   transition: transform 0.3s ease;
 }
 
-.ref-quote-glyph-bottom svg,
 .ref-quote-glyph-top svg {
   display: block;
+}
+
+.ref-quote-glyph-bottom svg {
+  display: block;
+  transform: rotate(180deg); /* Properly inverted closing quotation mark */
 }
 
 .ref-testi-card:hover .ref-quote-glyph-top {
@@ -2343,9 +2347,9 @@ h3 .text-accent {
 
 .ref-person-role {
   font-family: var(--font-body);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 600;
-  color: #64748b;
+  color: #ee2130; /* Distinct brand accent color for designation */
   line-height: 1.4;
   margin: 0 0 12px;
 }
