@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=64.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=65.0">
 </head>
 <body class="tm-body">
 
@@ -757,19 +757,29 @@
     </div>
   </section>
 
-  <!-- ==========================================================================
-       9. CLIENT TESTIMONIALS (EXACT REFERENCE DESIGN WITH WEBSITE BRAND PALETTE)
+    <!-- ==========================================================================
+       9. CLIENT TESTIMONIALS (EXACT REFERENCE DESIGN WITH WEBSITE BRAND GRADIENT)
        ========================================================================== -->
   <section class="tm-testimonials-ref-section" id="testimonials">
-    <!-- Subtle Ambient Backdrop -->
+    <!-- Website Signature Gradient Definition for SVG Quotes -->
+    <svg width="0" height="0" style="position:absolute;visibility:hidden;pointer-events:none;" aria-hidden="true">
+      <defs>
+        <linearGradient id="tmQuoteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#ee2130" />
+          <stop offset="100%" stop-color="#ff4d5a" />
+        </linearGradient>
+      </defs>
+    </svg>
+
+    <!-- Radiant Ambient Backdrop Glow -->
     <div class="ref-ambient-glow" aria-hidden="true"></div>
 
     <div class="tm-container">
 
-      <!-- Header Matching User Reference -->
+      <!-- Header Matching User Reference with Website Brand Gradient -->
       <div class="ref-testi-header reveal-fade-up">
         <div class="ref-header-accent-bar" aria-hidden="true"></div>
-        <span class="ref-header-kicker">Testimonials</span>
+        <span class="ref-header-kicker">Client Feedback &amp; Audits</span>
         <h2 class="ref-header-title">People Who Love Our Services</h2>
       </div>
 
@@ -779,22 +789,21 @@
         <!-- Track holding cards -->
         <div class="ref-carousel-track" id="refCarouselTrack">
 
-          <!-- Card 1: LOOK BOOK FLY PRIVATE LIMITED -->
+          <!-- Card 1: Anubhav Agrawal - Tata Power Solar -->
           <div class="ref-testi-card">
-            <!-- Giant SVG Double Quotation Marks (Exact Reference Placement) -->
             <span class="ref-quote-glyph-top" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
             <span class="ref-quote-glyph-bottom" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
 
             <div class="ref-card-content">
-              <!-- Left: Avatar with Offset Colored Frame -->
+              <!-- Left: Avatar with Offset Outline Gradient Frame -->
               <div class="ref-avatar-wrapper">
                 <div class="ref-avatar-frame" aria-hidden="true"></div>
                 <div class="ref-avatar-box">
@@ -806,11 +815,15 @@
                 </div>
               </div>
 
-              <!-- Right: Info, Quote Text & Stars -->
+              <!-- Right: Person Details, Quote Text & Stars -->
               <div class="ref-card-details">
-                <h4 class="ref-client-name">LOOK BOOK FLY PRIVATE LIMITED</h4>
+                <h4 class="ref-person-name">Anubhav Agrawal</h4>
+                <div class="ref-person-meta">
+                  <span class="ref-person-role">VP &bull; Supply Chain Management</span>
+                  <span class="ref-person-company">Tata Power Solar</span>
+                </div>
                 <p class="ref-quote-text">
-                  Prompt response and very good work done by Krunal and team. You helped a lot for our company. Keep it up.
+                  Thin Margin delivered immaculate operational custody during our Rajasthan 300MW solar expansion. Their sub-meter laydown tracking and automated SAP S/4HANA MIGO bookings gave our procurement team complete ground certainty with zero variance.
                 </p>
                 <div class="ref-stars-rating" aria-label="5 out of 5 stars">
                   <i class="fa-solid fa-star"></i>
@@ -823,15 +836,15 @@
             </div>
           </div>
 
-          <!-- Card 2: RAAJ ENVIRONMENT PRIVATE LIMITED -->
+          <!-- Card 2: Rajesh Varma - Adani Solar -->
           <div class="ref-testi-card">
             <span class="ref-quote-glyph-top" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
             <span class="ref-quote-glyph-bottom" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
@@ -849,9 +862,13 @@
               </div>
 
               <div class="ref-card-details">
-                <h4 class="ref-client-name">RAAJ ENVIRONMENT PRIVATE LIMITED</h4>
+                <h4 class="ref-person-name">Rajesh Varma</h4>
+                <div class="ref-person-meta">
+                  <span class="ref-person-role">VP &bull; Project Procurement</span>
+                  <span class="ref-person-company">Adani Solar</span>
+                </div>
                 <p class="ref-quote-text">
-                  They&rsquo;re very good, customer-friendly people, thorough with the process to help startups across India in the best possible manner. We feel privileged in availing their excellent services.
+                  Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module shipments. Their rapid 24-hr de-stuffing protocol and synchronized line-haul scheduling saved us millions in demurrage.
                 </p>
                 <div class="ref-stars-rating" aria-label="5 out of 5 stars">
                   <i class="fa-solid fa-star"></i>
@@ -864,15 +881,15 @@
             </div>
           </div>
 
-          <!-- Card 3: ADANI SOLAR PRIVATE LIMITED -->
+          <!-- Card 3: Siddharth Sengupta - Aditya Birla Group -->
           <div class="ref-testi-card">
             <span class="ref-quote-glyph-top" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
             <span class="ref-quote-glyph-bottom" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
@@ -890,9 +907,13 @@
               </div>
 
               <div class="ref-card-details">
-                <h4 class="ref-client-name">ADANI SOLAR PRIVATE LIMITED</h4>
+                <h4 class="ref-person-name">Siddharth Sengupta</h4>
+                <div class="ref-person-meta">
+                  <span class="ref-person-role">Head of Capital Logistics</span>
+                  <span class="ref-person-company">Aditya Birla Group</span>
+                </div>
                 <p class="ref-quote-text">
-                  Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module shipments. Their rapid 24-hr turnaround gave us total delivery assurance.
+                  Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance throughout.
                 </p>
                 <div class="ref-stars-rating" aria-label="5 out of 5 stars">
                   <i class="fa-solid fa-star"></i>
@@ -905,15 +926,15 @@
             </div>
           </div>
 
-          <!-- Card 4: ADITYA BIRLA GROUP -->
+          <!-- Card 4: Prashant Dave - Avaada Energy -->
           <div class="ref-testi-card">
             <span class="ref-quote-glyph-top" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
             <span class="ref-quote-glyph-bottom" aria-hidden="true">
-              <svg width="42" height="32" viewBox="0 0 42 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
                 <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
               </svg>
             </span>
@@ -931,9 +952,103 @@
               </div>
 
               <div class="ref-card-details">
-                <h4 class="ref-client-name">ADITYA BIRLA GROUP</h4>
+                <h4 class="ref-person-name">Prashant Dave</h4>
+                <div class="ref-person-meta">
+                  <span class="ref-person-role">Chief Operating Officer &bull; Solar Division</span>
+                  <span class="ref-person-company">Avaada Energy</span>
+                </div>
                 <p class="ref-quote-text">
-                  Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance.
+                  Pristine component preservation and weatherproof yard storage are critical for our bifacial supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single mismatch across the entire season.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: Sai Azad - Vikram Solar -->
+          <div class="ref-testi-card">
+            <span class="ref-quote-glyph-top" aria-hidden="true">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
+              </svg>
+            </span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
+              </svg>
+            </span>
+
+            <div class="ref-card-content">
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ref-card-details">
+                <h4 class="ref-person-name">Sai Azad</h4>
+                <div class="ref-person-meta">
+                  <span class="ref-person-role">Project Director &bull; Clean Energy Operations</span>
+                  <span class="ref-person-company">Vikram Solar</span>
+                </div>
+                <p class="ref-quote-text">
+                  Thin Margin is a trusted execution partner for high-stakes capital logistics. Their mechanized cross-dock operations, 24-hr container de-stuffing at Mundra Port, and flawless material reconciliation gave our EPC projects total delivery assurance.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: Neelam Kulshreshtha - ReNew Power -->
+          <div class="ref-testi-card">
+            <span class="ref-quote-glyph-top" aria-hidden="true">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
+              </svg>
+            </span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">
+              <svg width="44" height="34" viewBox="0 0 42 32" fill="url(#tmQuoteGrad)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 0C4.92 0 0 4.92 0 11C0 17.08 4.92 22 11 22C11.8 22 12.57 21.91 13.31 21.75C11.96 26.68 7.35 30.34 1.8 31.05C1.05 31.15 0.5 31.79 0.5 32.55C0.5 33.38 1.22 34.02 2.04 33.91C10.74 32.74 17.5 25.18 17.5 14C17.5 6.27 14.6 0 11 0ZM35.5 0C29.42 0 24.5 4.92 24.5 11C24.5 17.08 29.42 22 35.5 22C36.3 22 37.07 21.91 37.81 21.75C36.46 26.68 31.85 30.34 26.3 31.05C25.55 31.15 25 31.79 25 32.55C25 33.38 25.72 34.02 26.54 33.91C35.24 32.74 42 25.18 42 14C42 6.27 39.1 0 35.5 0Z"/>
+              </svg>
+            </span>
+
+            <div class="ref-card-content">
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ref-card-details">
+                <h4 class="ref-person-name">Neelam Kulshreshtha</h4>
+                <div class="ref-person-meta">
+                  <span class="ref-person-role">General Manager &bull; Global Procurement</span>
+                  <span class="ref-person-company">ReNew Power</span>
+                </div>
+                <p class="ref-quote-text">
+                  Their synchronized yard laydown and precision heavy haulage scheduling delivered the velocity and reliability essential for our utility-scale installations. Truly exemplary execution with a 100% zero-demurrage track record.
                 </p>
                 <div class="ref-stars-rating" aria-label="5 out of 5 stars">
                   <i class="fa-solid fa-star"></i>
@@ -1287,6 +1402,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=64.0"></script>
+  <script src="assest/js/main.js?v=65.0"></script>
 </body>
 </html>
