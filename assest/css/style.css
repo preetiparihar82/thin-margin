@@ -2366,9 +2366,11 @@ h3 .text-accent {
 .ref-stars-rating {
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 4px;
   color: #f59e0b;
   font-size: 14.5px;
+  margin-top: 8px;
 }
 
 /* --- Centered Slider Dots Only (Strictly No Side Arrows) --- */
@@ -2451,11 +2453,6 @@ h3 .text-accent {
   .ref-quote-glyph-bottom {
     right: 16px;
     bottom: -14px;
-  }
-}
-
-  .ref-stars-rating {
-    justify-content: center;
   }
 
   .ref-header-title {
