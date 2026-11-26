@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (refCarouselTrack) {
     const cards = refCarouselTrack.querySelectorAll('.ref-testi-card');
-    let currentIndex = 0;
+    let currentPage = 0;
     let autoSlideTimer = null;
     let touchStartX = 0;
 
@@ -262,22 +262,23 @@ document.addEventListener('DOMContentLoaded', () => {
       return window.innerWidth <= 992 ? 1 : 2;
     };
 
-    const getMaxIndex = () => {
+    const getTotalPages = () => {
       const visible = getVisibleCount();
-      return Math.max(0, cards.length - visible);
+      return Math.ceil(cards.length / visible);
     };
 
     const updateSlider = (smooth = true) => {
-      const maxIdx = getMaxIndex();
-      if (currentIndex > maxIdx) currentIndex = maxIdx;
-      if (currentIndex < 0) currentIndex = 0;
+      const totalPages = getTotalPages();
+      if (currentPage >= totalPages) currentPage = totalPages - 1;
+      if (currentPage < 0) currentPage = 0;
 
       const card = cards[0];
       if (!card) return;
 
+      const visible = getVisibleCount();
       const cardWidth = card.getBoundingClientRect().width;
       const gap = 36; // matching CSS gap
-      const offset = (cardWidth + gap) * currentIndex;
+      const offset = (cardWidth + gap) * (currentPage * visible);
 
       refCarouselTrack.style.transition = smooth ? 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
       refCarouselTrack.style.transform = `translateX(-${offset}px)`;
@@ -286,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (refCarouselDots) {
         const dots = refCarouselDots.querySelectorAll('.ref-dot');
         dots.forEach((dot, idx) => {
-          dot.classList.toggle('active', idx === currentIndex);
+          dot.classList.toggle('active', idx === currentPage);
         });
       }
     };
@@ -294,15 +295,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const buildDots = () => {
       if (!refCarouselDots) return;
       refCarouselDots.innerHTML = '';
-      const maxIdx = getMaxIndex();
-      const dotCount = maxIdx + 1;
+      const totalPages = getTotalPages();
 
-      for (let i = 0; i < dotCount; i++) {
+      for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('button');
-        dot.className = `ref-dot ${i === currentIndex ? 'active' : ''}`;
+        dot.className = `ref-dot ${i === currentPage ? 'active' : ''}`;
         dot.setAttribute('aria-label', `Navigate to testimonial slide ${i + 1}`);
         dot.addEventListener('click', () => {
-          currentIndex = i;
+          currentPage = i;
           updateSlider();
           resetAutoSlide();
         });
@@ -311,14 +311,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const nextSlide = () => {
-      const maxIdx = getMaxIndex();
-      currentIndex = currentIndex >= maxIdx ? 0 : currentIndex + 1;
+      const totalPages = getTotalPages();
+      currentPage = currentPage >= totalPages - 1 ? 0 : currentPage + 1;
       updateSlider();
     };
 
     const prevSlide = () => {
-      const maxIdx = getMaxIndex();
-      currentIndex = currentIndex <= 0 ? maxIdx : currentIndex - 1;
+      const totalPages = getTotalPages();
+      currentPage = currentPage <= 0 ? totalPages - 1 : currentPage - 1;
       updateSlider();
     };
 
