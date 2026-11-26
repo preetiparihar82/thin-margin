@@ -245,17 +245,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 6. TWO-CARD CLIENT TESTIMONIALS SLIDER & INTERACTIVE GLOW CONTROLLER
+  // 6. CLIENT TESTIMONIALS CAROUSEL CONTROLLER (MATCHING REFERENCE DESIGN)
   // ==========================================================================
-  const rvSection = document.getElementById('testimonials');
-  const rvTrack = document.getElementById('rvCardsTrack');
-  const rvPrevBtn = document.getElementById('rvPrevBtn');
-  const rvNextBtn = document.getElementById('rvNextBtn');
-  const rvDotsNav = document.getElementById('rvDotsNav');
-  const rvInteractiveGlow = document.getElementById('rvInteractiveGlow');
+  const refCarouselTrack = document.getElementById('refCarouselTrack');
+  const refPrevArrow = document.getElementById('refPrevArrow');
+  const refNextArrow = document.getElementById('refNextArrow');
+  const refCarouselDots = document.getElementById('refCarouselDots');
 
-  if (rvTrack) {
-    const cards = rvTrack.querySelectorAll('.rv-dual-card');
+  if (refCarouselTrack) {
+    const cards = refCarouselTrack.querySelectorAll('.ref-testi-card');
     let currentIndex = 0;
     let autoSlideTimer = null;
     let touchStartX = 0;
@@ -278,15 +276,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!card) return;
 
       const cardWidth = card.getBoundingClientRect().width;
-      const gap = 28; // matching CSS gap
+      const gap = 36; // matching CSS gap
       const offset = (cardWidth + gap) * currentIndex;
 
-      rvTrack.style.transition = smooth ? 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
-      rvTrack.style.transform = `translateX(-${offset}px)`;
+      refCarouselTrack.style.transition = smooth ? 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+      refCarouselTrack.style.transform = `translateX(-${offset}px)`;
 
       // Update dots
-      if (rvDotsNav) {
-        const dots = rvDotsNav.querySelectorAll('.rv-dot-btn');
+      if (refCarouselDots) {
+        const dots = refCarouselDots.querySelectorAll('.ref-dot');
         dots.forEach((dot, idx) => {
           dot.classList.toggle('active', idx === currentIndex);
         });
@@ -294,21 +292,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const buildDots = () => {
-      if (!rvDotsNav) return;
-      rvDotsNav.innerHTML = '';
+      if (!refCarouselDots) return;
+      refCarouselDots.innerHTML = '';
       const maxIdx = getMaxIndex();
       const dotCount = maxIdx + 1;
 
       for (let i = 0; i < dotCount; i++) {
         const dot = document.createElement('button');
-        dot.className = `rv-dot-btn ${i === currentIndex ? 'active' : ''}`;
+        dot.className = `ref-dot ${i === currentIndex ? 'active' : ''}`;
         dot.setAttribute('aria-label', `Navigate to testimonial slide ${i + 1}`);
         dot.addEventListener('click', () => {
           currentIndex = i;
           updateSlider();
           resetAutoSlide();
         });
-        rvDotsNav.appendChild(dot);
+        refCarouselDots.appendChild(dot);
       }
     };
 
@@ -324,27 +322,27 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
     };
 
-    if (rvNextBtn) {
-      rvNextBtn.addEventListener('click', () => {
+    if (refNextArrow) {
+      refNextArrow.addEventListener('click', () => {
         nextSlide();
         resetAutoSlide();
       });
     }
 
-    if (rvPrevBtn) {
-      rvPrevBtn.addEventListener('click', () => {
+    if (refPrevArrow) {
+      refPrevArrow.addEventListener('click', () => {
         prevSlide();
         resetAutoSlide();
       });
     }
 
     // Touch Swipe Support
-    rvTrack.addEventListener('touchstart', (e) => {
+    refCarouselTrack.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
       stopAutoSlide();
     }, { passive: true });
 
-    rvTrack.addEventListener('touchend', (e) => {
+    refCarouselTrack.addEventListener('touchend', (e) => {
       const touchEndX = e.changedTouches[0].screenX;
       const diff = touchStartX - touchEndX;
       if (Math.abs(diff) > 40) {
@@ -373,19 +371,8 @@ document.addEventListener('DOMContentLoaded', () => {
       startAutoSlide();
     };
 
-    rvTrack.addEventListener('mouseenter', stopAutoSlide);
-    rvTrack.addEventListener('mouseleave', startAutoSlide);
-
-    // Dynamic Mouse-Tracking Glow Effect
-    if (rvSection && rvInteractiveGlow) {
-      rvSection.addEventListener('mousemove', (e) => {
-        const rect = rvSection.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        rvInteractiveGlow.style.left = `${x}px`;
-        rvInteractiveGlow.style.top = `${y}px`;
-      });
-    }
+    refCarouselTrack.addEventListener('mouseenter', stopAutoSlide);
+    refCarouselTrack.addEventListener('mouseleave', startAutoSlide);
 
     // Initial setup and responsive listener
     buildDots();

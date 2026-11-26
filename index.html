@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="assest/css/style.css?v=61.0">
+  <link rel="stylesheet" href="assest/css/style.css?v=62.0">
 </head>
 <body class="tm-body">
 
@@ -758,225 +758,245 @@
   </section>
 
   <!-- ==========================================================================
-       9. CLIENT TESTIMONIALS — 2-CARD SHOWCASE (ARCHITECTURAL & DYNAMIC)
+       9. CLIENT TESTIMONIALS (REDESIGNED MATCHING USER REFERENCE WITH WEBSITE PALETTE)
        ========================================================================== -->
-  <section class="rv-testimonials" id="testimonials">
-    <!-- Dynamic Ambient Gradient Orbs (No Stars) -->
-    <div class="rv-bg-orb rv-orb-1" aria-hidden="true"></div>
-    <div class="rv-bg-orb rv-orb-2" aria-hidden="true"></div>
-    <div class="rv-bg-orb rv-orb-3" aria-hidden="true"></div>
-    <div class="rv-interactive-glow" id="rvInteractiveGlow" aria-hidden="true"></div>
+  <section class="tm-testimonials-ref-section" id="testimonials">
+    <!-- Subtle Ambient Glow -->
+    <div class="ref-ambient-glow" aria-hidden="true"></div>
 
     <div class="tm-container">
 
-      <!-- Animated Section Header (No Pills) -->
-      <div class="rv-header reveal-fade-up">
-        <div class="rv-kicker-wrap">
-          <span class="rv-kicker-bar"></span>
-          <span class="rv-kicker-text">CLIENT VOICES &amp; PROVEN IMPACT</span>
-        </div>
-        <h2 class="rv-title">What Our <span class="rv-title-shimmer">Clients</span> Say</h2>
-        <div class="rv-title-bar">
-          <span class="rv-bar-glow"></span>
-        </div>
-        <p class="rv-subtitle">
-          Leading energy conglomerates and EPC giants rely on Thin Margin for zero-demurrage port custody and precision project distribution.
-        </p>
+      <!-- Header Matching User Reference -->
+      <div class="ref-testi-header reveal-fade-up">
+        <div class="ref-header-accent-bar" aria-hidden="true"></div>
+        <span class="ref-header-kicker">Testimonials</span>
+        <h2 class="ref-header-title">People Who Love Our Services</h2>
       </div>
 
-      <!-- 2-Cards Slider Stage -->
-      <div class="rv-slider-container reveal-fade-up">
+      <!-- Testimonial Cards Carousel Stage (2 Cards Visible) -->
+      <div class="ref-carousel-wrapper reveal-fade-up">
         
-        <!-- Controls Topbar (Architectural Rectangular Geometry — No Pills) -->
-        <div class="rv-stage-topbar">
-          <div class="rv-rating-summary">
-            <span class="rv-summary-score">5.0</span>
-            <div class="rv-summary-stars">
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
-              <i class="fa-solid fa-star"></i>
+        <!-- Track holding cards -->
+        <div class="ref-carousel-track" id="refCarouselTrack">
+
+          <!-- Card 1: LOOK BOOK FLY PRIVATE LIMITED -->
+          <div class="ref-testi-card">
+            <!-- Giant Quote Marks -->
+            <span class="ref-quote-glyph-top" aria-hidden="true">&ldquo;</span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">&rdquo;</span>
+
+            <div class="ref-card-content">
+              <!-- Left: Avatar with Offset Frame -->
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Right: Info, Quote Text & Stars -->
+              <div class="ref-card-details">
+                <h4 class="ref-client-name">LOOK BOOK FLY PRIVATE LIMITED</h4>
+                <p class="ref-quote-text">
+                  Prompt response and very good work done by Krunal and team. You helped a lot for our company. Keep it up.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
             </div>
-            <span class="rv-summary-divider">|</span>
-            <span class="rv-summary-label">Over 40+ Mega Infrastructure Audits</span>
           </div>
 
-          <div class="rv-nav-arrows">
-            <button class="rv-nav-btn prev" id="rvPrevBtn" aria-label="Previous Reviews">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="rv-nav-btn next" id="rvNextBtn" aria-label="Next Reviews">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
+          <!-- Card 2: RAAJ ENVIRONMENT PRIVATE LIMITED -->
+          <div class="ref-testi-card">
+            <!-- Giant Quote Marks -->
+            <span class="ref-quote-glyph-top" aria-hidden="true">&ldquo;</span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">&rdquo;</span>
+
+            <div class="ref-card-content">
+              <!-- Left: Avatar with Offset Frame -->
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <!-- Right: Info, Quote Text & Stars -->
+              <div class="ref-card-details">
+                <h4 class="ref-client-name">RAAJ ENVIRONMENT PRIVATE LIMITED</h4>
+                <p class="ref-quote-text">
+                  They&rsquo;re very good, customer-friendly people, thorough with the process to help startups across India in the best possible manner. We feel privileged in availing their excellent services.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <!-- Card 3: ADANI SOLAR PRIVATE LIMITED -->
+          <div class="ref-testi-card">
+            <span class="ref-quote-glyph-top" aria-hidden="true">&ldquo;</span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">&rdquo;</span>
+
+            <div class="ref-card-content">
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ref-card-details">
+                <h4 class="ref-client-name">ADANI SOLAR PRIVATE LIMITED</h4>
+                <p class="ref-quote-text">
+                  Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module shipments. Their rapid 24-hr turnaround gave us total delivery assurance.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: ADITYA BIRLA LOGISTICS & CAPITAL -->
+          <div class="ref-testi-card">
+            <span class="ref-quote-glyph-top" aria-hidden="true">&ldquo;</span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">&rdquo;</span>
+
+            <div class="ref-card-content">
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ref-card-details">
+                <h4 class="ref-client-name">ADITYA BIRLA GROUP</h4>
+                <p class="ref-quote-text">
+                  Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5: VISHAKHA RENEWABLES PRIVATE LIMITED -->
+          <div class="ref-testi-card">
+            <span class="ref-quote-glyph-top" aria-hidden="true">&ldquo;</span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">&rdquo;</span>
+
+            <div class="ref-card-content">
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ref-card-details">
+                <h4 class="ref-client-name">VISHAKHA RENEWABLES PVT LTD</h4>
+                <p class="ref-quote-text">
+                  Pristine component preservation and weatherproof yard storage are critical for our supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single transit mismatch.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 6: ECOM EXPRESS LOGISTICS -->
+          <div class="ref-testi-card">
+            <span class="ref-quote-glyph-top" aria-hidden="true">&ldquo;</span>
+            <span class="ref-quote-glyph-bottom" aria-hidden="true">&rdquo;</span>
+
+            <div class="ref-card-content">
+              <div class="ref-avatar-wrapper">
+                <div class="ref-avatar-frame" aria-hidden="true"></div>
+                <div class="ref-avatar-box">
+                  <svg viewBox="0 0 80 80" class="ref-avatar-svg" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="80" height="80" rx="14" fill="#e9eef2"/>
+                    <circle cx="40" cy="32" r="14" fill="#94a3b8"/>
+                    <path d="M18 68 C18 52, 28 48, 40 48 C52 48, 62 52, 62 68 Z" fill="#94a3b8"/>
+                  </svg>
+                </div>
+              </div>
+
+              <div class="ref-card-details">
+                <h4 class="ref-client-name">ECOM EXPRESS LOGISTICS</h4>
+                <p class="ref-quote-text">
+                  Their synchronized line-haul scheduling and mechanized cross-dock operations deliver the velocity and reliability essential for national transit networks with round-the-clock tracking and zero variances.
+                </p>
+                <div class="ref-stars-rating" aria-label="5 out of 5 stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
 
-        <!-- Slider Overflow Track -->
-        <div class="rv-track-wrapper">
-          <div class="rv-cards-track" id="rvCardsTrack">
+        <!-- Slider Controls: Sleek Arrows & Dots Navigation -->
+        <div class="ref-carousel-nav-row">
+          <button class="ref-nav-arrow-btn prev" id="refPrevArrow" aria-label="Previous Reviews">
+            <i class="fa-solid fa-chevron-left"></i>
+          </button>
 
-            <!-- Card 1: Rajesh Varma (Executive Monogram, No Cartoons, No Logo Image) -->
-            <div class="rv-dual-card">
-              <div class="rv-card-inner">
-                <div class="rv-card-header">
-                  <div class="rv-avatar-badge">
-                    <span class="rv-monogram">RV</span>
-                  </div>
-                  <div class="rv-person-meta">
-                    <h4 class="rv-person-name">Rajesh Varma</h4>
-                    <p class="rv-person-role">VP &bull; Project Procurement</p>
-                  </div>
-                  <div class="rv-company-tag">
-                    <span>ADANI SOLAR</span>
-                  </div>
-                </div>
+          <div class="ref-carousel-dots" id="refCarouselDots"></div>
 
-                <div class="rv-card-body">
-                  <div class="rv-quote-icon" aria-hidden="true">&ldquo;</div>
-                  <p class="rv-quote-paragraph">
-                    Thin Margin’s turnkey decantation operations at Mundra Port eliminated container detention risks across our mega module shipments. Their rapid 24-hr de-stuffing and strict turnaround protocol gave us total delivery assurance.
-                  </p>
-                </div>
-
-                <div class="rv-card-footer">
-                  <div class="rv-verified-tag">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <span>Zero Demurrage Certified</span>
-                  </div>
-                  <div class="rv-card-stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 2: Siddharth Sengupta (Executive Monogram, No Cartoons, No Logo Image) -->
-            <div class="rv-dual-card">
-              <div class="rv-card-inner">
-                <div class="rv-card-header">
-                  <div class="rv-avatar-badge">
-                    <span class="rv-monogram">SS</span>
-                  </div>
-                  <div class="rv-person-meta">
-                    <h4 class="rv-person-name">Siddharth Sengupta</h4>
-                    <p class="rv-person-role">Head of Capital Logistics</p>
-                  </div>
-                  <div class="rv-company-tag">
-                    <span>ADITYA BIRLA</span>
-                  </div>
-                </div>
-
-                <div class="rv-card-body">
-                  <div class="rv-quote-icon" aria-hidden="true">&ldquo;</div>
-                  <p class="rv-quote-paragraph">
-                    Handling oversized heavy capital equipment requires flawless ground coordination. Thin Margin provided immaculate off-dock laydown security, zero-variance custody handover, and complete statutory compliance throughout.
-                  </p>
-                </div>
-
-                <div class="rv-card-footer">
-                  <div class="rv-verified-tag">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <span>Heavy Cargo Custody</span>
-                  </div>
-                  <div class="rv-card-stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 3: Prashant Dave (Executive Monogram, No Cartoons, No Logo Image) -->
-            <div class="rv-dual-card">
-              <div class="rv-card-inner">
-                <div class="rv-card-header">
-                  <div class="rv-avatar-badge">
-                    <span class="rv-monogram">PD</span>
-                  </div>
-                  <div class="rv-person-meta">
-                    <h4 class="rv-person-name">Prashant Dave</h4>
-                    <p class="rv-person-role">Chief Operating Officer</p>
-                  </div>
-                  <div class="rv-company-tag">
-                    <span>VISHAKHA RENEWABLES</span>
-                  </div>
-                </div>
-
-                <div class="rv-card-body">
-                  <div class="rv-quote-icon" aria-hidden="true">&ldquo;</div>
-                  <p class="rv-quote-paragraph">
-                    Pristine component preservation and weatherproof yard storage are critical for our supplies. Thin Margin’s dedicated site discipline protected our high-value solar assets without a single mismatch or damage.
-                  </p>
-                </div>
-
-                <div class="rv-card-footer">
-                  <div class="rv-verified-tag">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <span>Weatherproof Audited</span>
-                  </div>
-                  <div class="rv-card-stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Card 4: Col. Arvind Sharma (Executive Monogram, No Cartoons, No Logo Image) -->
-            <div class="rv-dual-card">
-              <div class="rv-card-inner">
-                <div class="rv-card-header">
-                  <div class="rv-avatar-badge">
-                    <span class="rv-monogram">AS</span>
-                  </div>
-                  <div class="rv-person-meta">
-                    <h4 class="rv-person-name">Col. Arvind Sharma (Retd.)</h4>
-                    <p class="rv-person-role">Senior Director &bull; Network Ops</p>
-                  </div>
-                  <div class="rv-company-tag">
-                    <span>ECOM EXPRESS</span>
-                  </div>
-                </div>
-
-                <div class="rv-card-body">
-                  <div class="rv-quote-icon" aria-hidden="true">&ldquo;</div>
-                  <p class="rv-quote-paragraph">
-                    Their synchronized line-haul scheduling and mechanized cross-dock operations deliver the velocity and reliability essential for national transit networks with zero dispatch variances and real-time visibility.
-                  </p>
-                </div>
-
-                <div class="rv-card-footer">
-                  <div class="rv-verified-tag">
-                    <i class="fa-solid fa-shield-check"></i>
-                    <span>High-Throughput SLA</span>
-                  </div>
-                  <div class="rv-card-stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          <button class="ref-nav-arrow-btn next" id="refNextArrow" aria-label="Next Reviews">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
-
-        <!-- Interactive Bar/Dash Indicators (Architectural Lines — Strictly No Pills) -->
-        <div class="rv-dots-nav" id="rvDotsNav"></div>
 
       </div>
 
@@ -1312,6 +1332,6 @@
   </div>
 
   <!-- Main JavaScript File -->
-  <script src="assest/js/main.js?v=61.0"></script>
+  <script src="assest/js/main.js?v=62.0"></script>
 </body>
 </html>
