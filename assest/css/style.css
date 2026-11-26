@@ -2259,11 +2259,11 @@ h3 .text-accent {
 
 .ref-quote-glyph-top svg {
   display: block;
+  transform: rotate(180deg); /* Exact reference opening quotation mark: bulbs at bottom, tails up-left */
 }
 
 .ref-quote-glyph-bottom svg {
-  display: block;
-  transform: rotate(180deg); /* Properly inverted closing quotation mark */
+  display: block; /* Exact reference closing quotation mark: bulbs at top, tails down-left */
 }
 
 .ref-testi-card:hover .ref-quote-glyph-top {
