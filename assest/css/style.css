@@ -2133,108 +2133,230 @@ h3 .text-accent {
 /* ==========================================================================
    12. CLIENT TESTIMONIALS (EXACT REFERENCE DESIGN WITH WEBSITE BRAND GRADIENT)
    ========================================================================== */
+/* ==========================================================================
+   12. CLIENT TESTIMONIALS (ANIMATED HIGH-END UI REDESIGN - MAGIC UI & ACETERNETY STANDARDS)
+   ========================================================================== */
 .tm-testimonials-ref-section {
   position: relative;
-  padding: 95px 0 105px;
-  background: linear-gradient(180deg, #ffffff 0%, #fffdfd 40%, #fffafa 75%, #ffffff 100%);
+  padding: 105px 0 115px;
+  background: linear-gradient(180deg, #ffffff 0%, #fcfbfb 30%, #fff7f7 70%, #ffffff 100%);
   overflow: hidden;
-  border-top: 1px solid rgba(241, 245, 249, 0.85);
-  border-bottom: 1px solid rgba(241, 245, 249, 0.85);
+  border-top: 1px solid rgba(226, 232, 240, 0.7);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
 }
 
-/* Radiant Ambient Glow (Lightened & Subtle) */
+/* Aceternity UI Dynamic Cursor Spotlight */
+.ref-interactive-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    650px circle at var(--spotlight-x, 50%) var(--spotlight-y, 35%),
+    rgba(238, 33, 48, 0.05) 0%,
+    rgba(255, 77, 90, 0.015) 40%,
+    transparent 75%
+  );
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+/* Ambient Subtle Depth Glow */
 .ref-ambient-glow {
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 750px;
-  height: 480px;
-  background: radial-gradient(circle, rgba(238, 33, 48, 0.025) 0%, rgba(255, 77, 90, 0.008) 45%, transparent 70%);
+  width: 820px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(238, 33, 48, 0.035) 0%, rgba(255, 77, 90, 0.01) 45%, transparent 75%);
   pointer-events: none;
   z-index: 0;
-  filter: blur(50px);
+  filter: blur(60px);
 }
 
-/* --- Section Header (Matching Reference Image) --- */
+/* --- Section Header (Magic UI Animated Shiny Text & Border Beam Pill) --- */
 .ref-testi-header {
   text-align: center;
-  margin-bottom: 52px;
+  margin-bottom: 56px;
   position: relative;
   z-index: 1;
 }
 
-.ref-header-accent-bar {
-  width: 38px;
-  height: 4px;
-  background: linear-gradient(90deg, #ee2130 0%, #ff4d5a 100%);
-  border-radius: 4px;
-  margin: 0 auto 10px;
+/* Pill Badge with Pulsing Status Indicator */
+.ref-header-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: rgba(238, 33, 48, 0.04);
+  border: 1px solid rgba(238, 33, 48, 0.16);
+  box-shadow: 0 2px 12px rgba(238, 33, 48, 0.06);
+  margin-bottom: 14px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ref-header-badge:hover {
+  background: rgba(238, 33, 48, 0.08);
+  border-color: rgba(238, 33, 48, 0.28);
+  transform: translateY(-1px);
+}
+
+.ref-header-badge-dot {
+  position: relative;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ee2130;
+  box-shadow: 0 0 8px rgba(238, 33, 48, 0.6);
+}
+
+.ref-header-badge-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(238, 33, 48, 0.5);
+  animation: badgeDotPulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@keyframes badgeDotPulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
 }
 
 .ref-header-kicker {
-  display: block;
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   color: #ee2130;
-  letter-spacing: 0.08em;
-  margin-bottom: 6px;
-  background: none;
-  border: none;
-  padding: 0;
+  letter-spacing: 0.1em;
+}
+
+/* Magic UI Animated Shimmer Heading */
+@keyframes magicShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .ref-header-title {
   font-family: var(--font-heading);
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 800;
-  color: #0b192c;
-  line-height: 1.22;
-  margin: 0;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 auto 12px;
+  letter-spacing: -0.025em;
+  background: linear-gradient(
+    115deg,
+    #0b192c 0%,
+    #0b192c 30%,
+    #ee2130 50%,
+    #ff4d5a 65%,
+    #0b192c 80%,
+    #0b192c 100%
+  );
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: magicShimmer 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  display: inline-block;
+  max-width: 800px;
 }
 
-/* --- 2-Cards Carousel Wrapper --- */
+/* Dynamic Accent Underline Bar */
+.ref-header-accent-bar {
+  width: 44px;
+  height: 4px;
+  background: linear-gradient(90deg, #ee2130 0%, #ff4d5a 100%);
+  border-radius: 4px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(238, 33, 48, 0.35);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ref-testi-header:hover .ref-header-accent-bar {
+  width: 72px;
+}
+
+/* --- Carousel Stage --- */
 .ref-carousel-wrapper {
   position: relative;
   z-index: 1;
   max-width: 1160px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 30px 10px 42px;
+  padding: 30px 12px 42px;
+  perspective: 1200px;
 }
 
 .ref-carousel-track {
   display: flex;
   gap: 36px;
-  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
-/* --- Testimonial Card (Exact Reference Geometry - No Top Line on Hover) --- */
+/* --- Testimonial Card with 3D Arc Motion & Follow-Through --- */
 .ref-testi-card {
-  flex: 0 0 calc(50% - 18px); /* Exactly two cards in one view */
+  flex: 0 0 calc(50% - 18px);
   position: relative;
-  background: #ffffff;
-  border: 1.5px solid #edf1f6;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(226, 232, 240, 0.85);
+  border-radius: 22px;
   padding: 42px 34px 38px 34px;
   box-shadow: 0 10px 30px rgba(15, 23, 42, 0.03), 0 2px 6px rgba(15, 23, 42, 0.02);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.4s cubic-bezier(0.34, 1.4, 0.64, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transform-style: preserve-3d;
+  will-change: transform, box-shadow;
 }
 
 .ref-testi-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(238, 33, 48, 0.25);
-  box-shadow: 0 20px 45px rgba(238, 33, 48, 0.07), 0 4px 12px rgba(15, 23, 42, 0.03);
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(238, 33, 48, 0.28);
+  box-shadow: 0 24px 50px rgba(238, 33, 48, 0.08), 0 8px 18px rgba(15, 23, 42, 0.04);
 }
 
-/* Giant Quotation Marks (Website Brand Gradient - Properly Inverted Pair) */
+/* Moving In Arcs: Continuous Gentle Floating Arc for Quotation Marks */
+@keyframes quoteFloatArcTop {
+  0%, 100% {
+    transform: rotate(180deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(181.5deg) translate(-2px, -3.5px);
+  }
+}
+
+@keyframes quoteFloatArcBottom {
+  0%, 100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-1.5deg) translate(2px, 3.5px);
+  }
+}
+
 .ref-quote-glyph-top {
   position: absolute;
   top: -16px;
@@ -2243,7 +2365,8 @@ h3 .text-accent {
   z-index: 2;
   line-height: 1;
   display: inline-flex;
-  transition: transform 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: quoteFloatArcTop 5s ease-in-out infinite;
 }
 
 .ref-quote-glyph-bottom {
@@ -2254,24 +2377,30 @@ h3 .text-accent {
   z-index: 2;
   line-height: 1;
   display: inline-flex;
-  transition: transform 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: quoteFloatArcBottom 5s ease-in-out infinite 0.75s;
 }
 
 .ref-quote-glyph-top svg {
   display: block;
-  transform: rotate(180deg); /* Exact reference opening quotation mark: bulbs at bottom, tails up-left */
+  transform: rotate(180deg); /* Opening "66" orientation matching user reference */
+  filter: drop-shadow(0 2px 8px rgba(238, 33, 48, 0.2));
 }
 
 .ref-quote-glyph-bottom svg {
-  display: block; /* Exact reference closing quotation mark: bulbs at top, tails down-left */
+  display: block; /* Closing "99" orientation matching user reference */
+  filter: drop-shadow(0 2px 8px rgba(238, 33, 48, 0.2));
 }
 
+/* Snappy Anticipation & Follow-Through on Hover for Quotation Marks */
 .ref-testi-card:hover .ref-quote-glyph-top {
-  transform: scale(1.08) translateY(-2px);
+  transform: scale(1.15) translate(-4px, -6px) rotate(176deg);
+  animation-play-state: paused;
 }
 
 .ref-testi-card:hover .ref-quote-glyph-bottom {
-  transform: scale(1.08) translateY(2px);
+  transform: scale(1.15) translate(4px, 6px) rotate(4deg);
+  animation-play-state: paused;
 }
 
 /* Inner Layout: Avatar on left, Details on right */
@@ -2283,7 +2412,7 @@ h3 .text-accent {
   z-index: 1;
 }
 
-/* Avatar with Gradient Outline Frame */
+/* Avatar Wrapper with Follow-Through Spring Frame */
 .ref-avatar-wrapper {
   position: relative;
   width: 86px;
@@ -2303,13 +2432,14 @@ h3 .text-accent {
   border-radius: 18px;
   pointer-events: none;
   z-index: 0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 3px 12px rgba(238, 33, 48, 0.14);
+  transition: transform 0.45s cubic-bezier(0.34, 1.5, 0.64, 1), box-shadow 0.4s ease;
+  box-shadow: 0 4px 14px rgba(238, 33, 48, 0.15);
 }
 
+/* Spring Follow-Through on Hover */
 .ref-testi-card:hover .ref-avatar-frame {
-  transform: translate(-2px, -2px);
-  box-shadow: 0 5px 16px rgba(238, 33, 48, 0.22);
+  transform: translate(-5px, -5px) rotate(-1.5deg);
+  box-shadow: 0 8px 24px rgba(238, 33, 48, 0.26);
 }
 
 .ref-avatar-box {
@@ -2329,7 +2459,7 @@ h3 .text-accent {
   display: block;
 }
 
-/* Card Details Column: Clean Typography (No Tags, Matching 2nd Reference Image) */
+/* Card Details Column: Typography & Content */
 .ref-card-details {
   flex: 1;
   min-width: 0;
@@ -2337,12 +2467,17 @@ h3 .text-accent {
 
 .ref-person-name {
   font-family: var(--font-heading);
-  font-size: 17px;
+  font-size: 17.5px;
   font-weight: 800;
   color: #0b192c;
   margin: 0 0 3px;
   line-height: 1.3;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  transition: color 0.3s ease;
+}
+
+.ref-testi-card:hover .ref-person-name {
+  color: #0b192c;
 }
 
 .ref-person-role {
@@ -2363,23 +2498,38 @@ h3 .text-accent {
   font-weight: 450;
 }
 
+/* Left-Aligned Star Rating with Sequential Stagger Sparkle Follow-Through */
 .ref-stars-rating {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 4px;
+  gap: 5px;
   color: #f59e0b;
   font-size: 14.5px;
   margin-top: 8px;
 }
 
-/* --- Centered Slider Dots Only (Strictly No Side Arrows) --- */
+.ref-stars-rating i {
+  display: inline-block;
+  transition: transform 0.35s cubic-bezier(0.34, 1.6, 0.64, 1),
+              color 0.25s ease,
+              text-shadow 0.35s ease;
+  transition-delay: calc(var(--star-idx, 0) * 45ms);
+}
+
+.ref-testi-card:hover .ref-stars-rating i {
+  transform: scale(1.22) translateY(-2px);
+  color: #f59e0b;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.55);
+}
+
+/* --- Magic UI Elastic Morphing Dots Navigation (Strictly No Side Arrows) --- */
 .ref-carousel-nav-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  margin-top: 36px;
+  gap: 12px;
+  margin-top: 38px;
   position: relative;
   z-index: 2;
 }
@@ -2388,39 +2538,55 @@ h3 .text-accent {
   display: flex;
   align-items: center;
   gap: 9px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
 }
 
 .ref-dot {
   width: 9px;
   height: 9px;
-  border-radius: 50%; /* Exactly circular dots like in reference */
+  border-radius: 999px;
   background: #cbd5e1;
   border: none;
   cursor: pointer;
   padding: 0;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 0.4s cubic-bezier(0.34, 1.4, 0.64, 1),
+              background 0.3s ease,
+              transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
 }
 
+.ref-dot:hover {
+  transform: scale(1.25);
+  background: #94a3b8;
+}
+
+/* Active Morphing Elastic Pill */
 .ref-dot.active {
+  width: 32px;
   background: linear-gradient(135deg, #ee2130 0%, #ff4d5a 100%);
-  transform: scale(1.3);
-  box-shadow: 0 2px 10px rgba(238, 33, 48, 0.45);
+  box-shadow: 0 2px 12px rgba(238, 33, 48, 0.45);
+  transform: none;
 }
 
 /* --- Responsive Media Queries --- */
 @media (max-width: 992px) {
   .ref-testi-card {
-    flex: 0 0 100%; /* Single card on mobile/tablets */
+    flex: 0 0 100%;
   }
 
   .ref-header-title {
-    font-size: 32px;
+    font-size: 34px;
   }
 }
 
 @media (max-width: 640px) {
   .tm-testimonials-ref-section {
-    padding: 70px 0 80px;
+    padding: 75px 0 85px;
   }
 
   .ref-testi-card {
@@ -2459,11 +2625,7 @@ h3 .text-accent {
     font-size: 28px;
   }
 }
-
-/* ==========================================================================
-   13. PARTNERS, CAREERS & BLOGS
-   ========================================================================== */
-.tm-partners-section {
+\n.tm-partners-section {
   padding: 55px 0;
   background-color: #ffffff;
   border-top: 1px solid var(--color-border);

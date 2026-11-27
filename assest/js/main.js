@@ -246,17 +246,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
   // 6. CLIENT TESTIMONIALS CAROUSEL CONTROLLER (MATCHING REFERENCE DESIGN)
+    // ==========================================================================
+  // 6. CLIENT TESTIMONIALS (MAGIC UI & ACETERNETY 3D ARCS & SPOTLIGHT CONTROLLER)
   // ==========================================================================
   const refCarouselTrack = document.getElementById('refCarouselTrack');
-  const refPrevArrow = document.getElementById('refPrevArrow');
-  const refNextArrow = document.getElementById('refNextArrow');
   const refCarouselDots = document.getElementById('refCarouselDots');
+  const testiSection = document.getElementById('testimonials');
+  const refSpotlight = document.getElementById('refSpotlight');
+
+  // Aceternity UI Spotlight Mouse Tracking
+  if (testiSection && refSpotlight) {
+    testiSection.addEventListener('mousemove', (e) => {
+      const rect = testiSection.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      refSpotlight.style.setProperty('--spotlight-x', x.toFixed(1) + '%');
+      refSpotlight.style.setProperty('--spotlight-y', y.toFixed(1) + '%');
+    }, { passive: true });
+  }
 
   if (refCarouselTrack) {
     const cards = refCarouselTrack.querySelectorAll('.ref-testi-card');
     let currentPage = 0;
     let autoSlideTimer = null;
     let touchStartX = 0;
+
+    // 3D Arc Motion Parallax with Smooth Inertia Follow-Through
+    cards.forEach((card) => {
+      let rafId = null;
+
+      card.addEventListener('mousemove', (e) => {
+        if (window.innerWidth <= 992) return;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+
+        // Micro arc rotation: Max 4.2 degrees for subtle professional elegance
+        const rotateX = -(y / (rect.height / 2)) * 4.2;
+        const rotateY = (x / (rect.width / 2)) * 4.2;
+
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(() => {
+          card.style.transform = "perspective(1000px) translateY(-8px) scale(1.01) rotateX(" + rotateX.toFixed(2) + "deg) rotateY(" + rotateY.toFixed(2) + "deg)";
+        });
+      }, { passive: true });
+
+      card.addEventListener('mouseleave', () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        card.style.transform = '';
+      });
+    });
 
     const getVisibleCount = () => {
       return window.innerWidth <= 992 ? 1 : 2;
@@ -280,10 +319,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const gap = 36; // matching CSS gap
       const offset = (cardWidth + gap) * (currentPage * visible);
 
-      refCarouselTrack.style.transition = smooth ? 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
-      refCarouselTrack.style.transform = `translateX(-${offset}px)`;
+      refCarouselTrack.style.transition = smooth ? 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)' : 'none';
+      refCarouselTrack.style.transform = 'translateX(-' + offset + 'px)';
 
-      // Update dots
+      // Update morphing pill dots
       if (refCarouselDots) {
         const dots = refCarouselDots.querySelectorAll('.ref-dot');
         dots.forEach((dot, idx) => {
@@ -299,8 +338,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('button');
-        dot.className = `ref-dot ${i === currentPage ? 'active' : ''}`;
-        dot.setAttribute('aria-label', `Navigate to testimonial slide ${i + 1}`);
+        dot.className = "ref-dot " + (i === currentPage ? 'active' : '');
+        dot.setAttribute('aria-label', "Navigate to testimonial slide " + (i + 1));
         dot.addEventListener('click', () => {
           currentPage = i;
           updateSlider();
@@ -322,21 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSlider();
     };
 
-    if (refNextArrow) {
-      refNextArrow.addEventListener('click', () => {
-        nextSlide();
-        resetAutoSlide();
-      });
-    }
-
-    if (refPrevArrow) {
-      refPrevArrow.addEventListener('click', () => {
-        prevSlide();
-        resetAutoSlide();
-      });
-    }
-
-    // Touch Swipe Support
+    // Touch Swipe Support with Follow-Through
     refCarouselTrack.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
       stopAutoSlide();
@@ -374,12 +399,8 @@ document.addEventListener('DOMContentLoaded', () => {
     refCarouselTrack.addEventListener('mouseenter', stopAutoSlide);
     refCarouselTrack.addEventListener('mouseleave', startAutoSlide);
 
-    // Initial setup and responsive listener
-    buildDots();
-    updateSlider(false);
-    startAutoSlide();
-
-    let resizeTimer;
+    // Dynamic Window Resize Listener
+    let resizeTimer = null;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
@@ -387,6 +408,11 @@ document.addEventListener('DOMContentLoaded', () => {
         updateSlider(false);
       }, 150);
     });
+
+    // Initial setup
+    buildDots();
+    updateSlider(false);
+    startAutoSlide();
   }
 
   // ==========================================================================
